@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 
 import { colors } from "styles";
+import { Text } from "./Typography";
 
 type Props = {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ const CustomLink: React.FC<Props> = ({
   const { pathname } = useRouter();
 
   const { lang } = useTranslation();
+  console.log("pathname", pathname === `/${lang}${to}`);
   return (
     <Link noLang href={`/${lang}${to}`} passHref>
       <A
@@ -47,7 +49,7 @@ export default CustomLink;
 
 const A = styled.a<LinkProps>`
   cursor: pointer;
-  & > * {
+  * {
     color: ${(p) => (p.active === true ? colors.primary : colors[p.color])};
     text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
   }
