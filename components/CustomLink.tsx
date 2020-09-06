@@ -49,8 +49,8 @@ export default CustomLink;
 
 const A = styled.a<LinkProps>`
   cursor: pointer;
-  * {
+  text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
+  ${Text} {
     color: ${(p) => (p.active === true ? colors.primary : colors[p.color])};
-    text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
   }
 `;
