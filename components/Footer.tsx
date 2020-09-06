@@ -64,8 +64,8 @@ const Wrapper = styled.footer`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: ${breakpoints.lg}) {
-    padding: 3.5em ${spacing.md.sides};
+  @media (min-width: ${breakpoints.md}) {
+    padding: 3.5em ${spacing.xs.sides};
     flex-direction: row;
     justify-content: space-between;
   }

@@ -1,10 +1,15 @@
-import useTranslation from "next-translate/useTranslation";
-import Layout from "components/Layout";
+import Portfolio from "../sections/portfolio";
+import { getAllProjects } from "pages_/api";
 
-const Home: React.FC<any> = (data) => {
-  const { t, lang } = useTranslation();
-
-  return <Layout>Moin</Layout>;
-};
+const Home = ({ projects }) => <Portfolio projects={projects} />;
 
 export default Home;
+
+export async function getStaticProps({ lang }) {
+  const projects = await getAllProjects(lang);
+  return {
+    props: {
+      projects,
+    },
+  };
+}

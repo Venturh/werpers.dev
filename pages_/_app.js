@@ -3,7 +3,8 @@ import { ThemeProvider } from "styled-components";
 
 import { GlobalStyles, theme } from "styles";
 
-import "fontsource-open-sans";
+import "fontsource-open-sans/300.css";
+import "fontsource-open-sans/700.css";
 import "fontsource-archivo";
 
 const MyApp = ({ Component, pageProps }) => {

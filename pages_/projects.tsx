@@ -1,8 +1,9 @@
-import { fetchAPI } from "../prismic-configuration";
 import useTranslation from "next-translate/useTranslation";
 
 import Layout from "components/Layout";
 import Link from "next-translate/Link";
+
+import { getAllProjects } from "./api";
 
 interface Project {
   node: {
@@ -39,28 +40,11 @@ const Projects: React.FC<any> = ({ projects }: ProjectProps) => {
 export default Projects;
 
 export async function getStaticProps({ lang }) {
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
-  const projects = await fetchAPI(
-    `
-    query {
-      allProjects(lang: "${locale}") {
-        edges{
-          node {
-            name
-            headline
-            slug
-          }
-        }
-      }
-    }
-
-  `,
-    {}
-  );
+  const projects = await getAllProjects(lang);
 
   return {
     props: {
-      projects: projects.allProjects.edges,
+      projects,
     },
   };
 }

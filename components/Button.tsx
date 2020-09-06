@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Link from "next-translate/Link";
 
+import { ButtonText, Text } from "./Typography";
 import Icon from "./Icon";
-import { Text } from "./Typography";
 
 import { colors } from "styles";
 
@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   to,
   out,
   hover,
-  iconSize = "1em",
+  iconSize = "1.5em",
   color,
   bg = "primary",
   className,
@@ -45,7 +45,7 @@ const Button: React.FC<ButtonProps> = ({
           <Icon path={leftIcon} color={color} size={iconSize} />
         ) : null}
         {children ? (
-          <Text style={{ margin: " 0 0.25em" }}>{children}</Text>
+          <ButtonText style={{ margin: " 0 0.25em" }}>{children}</ButtonText>
         ) : null}
         {rightIcon ? (
           <Icon path={rightIcon} color={color} size={iconSize} />
@@ -60,15 +60,16 @@ const Content = styled.a<ButtonProps>`
   align-items: center;
   padding: 0.5em;
   border-radius: 0.25em;
+  font-weight: 600;
   :hover {
-    background: ${(p) => (p.hover ? colors.bodyTint : "initial")};
+    background: ${(p) => (p.hover ? colors.bodyTint : "")};
   }
 `;
 
 export const PrimaryButton = styled(Button)`
   background: ${colors.primary};
   border: inherit;
-  ${Text} {
+  ${ButtonText} {
     color: ${colors.primaryContrast};
   }
   svg {
@@ -79,7 +80,7 @@ export const PrimaryButton = styled(Button)`
 export const SecondaryButton = styled(Button)`
   background: ${colors.body};
   border: 1px solid ${colors.primary};
-  ${Text} {
+  ${ButtonText} {
     color: ${colors.primary};
   }
 `;

@@ -39,7 +39,7 @@ const Subtitle = styled(Typography).attrs({ variant: "h4" })`
 `;
 
 const Title = styled(Typography).attrs({ variant: "h3" })`
-  font-size: ${fontSizes["title"]};
+  font-size: ${fontSizes["xl"]};
   color: ${(props) => colors[props.color] || colors.primary};
 `;
 
@@ -60,7 +60,7 @@ const Header = styled(Typography).attrs({ variant: "h1" })`
   color: ${(props) => colors[props.color] || colors.primary};
 `;
 
-const Span = styled.span`
+const Span = styled(Typography).attrs({ variant: "span" })`
   color: ${(props) => colors[props.color] || colors.bodyContrast};
 `;
 
