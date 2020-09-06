@@ -2,5 +2,9 @@
   "nav1": "Portfolio",
   "nav2": "Projects",
   "nav3": "About",
-  "pill": "Currently not avaible"
+  "pill": "Currently not avaible",
+  "footer1": "Coded with ",
+  "footer2": " by Max Werpers.",
+  "footer3": "Build with ",
+  "footer4": "and hostet on "
 }

@@ -1,11 +1,17 @@
-import React from "react";
 import styled from "styled-components";
 import Link from "next-translate/Link";
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 
 import { colors } from "styles";
 
-type Props = { children: React.ReactNode; nav?: boolean; to: string };
+type Props = {
+  children: React.ReactNode;
+  color?: string;
+  underline?: boolean;
+  nav?: boolean;
+  to: string;
+};
 type LinkProps = {
   color?: string;
   underline?: boolean;
@@ -13,39 +19,36 @@ type LinkProps = {
   active?: boolean;
 };
 
-const MyLink: React.FC<Props> = ({ nav, to, children, ...props }) => {
+const CustomLink: React.FC<Props> = ({
+  nav,
+  color,
+  underline,
+  to,
+  children,
+}) => {
   const { pathname } = useRouter();
+  const { lang } = useTranslation();
 
-  if (nav)
-    return (
-      <NavLink noLang href={to}>
-        <Style active={pathname === to ? true : false}>{children}</Style>
-      </NavLink>
-    );
-  else
-    return (
-      <LinkOut href={to} target="_blank" rel="noopener noreferrer" {...props}>
+  return (
+    <Link noLang={nav ? false : true} href={to} passHref>
+      <A
+        target={nav ? "" : "_blank"}
+        rel="noopener noreferrer"
+        active={pathname === `/${lang}${to}` ? true : false}
+        underline={underline}
+      >
         {children}
-      </LinkOut>
-    );
+      </A>
+    </Link>
+  );
 };
 
-export default MyLink;
+export default CustomLink;
 
-const NavLink = styled(Link)<LinkProps>`
-  color: ${(p) => (p.active === 1 ? colors.primary : colors[p.color])};
-  text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
-`;
-
-const Style = styled.a<LinkProps>`
+const A = styled.a<LinkProps>`
+  cursor: pointer;
   & > * {
     color: ${(p) => (p.active === true ? colors.primary : colors[p.color])};
+    text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
   }
-  cursor: pointer;
-`;
-
-const LinkOut = styled.a<LinkProps>`
-  color: ${(p) => colors[p.color]};
-  text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
-  cursor: pointer;
 `;

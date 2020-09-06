@@ -2,5 +2,9 @@
   "nav1": "Portfolio",
   "nav2": "Projekte",
   "nav3": "Über",
-  "pill": "Derzeit nicht verfügbar"
+  "pill": "Derzeit nicht verfügbar",
+  "footer1": "Programmiert mit ",
+  "footer2": " von Max Werpers.",
+  "footer3": "Gebaut mit ",
+  "footer4": "und gehostet mit "
 }

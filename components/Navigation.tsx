@@ -1,19 +1,16 @@
-import React from "react";
 import styled from "styled-components";
-import { breakpoints, colors, spacing } from "styles";
-import { Title, Text, Span } from "./Typography";
-import Pill from "./Pill";
-import CustomLink from "./CustomLink";
-import LanguageSwitch from "./LanguageSwitch";
 import useTranslation from "next-translate/useTranslation";
 
+import CustomLink from "./CustomLink";
+import LanguageSwitch from "./LanguageSwitch";
+import Pill from "./Pill";
+import { Title, Text, Span } from "./Typography";
+
+import { breakpoints, colors, spacing } from "styles";
+import { navlinks } from "content";
+
 const Navigation = () => {
-  const { t, lang } = useTranslation();
-  const navlinks = [
-    { name: "nav1", to: "" },
-    { name: "nav2", to: "/projects" },
-    { name: "nav3", to: "/about" },
-  ];
+  const { t } = useTranslation();
 
   return (
     <Nav>
@@ -34,7 +31,7 @@ const Navigation = () => {
       <NavItems>
         <NavLinks>
           {navlinks.map(({ name, to }) => (
-            <StyledLink nav to={`/${lang}${to}`} key={name}>
+            <StyledLink nav to={`${to}`} key={name}>
               <Text color="bodyContrast">{t(`common:${name}`)}</Text>
             </StyledLink>
           ))}
@@ -66,7 +63,7 @@ const Nav = styled.nav`
     padding: 1.5em ${spacing.md.sides};
   }
   @media (min-width: ${breakpoints.xl}) {
-    padding: 1.5em ${spacing.md.sides};
+    padding: 1.5em ${spacing.lg.sides};
   }
 `;
 
@@ -129,6 +126,4 @@ const NavTools = styled.div`
   display: flex;
   align-items: center;
   margin-left: 0.5em;
-  height: 100%;
-  font-weight: 400;
 `;

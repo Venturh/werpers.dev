@@ -1,5 +1,5 @@
-import React from "react";
 import styled from "styled-components";
+
 import { fontSizes, colors } from "styles";
 
 type Props = { fontSize?: string; fontWeight?: number };

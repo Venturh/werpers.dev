@@ -1,7 +1,9 @@
-import React from "react";
 import styled from "styled-components";
-import { breakpoints, spacing } from "../styles";
+
 import Navigation from "./Navigation";
+import Footer from "./Footer";
+
+import { breakpoints, spacing } from "../styles";
 
 type Props = { small?: boolean };
 
@@ -10,6 +12,7 @@ const Layout: React.FC<Props> = ({ children, ...props }) => {
     <Wrapper>
       <Navigation />
       <Content {...props}>{children}</Content>
+      <Footer />
     </Wrapper>
   );
 };
@@ -30,7 +33,7 @@ const Content = styled.main<Props>`
 
   @media (min-width: ${breakpoints.lg}) {
     margin: 0;
-    padding: 7em ${(p) => (p.small ? "30%" : spacing.lg.sides)};
+    padding: 7em ${(p) => (p.small ? "30%" : spacing.md.sides)};
     padding-bottom: 0;
   }
 

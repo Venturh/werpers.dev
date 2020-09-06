@@ -1,6 +1,6 @@
-import Prismic from "prismic-javascript";
 import { fetchAPI } from "../prismic-configuration";
 import useTranslation from "next-translate/useTranslation";
+
 import Layout from "components/Layout";
 import Link from "next-translate/Link";
 
