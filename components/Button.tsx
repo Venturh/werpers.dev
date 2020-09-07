@@ -4,7 +4,7 @@ import Link from "next-translate/Link";
 import { ButtonText, Text } from "./Typography";
 import Icon from "./Icon";
 
-import { colors } from "styles";
+import { card1, colors } from "styles";
 
 type ButtonProps = {
   leftIcon?: string;
@@ -45,7 +45,7 @@ const Button: React.FC<ButtonProps> = ({
           <Icon path={leftIcon} color={color} size={iconSize} />
         ) : null}
         {children ? (
-          <ButtonText style={{ margin: " 0 0.25em" }}>{children}</ButtonText>
+          <ButtonText style={{ margin: " 0 0.5em" }}>{children}</ButtonText>
         ) : null}
         {rightIcon ? (
           <Icon path={rightIcon} color={color} size={iconSize} />
@@ -82,6 +82,21 @@ export const SecondaryButton = styled(Button)`
   border: 1px solid ${colors.primary};
   ${ButtonText} {
     color: ${colors.primary};
+  }
+`;
+
+export const TertiaryButton = styled(Button).attrs({
+  justify: "start",
+  lower: true,
+  fontSize: "sm",
+})`
+  ${card1}
+  fill: ${colors.primary};
+  & > * {
+    margin-left: 0.5em;
+  }
+  ${Text} {
+    color: ${colors.bodyContrast};
   }
 `;
 

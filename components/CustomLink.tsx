@@ -28,9 +28,8 @@ const CustomLink: React.FC<Props> = ({
   children,
 }) => {
   const { pathname } = useRouter();
-
   const { lang } = useTranslation();
-  console.log("pathname", pathname === `/${lang}${to}`);
+
   return (
     <Link noLang href={`/${lang}${to}`} passHref>
       <A

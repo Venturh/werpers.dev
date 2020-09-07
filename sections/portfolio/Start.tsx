@@ -7,25 +7,16 @@ import {
   ProjectCard,
   Span,
   Subheader,
+  Subtitle,
+  TertiaryButton,
   Text,
 } from "components";
 
 import { breakpoints, fontSizes } from "styles";
 
 import { ArrowRightS } from "icons";
-
-interface Node {
-  node: {
-    name: string;
-    headline: string;
-    icon: string;
-    slug: string;
-  };
-}
-
-interface Project {
-  projects: Node[];
-}
+import { socials } from "content";
+import { Project } from "pages_/api";
 
 const Start = ({ projects }: Project) => {
   const { t } = useTranslation();
@@ -62,6 +53,24 @@ const Start = ({ projects }: Project) => {
             ))}
           </ProjectsCards>
         </Projects>
+        <SocialsBlog>
+          <Socials>
+            <Subheader>{t("common:socialsTitle")}</Subheader>
+            <SocialsCards>
+              {socials.map(({ name, icon, link }) => (
+                <TertiaryButton key={link} leftIcon={icon} to={link}>
+                  {name}
+                </TertiaryButton>
+              ))}
+            </SocialsCards>
+          </Socials>
+          <Blog>
+            <Subheader>Blog</Subheader>
+            <BlogCards>
+              <Subtitle>{t("common:soon")}</Subtitle>
+            </BlogCards>
+          </Blog>
+        </SocialsBlog>
       </Content>
     </Wrapper>
   );
@@ -140,3 +149,30 @@ const ProjectsCards = styled.div`
   display: grid;
   gap: 0.5em;
 `;
+
+const SocialsBlog = styled.div`
+  @media (min-width: ${breakpoints.lg}) {
+    width: 40%;
+  }
+`;
+const Socials = styled.div`
+  margin-top: 2em;
+  @media (min-width: ${breakpoints.lg}) {
+    margin-top: 0;
+  }
+`;
+
+const SocialsCards = styled.div`
+  display: grid;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  @media (min-width: ${breakpoints.lg}) {
+    grid-template-columns: repeat(2, 50%);
+  }
+`;
+
+const Blog = styled.div`
+  margin-top: 2em;
+`;
+
+const BlogCards = styled.div``;
