@@ -4,32 +4,18 @@ import { getAllExperiences, getAllProjects } from "pages_/api";
 import { Layout } from "components";
 import Start from "sections/portfolio/Start";
 import Experience from "sections/portfolio/Experience";
+import Skills from "sections/portfolio/Skills";
 
-const Portfolio: React.FC<any> = ({ projects, experiences }) => {
-  console.log("experiences", experiences);
-  return (
-    <Layout>
-      <Start projects={projects} />
-      <Expertise>
-        <Experience experiences={experiences} />
-      </Expertise>
-    </Layout>
-  );
-};
-
+const Portfolio: React.FC<any> = ({ projects, experiences }) => (
+  <Layout>
+    <Start projects={projects} />
+    <Expertise>
+      <Experience experiences={experiences} />
+      <Skills />
+    </Expertise>
+  </Layout>
+);
 export default Portfolio;
-
-const Expertise = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  @media (min-width: ${breakpoints.lg}) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
 
 export async function getStaticProps({ lang }) {
   const projects = await getAllProjects(lang);
@@ -41,3 +27,14 @@ export async function getStaticProps({ lang }) {
     },
   };
 }
+
+const Expertise = styled.section`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+
+  @media (min-width: ${breakpoints.lg}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;

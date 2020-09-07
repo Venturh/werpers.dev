@@ -5,7 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 
 import { Text } from "./Typography";
 
-import { card1, colors } from "styles";
+import { breakpoints, card1, colors } from "styles";
 import Lang from "../icons/language.svg";
 import LangIcon2 from "../icons/language2.svg";
 import ArrowUp from "../icons/arrowup.svg";
@@ -66,9 +66,9 @@ const LanguageSwitch: React.FC<any> = () => {
         onClick={() => setToggleDropdown(!toggleDropdown)}
       >
         <Lang fill={colors.bodyContrast} width="1.5em" />
-        <Text style={{ padding: " 0 0.25em" }}>
+        <DisplayLanguage>
           {lang === "en" ? "English" : "Deutsch"}
-        </Text>
+        </DisplayLanguage>
         {toggleDropdown ? (
           <ArrowUp fill={colors.bodyContrast} width="1.25em" />
         ) : (
@@ -100,14 +100,26 @@ const Display = styled.div`
   cursor: pointer;
 `;
 
+const DisplayLanguage = styled(Text)`
+  display: none;
+  padding: 0 0.25em;
+  @media (min-width: ${breakpoints.lg}) {
+    display: block;
+  }
+`;
+
 const Dropdown = styled.div<DropDownProps>`
   ${card1};
   display: ${(p) => (p.open ? "flex" : "none")};
   flex-direction: column;
-  width: 100%;
+  width: 7em;
   position: absolute;
   border-radius: 0.25em;
   top: 2.5em;
+  transform: translateX(-60%);
+  @media (min-width: ${breakpoints.lg}) {
+    transform: translateX(-10%);
+  }
 `;
 
 const DropdownItem = styled.div`
@@ -115,6 +127,7 @@ const DropdownItem = styled.div`
   align-items: center;
   padding: 0.5em;
   height: 3em;
+
   border-radius: 0.25em;
   cursor: pointer;
   :hover {

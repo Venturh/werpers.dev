@@ -7,7 +7,7 @@ const Experience = ({ experiences }) => {
   const { t } = useTranslation();
   return (
     <Wrapper>
-      <Subheader style={{ alignSelf: "center" }}>
+      <Subheader style={{ alignSelf: "center", marginBottom: "0.5em" }}>
         {t("common:experience")}
       </Subheader>
       <LineWrapper>

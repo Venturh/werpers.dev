@@ -5,6 +5,7 @@ export { default as LanguageSwitch } from "./LanguageSwitch";
 export { default as Layout } from "./Layout";
 export { default as Navigation } from "./Navigation";
 export { default as ProjectCard } from "./ProjectCard";
+export { default as SkillCard } from "./SkillCard";
 export {
   default as Button,
   PrimaryButton,

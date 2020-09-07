@@ -81,5 +81,5 @@ export const skills = [
   { type: "frameworks", skills: frameworks },
   { type: "languages", skills: languages },
   { type: "databases", skills: databases },
-  { type: "other", skills: other },
+  { type: "others", skills: other },
 ];

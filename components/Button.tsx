@@ -17,6 +17,7 @@ type ButtonProps = {
   color?: string;
   bg?: string;
   className?: string;
+  onClick?: () => void;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -29,9 +30,25 @@ const Button: React.FC<ButtonProps> = ({
   iconSize = "1.5em",
   color,
   bg = "primary",
+  onClick,
   className,
   ...rest
 }) => {
+  if (to === undefined) {
+    return (
+      <Content className={className} onClick={onClick} hover={hover}>
+        {leftIcon ? (
+          <Icon path={leftIcon} color={color} size={iconSize} />
+        ) : null}
+        {children ? (
+          <ButtonText style={{ margin: " 0 0.5em" }}>{children}</ButtonText>
+        ) : null}
+        {rightIcon ? (
+          <Icon path={rightIcon} color={color} size={iconSize} />
+        ) : null}
+      </Content>
+    );
+  }
   return (
     <Link
       noLang={out ? true : false}
@@ -40,7 +57,7 @@ const Button: React.FC<ButtonProps> = ({
       passHref
       {...rest}
     >
-      <Content className={className} hover={hover}>
+      <Content className={className} onClick={onClick} hover={hover}>
         {leftIcon ? (
           <Icon path={leftIcon} color={color} size={iconSize} />
         ) : null}
@@ -60,7 +77,6 @@ const Content = styled.a<ButtonProps>`
   align-items: center;
   padding: 0.5em;
   border-radius: 0.25em;
-  font-weight: 600;
   :hover {
     background: ${(p) => (p.hover ? colors.bodyTint : "")};
   }
@@ -71,6 +87,7 @@ export const PrimaryButton = styled(Button)`
   border: inherit;
   ${ButtonText} {
     color: ${colors.primaryContrast};
+    font-weight: 600;
   }
   svg {
     fill: ${colors.primaryContrast};

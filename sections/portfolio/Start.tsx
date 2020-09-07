@@ -78,7 +78,7 @@ const Start = ({ projects }: Project) => {
 
 export default Start;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.section``;
 
 const Hero = styled.div`
   display: flex;

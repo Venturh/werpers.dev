@@ -66,6 +66,10 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  section{
+    margin-bottom: 2em;
+  }
+
   /* Remove list styles on ul, ol elements with a class attribute */
   ul[class],
   ol[class] {
