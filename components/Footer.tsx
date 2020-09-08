@@ -43,11 +43,11 @@ const Footer = () => {
           <Button
             out
             hover
+            to={link}
             key={link}
             rightIcon={icon}
             color="bodyContrast"
             iconSize="1.5em"
-            to={link}
           />
         ))}
       </div>

@@ -6,10 +6,9 @@ import useTranslation from "next-translate/useTranslation";
 import { Text } from "./Typography";
 
 import { breakpoints, card1, colors } from "styles";
-import Lang from "../icons/language.svg";
-import LangIcon2 from "../icons/language2.svg";
-import ArrowUp from "../icons/arrowup.svg";
 import ArrowDown from "../icons/arrowdown.svg";
+import Icon from "./Icon";
+import { ArrowDownS, ArrowUpS, Language, Language2 } from "icons";
 
 interface DropDownProps {
   open: boolean;
@@ -65,20 +64,25 @@ const LanguageSwitch: React.FC<any> = () => {
         ref={displayRef}
         onClick={() => setToggleDropdown(!toggleDropdown)}
       >
-        <Lang fill={colors.bodyContrast} width="1.5em" />
+        <Icon
+          path={Language}
+          viewBox="0 0 640 512"
+          color="bodyContrast"
+          size="1.25em"
+        />
         <DisplayLanguage>
           {lang === "en" ? "English" : "Deutsch"}
         </DisplayLanguage>
         {toggleDropdown ? (
-          <ArrowUp fill={colors.bodyContrast} width="1.25em" />
+          <Icon path={ArrowUpS} color="bodyContrast" size="1.25em" />
         ) : (
-          <ArrowDown fill={colors.bodyContrast} width="1.25em" />
+          <Icon path={ArrowDownS} color="bodyContrast" size="1.25em" />
         )}
       </Display>
       <Dropdown ref={dropdownRef} open={toggleDropdown}>
         {allLanguages.map((language) => (
           <DropdownItem key={language} onClick={() => onChangeLang()}>
-            <LangIcon2 fill={colors.bodyContrast} width="1.25em" />
+            <Icon path={Language2} color="bodyContrast" size="1.25em" />
             <Text style={{ paddingLeft: "0.5em" }}>{language}</Text>
           </DropdownItem>
         ))}

@@ -50,14 +50,13 @@ const Button: React.FC<ButtonProps> = ({
     );
   }
   return (
-    <Link
-      noLang={out ? true : false}
-      href={to}
-      target={out ? "_blank" : ""}
-      passHref
-      {...rest}
-    >
-      <Content className={className} onClick={onClick} hover={hover}>
+    <Link noLang={out ? true : false} href={to} passHref {...rest}>
+      <Content
+        className={className}
+        onClick={onClick}
+        hover={hover}
+        target={out ? "_blank" : ""}
+      >
         {leftIcon ? (
           <Icon path={leftIcon} color={color} size={iconSize} />
         ) : null}

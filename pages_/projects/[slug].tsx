@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchAPI } from "pages_/api/prismic-configuration";
+import { fetchAPI } from "lib/prismic/api/prismic-configuration";
 import { Layout } from "components";
 
 interface Project {

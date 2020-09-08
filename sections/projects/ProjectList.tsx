@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import Link from "next-translate/Link";
 
-import { Button, Subtitle, Text } from "components";
+import { Button, Span, Subtitle, Text } from "components";
 
-import { ArrowRightUp, Github } from "icons";
+import { ArrowRightUp, Github, LinkOut } from "icons";
 import { breakpoints, colors } from "styles";
-import { Project } from "pages_/api";
+import { Project } from "lib/prismic/api";
 
 const ProjectList = ({ projects }: Project) => {
   return (
@@ -43,10 +42,10 @@ const ProjectList = ({ projects }: Project) => {
                   </Title>
                   <Techs>
                     {body[0].fields.map((field, i) => (
-                      <span key={field.type}>
+                      <Span key={field.type}>
                         {field.type}
-                        {i !== body[0].fields.length - 1 && <span> - </span>}
-                      </span>
+                        {i !== body[0].fields.length - 1 && <Span> - </Span>}
+                      </Span>
                     ))}
                   </Techs>
 
@@ -56,9 +55,15 @@ const ProjectList = ({ projects }: Project) => {
                   <Year>{year}</Year>
                   <Links>
                     <Button
+                      to={`/projects/${slug}`}
+                      color="bodyContrast"
+                      iconSize="1.25em"
+                      leftIcon={ArrowRightUp}
+                    />
+                    <Button
                       out
                       to={giturl}
-                      color="primary"
+                      color="bodyContrast"
                       iconSize="1.25em"
                       leftIcon={Github}
                     />
@@ -66,8 +71,8 @@ const ProjectList = ({ projects }: Project) => {
                       <Button
                         out
                         to={url}
-                        color="primary"
-                        leftIcon={ArrowRightUp}
+                        color="bodyContrast"
+                        leftIcon={LinkOut}
                         iconSize="1.25em"
                       />
                     ) : null}
@@ -94,10 +99,9 @@ const List = styled.div`
   }
   th {
     text-align: left;
-    padding: 0.25em 0.25em;
   }
   td {
-    padding: 0.5em 0.5em;
+    padding: 0.5em 0em;
     cursor: default;
   }
   .hide-on-mobile {
@@ -131,7 +135,7 @@ const Progress = styled.td`
 const Techs = styled.td`
   display: none;
   @media (min-width: ${breakpoints.md}) {
-    display: inline;
+    display: table-cell;
     width: 35%;
   }
 `;

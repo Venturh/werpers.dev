@@ -6,8 +6,8 @@ import ProjectList from "sections/projects/ProjectList";
 import ProjectFilter from "sections/projects/ProjectFilters";
 
 import styled from "styled-components";
-import { getAllProjects } from "./api";
-import { Project } from "pages_/api";
+import { getAllProjects } from "../lib/prismic/api";
+import { Project } from "lib/prismic/api";
 
 const Projects = ({ projects }: Project) => {
   const { t } = useTranslation();
