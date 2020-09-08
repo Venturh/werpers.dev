@@ -4,7 +4,7 @@ import { Button, Span, Subtitle, Text } from "components";
 
 import { ArrowRightUp, Github, LinkOut } from "icons";
 import { breakpoints, colors } from "styles";
-import { Project } from "lib/prismic/api";
+import { Project } from "lib/prismic";
 
 const ProjectList = ({ projects }: Project) => {
   return (

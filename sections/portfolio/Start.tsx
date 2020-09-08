@@ -16,7 +16,7 @@ import { breakpoints, fontSizes } from "styles";
 
 import { ArrowRightS } from "icons";
 import { socials } from "content";
-import { Project } from "lib/prismic/api";
+import { Project } from "lib/prismic";
 
 const Start = ({ projects }: Project) => {
   const { t } = useTranslation();
