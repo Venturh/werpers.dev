@@ -2,7 +2,6 @@ import { css } from "styled-components";
 import { colors } from ".";
 
 export const card1 = css`
-  min-height: 4em;
   background-color: ${colors.body};
   color: ${colors.bodyContrast};
   border-radius: 0.75em;

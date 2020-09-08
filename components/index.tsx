@@ -1,5 +1,6 @@
 export { default as CustomLink } from "./CustomLink";
 export { default as ExperienceCard } from "./ExperienceCard";
+export { default as Filter } from "./Filter";
 export { default as Footer } from "./Footer";
 export { default as LanguageSwitch } from "./LanguageSwitch";
 export { default as Layout } from "./Layout";

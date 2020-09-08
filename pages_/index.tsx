@@ -5,14 +5,17 @@ import { Layout } from "components";
 import Start from "sections/portfolio/Start";
 import Experience from "sections/portfolio/Experience";
 import Skills from "sections/portfolio/Skills";
+import Contact from "sections/portfolio/Contact";
+import { Project } from "./api/index";
 
-const Portfolio: React.FC<any> = ({ projects, experiences }) => (
+const Portfolio = ({ projects, experiences }) => (
   <Layout>
     <Start projects={projects} />
     <Expertise>
       <Experience experiences={experiences} />
       <Skills />
     </Expertise>
+    <Contact />
   </Layout>
 );
 export default Portfolio;

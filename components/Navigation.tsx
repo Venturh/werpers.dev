@@ -107,10 +107,7 @@ const NavLinks = styled.div`
   align-items: center;
   font-weight: 400;
   & > * {
-    margin-right: 0.5em;
-    @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-      margin-right: 0.5em;
-    }
+    margin-right: 1em;
   }
 `;
 

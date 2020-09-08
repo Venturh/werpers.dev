@@ -3,9 +3,16 @@ import { fetchAPI } from "./prismic-configuration";
 interface Node {
   node: {
     name: string;
+    gitname: string;
     headline: string;
     icon: string;
     slug: string;
+    cover: object;
+    year: string;
+    progress: string;
+    url: string;
+    giturl: string;
+    body?: [{ fields: [{ type: string; icon: string }] }];
   };
 }
 
@@ -22,9 +29,23 @@ export const getAllProjects = async (lang: string) => {
         edges{
           node {
             name
+            gitname
             headline
-            slug
             icon
+            slug
+            cover
+            year
+            progress
+            url
+            giturl
+            body {
+              ... on  ProjectBodyBuildwith{
+                  fields {
+                    type
+                    icon
+                  }
+                }
+              }
           }
         }
       }
@@ -43,10 +64,10 @@ export const getAllExperiences = async (lang: string) => {
       allExperiences(lang: "${locale}", sortBy:  nr_DESC) {
         edges{
           node {
-        name
-        type
-        place
-        time
+            name
+            type
+            place
+            time
           }
         }
       }

@@ -1,38 +1,48 @@
+import { useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 
 import Layout from "components/Layout";
-import Link from "next-translate/Link";
+import ProjectList from "sections/projects/ProjectList";
+import ProjectFilter from "sections/projects/ProjectFilters";
 
+import styled from "styled-components";
 import { getAllProjects } from "./api";
+import { Project } from "pages_/api";
 
-interface Project {
-  node: {
-    name: string;
-    headline: string;
-    slug: string;
+const Projects = ({ projects }: Project) => {
+  const { t } = useTranslation();
+  const [appliedFilters, setAppliedFilters] = useState([]);
+
+  const setFilters = (name: string) => {
+    const find = appliedFilters.findIndex((n) => n === name);
+    if (find !== -1) {
+      setAppliedFilters((appliedFilters) =>
+        appliedFilters.filter((n) => n !== name)
+      );
+    } else {
+      setAppliedFilters((appliedFilters) => [...appliedFilters, name]);
+    }
   };
-}
 
-type ProjectProps = {
-  projects: Project[];
-};
+  const filteredProjects =
+    appliedFilters.length !== 0
+      ? projects.filter((p) =>
+          p.node.body[0].fields.some(({ type }) =>
+            appliedFilters.some((n) => n === type)
+          )
+        )
+      : projects;
 
-const Projects: React.FC<any> = ({ projects }: ProjectProps) => {
-  const { t, lang } = useTranslation();
+  console.log("Projects -> filteredProjects", filteredProjects);
 
   return (
     <Layout>
-      <div>
-        {projects.map(({ node: project }) => (
-          <Link
-            key={project.slug}
-            href="/projects/[id]"
-            as={`/projects/${project.slug}`}
-          >
-            <a>{project.name}</a>
-          </Link>
-        ))}
-      </div>
+      <main>
+        <Content>
+          <ProjectFilter setFilters={setFilters} />
+          <ProjectList projects={filteredProjects} />
+        </Content>
+      </main>
     </Layout>
   );
 };
@@ -48,3 +58,12 @@ export async function getStaticProps({ lang }) {
     },
   };
 }
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;

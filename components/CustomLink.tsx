@@ -31,7 +31,7 @@ const CustomLink: React.FC<Props> = ({
   const { lang } = useTranslation();
 
   return (
-    <Link noLang href={`/${lang}${to}`} passHref>
+    <Link noLang href={nav ? `/${lang}${to}` : to} passHref>
       <A
         target={nav ? "" : "_blank"}
         rel="noopener noreferrer"

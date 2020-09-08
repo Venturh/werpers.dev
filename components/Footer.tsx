@@ -27,11 +27,11 @@ const Footer = () => {
         </Text>
         <Text>
           {t(`common:footer3`)}
-          <CustomLink color="primary" underline to="https://www.gatsbyjs.org/">
+          <CustomLink color="primary" underline to="https://nextjs.org/">
             <Span color="primary">Next</Span>
           </CustomLink>{" "}
           {t(`common:footer4`)}
-          <CustomLink underline to="https://www.netlify.com/">
+          <CustomLink underline to="https://vercel.com/">
             <Span as="span" color="primary">
               Vercel
             </Span>

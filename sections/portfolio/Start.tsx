@@ -58,7 +58,7 @@ const Start = ({ projects }: Project) => {
             <Subheader>{t("common:socialsTitle")}</Subheader>
             <SocialsCards>
               {socials.map(({ name, icon, link }) => (
-                <TertiaryButton key={link} leftIcon={icon} to={link}>
+                <TertiaryButton out key={link} leftIcon={icon} to={link}>
                   {name}
                 </TertiaryButton>
               ))}
@@ -166,8 +166,10 @@ const SocialsCards = styled.div`
   display: grid;
   gap: 0.5em;
   margin-top: 0.5em;
+  grid-template-rows: repeat(4, 4em);
   @media (min-width: ${breakpoints.lg}) {
     grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 3em);
   }
 `;
 
