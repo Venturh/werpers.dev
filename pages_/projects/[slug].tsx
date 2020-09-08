@@ -1,6 +1,10 @@
-import React from "react";
-import { fetchAPI } from "lib/prismic/api/prismic-configuration";
+import useSWR from "swr";
+
 import { Layout } from "components";
+
+import { getAllProjects, getProjectBySlug } from "lib/prismic";
+import fetcher from "../../lib/fetcher";
+import Hero from "sections/project/Hero";
 
 interface Project {
   name: string;
@@ -15,76 +19,32 @@ interface Project {
 
 type ProjectProps = {
   project: Project;
+  gitname: string;
 };
 
-function Project({ project }: ProjectProps) {
+function Project({ project, gitname }: ProjectProps) {
+  const { data } = useSWR("/api/github?gitname=" + gitname, fetcher);
   return (
     <Layout>
-      <h1>{project.name}</h1>
-      <p>{project.headline}</p>
+      <Hero project={project} github={data} />
     </Layout>
   );
 }
 
 export async function getStaticProps({ params, lang }) {
   const { slug } = params;
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
-
-  const { allProjects } = await fetchAPI(
-    `{
-      allProjects(lang: "${locale}", where : {slug: "${slug}"} ) {
-        edges {
-          node {
-            name
-            headline
-            slug
-            gitname
-            headline
-            cover
-            year
-            url
-            giturl
-          }
-        }
-      }
-    }
-`,
-    {}
-  );
+  const project = await getProjectBySlug(lang, slug);
 
   return {
-    props: { project: allProjects.edges[0].node },
+    props: { project, gitname: project.gitname },
   };
 }
 
 export async function getStaticPaths({ lang }) {
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
-  const {
-    allProjects: { edges },
-  } = await fetchAPI(
-    `{
-      allProjects(lang: "${locale}" ) {
-        edges {
-          node {
-            name
-            headline
-            slug
-            gitname
-            headline
-            cover
-            year
-            url
-            giturl
-          }
-        }
-      }
-    }
-`,
-    {}
-  );
+  const projects = await getAllProjects(lang);
 
   return {
-    paths: edges.map(({ node }) => `/${lang}/projects/${node.slug}`) || [],
+    paths: projects.map(({ node }) => `/${lang}/projects/${node.slug}`) || [],
     fallback: false,
   };
 }

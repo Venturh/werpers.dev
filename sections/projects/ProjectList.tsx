@@ -99,9 +99,10 @@ const List = styled.div`
   }
   th {
     text-align: left;
+    padding: 0 0.5em;
   }
   td {
-    padding: 0.5em 0em;
+    padding: 0.25em 0.25em;
     cursor: default;
   }
   .hide-on-mobile {

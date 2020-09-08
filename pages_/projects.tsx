@@ -8,6 +8,7 @@ import ProjectFilter from "sections/projects/ProjectFilters";
 import styled from "styled-components";
 import { getAllProjects } from "../lib/prismic";
 import { Project } from "lib/prismic";
+import { Header, Subtitle } from "components";
 
 const Projects = ({ projects }: Project) => {
   const { t } = useTranslation();
@@ -33,11 +34,11 @@ const Projects = ({ projects }: Project) => {
         )
       : projects;
 
-  console.log("Projects -> filteredProjects", filteredProjects);
-
   return (
     <Layout>
       <main>
+        <Header>{t("common:projects")}</Header>
+        <Subtitle>{t("common:projectsDesc")}</Subtitle>
         <Content>
           <ProjectFilter setFilters={setFilters} />
           <ProjectList projects={filteredProjects} />
@@ -62,6 +63,7 @@ export async function getStaticProps({ lang }) {
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 4em;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;
     justify-content: space-between;

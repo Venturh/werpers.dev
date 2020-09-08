@@ -56,6 +56,42 @@ export const getAllProjects = async (lang: string) => {
   return projects.allProjects.edges;
 };
 
+export const getProjectBySlug = async (lang: string, slug: string) => {
+  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
+  const projects = await fetchAPI(
+    `
+    {
+      allProjects(lang: "${locale}", where : {slug: "${slug}"} ) {
+        edges{
+          node {
+            name
+            gitname
+            headline
+            icon
+            slug
+            cover
+            year
+            progress
+            url
+            giturl
+            body {
+              ... on  ProjectBodyBuildwith{
+                  fields {
+                    type
+                    icon
+                  }
+                }
+              }
+          }
+        }
+      }
+    }
+  `,
+    {}
+  );
+  return projects.allProjects.edges[0].node;
+};
+
 export const getAllExperiences = async (lang: string) => {
   const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
   const experiences = await fetchAPI(

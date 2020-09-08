@@ -17,6 +17,7 @@ type ButtonProps = {
   color?: string;
   bg?: string;
   className?: string;
+  style?: React.CSSProperties;
   onClick?: () => void;
 };
 
@@ -32,11 +33,17 @@ const Button: React.FC<ButtonProps> = ({
   bg = "primary",
   onClick,
   className,
+  style,
   ...rest
 }) => {
   if (to === undefined) {
     return (
-      <Content className={className} onClick={onClick} hover={hover}>
+      <StyledContent
+        className={className}
+        style={style}
+        onClick={onClick}
+        hover={hover}
+      >
         {leftIcon ? (
           <Icon path={leftIcon} color={color} size={iconSize} />
         ) : null}
@@ -46,13 +53,14 @@ const Button: React.FC<ButtonProps> = ({
         {rightIcon ? (
           <Icon path={rightIcon} color={color} size={iconSize} />
         ) : null}
-      </Content>
+      </StyledContent>
     );
   }
   return (
     <Link noLang={out ? true : false} href={to} passHref {...rest}>
-      <Content
+      <StyledContent
         className={className}
+        style={style}
         onClick={onClick}
         hover={hover}
         target={out ? "_blank" : ""}
@@ -66,12 +74,14 @@ const Button: React.FC<ButtonProps> = ({
         {rightIcon ? (
           <Icon path={rightIcon} color={color} size={iconSize} />
         ) : null}
-      </Content>
+      </StyledContent>
     </Link>
   );
 };
 
-const Content = styled.a<ButtonProps>`
+const Content = () => {};
+
+const StyledContent = styled.a<ButtonProps>`
   display: inline-flex;
   align-items: center;
   padding: 0.5em;

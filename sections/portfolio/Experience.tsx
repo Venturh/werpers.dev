@@ -2,6 +2,7 @@ import styled from "styled-components";
 import useTranslation from "next-translate/useTranslation";
 import { ExperienceCard, Subheader } from "components";
 import { breakpoints, colors } from "styles";
+import Shape from "components/Shape";
 
 const Experience = ({ experiences }) => {
   const { t } = useTranslation();
@@ -14,7 +15,7 @@ const Experience = ({ experiences }) => {
         <Experiences>
           {experiences.map(({ node: experience }) => (
             <StyledTimelineCards key={experience.name}>
-              <Circle />
+              <Circle tbg="primary" />
               <ExperienceCard {...experience} />
             </StyledTimelineCards>
           ))}
@@ -100,7 +101,7 @@ const LineWrapper = styled.span`
   }
 `;
 
-const Circle = styled.div`
+const Circle = styled(Shape)`
   align-self: center;
   position: relative;
   left: -9px;
