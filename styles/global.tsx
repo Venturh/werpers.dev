@@ -7,6 +7,43 @@ export interface IThemeWrapper {
 }
 
 const GlobalStyles = createGlobalStyle`
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Bold.ttf');
+  font-weight: bold;
+  font-display: auto;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Bold.ttf');
+  font-weight: bold;
+  font-display: auto;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-SemiBold.ttf');
+  font-weight: 600;
+  font-display: auto;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Regular.ttf');
+  font-weight: 400;
+  font-display: auto;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Light.ttf');
+  font-weight: 300;
+  font-display: auto;
+  font-style: normal;
+}
  a {
     color: inherit;
     text-decoration: none;

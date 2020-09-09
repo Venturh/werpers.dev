@@ -3061,16 +3061,6 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-fontsource-archivo@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/fontsource-archivo/-/fontsource-archivo-3.0.5.tgz#933e9175cabc55d0ffc39db79e4984037ee99f30"
-  integrity sha512-tl6HPwwlI6a608aXtkFEZse0SmbG/rU8dtQryaG36/o0i3M6p3zYkDqUSf4HWs6VeNjXTm8EoZB395Zl1hnQMw==
-
-fontsource-open-sans@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/fontsource-open-sans/-/fontsource-open-sans-3.0.3.tgz#040e815c19e3fbcaa529e51061a6efcff42b3268"
-  integrity sha512-W5SIXP3OnwZOqXMevcIPSTRkbKJHc7rJCKxKr3rfii7A1dIdgrtIuc3WT5kIcdvBj2VB/AS206I4p5uPcOnRwg==
-
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"

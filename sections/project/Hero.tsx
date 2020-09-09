@@ -6,7 +6,6 @@ import { ArrowDownS } from "icons";
 import { card2 } from "styles/common";
 
 const Hero = ({ project, github }) => {
-  console.log("Hero -> github", github);
   const lowRes = `${project.cover.url}&w=100`;
   const { fields: buildWith } = project.body[0];
   return (
@@ -32,7 +31,6 @@ const Hero = ({ project, github }) => {
         </Techs>
       </Info>
       <HeroImgWrapperDesktop>
-        <PlaceholderImg src={lowRes} />
         <HeroImg src={project.cover.url} />
       </HeroImgWrapperDesktop>
       <ArrowDown path={ArrowDownS} />
