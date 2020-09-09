@@ -12,6 +12,7 @@ type Props = {
   underline?: boolean;
   nav?: boolean;
   to: string;
+  className?: string;
 };
 type LinkProps = {
   color?: string;
@@ -26,6 +27,7 @@ const CustomLink: React.FC<Props> = ({
   underline,
   to,
   children,
+  className,
 }) => {
   const { pathname } = useRouter();
   const { lang } = useTranslation();
@@ -33,6 +35,7 @@ const CustomLink: React.FC<Props> = ({
   return (
     <Link noLang href={nav ? `/${lang}${to}` : to} passHref>
       <A
+        className={className}
         target={nav ? "" : "_blank"}
         rel="noopener noreferrer"
         active={pathname === `/${lang}${to}` ? true : false}

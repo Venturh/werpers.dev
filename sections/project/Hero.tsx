@@ -10,10 +10,7 @@ const Hero = ({ project, github }) => {
   return (
     <Wrapper>
       <HeroImgWrapperMobile>
-        <HeroImg
-          src={`https://images.prismic.io/maxwerpers-next/a7c5142b-3be7-4166-8cda-3c5038c5be3f_yee_cover.png?lqip`}
-          alt=""
-        />
+        <HeroImg src={project.cover.url} alt="mobileCover" />
       </HeroImgWrapperMobile>
       <Info>
         <InfoText>
@@ -30,7 +27,7 @@ const Hero = ({ project, github }) => {
         </Techs>
       </Info>
       <HeroImgWrapperDesktop>
-        <HeroImg src={project.cover.url} />
+        <HeroImg src={project.cover.url} alt="desktopCover" />
       </HeroImgWrapperDesktop>
       <ArrowDown path={ArrowDownS} />
     </Wrapper>
@@ -78,7 +75,7 @@ const HeroImgWrapperMobile = styled.div`
 `;
 
 const HeroImg = styled.img`
-  width: 100vw;
+  width: 100%;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     width: 40vw;
   }

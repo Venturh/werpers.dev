@@ -32,7 +32,7 @@ const Navigation = () => {
       <NavItems>
         <NavLinks>
           {navlinks.map(({ name, to }) => (
-            <StyledLink key={name} hover fontSize="1em" to={`${to}`}>
+            <StyledLink key={name} nav to={`${to}`}>
               <Text color="bodyContrast">{t(`common:${name}`)}</Text>
             </StyledLink>
           ))}
@@ -112,8 +112,12 @@ const NavLinks = styled.div`
   }
 `;
 
-const StyledLink = styled(Button)`
-  padding: 0.5em 0;
+const StyledLink = styled(CustomLink)`
+  padding: 0.5em 0.5em;
+  border-radius: 0.5em;
+  :hover {
+    background: ${colors.bodyTint};
+  }
 `;
 
 const NavTools = styled.div`
