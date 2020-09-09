@@ -9,9 +9,9 @@ type Props = { small?: boolean };
 
 const Layout: React.FC<Props> = ({ children, ...props }) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper>
       <Navigation />
-      <Content>{children}</Content>
+      <Content {...props}>{children}</Content>
       <Footer />
     </Wrapper>
   );
@@ -19,7 +19,7 @@ const Layout: React.FC<Props> = ({ children, ...props }) => {
 
 export default Layout;
 
-const Wrapper = styled.div<Props>`
+const Wrapper = styled.div`
   height: 100%;
   position: relative;
   display: flex;
@@ -31,17 +31,17 @@ const Wrapper = styled.div<Props>`
 
   @media (min-width: ${breakpoints.lg}) {
     margin: 0;
-    padding: 0 ${(p) => (p.small ? "30%" : spacing.md.sides)};
+    padding: 0 ${spacing.md.sides};
   }
 
   @media (min-width: ${breakpoints.xl}) {
     margin: 0;
-    padding: 0 ${(p) => (p.small ? "30%" : spacing.lg.sides)};
+    padding: 0 ${spacing.lg.sides};
   }
 `;
 
-const Content = styled.main`
+const Content = styled.main<Props>`
   position: relative;
   min-height: calc(100vh - 9em);
-  padding: 2em 0;
+  padding: ${(p) => (p.small ? "2em 20%" : "2em 0")};
 `;

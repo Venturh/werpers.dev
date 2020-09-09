@@ -56,7 +56,6 @@ const Nav = styled.nav`
   justify-content: space-between;
   height: 3em;
   background-color: ${colors.body};
-  border-bottom: 1px solid ${colors.bodyTint};
 `;
 
 const Left = styled.div`

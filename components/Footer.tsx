@@ -57,7 +57,6 @@ const Footer = () => {
 
 const Wrapper = styled.footer`
   height: 6em;
-  border-top: 1px solid ${colors.bodyTint};
   padding: 2.5em 0;
   display: flex;
   flex-direction: column;
