@@ -8,22 +8,23 @@ import Shape from "./Shape";
 import { Github, Star } from "icons";
 import { card1 } from "styles/common";
 
-const GithubCard = ({
-  url,
-  full_name,
-  description,
-  homepage,
-  language,
-  stargazers_count,
-  ...rest
-}) => {
+const GithubCard = ({ repo }) => {
+  const {
+    html_url,
+    full_name,
+    description,
+    homepage,
+    language,
+    stargazers_count,
+  } = repo || {};
+
   const languageColors = {
     Vue: "#2C3E50",
     TypeScript: "#2B7489",
     JavaScript: "#F1E05A",
   };
   return (
-    <Card {...rest}>
+    <Card>
       <Tag>
         <LanguageIndicator>
           <Shape
@@ -50,7 +51,7 @@ const GithubCard = ({
       </Subtitle>
       <StyledDescription text={description} />
       <ButtonWrapper>
-        <PrimaryButton out to={url} iconSize="1.2em" leftIcon={Github}>
+        <PrimaryButton out to={html_url} iconSize="1.2em" leftIcon={Github}>
           Github
         </PrimaryButton>
         {homepage ? (

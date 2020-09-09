@@ -6,6 +6,7 @@ import { ArrowDownS } from "icons";
 import { card2 } from "styles/common";
 
 const Hero = ({ project, github }) => {
+  console.log("Hero -> github", github);
   const lowRes = `${project.cover.url}&w=100`;
   const { fields: buildWith } = project.body[0];
   return (
@@ -21,7 +22,7 @@ const Hero = ({ project, github }) => {
           <Subheader>{project.name}</Subheader>
           <Description color="bodyContrast">{project.headline}</Description>
         </InfoText>
-        {github && <GithubCard {...github.repo} />}
+        <GithubCard repo={github} />
         <Techs>
           {buildWith.map(({ type, icon }) => (
             <Tech key={type} leftIcon={icon}>

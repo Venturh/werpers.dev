@@ -27,6 +27,7 @@ export async function getStaticProps({ lang }) {
     props: {
       projects,
       experiences,
+      revalidate: 1,
     },
   };
 }
