@@ -56,21 +56,19 @@ const Footer = () => {
 };
 
 const Wrapper = styled.footer`
-  height: 6vh;
+  height: 6em;
   border-top: 1px solid ${colors.bodyTint};
-  padding: 2.5em ${spacing.xs.sides};
+  padding: 2.5em 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @media (min-width: ${breakpoints.md}) {
-    padding: 3.5em ${spacing.xs.sides};
     flex-direction: row;
     justify-content: space-between;
   }
   @media (min-width: ${breakpoints.xl}) {
-    padding: 3.5em ${spacing.lg.sides};
   }
 `;
 

@@ -99,10 +99,10 @@ const List = styled.div`
   }
   th {
     text-align: left;
-    padding: 0 0.5em;
+    padding: 0 0em;
   }
   td {
-    padding: 0.25em 0.25em;
+    padding: 0.25em 0em;
     cursor: default;
   }
   .hide-on-mobile {
@@ -120,13 +120,16 @@ const Table = styled.table`
   border-collapse: collapse;
 `;
 const Title = styled.td`
-  width: 60%;
+  width: 40%;
   @media (min-width: ${breakpoints.md}) {
     width: 20%;
   }
 `;
 const Year = styled.td`
-  width: 10%;
+  width: 30%;
+  @media (min-width: ${breakpoints.md}) {
+    width: 10%;
+  }
 `;
 
 const Progress = styled.td`

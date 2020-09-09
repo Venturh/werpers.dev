@@ -42,7 +42,7 @@ const Wrapper = styled.section`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    min-height: calc(94vh - 7em);
+    min-height: calc(88vh - 7em);
   }
 `;
 

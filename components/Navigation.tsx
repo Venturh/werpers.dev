@@ -49,8 +49,7 @@ export default Navigation;
 
 const Nav = styled.nav`
   font-family: "Segoe UI";
-  width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 1;
   display: flex;
@@ -58,14 +57,6 @@ const Nav = styled.nav`
   height: 3em;
   background-color: ${colors.body};
   border-bottom: 1px solid ${colors.bodyTint};
-  padding: 0 ${spacing.xs.sides};
-
-  @media (min-width: ${breakpoints.lg}) {
-    padding: 1.5em ${spacing.md.sides};
-  }
-  @media (min-width: ${breakpoints.xl}) {
-    padding: 1.5em ${spacing.lg.sides};
-  }
 `;
 
 const Left = styled.div`
