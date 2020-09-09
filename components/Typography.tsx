@@ -12,6 +12,7 @@ const Typography = ({ children, variant, text, ...props }) => (
 
 const StyledTypography = styled.p<Props>`
   color: ${(p) => colors[p.color]};
+
   font-size: ${(p) => fontSizes[p.fontSize] || p.fontSize};
   font-weight: ${(p) => p.fontWeight};
   white-space: pre-line;
@@ -44,6 +45,7 @@ const Title = styled(Typography).attrs({ variant: "h3" })`
 `;
 
 const Subheader = styled(Typography).attrs({ variant: "h2" })`
+  font-family: "Segoe UI";
   text-align: center;
   font-size: ${fontSizes["2xl"]};
   font-weight: 600;
@@ -55,7 +57,7 @@ const Subheader = styled(Typography).attrs({ variant: "h2" })`
 
 const Header = styled(Typography).attrs({ variant: "h1" })`
   font-size: ${fontSizes["3xl"]};
-  font-family: "Archivo";
+  font-family: "Segoe UI";
   font-weight: 700;
   color: ${(props) => colors[props.color] || colors.primary};
 `;

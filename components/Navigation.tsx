@@ -47,7 +47,7 @@ const Navigation = () => {
 export default Navigation;
 
 const Nav = styled.nav`
-  font-family: "Archivo";
+  font-family: "Segoe UI";
   width: 100%;
   position: fixed;
   top: 0;
