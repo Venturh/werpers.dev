@@ -16,6 +16,7 @@ type ButtonProps = {
   iconSize?: string;
   color?: string;
   bg?: string;
+  fontSize?: string;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   iconSize = "1.5em",
   color,
   bg = "primary",
+  fontSize,
   onClick,
   className,
   style,
@@ -43,6 +45,7 @@ const Button: React.FC<ButtonProps> = ({
         style={style}
         onClick={onClick}
         hover={hover}
+        fontSize={fontSize}
       >
         {leftIcon ? (
           <Icon path={leftIcon} color={color} size={iconSize} />
@@ -64,6 +67,7 @@ const Button: React.FC<ButtonProps> = ({
         onClick={onClick}
         hover={hover}
         target={out ? "_blank" : ""}
+        fontSize={fontSize}
       >
         {leftIcon ? (
           <Icon path={leftIcon} color={color} size={iconSize} />
@@ -86,6 +90,9 @@ const StyledContent = styled.a<ButtonProps>`
   align-items: center;
   padding: 0.5em;
   border-radius: 0.25em;
+  ${ButtonText} {
+    font-size: ${(p) => p.fontSize};
+  }
   :hover {
     background: ${(p) => (p.hover ? colors.bodyTint : "")};
   }

@@ -8,6 +8,7 @@ import { Title, Text, Span } from "./Typography";
 
 import { breakpoints, colors, spacing } from "styles";
 import { navlinks } from "content";
+import Button from "./Button";
 
 const Navigation = () => {
   const { t } = useTranslation();
@@ -31,7 +32,7 @@ const Navigation = () => {
       <NavItems>
         <NavLinks>
           {navlinks.map(({ name, to }) => (
-            <StyledLink nav to={`${to}`} key={name}>
+            <StyledLink key={name} hover fontSize="1em" to={`${to}`}>
               <Text color="bodyContrast">{t(`common:${name}`)}</Text>
             </StyledLink>
           ))}
@@ -107,16 +108,12 @@ const NavLinks = styled.div`
   align-items: center;
   font-weight: 400;
   & > * {
-    margin-right: 1em;
+    margin-right: 0.25em;
   }
 `;
 
-const StyledLink = styled(CustomLink)`
-  padding: 0.5em 0.25em;
-  border-radius: 0.25em;
-  :hover {
-    background-color: ${colors.bodyTint};
-  }
+const StyledLink = styled(Button)`
+  padding: 0.5em 0;
 `;
 
 const NavTools = styled.div`

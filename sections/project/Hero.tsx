@@ -6,7 +6,6 @@ import { ArrowDownS } from "icons";
 import { card2 } from "styles/common";
 
 const Hero = ({ project, github }) => {
-  const lowRes = `${project.cover.url}&w=100`;
   const { fields: buildWith } = project.body[0];
   return (
     <Wrapper>
@@ -21,7 +20,7 @@ const Hero = ({ project, github }) => {
           <Subheader>{project.name}</Subheader>
           <Description color="bodyContrast">{project.headline}</Description>
         </InfoText>
-        <GithubCard repo={github} />
+        <Github repo={github} />
         <Techs>
           {buildWith.map(({ type, icon }) => (
             <Tech key={type} leftIcon={icon}>
@@ -40,14 +39,8 @@ const Hero = ({ project, github }) => {
 
 export default Hero;
 
-const PlaceholderImg = styled.img`
-  width: 100%;
-  filter: blur(1.5rem);
-`;
-
 const Wrapper = styled.section`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -58,7 +51,7 @@ const Wrapper = styled.section`
 
 const Info = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    width: 30vw;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,18 +69,9 @@ const Description = styled(Subtitle)`
   }
 `;
 
-const GithubCard = styled(Github)`
-  margin: 1em 0;
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    width: 90%;
-  }
-`;
-
 const HeroImgWrapperMobile = styled.div`
   display: block;
   width: 100%;
-  margin: 1em auto;
-  overflow: hidden;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
   }
@@ -97,9 +81,6 @@ const HeroImg = styled.img`
   width: 100vw;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     width: 40vw;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 `;
 
@@ -108,7 +89,6 @@ const HeroImgWrapperDesktop = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: block;
     width: 50%;
-    position: relative;
   }
 `;
 

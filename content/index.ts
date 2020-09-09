@@ -28,7 +28,7 @@ interface Social {
 }
 
 export const navlinks: Navlink[] = [
-  { name: "portfolio", to: "" },
+  { name: "portfolio", to: "/" },
   { name: "projects", to: "/projects" },
   { name: "about", to: "/about" },
 ];

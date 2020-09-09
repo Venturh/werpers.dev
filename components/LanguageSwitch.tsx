@@ -68,7 +68,7 @@ const LanguageSwitch: React.FC<any> = () => {
           path={Language}
           viewBox="0 0 640 512"
           color="bodyContrast"
-          size="1.25em"
+          size="1.4em"
         />
         <DisplayLanguage>
           {lang === "en" ? "English" : "Deutsch"}
@@ -100,13 +100,13 @@ const Wrapper = styled.div`
 const Display = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   cursor: pointer;
+  padding: 0.5em;
 `;
 
 const DisplayLanguage = styled(Text)`
   display: none;
-  padding: 0 0.25em;
+  padding: 0.5em;
   @media (min-width: ${breakpoints.lg}) {
     display: block;
   }
