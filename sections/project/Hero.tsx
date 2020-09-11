@@ -74,13 +74,16 @@ const Description = styled(Subtitle)`
 const HeroImgWrapperMobile = styled.div`
   display: block;
   width: 100%;
+  height: 35vh;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
   }
 `;
 
 const HeroImg = styled.img`
+  height: 100%;
   width: 100%;
+  object-fit: contain;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     width: 40vw;
   }
