@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { ButtonText } from "./Typography";
 
-import { card2 } from "styles/common";
+import { card3 } from "styles/common";
 import { colors } from "styles";
 
 type FilterProps = {
@@ -32,14 +32,16 @@ const Filter = ({ name, callback, ...rest }: FilterProps) => {
 export default Filter;
 
 const Card = styled.button<CardProps>`
-  ${card2}
+  ${card3}
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  border: ${(p) => (p.selected ? `1px solid ${colors.primary}` : null)};
+  border: ${(p) => (p.selected ? `2px solid ${colors.primary}` : null)};
   padding: 0 1em;
   height: 2.5em;
   cursor: pointer;
+  :hover {
+    border: 2px solid ${colors.primary};
+  }
 `;

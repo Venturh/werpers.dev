@@ -13,8 +13,6 @@ import { Header, Subtitle } from "components";
 const Projects = ({ projects }: ProjectsProps) => {
   const { t } = useTranslation();
 
-  console.log("Projects -> p", projects);
-
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   return (

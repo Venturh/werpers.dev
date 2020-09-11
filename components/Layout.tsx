@@ -43,5 +43,8 @@ const Wrapper = styled.div`
 const Content = styled.main<Props>`
   position: relative;
   min-height: calc(100vh - 9em);
-  padding: ${(p) => (p.small ? "2em 20%" : "2em 0")};
+  padding: 2em 0;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: ${(p) => (p.small ? "2em 18%" : "2em 0")};
+  }
 `;

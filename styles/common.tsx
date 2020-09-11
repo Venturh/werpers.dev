@@ -13,3 +13,8 @@ export const card2 = css`
   border-radius: 1em;
   border: 1px solid ${colors.bodyGlow};
 `;
+
+export const card3 = css`
+  background-color: ${colors.bodyTint};
+  border-radius: 1em;
+`;

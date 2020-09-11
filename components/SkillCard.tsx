@@ -5,7 +5,7 @@ import Icon from "./Icon";
 import { Caption, Subtitle, Text } from "./Typography";
 
 import { ArrowDownS, ArrowUpS } from "icons";
-import { card1 } from "styles/common";
+import { card3 } from "styles";
 import Button from "./Button";
 
 type SkillCardProps = {
@@ -41,7 +41,7 @@ const SkillCard = ({ title, skills }) => {
 export default SkillCard;
 
 const Card = styled.div<SkillCardProps>`
-  ${card1}
+  ${card3}
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -5,7 +5,7 @@ import useTranslation from "next-translate/useTranslation";
 
 import { Text } from "./Typography";
 
-import { breakpoints, card1, colors } from "styles";
+import { breakpoints, card3, colors } from "styles";
 import ArrowDown from "../icons/arrowdown.svg";
 import Icon from "./Icon";
 import { ArrowDownS, ArrowUpS, Language, Language2 } from "icons";
@@ -113,7 +113,7 @@ const DisplayLanguage = styled(Text)`
 `;
 
 const Dropdown = styled.div<DropDownProps>`
-  ${card1};
+  ${card3};
   display: ${(p) => (p.open ? "flex" : "none")};
   flex-direction: column;
   width: 7em;

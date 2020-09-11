@@ -4,7 +4,7 @@ import Icon from "./Icon";
 import { ButtonText, Text } from "./Typography";
 
 import { Location } from "icons";
-import { card1 } from "styles/common";
+import { card3 } from "styles";
 
 const ExperienceCard = ({ type, name, place, time }) => (
   <Card>
@@ -23,7 +23,7 @@ const ExperienceCard = ({ type, name, place, time }) => (
 export default ExperienceCard;
 
 const Card = styled.div`
-  ${card1}
+  ${card3}
   width: 100%;
   padding: 0.75em;
   position: relative;

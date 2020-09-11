@@ -4,7 +4,7 @@ import Link from "next-translate/Link";
 import { ButtonText, Text } from "./Typography";
 import Icon from "./Icon";
 
-import { card1, colors } from "styles";
+import { colors, card3 } from "styles";
 
 type ButtonProps = {
   leftIcon?: string;
@@ -123,7 +123,7 @@ export const TertiaryButton = styled(Button).attrs({
   lower: true,
   fontSize: "sm",
 })`
-  ${card1}
+  ${card3}
   fill: ${colors.primary};
   & > * {
     margin-left: 0.5em;

@@ -19,7 +19,6 @@ import { socials } from "content";
 import { Projects as ProjectProps } from "lib/prismic";
 
 const Start = ({ projects }: ProjectProps) => {
-  console.log("Start -> projects", projects);
   const { t } = useTranslation();
   return (
     <Wrapper>

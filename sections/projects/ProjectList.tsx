@@ -55,12 +55,14 @@ const ProjectList = ({ projects }: any) => {
                   <Year>{year}</Year>
                   <Links>
                     <Button
+                      hover
                       to={`/projects/${slug}`}
                       color="bodyContrast"
                       iconSize="1.25em"
                       leftIcon={ArrowRightUp}
                     />
                     <Button
+                      hover
                       out
                       to={giturl}
                       color="bodyContrast"
@@ -69,6 +71,7 @@ const ProjectList = ({ projects }: any) => {
                     />
                     {url ? (
                       <Button
+                        hover
                         out
                         to={url}
                         color="bodyContrast"
@@ -90,16 +93,9 @@ const ProjectList = ({ projects }: any) => {
 export default ProjectList;
 
 const List = styled.div`
-  tbody tr {
-    &:hover,
-    &:focus {
-      background-color: ${colors.bodyGlow};
-      border-radius: 1em;
-    }
-  }
   th {
     text-align: left;
-    padding: 0 0em;
+    padding: 0;
   }
   td {
     padding: 0.25em 0em;

@@ -3,8 +3,7 @@ import { useTranslation } from "next-translate";
 import { PrimaryButton, Subheader, Text } from "components";
 
 import { Chat } from "icons";
-import { card2 } from "styles/common";
-import { breakpoints } from "styles";
+import { breakpoints, card3 } from "styles";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -27,7 +26,7 @@ const Contact = () => {
 export default Contact;
 
 const Wrapper = styled.section`
-  ${card2};
+  ${card3};
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -36,7 +36,7 @@ const Search = ({ callback, data }: SearchProps) => {
 
   return (
     <Wrapper>
-      <Icon path={SearchIcon} size="1.2em" color="primary" />
+      <Searchs path={SearchIcon} size="1.2em" color="primary" />
       <Input
         type="text"
         placeholder="Search"
@@ -52,21 +52,30 @@ const Search = ({ callback, data }: SearchProps) => {
 export default Search;
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2em;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  background: ${colors.bodyTint};
+  position: relative;
+`;
 
-  :hover {
-    border: 1px solid ${colors.primary};
-  }
+const Searchs = styled(Icon)`
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  z-index: 1;
 `;
 
 const Input = styled.input`
-  margin-left: 1em;
-  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 0.25em;
+  height: 2em;
+  width: 100%;
+  padding: 0 20%;
+  transition: all 300ms ease;
   color: ${colors.bodyContrast};
+  background-color: ${colors.bodyTint};
+  &:hover {
+    border: 2px solid ${colors.primary};
+  }
+  &:focus {
+    border: 2px solid ${colors.primary};
+    outline: 0;
+  }
 `;

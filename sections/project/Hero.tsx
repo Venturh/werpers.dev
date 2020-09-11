@@ -13,7 +13,6 @@ type HeroProps = {
 };
 
 const Hero = ({ project, github }: HeroProps) => {
-  console.log("Hero -> project", project);
   return (
     <Wrapper>
       <HeroImgWrapperMobile>
