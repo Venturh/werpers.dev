@@ -12,7 +12,6 @@ const Typography = ({ children, variant, text, ...props }) => (
 
 const StyledTypography = styled.p<Props>`
   color: ${(p) => colors[p.color]};
-
   font-size: ${(p) => fontSizes[p.fontSize] || p.fontSize};
   font-weight: ${(p) => p.fontWeight};
   white-space: pre-line;

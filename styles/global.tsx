@@ -50,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Set core body defaults */
   body {
-    font-family: "Open Sans","Segoe UI";
+    font-family: "Segoe UI";
     font-weight: 300;
     line-height: 1.5;
     min-height: 100vh;

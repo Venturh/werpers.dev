@@ -16,5 +16,6 @@ export default Pill;
 
 const Wrapper = styled.div`
   ${card2}
+  font-weight: 400;
   padding: 0.5em 1em;
 `;
