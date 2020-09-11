@@ -5,6 +5,7 @@ import { Subheader, Subtitle, Github, Icon, TertiaryButton } from "components";
 import { ArrowDownS } from "icons";
 import { card2 } from "styles/common";
 import { Project as ProjectType } from "lib/prismic";
+import Image from "components/Image";
 
 type HeroProps = {
   project: ProjectType;
@@ -12,10 +13,11 @@ type HeroProps = {
 };
 
 const Hero = ({ project, github }: HeroProps) => {
+  console.log("Hero -> project", project);
   return (
     <Wrapper>
       <HeroImgWrapperMobile>
-        <HeroImg src={project.cover.url} alt="mobileCover" />
+        <Image src={project.cover.url} alt="desktopCover" />
       </HeroImgWrapperMobile>
       <Info>
         <InfoText>
@@ -32,7 +34,7 @@ const Hero = ({ project, github }: HeroProps) => {
         </Techs>
       </Info>
       <HeroImgWrapperDesktop>
-        <HeroImg src={project.cover.url} alt="desktopCover" />
+        <Image src={project.cover.url} alt="desktopCover" />
       </HeroImgWrapperDesktop>
       <ArrowDown path={ArrowDownS} />
     </Wrapper>
@@ -74,18 +76,9 @@ const Description = styled(Subtitle)`
 const HeroImgWrapperMobile = styled.div`
   display: block;
   width: 100%;
-  height: 35vh;
+  height: 33vh;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: none;
-  }
-`;
-
-const HeroImg = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    width: 40vw;
   }
 `;
 
@@ -93,7 +86,8 @@ const HeroImgWrapperDesktop = styled.div`
   display: none;
   @media (min-width: ${(props) => props.theme.breakpoints.md}) {
     display: block;
-    width: 50%;
+    width: 40%;
+    height: 50vh;
   }
 `;
 
