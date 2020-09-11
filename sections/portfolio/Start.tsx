@@ -16,9 +16,10 @@ import { breakpoints, fontSizes } from "styles";
 
 import { ArrowRightS } from "icons";
 import { socials } from "content";
-import { Project } from "lib/prismic";
+import { Projects as ProjectProps } from "lib/prismic";
 
-const Start = ({ projects }: Project) => {
+const Start = ({ projects }: ProjectProps) => {
+  console.log("Start -> projects", projects);
   const { t } = useTranslation();
   return (
     <Wrapper>
@@ -48,7 +49,7 @@ const Start = ({ projects }: Project) => {
             </PrimaryButton>
           </ProjectsHead>
           <ProjectsCards>
-            {projects.map(({ node: project }) => (
+            {projects.map((project) => (
               <ProjectCard key={project.name} {...project} />
             ))}
           </ProjectsCards>

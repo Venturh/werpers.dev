@@ -7,32 +7,15 @@ import ProjectFilter from "sections/projects/ProjectFilters";
 
 import styled from "styled-components";
 import { getAllProjects } from "../lib/prismic";
-import { Project } from "lib/prismic";
+import { Projects as ProjectsProps } from "lib/prismic";
 import { Header, Subtitle } from "components";
 
-const Projects = ({ projects }: Project) => {
+const Projects = ({ projects }: ProjectsProps) => {
   const { t } = useTranslation();
-  const [appliedFilters, setAppliedFilters] = useState([]);
 
-  const setFilters = (name: string) => {
-    const find = appliedFilters.findIndex((n) => n === name);
-    if (find !== -1) {
-      setAppliedFilters((appliedFilters) =>
-        appliedFilters.filter((n) => n !== name)
-      );
-    } else {
-      setAppliedFilters((appliedFilters) => [...appliedFilters, name]);
-    }
-  };
+  console.log("Projects -> p", projects);
 
-  const filteredProjects =
-    appliedFilters.length !== 0
-      ? projects.filter((p) =>
-          p.node.body[0].fields.some(({ type }) =>
-            appliedFilters.some((n) => n === type)
-          )
-        )
-      : projects;
+  const [filteredProjects, setFilteredProjects] = useState([]);
 
   return (
     <Layout>
@@ -40,7 +23,7 @@ const Projects = ({ projects }: Project) => {
         <Header>{t("common:projects")}</Header>
         <Subtitle>{t("common:projectsDesc")}</Subtitle>
         <Content>
-          <ProjectFilter setFilters={setFilters} />
+          <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
           <ProjectList projects={filteredProjects} />
         </Content>
       </main>
@@ -64,7 +47,7 @@ export async function getStaticProps({ lang }) {
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 4em;
+  margin-top: 2em;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-direction: row;
     justify-content: space-between;

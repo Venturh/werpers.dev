@@ -4,9 +4,14 @@ import { Subheader, Subtitle, Github, Icon, TertiaryButton } from "components";
 
 import { ArrowDownS } from "icons";
 import { card2 } from "styles/common";
+import { Project as ProjectType } from "lib/prismic";
 
-const Hero = ({ project, github }) => {
-  const { fields: buildWith } = project.body[0];
+type HeroProps = {
+  project: ProjectType;
+  github: any;
+};
+
+const Hero = ({ project, github }: HeroProps) => {
   return (
     <Wrapper>
       <HeroImgWrapperMobile>
@@ -19,7 +24,7 @@ const Hero = ({ project, github }) => {
         </InfoText>
         <Github repo={github} />
         <Techs>
-          {buildWith.map(({ type, icon }) => (
+          {project.buildWith.map(({ type, icon }) => (
             <Tech key={type} leftIcon={icon}>
               {type}
             </Tech>
@@ -42,7 +47,7 @@ const Wrapper = styled.section`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    min-height: calc(88vh - 7em);
+    height: 70vh;
   }
 `;
 

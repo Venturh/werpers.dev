@@ -1,21 +1,14 @@
 import { Layout } from "components";
 
-import { getAllProjects, getProjectBySlug } from "lib/prismic";
+import {
+  getAllProjects,
+  getProjectBySlug,
+  Project as ProjectType,
+} from "lib/prismic";
 import Hero from "sections/project/Hero";
 
-interface Project {
-  name: string;
-  gitname: string;
-  cover: string;
-  year: string;
-  headline: string;
-  slug: string;
-  url: string;
-  giturl: string;
-}
-
 type ProjectProps = {
-  project: Project;
+  project: ProjectType;
   github: any;
 };
 
@@ -48,7 +41,7 @@ export async function getStaticPaths({ lang }) {
   const projects = await getAllProjects(lang);
 
   return {
-    paths: projects.map(({ node }) => `/${lang}/projects/${node.slug}`) || [],
+    paths: projects.map(({ slug }) => `/${lang}/projects/${slug}`) || [],
     fallback: false,
   };
 }

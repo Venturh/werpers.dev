@@ -91,12 +91,23 @@ const GlobalStyles = createGlobalStyle`
 
 
 
-  /* Inherit fonts for inputs and buttons */
   button,
   input,
   select,
   textarea {
     font: inherit;
+    margin:0;
+	  border:0;
+	  padding:0;
+	  display:inline-block;
+	  vertical-align:middle;
+	  white-space:normal;
+	  background:none;
+	  line-height:1;
+  }
+
+  input:focus {
+	  outline:0;
   }
 
   /* Remove all animations and transitions for people that prefer not to see them */

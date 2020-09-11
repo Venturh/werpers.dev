@@ -38,7 +38,6 @@ const Card = styled.button<CardProps>`
   justify-content: center;
   align-items: center;
 
-  border-radius: 4em;
   border: ${(p) => (p.selected ? `1px solid ${colors.primary}` : null)};
   padding: 0 1em;
   height: 2.5em;

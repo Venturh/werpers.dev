@@ -1,19 +1,55 @@
 import styled from "styled-components";
+import Fuse from "fuse.js";
+import { Filter, Search } from "components";
+import { useEffect, useState } from "react";
 
-import { Filter, Subtitle } from "components";
+const options = {
+  shouldSort: true,
+  threshold: 0.28,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 1,
+  useExtendedSearch: true,
+  keys: ["buildWith.type"],
+};
 
-const ProjectFilter = ({ setFilters }) => {
+const ProjectFilter = ({ onFilter, projects }) => {
   const filters = ["React", "Vue", "Electron", "Gatsby", "TypeScript"];
+
+  const [appliedFilters, setAppliedFilters] = useState([]);
+
+  const filterByTag = (name: string) => {
+    const find = appliedFilters.findIndex((n) => n === name);
+    if (find !== -1) {
+      setAppliedFilters((appliedFilters) =>
+        appliedFilters.filter((n) => n !== name)
+      );
+    } else {
+      setAppliedFilters((appliedFilters) => [...appliedFilters, name]);
+    }
+  };
+
+  useEffect(() => {
+    if (appliedFilters.length === 0) {
+      onFilter(projects);
+      return;
+    }
+    const fuse = new Fuse(projects, options);
+    const test = appliedFilters.join(" | ");
+    const result = fuse.search(test).map((item) => item.item);
+    onFilter(result);
+  }, [appliedFilters]);
 
   return (
     <Wrapper>
-      <Subtitle>Filter</Subtitle>
+      <Search data={projects} callback={(filter) => onFilter(filter)} />
       <Filters>
         {filters.map((filter) => (
           <Filter
             key={filter}
             name={filter}
-            callback={(name: string) => setFilters(name)}
+            callback={(name: string) => filterByTag(name)}
           />
         ))}
       </Filters>
@@ -34,9 +70,19 @@ const Wrapper = styled.div`
 const Filters = styled.div`
   margin-top: 1em;
   display: flex;
-  flex-wrap: wrap;
-  button {
-    margin-top: 0.25em;
-    margin-right: 0.5em;
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    button {
+      margin-top: 0.25em;
+      margin-right: 0.5em;
+    }
   }
 `;

@@ -7,6 +7,7 @@ import Icon from "./Icon";
 import { card2 } from "styles/common";
 
 const ProjectCard = ({ name, headline, slug, icon }) => {
+  console.log("ProjectCard -> icon", icon);
   return (
     <Link passHref href={`/projects/${slug}`}>
       <Content>

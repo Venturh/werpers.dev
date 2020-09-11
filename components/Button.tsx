@@ -94,7 +94,7 @@ const StyledContent = styled.a<ButtonProps>`
     font-size: ${(p) => p.fontSize};
   }
   :hover {
-    background: ${(p) => (p.hover ? colors.bodyTint : "")};
+    background: ${(p) => (p.hover ? colors.bodyGlow : "")};
   }
 `;
 

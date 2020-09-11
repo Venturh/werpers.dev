@@ -4,9 +4,9 @@ import { Button, Span, Subtitle, Text } from "components";
 
 import { ArrowRightUp, Github, LinkOut } from "icons";
 import { breakpoints, colors } from "styles";
-import { Project } from "lib/prismic";
+import { Projects } from "lib/prismic";
 
-const ProjectList = ({ projects }: Project) => {
+const ProjectList = ({ projects }: any) => {
   return (
     <List>
       <Table>
@@ -34,17 +34,17 @@ const ProjectList = ({ projects }: Project) => {
         </thead>
         <tbody>
           {projects.map(
-            ({ node: { name, year, progress, body, url, giturl, slug } }) => {
+            ({ name, year, progress, buildWith, url, giturl, slug }) => {
               return (
                 <tr key={name}>
                   <Title>
                     <Subtitle>{name}</Subtitle>
                   </Title>
                   <Techs>
-                    {body[0].fields.map((field, i) => (
+                    {buildWith.map((field, i) => (
                       <Span key={field.type}>
                         {field.type}
-                        {i !== body[0].fields.length - 1 && <Span> - </Span>}
+                        {i !== buildWith.length - 1 && <Span> - </Span>}
                       </Span>
                     ))}
                   </Techs>
@@ -93,7 +93,7 @@ const List = styled.div`
   tbody tr {
     &:hover,
     &:focus {
-      background-color: ${colors.bodyTint};
+      background-color: ${colors.bodyGlow};
       border-radius: 1em;
     }
   }
@@ -112,7 +112,7 @@ const List = styled.div`
     }
   }
   @media (min-width: ${breakpoints.lg}) {
-    width: 75%;
+    width: 70%;
   }
 `;
 const Table = styled.table`

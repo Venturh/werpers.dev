@@ -1,28 +1,26 @@
 import { fetchAPI } from "./prismic-configuration";
 
-interface Node {
-  node: {
-    name: string;
-    gitname: string;
-    headline: string;
-    icon: string;
-    slug: string;
-    cover: object;
-    year: string;
-    progress: string;
-    url: string;
-    giturl: string;
-    body?: [{ fields: [{ type: string; icon: string }] }];
-  };
+export interface Project {
+  name: string;
+  gitname: string;
+  headline: string;
+  icon: string;
+  slug: string;
+  cover: { url: string };
+  year: string;
+  progress: string;
+  url: string;
+  giturl: string;
+  buildWith?: [{ type: string; icon: string }];
 }
 
-export interface Project {
-  projects: Node[];
+export interface Projects {
+  projects: Project[];
 }
 
 export const getAllProjects = async (lang: string) => {
   const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
-  const projects = await fetchAPI(
+  const data = await fetchAPI(
     `
     {
       allProjects(lang: "${locale}") {
@@ -53,12 +51,40 @@ export const getAllProjects = async (lang: string) => {
   `,
     {}
   );
-  return projects.allProjects.edges;
+  return data.allProjects.edges.map(
+    ({
+      node: {
+        name,
+        gitname,
+        headline,
+        icon,
+        slug,
+        cover,
+        year,
+        progress,
+        url,
+        giturl,
+        body,
+      },
+    }) => ({
+      name,
+      gitname,
+      headline,
+      icon,
+      slug,
+      cover,
+      year,
+      progress,
+      url,
+      giturl,
+      buildWith: body[0].fields,
+    })
+  );
 };
 
 export const getProjectBySlug = async (lang: string, slug: string) => {
   const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
-  const projects = await fetchAPI(
+  const { allProjects } = await fetchAPI(
     `
     {
       allProjects(lang: "${locale}", where : {slug: "${slug}"} ) {
@@ -89,7 +115,38 @@ export const getProjectBySlug = async (lang: string, slug: string) => {
   `,
     {}
   );
-  return projects.allProjects.edges[0].node;
+
+  const projects = allProjects.edges.map(
+    ({
+      node: {
+        name,
+        gitname,
+        headline,
+        icon,
+        slug,
+        cover,
+        year,
+        progress,
+        url,
+        giturl,
+        body,
+      },
+    }) => ({
+      name,
+      gitname,
+      headline,
+      icon,
+      slug,
+      cover,
+      year,
+      progress,
+      url,
+      giturl,
+      buildWith: body[0].fields,
+    })
+  );
+
+  return projects[0];
 };
 
 export const getAllExperiences = async (lang: string) => {

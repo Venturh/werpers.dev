@@ -11,5 +11,5 @@ export const card1 = css`
 export const card2 = css`
   background-color: ${colors.body};
   border-radius: 1em;
-  border: 1px solid ${colors.bodyTint};
+  border: 1px solid ${colors.bodyGlow};
 `;

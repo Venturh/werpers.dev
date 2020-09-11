@@ -106,7 +106,7 @@ const StyledLink = styled(CustomLink)`
   padding: 0.5em 0.5em;
   border-radius: 0.5em;
   :hover {
-    background: ${colors.bodyTint};
+    background: ${colors.bodyGlow};
   }
 `;
 
