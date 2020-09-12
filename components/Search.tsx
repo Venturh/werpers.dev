@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Fuse from "fuse.js";
 import Icon from "./Icon";
 
 import { Search as SearchIcon } from "icons";
@@ -8,30 +7,13 @@ import { useState } from "react";
 
 type SearchProps = {
   callback: Function;
-  data: any;
 };
 
-const options = {
-  shouldSort: true,
-  threshold: 0.28,
-  location: 0,
-  distance: 100,
-  maxPatternLength: 32,
-  minMatchCharLength: 1,
-  keys: ["name", "buildWith.type"],
-};
-
-const Search = ({ callback, data }: SearchProps) => {
+const Search = ({ callback }: SearchProps) => {
   const [value, setValue] = useState("");
   const search = (toSearch: string) => {
     setValue(toSearch);
-    if (toSearch === "") {
-      callback(data);
-      return;
-    }
-    const fuse = new Fuse(data, options);
-    const result = fuse.search(value).map((item) => item.item);
-    callback(result);
+    callback(toSearch);
   };
 
   return (

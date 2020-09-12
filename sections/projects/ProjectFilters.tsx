@@ -11,13 +11,25 @@ const options = {
   maxPatternLength: 32,
   minMatchCharLength: 1,
   useExtendedSearch: true,
-  keys: ["buildWith.type"],
+  keys: ["buildWith.type", "name"],
 };
 
 const ProjectFilter = ({ onFilter, projects }) => {
   const filters = ["React", "Vue", "Electron", "Gatsby", "TypeScript"];
 
   const [appliedFilters, setAppliedFilters] = useState([]);
+  const [searchFilter, setSearchFilter] = useState("");
+
+  const handleSearch = (name: string) => {
+    if (searchFilter) {
+      setAppliedFilters((appliedFilters) =>
+        appliedFilters.filter((n) => n !== searchFilter)
+      );
+    }
+    setSearchFilter(name);
+    if (name === "") return;
+    filterByTag(name);
+  };
 
   const filterByTag = (name: string) => {
     const find = appliedFilters.findIndex((n) => n === name);
@@ -43,7 +55,7 @@ const ProjectFilter = ({ onFilter, projects }) => {
 
   return (
     <Wrapper>
-      <Search data={projects} callback={(filter) => onFilter(filter)} />
+      <Search callback={(name: string) => handleSearch(name)} />
       <Filters>
         {filters.map((filter) => (
           <Filter
@@ -80,9 +92,6 @@ const Filters = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     flex-wrap: wrap;
     overflow-x: visible;
-    button {
-      margin-top: 0.25em;
-      margin-right: 0.5em;
-    }
+    gap: 0.5em;
   }
 `;
