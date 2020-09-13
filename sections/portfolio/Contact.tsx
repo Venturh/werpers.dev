@@ -36,7 +36,7 @@ const Wrapper = styled.section`
     text-align: center;
   }
   ${Text} {
-    margin: 0.75em 0;
+    margin: 0.5em 0 1em 0;
     @media (min-width: ${breakpoints.lg}) {
       text-align: center;
     }

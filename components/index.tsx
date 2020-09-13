@@ -11,6 +11,7 @@ export { default as Navigation } from "./Navigation";
 export { default as ProjectCard } from "./ProjectCard";
 export { default as Search } from "./Search";
 export { default as SkillCard } from "./SkillCard";
+export { default as Socials } from "./Socials";
 export {
   default as Button,
   PrimaryButton,

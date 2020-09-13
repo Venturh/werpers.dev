@@ -1,31 +1,84 @@
 import styled from "styled-components";
 import { useTranslation } from "next-translate";
 
-import { ButtonText, Header, Layout, Text, Title } from "components";
-import { colors } from "styles";
+import {
+  ButtonText,
+  CustomLink,
+  Header,
+  Layout,
+  Socials,
+  Span,
+  Subheader,
+  TertiaryButton,
+  Text,
+  Title,
+} from "components";
+import { breakpoints, colors } from "styles";
+import { socials } from "content";
 
-export default () => {
+const About = () => {
   const { t } = useTranslation();
   return (
     <Layout small>
-      <main>
-        <Header text={t("common:about")} />
-        <Description>
-          <Title>{t("common:aboutSub")}</Title>
-          <Text>{t("common:aboutDesc")}</Text>
-        </Description>
+      <Wrapper>
+        <Header text={t("about:title")} />
+        <div>
+          <Title>{t("about:subtitle")}</Title>
+          <Text style={{ marginTop: "0.5em" }}>
+            {t("about:1")}
+            <CustomLink to="https://clickbar.dev/" color="primary">
+              <Span color="primary">clickbar.dev</Span>
+            </CustomLink>
+            {" " + t("about:2")}
+          </Text>
+          <br />
+          <Text>
+            {t("about:3")}{" "}
+            <CustomLink nav to="/projects">
+              <Span color="primary">{t("about:here")}</Span>
+            </CustomLink>
+          </Text>
+        </div>
         <Cv href="/cv.pdf" download>
           <ButtonText>Download CV</ButtonText>
         </Cv>
-      </main>
+        <div>
+          <Title>{t("common:contactHeader")}</Title>
+          <Text>{t("common:contactBody")}</Text>
+          <CustomLink to="mailto:contact@maxwerpers.me">
+            <Text>contact@maxwerpers.me</Text>
+          </CustomLink>
+        </div>
+        <div>
+          <Title>{t("common:socialsTitle")}</Title>
+          <Socials />
+        </div>
+      </Wrapper>
     </Layout>
   );
 };
 
-const Description = styled.article`
-  margin: 1em 0;
+export default About;
+
+const Wrapper = styled.main`
+  div {
+    margin: 1em 0;
+  }
 `;
+
+const SocialsCards = styled.div`
+  display: grid;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  grid-template-rows: repeat(4, 4em);
+  @media (min-width: ${breakpoints.lg}) {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 3em);
+  }
+`;
+
 const Cv = styled.a`
+  margin-top: 0.5em;
   display: inline-flex;
   padding: 0.5em;
   background: ${colors.body};

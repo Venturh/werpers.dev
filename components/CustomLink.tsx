@@ -40,6 +40,7 @@ const CustomLink: React.FC<Props> = ({
         rel="noopener noreferrer"
         active={pathname === `/${lang}${to}` ? true : false}
         underline={underline}
+        color={color}
       >
         {children}
       </A>
@@ -53,6 +54,11 @@ const A = styled.a<LinkProps>`
   cursor: pointer;
   text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
   ${Text} {
-    color: ${(p) => (p.active === true ? colors.primary : colors[p.color])};
+    color: ${(p) =>
+      p.active === true
+        ? colors.primary
+        : p.color
+        ? colors[p.color]
+        : colors.bodyContrast};
   }
 `;

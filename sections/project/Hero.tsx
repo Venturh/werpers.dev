@@ -34,6 +34,7 @@ const Hero = ({ project, github }: HeroProps) => {
         <Techs>
           {project.buildWith.map(({ type, icon }) => (
             <Flair
+              key={type}
               style={{ padding: "0.75em" }}
               icon={icon}
               iconSize="1.25em"

@@ -6,6 +6,6 @@
   "localesPath": "locales",
   "defaultLangRedirect": "lang-path",
   "pages": {
-    "*": ["common"]
+    "*": ["common", "about"]
   }
 }

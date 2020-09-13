@@ -5,6 +5,7 @@ import {
   Header,
   PrimaryButton,
   ProjectCard,
+  Socials,
   Span,
   Subheader,
   Subtitle,
@@ -25,14 +26,12 @@ const Start = ({ projects }: ProjectProps) => {
       <Hero>
         <TextWrapper>
           <Heading color="bodyContrast">
-            {t("common:hey")}{" "}
+            {t("common:hey")} <br />
             <Span fontSize="header" color="primary">
-              Max Werpers,
+              Maximilian Werpers{" "}
             </Span>
-            <br />
-            {t("common:whatS")}
           </Heading>
-          <Text> {t("common:whatL")}</Text>
+          <Text> {t("common:what")}</Text>
         </TextWrapper>
         <HeroCover>
           <Header color="primary">m</Header>
@@ -54,16 +53,10 @@ const Start = ({ projects }: ProjectProps) => {
           </ProjectsCards>
         </Projects>
         <SocialsBlog>
-          <Socials>
+          <Social>
             <Subheader>{t("common:socialsTitle")}</Subheader>
-            <SocialsCards>
-              {socials.map(({ name, icon, link }) => (
-                <TertiaryButton out key={link} leftIcon={icon} to={link}>
-                  {name}
-                </TertiaryButton>
-              ))}
-            </SocialsCards>
-          </Socials>
+            <Socials />
+          </Social>
           <Blog>
             <Subheader>Blog</Subheader>
             <BlogCards>
@@ -94,6 +87,7 @@ const Hero = styled.div`
 `;
 
 const TextWrapper = styled.div`
+  margin-top: 1em;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     width: 55%;
   }
@@ -155,7 +149,7 @@ const SocialsBlog = styled.div`
     width: 40%;
   }
 `;
-const Socials = styled.div`
+const Social = styled.div`
   margin-top: 2em;
   @media (min-width: ${breakpoints.lg}) {
     margin-top: 0;

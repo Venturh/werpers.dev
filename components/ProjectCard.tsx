@@ -19,16 +19,16 @@ const ProjectCard = ({ name, headline, slug, icon, buildWith }: Project) => {
           path={icon}
         />
         <CardInfo>
-          <Top>
+          <Title color="primary">{name}</Title>
+          <Description color="bodyContrast">{headline}</Description>
+          <Bottom>
             <ButtonText>Open Source</ButtonText>
             <Flairs>
               {buildWith.map(({ icon }) => (
-                <Flair icon={icon} />
+                <Flair key={icon} icon={icon} />
               ))}
             </Flairs>
-          </Top>
-          <Title color="primary">{name}</Title>
-          <Text color="bodyContrast">{headline}</Text>
+          </Bottom>
         </CardInfo>
       </Content>
     </Link>
@@ -51,7 +51,14 @@ const CardInfo = styled.div`
   }
 `;
 
-const Top = styled.div`
+const Description = styled(Text)`
+  min-height: 2.5em;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    min-height: 1em;
+  }
+`;
+
+const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
