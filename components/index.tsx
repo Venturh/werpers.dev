@@ -1,6 +1,7 @@
 export { default as CustomLink } from "./CustomLink";
 export { default as ExperienceCard } from "./ExperienceCard";
 export { default as Filter } from "./Filter";
+export { default as Flair } from "./Flair";
 export { default as Footer } from "./Footer";
 export { default as Github } from "./Github";
 export { default as Icon } from "./Icon";

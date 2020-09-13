@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-import { Subheader, Subtitle, Github, Icon, TertiaryButton } from "components";
+import {
+  Subheader,
+  Subtitle,
+  Github,
+  Icon,
+  TertiaryButton,
+  Flair,
+} from "components";
 
 import { ArrowDownS } from "icons";
 import { card2 } from "styles/common";
@@ -26,9 +33,12 @@ const Hero = ({ project, github }: HeroProps) => {
         <Github repo={github} />
         <Techs>
           {project.buildWith.map(({ type, icon }) => (
-            <Tech key={type} leftIcon={icon}>
-              {type}
-            </Tech>
+            <Flair
+              style={{ padding: "0.75em" }}
+              icon={icon}
+              iconSize="1.25em"
+              type={type}
+            />
           ))}
         </Techs>
       </Info>
@@ -99,10 +109,6 @@ const Techs = styled.div`
     width: 90%;
     grid-template-columns: repeat(auto-fit, 30%);
   }
-`;
-
-const Tech = styled(TertiaryButton)`
-  ${card2}
 `;
 
 const ArrowDown = styled(Icon)`

@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Link from "next-translate/Link";
 
-import { Caption, Text, Title } from "./Typography";
+import { ButtonText, Text, Title } from "./Typography";
 import Icon from "./Icon";
 
 import { card3 } from "styles/common";
+import Flair from "./Flair";
 
-const ProjectCard = ({ name, headline, slug, icon }) => {
+const ProjectCard = ({ name, headline, slug, icon, buildWith }) => {
   return (
     <Link passHref href={`/projects/${slug}`}>
       <Content>
@@ -17,7 +18,14 @@ const ProjectCard = ({ name, headline, slug, icon }) => {
           path={icon}
         />
         <CardInfo>
-          <Caption>Open Source</Caption>
+          <Top>
+            <ButtonText>Open Source</ButtonText>
+            <Flairs>
+              {buildWith.map(({ icon }) => (
+                <Flair icon={icon} />
+              ))}
+            </Flairs>
+          </Top>
           <Title color="primary">{name}</Title>
           <Text color="bodyContrast">{headline}</Text>
         </CardInfo>
@@ -36,8 +44,20 @@ const Content = styled.a`
   padding: 0.5em 0;
 `;
 const CardInfo = styled.div`
-  width: 60%;
+  width: 70%;
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    width: initial;
+    width: 100%;
   }
+`;
+
+const Top = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0.25em;
+`;
+
+const Flairs = styled.div`
+  display: flex;
+  gap: 0.25em;
 `;
