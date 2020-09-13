@@ -6,8 +6,9 @@ import Icon from "./Icon";
 
 import { card3 } from "styles/common";
 import Flair from "./Flair";
+import { Project } from "lib/prismic";
 
-const ProjectCard = ({ name, headline, slug, icon, buildWith }) => {
+const ProjectCard = ({ name, headline, slug, icon, buildWith }: Project) => {
   return (
     <Link passHref href={`/projects/${slug}`}>
       <Content>
