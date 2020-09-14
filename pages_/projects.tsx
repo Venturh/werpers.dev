@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NextSeo } from "next-seo";
 import useTranslation from "next-translate/useTranslation";
 
 import Layout from "components/Layout";
@@ -15,17 +16,31 @@ const Projects = ({ projects }: ProjectsProps) => {
 
   const [filteredProjects, setFilteredProjects] = useState([]);
 
+  const url = "https://www.maxwerpers.me/de/projects";
+  const title = "Projekte Übersicht - Maximilian Werpers";
+
   return (
-    <Layout>
-      <main>
-        <Header>{t("common:projects")}</Header>
-        <Subtitle>{t("common:projectsDesc")}</Subtitle>
-        <Content>
-          <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
-          <ProjectList projects={filteredProjects} />
-        </Content>
-      </main>
-    </Layout>
+    <>
+      <NextSeo
+        title={title}
+        canonical={url}
+        openGraph={{
+          title,
+          url,
+          type: "website",
+        }}
+      />
+      <Layout>
+        <main>
+          <Header>{t("common:projects")}</Header>
+          <Subtitle>{t("common:projectsDesc")}</Subtitle>
+          <Content>
+            <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
+            <ProjectList projects={filteredProjects} />
+          </Content>
+        </main>
+      </Layout>
+    </>
   );
 };
 

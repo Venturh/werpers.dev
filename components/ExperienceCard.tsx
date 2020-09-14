@@ -30,13 +30,6 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  transition: all 0.2s ease-in-out;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    :hover {
-      transform: scale(1.1) translateY(-10px);
-      cursor: default;
-    }
-  }
 `;
 
 const TypeTime = styled.div`

@@ -1,11 +1,13 @@
+import { NextSeo } from "next-seo";
+
 import { Layout } from "components";
+import Hero from "sections/project/Hero";
 
 import {
   getAllProjects,
   getProjectBySlug,
   Project as ProjectType,
 } from "lib/prismic";
-import Hero from "sections/project/Hero";
 
 type ProjectProps = {
   project: ProjectType;
@@ -13,10 +15,27 @@ type ProjectProps = {
 };
 
 const Project = ({ project, github }: ProjectProps) => {
+  const url = `https://www.maxwerpers.me/de/projects/${project.slug}`;
+  const title = `${project.name} - Maximilian Werpers`;
+  const description = project.headline;
+
   return (
-    <Layout>
-      <Hero project={project} github={github} />
-    </Layout>
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{
+          title,
+          description,
+          url,
+          type: "website",
+        }}
+      />
+      <Layout>
+        <Hero project={project} github={github} />
+      </Layout>
+    </>
   );
 };
 

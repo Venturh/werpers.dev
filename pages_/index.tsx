@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { breakpoints } from "styles";
-import { getAllExperiences, getAllProjects } from "lib/prismic";
+
 import { Layout } from "components";
 import Start from "sections/portfolio/Start";
 import Experience from "sections/portfolio/Experience";
 import Skills from "sections/portfolio/Skills";
 import Contact from "sections/portfolio/Contact";
-import { Project } from "../lib/prismic/index";
+
+import { breakpoints } from "styles";
+import { getAllExperiences, getAllProjects } from "lib/prismic";
 
 const Portfolio = ({ projects, experiences }) => (
   <Layout>
