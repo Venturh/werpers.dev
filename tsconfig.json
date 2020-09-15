@@ -22,8 +22,7 @@
     "components/LanguageSwitch.tsx",
     "pages_/_app.js",
     "styles/global.js",
-    "pages_/_document.js",
-    "pages_/_document.js"
+    "pages_/_document.tsx"
   ],
   "exclude": ["node_modules"]
 }
