@@ -1,0 +1,22 @@
+{
+  "name": "Maximilian Werpers",
+  "short_name": "maxwerpers.me",
+  "description": "Mein persönliches Portfolio",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#161821",
+  "background_color": "#161821",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "../../index.html"
+}

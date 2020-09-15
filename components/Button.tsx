@@ -45,6 +45,7 @@ const Button: React.FC<ButtonProps> = ({
         style={style}
         onClick={onClick}
         hover={hover}
+        rel="noopener"
         fontSize={fontSize}
       >
         {leftIcon ? (
@@ -67,6 +68,7 @@ const Button: React.FC<ButtonProps> = ({
         onClick={onClick}
         hover={hover}
         target={out ? "_blank" : ""}
+        rel="noopener"
         fontSize={fontSize}
       >
         {leftIcon ? (
