@@ -67,8 +67,9 @@ const Button: React.FC<ButtonProps> = ({
         style={style}
         onClick={onClick}
         hover={hover}
+        aria-label={`${to}`}
         target={out ? "_blank" : ""}
-        rel="noopener"
+        rel="noopener noreferrer"
         fontSize={fontSize}
       >
         {leftIcon ? (

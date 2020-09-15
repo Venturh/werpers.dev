@@ -6,6 +6,7 @@ import NextDocument, {
   DocumentContext,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import documentLang from "next-translate/documentLang";
 
 export default class Document extends NextDocument {
   static getInitialProps = async (ctx: DocumentContext) => {
@@ -38,7 +39,7 @@ export default class Document extends NextDocument {
 
   render() {
     return (
-      <Html lang="de">
+      <Html lang={documentLang(this.props)}>
         <Head>
           <link
             rel="apple-touch-icon"

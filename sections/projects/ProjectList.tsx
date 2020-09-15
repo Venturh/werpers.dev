@@ -38,7 +38,7 @@ const ProjectList = ({ projects }: any) => {
               return (
                 <tr key={name}>
                   <Title>
-                    <Subtitle>{name}</Subtitle>
+                    <Subtitle as="h3">{name}</Subtitle>
                   </Title>
                   <Techs>
                     {buildWith.map((field, i) => (

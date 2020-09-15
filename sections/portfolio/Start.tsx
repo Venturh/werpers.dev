@@ -9,14 +9,12 @@ import {
   Span,
   Subheader,
   Subtitle,
-  TertiaryButton,
   Text,
 } from "components";
 
 import { breakpoints, fontSizes } from "styles";
 
 import { ArrowRightS } from "icons";
-import { socials } from "content";
 import { Projects as ProjectProps } from "lib/prismic";
 
 const Start = ({ projects }: ProjectProps) => {
@@ -60,7 +58,7 @@ const Start = ({ projects }: ProjectProps) => {
           <Blog>
             <Subheader>Blog</Subheader>
             <BlogCards>
-              <Subtitle>{t("common:soon")}</Subtitle>
+              <Text>{t("common:soon")}</Text>
             </BlogCards>
           </Blog>
         </SocialsBlog>

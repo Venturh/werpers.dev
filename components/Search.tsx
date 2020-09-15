@@ -19,14 +19,17 @@ const Search = ({ callback }: SearchProps) => {
   return (
     <Wrapper>
       <Searchs path={SearchIcon} size="1.2em" color="primary" />
-      <Input
-        type="text"
-        placeholder="Search"
-        value={value}
-        onChange={(e: React.FormEvent<HTMLInputElement>) =>
-          search(e.currentTarget.value)
-        }
-      />
+      <label>
+        bla
+        <Input
+          type="text"
+          placeholder="Search"
+          value={value}
+          onChange={(e: React.FormEvent<HTMLInputElement>) =>
+            search(e.currentTarget.value)
+          }
+        />
+      </label>
     </Wrapper>
   );
 };

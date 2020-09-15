@@ -35,7 +35,7 @@ const About = () => {
         <Wrapper>
           <Header text={t("about:title")} />
           <div>
-            <Title>{t("about:subtitle")}</Title>
+            <Title as="h2">{t("about:subtitle")}</Title>
             <Text style={{ marginTop: "0.5em" }}>
               {t("about:1")}
               <CustomLink to="https://clickbar.dev/" color="primary">

@@ -28,7 +28,9 @@ const Hero = ({ project, github }: HeroProps) => {
       <Info>
         <InfoText>
           <Subheader>{project.name}</Subheader>
-          <Description color="bodyContrast">{project.headline}</Description>
+          <Description as="h3" color="bodyContrast">
+            {project.headline}
+          </Description>
         </InfoText>
         <Github repo={github} />
         <Techs>

@@ -33,7 +33,7 @@ const Projects = ({ projects }: ProjectsProps) => {
       <Layout>
         <main>
           <Header>{t("common:projects")}</Header>
-          <Subtitle>{t("common:projectsDesc")}</Subtitle>
+          <Subtitle as="h2">{t("common:projectsDesc")}</Subtitle>
           <Content>
             <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
             <ProjectList projects={filteredProjects} />
