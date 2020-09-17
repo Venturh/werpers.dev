@@ -22,5 +22,9 @@
   "footer1": "Coded with ",
   "footer2": " by Max Werpers.",
   "footer3": "Build with ",
-  "footer4": "and hostet on "
+  "footer4": "and hostet on ",
+  "search": "Search",
+  "buildUsing": "Build using",
+  "progress": "Progress",
+  "year": "Year"
 }

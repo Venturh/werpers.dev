@@ -1,15 +1,18 @@
+import { useState } from "react";
 import styled from "styled-components";
+import useTranslation from "next-translate/useTranslation";
+
 import Icon from "./Icon";
 
 import { Search as SearchIcon } from "icons";
 import { colors } from "styles";
-import { useState } from "react";
 
 type SearchProps = {
   callback: Function;
 };
 
 const Search = ({ callback }: SearchProps) => {
+  const { t } = useTranslation();
   const [value, setValue] = useState("");
   const search = (toSearch: string) => {
     setValue(toSearch);
@@ -19,17 +22,14 @@ const Search = ({ callback }: SearchProps) => {
   return (
     <Wrapper>
       <Searchs path={SearchIcon} size="1.2em" color="primary" />
-      <label>
-        bla
-        <Input
-          type="text"
-          placeholder="Search"
-          value={value}
-          onChange={(e: React.FormEvent<HTMLInputElement>) =>
-            search(e.currentTarget.value)
-          }
-        />
-      </label>
+      <Input
+        type="text"
+        placeholder={t("common:search")}
+        value={value}
+        onChange={(e: React.FormEvent<HTMLInputElement>) =>
+          search(e.currentTarget.value)
+        }
+      />
     </Wrapper>
   );
 };

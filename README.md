@@ -1,30 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <br/>
+  <a href="https://maxwerpers.me/en target="_blank"">
+    <img alt="logo" src="https://user-images.githubusercontent.com/33336634/93456642-43137c00-f8de-11ea-98a2-736ae2716f04.png" width="300px" />
+  </a>
+</p>
+<p align="center">
+  Previous versions:
+  <br/>
+  <a href="https://github.com/Venturh/maxwerpers-v1" target="_blank">Version 1</a> &middot
+  <a href="https://github.com/Venturh/maxwerpers-v2" target="_blank">Version 2</a>
+</p>
 
-## Getting Started
+## About
 
-First, run the development server:
+This is the third version of my personal portfolio.
+I moved from gatsby to try out nextjs. The new portfolio has a more compact structure and is build to stay for years.
 
-```bash
-npm run dev
-# or
+If you want to check out my portfolio yourself you can do so [here](https://maxwerpers.me/en "Title")
+
+## Built Using
+
+- [Next.js](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [Prismic.io](https://prismic.io/)
+- [Vercel](https://vercel.com/)
+
+## Forking
+
+You can fork this repo and use it as a base for your portfolio but if you do so please give credit by linking to this repo.
+
+## Running Locally
+
+```
+git clone https://github.com/Venturh/maxwerpers
+cd maxwerpers
+yarn install
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a .env.local file containing:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+PRISMIC_API_TOKEN: your token
+PRISMIC_URL: your prismic url
+PRISMIC_REPOSITORY_NAME: your prismic repo name
+```

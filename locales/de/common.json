@@ -22,5 +22,9 @@
   "footer1": "Programmiert mit ",
   "footer2": " von Max Werpers.",
   "footer3": "Gebaut mit ",
-  "footer4": "und gehostet mit "
+  "footer4": "und gehostet mit ",
+  "search": "Suchen",
+  "buildUsing": "Gebaut mit",
+  "progress": "Fortschritt",
+  "year": "Jahr"
 }

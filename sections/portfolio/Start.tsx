@@ -55,12 +55,6 @@ const Start = ({ projects }: ProjectProps) => {
             <Subheader>{t("common:socialsTitle")}</Subheader>
             <Socials />
           </Social>
-          <Blog>
-            <Subheader>Blog</Subheader>
-            <BlogCards>
-              <Text>{t("common:soon")}</Text>
-            </BlogCards>
-          </Blog>
         </SocialsBlog>
       </Content>
     </Wrapper>
@@ -153,20 +147,3 @@ const Social = styled.div`
     margin-top: 0;
   }
 `;
-
-const SocialsCards = styled.div`
-  display: grid;
-  gap: 0.5em;
-  margin-top: 0.5em;
-  grid-template-rows: repeat(4, 4em);
-  @media (min-width: ${breakpoints.lg}) {
-    grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(2, 3em);
-  }
-`;
-
-const Blog = styled.div`
-  margin-top: 2em;
-`;
-
-const BlogCards = styled.div``;

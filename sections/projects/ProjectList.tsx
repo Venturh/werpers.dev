@@ -1,12 +1,13 @@
 import styled from "styled-components";
-
+import useTranslation from "next-translate/useTranslation";
 import { Button, Span, Subtitle, Text } from "components";
 
 import { ArrowRightUp, Github, LinkOut } from "icons";
-import { breakpoints, colors } from "styles";
+import { breakpoints } from "styles";
 import { Projects } from "lib/prismic";
 
-const ProjectList = ({ projects }: any) => {
+const ProjectList = ({ projects }: Projects) => {
+  const { t } = useTranslation();
   return (
     <List>
       <Table>
@@ -16,15 +17,15 @@ const ProjectList = ({ projects }: any) => {
               Name
             </Subtitle>
             <Subtitle as="th" className="hide-on-mobile" color="primary">
-              Build with
+              {t("common:buildUsing")}
             </Subtitle>
 
             <Subtitle as="th" className="hide-on-mobile" color="primary">
-              Progress
+              {t("common:progress")}
             </Subtitle>
 
             <Subtitle as="th" color="primary">
-              Year
+              {t("common:year")}
             </Subtitle>
 
             <Subtitle as="th" color="primary">
