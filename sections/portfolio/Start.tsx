@@ -27,7 +27,7 @@ type Props = {
   ressources: RessourcesInterface;
 };
 
-const Start = ({ projects, ressources }: Props) => {
+const Start = ({ projects, ressources }) => {
   console.log("Start -> ressources", ressources);
   const { t } = useTranslation();
   return (

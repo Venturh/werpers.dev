@@ -15,7 +15,6 @@ export interface Project {
 }
 
 export interface Projects {
-  map: any;
   projects: Project[];
 }
 
@@ -24,7 +23,6 @@ export interface Ressource {
 }
 
 export interface Ressources {
-  map: any;
   ressources: Ressource[];
 }
 
