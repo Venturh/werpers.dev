@@ -1,11 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
+type Props = {
+  src?: string;
+  alt?: string;
+  cover?: boolean;
+};
+
 type ImgProps = {
   loaded: boolean;
 };
 
-const Image = ({ src, alt }) => {
+const Image = ({ src, alt, cover }: Props) => {
   const lqip = `${src}&w=100&blur=200&fm=webp`;
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null!);
@@ -16,7 +22,7 @@ const Image = ({ src, alt }) => {
   }, []);
   const aspectRatio = 16 / 3;
   return (
-    <Wrapper>
+    <Wrapper cover={cover}>
       <div style={{ paddingBottom: `${100 / aspectRatio}%` }} />
       {lqip && (
         <Placeholder loaded={loaded} src={lqip} alt="" aria-hidden="true" />
@@ -35,7 +41,7 @@ const Image = ({ src, alt }) => {
 
 export default Image;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<Props>`
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -49,7 +55,7 @@ const Wrapper = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    object-fit: contain;
+    object-fit: ${(p) => (p.cover ? "cover" : "contain")};
     transition: opacity 1200ms;
   }
 `;

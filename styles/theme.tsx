@@ -10,6 +10,7 @@ interface Colors {
   primaryGlow: string;
   body: string;
   bodyContrast: string;
+  card: string;
   bodyGlow: string;
   bodyTint: string;
 }
@@ -66,9 +67,10 @@ export const colors: Colors = {
   primary: "#85EEA7",
   primaryContrast: "#292929",
   primaryGlow: "#b0fbbc",
-  body: "#161821;",
+  body: "#1A202C;",
   bodyContrast: "#FFFFFF",
   bodyGlow: "#272932",
+  card: "#212732",
   bodyTint: "#12131a",
 };
 export const theme: ITheme = {

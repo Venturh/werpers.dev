@@ -8,16 +8,27 @@ import {
   Socials,
   Span,
   Subheader,
-  Subtitle,
   Text,
 } from "components";
 
 import { breakpoints, fontSizes } from "styles";
 
 import { ArrowRightS } from "icons";
-import { Projects as ProjectProps } from "lib/prismic";
+import {
+  Project,
+  Projects as ProjectsInterface,
+  Ressource,
+  Ressources as RessourcesInterface,
+} from "lib/prismic";
+import RessourceCard from "components/RessourceCard";
 
-const Start = ({ projects }: ProjectProps) => {
+type Props = {
+  projects: ProjectsInterface;
+  ressources: RessourcesInterface;
+};
+
+const Start = ({ projects, ressources }: Props) => {
+  console.log("Start -> ressources", ressources);
   const { t } = useTranslation();
   return (
     <Wrapper>
@@ -38,19 +49,35 @@ const Start = ({ projects }: ProjectProps) => {
       </Hero>
       <Content>
         <Projects>
-          <ProjectsHead>
+          <HeadWithButton>
             <Subheader> {t("common:projects")}</Subheader>
             <PrimaryButton to="/projects" rightIcon={ArrowRightS}>
               {t("common:showmore")}
             </PrimaryButton>
-          </ProjectsHead>
+          </HeadWithButton>
           <ProjectsCards>
-            {projects.map((project) => (
-              <ProjectCard key={project.name} {...project} />
-            ))}
+            {projects.map((project: Project, index: number) => {
+              if (index <= 3) {
+                return <ProjectCard key={project.name} {...project} />;
+              }
+            })}
           </ProjectsCards>
         </Projects>
         <SocialsBlog>
+          <Ressources>
+            <HeadWithButton>
+              <Subheader> {t("common:ressources")}</Subheader>
+              {/* <PrimaryButton to="/projects" rightIcon={ArrowRightS}>
+                {t("common:showmore")}
+              </PrimaryButton> */}
+            </HeadWithButton>
+            <RessourceCards>
+              {ressources.map(({ node: ressource }: Ressource) => {
+                console.log("Start -> ressource", ressource);
+                return <RessourceCard key={ressource.name} {...ressource} />;
+              })}
+            </RessourceCards>
+          </Ressources>
           <Social>
             <Subheader>{t("common:socialsTitle")}</Subheader>
             <Socials />
@@ -98,7 +125,7 @@ const HeroCover = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
     display: flex;
     justify-content: center;
-    width: 40%;
+    width: 45%;
     ${Header} {
       font-size: 5em;
     }
@@ -118,12 +145,12 @@ const Content = styled.div`
 
 const Projects = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    width: 55%;
+    width: 50%;
     margin-top: 0;
   }
 `;
 
-const ProjectsHead = styled.div`
+const HeadWithButton = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -138,12 +165,27 @@ const ProjectsCards = styled.div`
 
 const SocialsBlog = styled.div`
   @media (min-width: ${breakpoints.lg}) {
-    width: 40%;
+    width: 45%;
   }
 `;
 const Social = styled.div`
   margin-top: 2em;
   @media (min-width: ${breakpoints.lg}) {
-    margin-top: 0;
+    margin-top: 2em;
   }
+`;
+
+const Ressources = styled.div`
+  margin-top: 2em;
+  @media (min-width: ${breakpoints.lg}) {
+    margin-top: 0em;
+  }
+`;
+
+const RessourceCards = styled.div`
+  margin-top: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 20vh;
+  gap: 0.5em;
 `;

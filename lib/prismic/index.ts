@@ -15,7 +15,17 @@ export interface Project {
 }
 
 export interface Projects {
+  map: any;
   projects: Project[];
+}
+
+export interface Ressource {
+  node: { name: string; url: string; cover: { url: string } };
+}
+
+export interface Ressources {
+  map: any;
+  ressources: Ressource[];
 }
 
 export const getAllProjects = async (lang: string) => {
@@ -23,7 +33,7 @@ export const getAllProjects = async (lang: string) => {
   const data = await fetchAPI(
     `
     {
-      allProjects(lang: "${locale}") {
+      allProjects(lang: "${locale}", sortBy: order_ASC) {
         edges{
           node {
             name
@@ -169,4 +179,25 @@ export const getAllExperiences = async (lang: string) => {
     {}
   );
   return experiences.allExperiences.edges;
+};
+
+export const getAllRessources = async (lang: string) => {
+  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
+  const { allRessources } = await fetchAPI(
+    `
+    {
+      allRessources(lang: "${locale}") {
+        edges{
+          node {
+            name
+            url
+            cover
+          }
+        }
+      }
+    }
+  `,
+    {}
+  );
+  return allRessources.edges;
 };

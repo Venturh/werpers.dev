@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Link from "next-translate/Link";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
@@ -50,9 +50,27 @@ const CustomLink: React.FC<Props> = ({
 
 export default CustomLink;
 
+const underline = css`
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -1.25px;
+  left: 0;
+  background: ${colors.primary};
+  transition: background 300ms ease;
+`;
+
 const A = styled.a<LinkProps>`
+  display: inline-block;
+  position: relative;
   cursor: pointer;
-  text-decoration: ${(p) => (p.underline ? "underline" : "inherit")};
+  /* text-decoration: ${(p) => (p.underline ? "underline" : "inherit")}; */
+  ::after {
+    ${(p) => (p.underline ? underline : null)};
+  }
+
   ${Text} {
     color: ${(p) =>
       p.active === true

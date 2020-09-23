@@ -55,7 +55,7 @@ const Input = styled.input`
   padding: 0 20%;
   transition: all 300ms ease;
   color: ${colors.bodyContrast};
-  background-color: ${colors.bodyTint};
+  background-color: ${colors.card};
   &:hover {
     border: 2px solid ${colors.primary};
   }

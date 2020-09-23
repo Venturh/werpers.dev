@@ -7,11 +7,15 @@ import Skills from "sections/portfolio/Skills";
 import Contact from "sections/portfolio/Contact";
 
 import { breakpoints } from "styles";
-import { getAllExperiences, getAllProjects } from "lib/prismic";
+import {
+  getAllExperiences,
+  getAllProjects,
+  getAllRessources,
+} from "lib/prismic";
 
-const Portfolio = ({ projects, experiences }) => (
+const Portfolio = ({ projects, experiences, ressources }) => (
   <Layout>
-    <Start projects={projects} />
+    <Start projects={projects} ressources={ressources} />
     <Expertise>
       <Experience experiences={experiences} />
       <Skills />
@@ -24,12 +28,14 @@ export default Portfolio;
 export async function getStaticProps({ lang }) {
   const projects = await getAllProjects(lang);
   const experiences = await getAllExperiences(lang);
+  const ressources = await getAllRessources(lang);
   return {
     props: {
       projects,
       experiences,
-      revalidate: 1,
+      ressources,
     },
+    revalidate: 1,
   };
 }
 

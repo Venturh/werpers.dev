@@ -15,7 +15,14 @@ const options = {
 };
 
 const ProjectFilter = ({ onFilter, projects }) => {
-  const filters = ["React", "Vue", "Electron", "Gatsby", "TypeScript"];
+  const filters = [
+    "React",
+    "Vue",
+    "Next.js",
+    "Gatsby",
+    "Electron",
+    "TypeScript",
+  ];
 
   const [appliedFilters, setAppliedFilters] = useState([]);
   const [searchFilter, setSearchFilter] = useState("");
