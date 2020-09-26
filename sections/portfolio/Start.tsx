@@ -186,6 +186,6 @@ const RessourceCards = styled.div`
   margin-top: 0.5em;
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-template-rows: 20vh;
+  grid-template-rows: 12em;
   gap: 0.5em;
 `;

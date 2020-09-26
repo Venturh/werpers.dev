@@ -45,10 +45,7 @@ const Content = styled.a`
   padding: 0.5em 0;
 `;
 const CardInfo = styled.div`
-  width: 70%;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const Description = styled(Text)`
