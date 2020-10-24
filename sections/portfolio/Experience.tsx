@@ -51,7 +51,7 @@ const Experiences = styled.div`
 
 const StyledTimelineCards = styled.div`
   display: flex;
-  align-items:center;
+  align-items: center;
   height: 100%;
   //line
   &:not(:last-child):before {

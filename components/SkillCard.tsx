@@ -1,51 +1,55 @@
 import styled from "styled-components";
 
 import Icon from "./Icon";
-import { Caption, Text } from "./Typography";
+import { Caption, Subtitle, Text, ButtonText } from "./Typography";
 
 import { card3 } from "styles";
 
-const SkillCard = ({ title, skills }) => (
-  <Card>
-    <Text>{title}</Text>
-    <Skills>
-      {skills.map((skill: { icon: string; name: string }) => (
-        <Skill key={skill.name}>
-          <Icon color="primary" size="1.5em" path={skill.icon} />
-          <Caption style={{ paddingTop: "0.25em" }}>{skill.name}</Caption>
+const SkillCard = ({ type, skills }) => (
+  <Section>
+    <Subtitle style={{ marginBottom: "0.5em" }}>{type}</Subtitle>
+    <SkillSection>
+      {skills.map(({ name, icon }) => (
+        <Skill key={name}>
+          <Icon color="primary" size="1.5em" path={icon} />
+          <ButtonText style={{ paddingTop: "0.25em" }}>{name}</ButtonText>
         </Skill>
       ))}
-    </Skills>
-  </Card>
+    </SkillSection>
+  </Section>
 );
 
 export default SkillCard;
 
-const Card = styled.div`
-  ${card3}
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 6em;
-  padding-left: 0.5em;
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    height: 4em;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1em;
+const Section = styled.div`
+  width: 100%;
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    text-align: center;
   }
 `;
 
-const Skills = styled.div`
-  margin-top: 0.5em;
-  display: flex;
+const SkillSection = styled.div`
+  margin-bottom: 0.5em;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+
+  grid-gap: 0.75em 0.5em;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    grid-template-columns: repeat(4, 25%);
+  }
 `;
 
 const Skill = styled.div`
-  margin: 0 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${card3};
+  border-radius: 0.75em;
+  padding: 0.5em 0.2em;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding: 0.5em 2em;
+  }
 `;

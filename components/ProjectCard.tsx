@@ -42,7 +42,7 @@ const Content = styled.a`
   align-items: center;
   ${card3}
   width: 100%;
-  padding: 0.5em 0;
+  padding: 0.5em 0.75em;
 `;
 const CardInfo = styled.div`
   width: 100%;
@@ -63,6 +63,9 @@ const Bottom = styled.div`
 `;
 
 const Flairs = styled.div`
-  display: flex;
-  gap: 0.25em;
+  display: none;
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
+    display: flex;
+    gap: 0.25em;
+  }
 `;

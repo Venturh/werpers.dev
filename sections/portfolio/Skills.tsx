@@ -12,11 +12,17 @@ const Skills = () => {
       <Subheader style={{ alignSelf: "center", marginBottom: "0.5em" }}>
         {t("common:skills")}
       </Subheader>
-      {skills.map(({ type, skills }) => (
-        <Section key={type}>
-          <SkillCard title={t(`common:${type}`)} skills={skills} />
-        </Section>
-      ))}
+      {skills.map(
+        ({
+          type,
+          skills,
+        }: {
+          type: string;
+          skills: { name: string; icon: string }[];
+        }) => (
+          <SkillCard type={t(`common:${type}`)} skills={skills} />
+        )
+      )}
     </Wrapper>
   );
 };
@@ -29,9 +35,4 @@ const Wrapper = styled.section`
   @media (min-width: ${breakpoints.lg}) {
     width: 40%;
   }
-`;
-
-const Section = styled.div`
-  width: 100%;
-  margin-bottom: 0.5em;
 `;
