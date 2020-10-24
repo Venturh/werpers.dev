@@ -21,7 +21,7 @@ const Search = ({ callback }: SearchProps) => {
 
   return (
     <Wrapper>
-      <Searchs path={SearchIcon} size="1.2em" color="primary" />
+      <StyledSearchIcon path={SearchIcon} size="1.1em" color="primary" />
       <Input
         type="text"
         placeholder={t("common:search")}
@@ -40,10 +40,10 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Searchs = styled(Icon)`
+const StyledSearchIcon = styled(Icon)`
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: 22.5%;
+  left: 0.5em;
   z-index: 1;
 `;
 
@@ -52,7 +52,7 @@ const Input = styled.input`
   border-radius: 0.25em;
   height: 2em;
   width: 100%;
-  padding: 0 20%;
+  padding: 0 2em;
   transition: all 300ms ease;
   color: ${colors.bodyContrast};
   background-color: ${colors.card};

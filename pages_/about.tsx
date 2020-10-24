@@ -38,7 +38,7 @@ const About = () => {
             <Title as="h2">{t("about:subtitle")}</Title>
             <Text style={{ marginTop: "0.5em" }}>
               {t("about:1")}
-              <CustomLink underline to="https://clickbar.dev/" color="primary">
+              <CustomLink underline to="https://clickbar.dev/">
                 <Span color="primary">clickbar.dev</Span>
               </CustomLink>
               {" " + t("about:2")}

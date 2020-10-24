@@ -53,6 +53,7 @@ const StyledTimelineCards = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+
   //line
   &:not(:last-child):before {
     content: "";
@@ -85,7 +86,7 @@ const StyledTimelineCards = styled.div`
 `;
 
 const LineWrapper = styled.span`
-  width: 100%;
+  width: 90%;
   //circle
   span {
     position: relative;

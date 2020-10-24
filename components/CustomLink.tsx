@@ -50,27 +50,11 @@ const CustomLink: React.FC<Props> = ({
 
 export default CustomLink;
 
-const underline = css`
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  bottom: -1.25px;
-  left: 0;
-  background: ${colors.primary};
-  transition: background 300ms ease;
-`;
-
 const A = styled.a<LinkProps>`
   display: inline-block;
   position: relative;
   cursor: pointer;
-  /* text-decoration: ${(p) => (p.underline ? "underline" : "inherit")}; */
-  ::after {
-    ${(p) => (p.underline ? underline : null)};
-  }
-
+  border-bottom: ${(p) => (p.underline ? `0.5px solid ${colors.primary}` : "")};
   ${Text} {
     color: ${(p) =>
       p.active === true

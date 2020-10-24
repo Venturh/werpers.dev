@@ -108,7 +108,7 @@ const List = styled.div`
       display: table-cell;
     }
   }
-  @media (min-width: ${breakpoints.lg}) {
+  @media (min-width: ${breakpoints.xl}) {
     width: 70%;
   }
 `;

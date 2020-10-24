@@ -68,7 +68,7 @@ export const colors: Colors = {
   primaryContrast: "#292929",
   primaryGlow: "#b0fbbc",
   body: "#1A202C;",
-  bodyContrast: "#FFFFFF",
+  bodyContrast: "#DBE0E8",
   bodyGlow: "#272932",
   card: "#212732",
   bodyTint: "#12131a",

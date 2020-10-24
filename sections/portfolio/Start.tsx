@@ -28,7 +28,6 @@ type Props = {
 };
 
 const Start = ({ projects, ressources }) => {
-  console.log("Start -> ressources", ressources);
   const { t } = useTranslation();
   return (
     <Wrapper>
@@ -64,20 +63,19 @@ const Start = ({ projects, ressources }) => {
           </ProjectsCards>
         </Projects>
         <SocialsBlog>
-          <Ressources>
+          {/* <Ressources>
             <HeadWithButton>
               <Subheader> {t("common:ressources")}</Subheader>
-              {/* <PrimaryButton to="/projects" rightIcon={ArrowRightS}>
+              <PrimaryButton to="/projects" rightIcon={ArrowRightS}>
                 {t("common:showmore")}
-              </PrimaryButton> */}
+              </PrimaryButton>
             </HeadWithButton>
             <RessourceCards>
               {ressources.map(({ node: ressource }: Ressource) => {
-                console.log("Start -> ressource", ressource);
                 return <RessourceCard key={ressource.name} {...ressource} />;
               })}
             </RessourceCards>
-          </Ressources>
+          </Ressources> */}
           <Social>
             <Subheader>{t("common:socialsTitle")}</Subheader>
             <Socials />

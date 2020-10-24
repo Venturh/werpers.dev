@@ -27,7 +27,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     const articles = await getAllProjects("de");
-    console.log("if -> articles", articles);
     articles.map((project) => {
       smStream.write({
         url: `/projects/${project.slug}`,

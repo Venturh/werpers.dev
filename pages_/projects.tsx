@@ -61,7 +61,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 2em;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
     flex-direction: row;
     justify-content: space-between;
   }

@@ -20,7 +20,7 @@ const Skills = () => {
           type: string;
           skills: { name: string; icon: string }[];
         }) => (
-          <SkillCard type={t(`common:${type}`)} skills={skills} />
+          <SkillCard key={type} type={t(`common:${type}`)} skills={skills} />
         )
       )}
     </Wrapper>

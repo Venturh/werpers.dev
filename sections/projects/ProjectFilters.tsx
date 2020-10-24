@@ -80,7 +80,7 @@ export default ProjectFilter;
 
 const Wrapper = styled.div`
   margin-bottom: 1em;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
     width: 25%;
     margin-bottom: 0;
   }
@@ -90,6 +90,7 @@ const Filters = styled.div`
   margin-top: 1em;
   display: flex;
   width: 100%;
+  gap: 0.3em;
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
