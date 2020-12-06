@@ -1,7 +1,7 @@
 {
-  "title": "Über mich",
-  "subtitle": "Entwickler - Student",
-  "1": "Hallo ich bin Maximilian Werpers aus Wiesbaden. Ich arbeite derzeit Vollzeit bei ",
+  "about": "Über mich",
+  "aboutSub": "Entwickler - Student",
+  "1": "Hey ich bin Maximilian Werpers aus Wiesbaden. Ich arbeite derzeit Vollzeit bei ",
   "2": "als Praktikant in der Fullstack Web Entwicklung und studiere Medieninformatik im siebten Semester.",
   "3": "Während des Studiums habe ich meine Leidenschaft für die Webentwicklung entdeckt und verfolge in meiner Freizeit meine eigenen kleinen Projekte um weitere Konzepte und Ideen zu entwickeln und zu verfolgen.  Die komplette Liste der Projekte an denen ich gearbeitet habe befindet sich ",
   "here": "hier."

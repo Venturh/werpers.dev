@@ -1,13 +1,13 @@
-import { NextSeo } from "next-seo";
+import { NextSeo } from 'next-seo';
 
-import { Layout } from "components";
-import Hero from "sections/project/Hero";
+import { Layout } from 'components';
+import Hero from 'sections/project/Hero';
 
 import {
   getAllProjects,
   getProjectBySlug,
   Project as ProjectType,
-} from "lib/prismic";
+} from 'lib/prismic';
 
 type ProjectProps = {
   project: ProjectType;
@@ -29,7 +29,7 @@ const Project = ({ project, github }: ProjectProps) => {
           title,
           description,
           url,
-          type: "website",
+          type: 'website',
         }}
       />
       <Layout>
@@ -41,26 +41,33 @@ const Project = ({ project, github }: ProjectProps) => {
 
 export default Project;
 
-export async function getStaticProps({ params, lang }) {
+export async function getStaticProps({ params, locale }) {
   const { slug } = params;
-  const project = await getProjectBySlug(lang, slug);
+
+  const project = await getProjectBySlug(locale, slug);
   const userReposResponse = await fetch(
     `https://api.github.com/repos/venturh/${project.gitname}`
   );
 
   const github = await userReposResponse.json();
 
-  return {
-    props: { project, github },
-    revalidate: 1,
-  };
+  return { props: { project, github }, revalidate: 1 };
 }
 
-export async function getStaticPaths({ lang }) {
-  const projects = await getAllProjects(lang);
+export async function getStaticPaths({ locales }) {
+  const projects = {
+    de: await getAllProjects(locales[0]),
+    en: await getAllProjects(locales[1]),
+  };
 
   return {
-    paths: projects.map(({ slug }) => `/${lang}/projects/${slug}`) || [],
+    paths: locales
+      .map((locale: 'en' | 'de') => {
+        return projects[locale].map((page) => {
+          return { params: { slug: page.slug }, locale };
+        });
+      })
+      .flat(),
     fallback: false,
   };
 }

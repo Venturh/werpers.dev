@@ -1,9 +1,12 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projekte",
+  "projectsSub": "Eine Auswahl meiner neusten Projekte.",
   "about": "Über",
   "skills": "Fähigkeiten",
+  "skillsSub": "Meine meistgenutzen Technologien, mit denen ich Erfahrung gesammelt habe.",
   "experience": "Erfahrung",
+  "experienceSub": "Meine Erfahrungen, zusammengefasst.",
   "ressources": "Ressourcen",
   "pill": "Derzeit nicht verfügbar",
   "hey": "Hey ich bin",

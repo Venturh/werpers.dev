@@ -1,145 +1,57 @@
-import styled from "styled-components";
-import useTranslation from "next-translate/useTranslation";
-import { Button, Span, Subtitle, Text } from "components";
+import useTranslation from 'next-translate/useTranslation';
 
-import { ArrowRightUp, Github, LinkOut } from "icons";
-import { breakpoints } from "styles";
-import { Projects } from "lib/prismic";
+import { Project } from 'lib/prismic';
+import { ArrowRightUp, Github, LinkOut } from 'icons';
+import { IconButton } from 'components';
 
-const ProjectList = ({ projects }: Projects) => {
+const ProjectList = ({ projects }) => {
   const { t } = useTranslation();
   return (
-    <List>
-      <Table>
-        <thead>
-          <tr>
-            <Subtitle as="th" color="primary">
-              Name
-            </Subtitle>
-            <Subtitle as="th" className="hide-on-mobile" color="primary">
-              {t("common:buildUsing")}
-            </Subtitle>
+    <table className="w-full">
+      <thead>
+        <tr className="w-full text-left text-brand">
+          <th>Name</th>
+          <th className="hidden lg:table-cell"> {t('common:buildUsing')}</th>
+          <th>{t('common:year')}</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        {projects.map(
+          ({ name, year, buildWith, url, giturl, slug }: Project) => {
+            return (
+              <tr key={name}>
+                <td>
+                  <span>{name}</span>
+                </td>
+                <td className="hidden lg:table-cell">
+                  {buildWith.map((field, i) => (
+                    <span key={field.type}>
+                      {field.type}
+                      {i !== buildWith.length - 1 && <span> - </span>}
+                    </span>
+                  ))}
+                </td>
 
-            <Subtitle as="th" className="hide-on-mobile" color="primary">
-              {t("common:progress")}
-            </Subtitle>
-
-            <Subtitle as="th" color="primary">
-              {t("common:year")}
-            </Subtitle>
-
-            <Subtitle as="th" color="primary">
-              Links
-            </Subtitle>
-          </tr>
-        </thead>
-        <tbody>
-          {projects.map(
-            ({ name, year, progress, buildWith, url, giturl, slug }) => {
-              return (
-                <tr key={name}>
-                  <Title>
-                    <Subtitle as="h3">{name}</Subtitle>
-                  </Title>
-                  <Techs>
-                    {buildWith.map((field, i) => (
-                      <Span key={field.type}>
-                        {field.type}
-                        {i !== buildWith.length - 1 && <Span> - </Span>}
-                      </Span>
-                    ))}
-                  </Techs>
-
-                  <Progress className="hide-on-mobile">
-                    <Text>{progress}</Text>
-                  </Progress>
-                  <Year>{year}</Year>
-                  <Links>
-                    <Button
-                      hover
-                      to={`/projects/${slug}`}
-                      color="bodyContrast"
-                      iconSize="1.25em"
-                      leftIcon={ArrowRightUp}
-                    />
-                    <Button
-                      hover
-                      out
-                      to={giturl}
-                      color="bodyContrast"
-                      iconSize="1.25em"
-                      leftIcon={Github}
-                    />
-                    {url ? (
-                      <Button
-                        hover
-                        out
-                        to={url}
-                        color="bodyContrast"
-                        leftIcon={LinkOut}
-                        iconSize="1.25em"
-                      />
-                    ) : null}
-                  </Links>
-                </tr>
-              );
-            }
-          )}
-        </tbody>
-      </Table>
-    </List>
+                <td>{year}</td>
+                <td className="flex space-x-2">
+                  <IconButton
+                    rounded
+                    to={`/projects/${slug}`}
+                    icon={ArrowRightUp}
+                  />
+                  <IconButton rounded out to={giturl} icon={Github} />
+                  {url ? (
+                    <IconButton rounded out to={url} icon={LinkOut} />
+                  ) : null}
+                </td>
+              </tr>
+            );
+          }
+        )}
+      </tbody>
+    </table>
   );
 };
 
 export default ProjectList;
-
-const List = styled.div`
-  th {
-    text-align: left;
-    padding: 0;
-  }
-  td {
-    padding: 0.25em 0em;
-    cursor: default;
-  }
-  .hide-on-mobile {
-    display: none;
-    @media (min-width: ${breakpoints.md}) {
-      display: table-cell;
-    }
-  }
-  @media (min-width: ${breakpoints.xl}) {
-    width: 70%;
-  }
-`;
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-`;
-const Title = styled.td`
-  width: 40%;
-  @media (min-width: ${breakpoints.md}) {
-    width: 20%;
-  }
-`;
-const Year = styled.td`
-  width: 30%;
-  @media (min-width: ${breakpoints.md}) {
-    width: 10%;
-  }
-`;
-
-const Progress = styled.td`
-  width: 20%;
-`;
-
-const Techs = styled.td`
-  display: none;
-  @media (min-width: ${breakpoints.md}) {
-    display: table-cell;
-    width: 35%;
-  }
-`;
-const Links = styled.td`
-  display: flex;
-`;

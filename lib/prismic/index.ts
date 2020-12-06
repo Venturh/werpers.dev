@@ -1,4 +1,4 @@
-import { fetchAPI } from "./prismic-configuration";
+import { fetchAPI } from './prismic-configuration';
 
 export interface Project {
   name: string;
@@ -14,8 +14,14 @@ export interface Project {
   buildWith?: [{ type: string; icon: string }];
 }
 
-export interface Projects {
-  projects: Project[];
+export interface Careers {
+  company: string;
+  url: string;
+  description: string;
+  end_time: string;
+  start_time: string;
+  type: string;
+  used?: [{ used: string }];
 }
 
 export interface Ressource {
@@ -27,7 +33,7 @@ export interface Ressources {
 }
 
 export const getAllProjects = async (lang: string) => {
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
+  const locale = `${lang}-${lang === 'de' ? 'de' : 'gb'}`;
   const data = await fetchAPI(
     `
     {
@@ -91,7 +97,7 @@ export const getAllProjects = async (lang: string) => {
 };
 
 export const getProjectBySlug = async (lang: string, slug: string) => {
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
+  const locale = `${lang}-${lang === 'de' ? 'de' : 'gb'}`;
   const { allProjects } = await fetchAPI(
     `
     {
@@ -158,7 +164,7 @@ export const getProjectBySlug = async (lang: string, slug: string) => {
 };
 
 export const getAllExperiences = async (lang: string) => {
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
+  const locale = `${lang}-${lang === 'de' ? 'de' : 'gb'}`;
   const experiences = await fetchAPI(
     `
     {
@@ -180,7 +186,7 @@ export const getAllExperiences = async (lang: string) => {
 };
 
 export const getAllRessources = async (lang: string) => {
-  const locale = `${lang}-${lang === "de" ? "de" : "gb"}`;
+  const locale = `${lang}-${lang === 'de' ? 'de' : 'gb'}`;
   const { allRessources } = await fetchAPI(
     `
     {
@@ -198,4 +204,47 @@ export const getAllRessources = async (lang: string) => {
     {}
   );
   return allRessources.edges;
+};
+
+export const getAllCareers = async (lang: string) => {
+  const locale = `${lang}-${lang === 'de' ? 'de' : 'gb'}`;
+  const { allCareers } = await fetchAPI(
+    `
+    {
+      allCareers(lang: "${locale}") {
+        edges {
+          node {
+            company
+            url
+            start_time
+            end_time
+            type
+            description
+            body {
+              ... on CareerBodyUsed {
+                fields {
+                  used
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {}
+  );
+  return allCareers.edges.map(
+    ({
+      node: { company, url, description, end_time, start_time, type, body },
+    }) => ({
+      company,
+      url,
+      description,
+      end_time,
+      start_time,
+      type,
+      used: body[0].fields,
+    })
+  );
 };

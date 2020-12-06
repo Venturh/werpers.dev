@@ -1,50 +1,22 @@
-import styled from "styled-components";
+import Navigation from './Navigation';
+import Footer from './Footer';
+import clsx from 'clsx';
 
-import Navigation from "./Navigation";
-import Footer from "./Footer";
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+};
 
-import { breakpoints, spacing } from "../styles";
-
-type Props = { small?: boolean };
-
-const Layout: React.FC<Props> = ({ children, ...props }) => {
+const Layout = ({ children, className }: Props) => {
   return (
-    <Wrapper>
+    <main className="flex flex-col items-center min-h-screen mx-auto space-y-4 text-base max-w-xsm lg:text-lg lg:max-w-4xl">
       <Navigation />
-      <Content {...props}>{children}</Content>
+      <div className={clsx(className, 'md:max-w-2xl flex flex-col flex-auto')}>
+        {children}
+      </div>
       <Footer />
-    </Wrapper>
+    </main>
   );
 };
 
 export default Layout;
-
-const Wrapper = styled.div`
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  min-height: 100vh;
-
-  padding: 0 ${spacing.xs.sides};
-
-  @media (min-width: ${breakpoints.lg}) {
-    margin: 0;
-    padding: 0 ${spacing.md.sides};
-  }
-
-  @media (min-width: ${breakpoints.xl}) {
-    margin: 0;
-    padding: 0 ${spacing.lg.sides};
-  }
-`;
-
-const Content = styled.main<Props>`
-  position: relative;
-  min-height: calc(100vh - 9em);
-  padding: 2em 0;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    padding: ${(p) => (p.small ? "2em 18%" : "2em 0")};
-  }
-`;

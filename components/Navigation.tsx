@@ -1,117 +1,50 @@
-import styled from "styled-components";
-import useTranslation from "next-translate/useTranslation";
+import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 
-import CustomLink from "./CustomLink";
-import LanguageSwitch from "./LanguageSwitch";
-import Pill from "./Pill";
-import { Title, Text, Span } from "./Typography";
+import Link from './Link';
+import LanguageSwitch from './LanguageSwitch';
 
-import { breakpoints, colors, spacing } from "styles";
-import { navlinks } from "content";
-import Button from "./Button";
+import { navlinks } from 'content';
+
+import ThemeColorToggle from './ThemeColorToggle';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const { t } = useTranslation();
+  const { pathname } = useRouter();
 
   return (
-    <Nav>
-      <Left>
-        <CustomLink to="/" nav>
-          <DesktopLogo>
-            <Title color="primary">max</Title>
-            <Title color="bodyContrast">werpers</Title>
-          </DesktopLogo>
-          <MobileLogo>
-            <Text color="primary">
-              M<Span color="bodyContrast">W</Span>
-            </Text>
-          </MobileLogo>
-        </CustomLink>
-        <InfoPill>{t(`common:pill`)}</InfoPill>
-      </Left>
-      <NavItems>
-        <NavLinks>
-          {navlinks.map(({ name, to }) => (
-            <StyledLink key={name} nav to={`${to}`}>
-              <Text color="bodyContrast">{t(`common:${name}`)}</Text>
-            </StyledLink>
-          ))}
-        </NavLinks>
-        <NavTools>
+    <nav className="flex items-center justify-between w-full h-12">
+      <Link to="/">
+        <div className="hidden font-semibold lg:inline-flex">
+          <span className="text-3xl text-brand">max</span>
+          <span className="text-3xl ">werpers</span>
+        </div>
+        <div className="lg:hidden">
+          <span className="text-2xl text-brand">
+            M<span className="text-2xl text-primary">W</span>
+          </span>
+        </div>
+      </Link>
+
+      <div className="flex items-center space-x-2 md:space-x-4">
+        {navlinks.map(({ name, to }) => {
+          return (
+            <Link active={pathname === to} block key={name} to={`${to}`}>
+              {t(`common:${name}`)}
+            </Link>
+          );
+        })}
+
+        <div className="flex space-x-2 space-y-1 md:space-x-4">
+          <span className="text-xl">|</span>
+          <ThemeColorToggle />
+          <ThemeToggle />
           <LanguageSwitch />
-        </NavTools>
-      </NavItems>
-    </Nav>
+        </div>
+      </div>
+    </nav>
   );
 };
 
 export default Navigation;
-
-const Nav = styled.nav`
-  font-family: "Segoe UI";
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  height: 3em;
-  background-color: ${colors.body};
-`;
-
-const Left = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const DesktopLogo = styled.div`
-  display: none;
-  @media (min-width: ${breakpoints.lg}) {
-    display: flex;
-    align-items: center;
-  }
-`;
-
-const MobileLogo = styled.div`
-  height: 3em;
-  display: flex;
-  align-items: center;
-  @media (min-width: ${breakpoints.lg}) {
-    display: none;
-  }
-`;
-
-const InfoPill = styled(Pill)`
-  display: none;
-  @media (min-width: ${breakpoints.lg}) {
-    display: inline;
-    margin-left: 1em;
-  }
-`;
-
-const NavItems = styled.div`
-  display: flex;
-`;
-
-const NavLinks = styled.div`
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-  & > * {
-    margin-right: 0.25em;
-  }
-`;
-
-const StyledLink = styled(CustomLink)`
-  padding: 0.5em 0.5em;
-  border-radius: 0.5em;
-  :hover {
-    background: ${colors.bodyGlow};
-  }
-`;
-
-const NavTools = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 0.5em;
-`;

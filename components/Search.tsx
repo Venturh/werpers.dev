@@ -1,66 +1,40 @@
-import { useState } from "react";
-import styled from "styled-components";
-import useTranslation from "next-translate/useTranslation";
+import { useState } from 'react';
+import useTranslation from 'next-translate/useTranslation';
 
-import Icon from "./Icon";
+import Icon from './Icon';
 
-import { Search as SearchIcon } from "icons";
-import { colors } from "styles";
+import { Search as SearchIcon } from 'icons';
 
-type SearchProps = {
+type Props = {
   callback: Function;
 };
 
-const Search = ({ callback }: SearchProps) => {
+const Search = ({ callback }: Props) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
   const search = (toSearch: string) => {
     setValue(toSearch);
     callback(toSearch);
   };
 
   return (
-    <Wrapper>
-      <StyledSearchIcon path={SearchIcon} size="1.1em" color="primary" />
-      <Input
+    <div className="inline-flex flex-1 w-full overflow-hidden rounded-lg bg-secondary ">
+      <Icon
+        className="m-4 fill-current bg-secondary text-brand"
+        path={SearchIcon}
+        colored
+      />
+      <input
+        className="flex-1 w-full bg-secondary "
         type="text"
-        placeholder={t("common:search")}
+        placeholder={t('common:search')}
         value={value}
         onChange={(e: React.FormEvent<HTMLInputElement>) =>
           search(e.currentTarget.value)
         }
       />
-    </Wrapper>
+    </div>
   );
 };
 
 export default Search;
-
-const Wrapper = styled.div`
-  position: relative;
-`;
-
-const StyledSearchIcon = styled(Icon)`
-  position: absolute;
-  top: 22.5%;
-  left: 0.5em;
-  z-index: 1;
-`;
-
-const Input = styled.input`
-  border: 2px solid transparent;
-  border-radius: 0.25em;
-  height: 2em;
-  width: 100%;
-  padding: 0 2em;
-  transition: all 300ms ease;
-  color: ${colors.bodyContrast};
-  background-color: ${colors.card};
-  &:hover {
-    border: 2px solid ${colors.primary};
-  }
-  &:focus {
-    border: 2px solid ${colors.primary};
-    outline: 0;
-  }
-`;

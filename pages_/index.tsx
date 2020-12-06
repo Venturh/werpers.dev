@@ -1,51 +1,38 @@
-import styled from "styled-components";
-
-import { Layout } from "components";
-import Start from "sections/portfolio/Start";
-import Experience from "sections/portfolio/Experience";
-import Skills from "sections/portfolio/Skills";
-import Contact from "sections/portfolio/Contact";
-
-import { breakpoints } from "styles";
+import { Layout } from 'components';
+import { getAllCareers, getAllExperiences, getAllProjects } from 'lib/prismic';
 import {
-  getAllExperiences,
-  getAllProjects,
-  getAllRessources,
-} from "lib/prismic";
+  Projects,
+  PortfolioHero as Hero,
+  Career,
+  Skills,
+  About,
+} from 'sections';
 
-const Portfolio = ({ projects, experiences, ressources }) => (
-  <Layout>
-    <Start projects={projects} ressources={ressources} />
-    <Expertise>
-      <Experience experiences={experiences} />
+const Portfolio = ({ projects, career }) => {
+  return (
+    <Layout className="space-y-4">
+      <Hero />
+      <Projects projects={projects} />
+      <Career career={career} />
       <Skills />
-    </Expertise>
-    <Contact />
-  </Layout>
-);
+      <About />
+    </Layout>
+  );
+};
 export default Portfolio;
 
-export async function getStaticProps({ lang }) {
-  const projects = await getAllProjects(lang);
-  const experiences = await getAllExperiences(lang);
-  const ressources = await getAllRessources(lang);
+export async function getStaticProps({ locale }) {
+  const projects = await getAllProjects(locale);
+  const experiences = await getAllExperiences(locale);
+  const career = await getAllCareers(locale);
   return {
     props: {
+      getStaticPropsWorks: true,
+      lang: locale,
       projects,
       experiences,
-      ressources,
+      career,
     },
     revalidate: 1,
   };
 }
-
-const Expertise = styled.section`
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-
-  @media (min-width: ${breakpoints.lg}) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;

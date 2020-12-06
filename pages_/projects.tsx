@@ -1,23 +1,19 @@
-import { useState } from "react";
-import { NextSeo } from "next-seo";
-import useTranslation from "next-translate/useTranslation";
+import { useState } from 'react';
+import { NextSeo } from 'next-seo';
+import useTranslation from 'next-translate/useTranslation';
 
-import Layout from "components/Layout";
-import ProjectList from "sections/projects/ProjectList";
-import ProjectFilter from "sections/projects/ProjectFilters";
+import Layout from 'components/Layout';
+import ProjectList from 'sections/projects/ProjectList';
+import ProjectFilter from 'sections/projects/ProjectFilters';
 
-import styled from "styled-components";
-import { getAllProjects } from "../lib/prismic";
-import { Projects as ProjectsProps } from "lib/prismic";
-import { Header, Subtitle } from "components";
+import { getAllProjects } from '../lib/prismic';
 
-const Projects = ({ projects }: ProjectsProps) => {
+const Projects = ({ projects }) => {
   const { t } = useTranslation();
 
   const [filteredProjects, setFilteredProjects] = useState([]);
-
-  const url = "https://www.maxwerpers.me/de/projects";
-  const title = "Projekte Übersicht - Maximilian Werpers";
+  const url = 'https://www.maxwerpers.me/de/projects';
+  const title = 'Projekte Übersicht - Maximilian Werpers';
 
   return (
     <>
@@ -27,18 +23,18 @@ const Projects = ({ projects }: ProjectsProps) => {
         openGraph={{
           title,
           url,
-          type: "website",
+          type: 'website',
         }}
       />
-      <Layout>
-        <main>
-          <Header>{t("common:projects")}</Header>
-          <Subtitle as="h2">{t("common:projectsDesc")}</Subtitle>
-          <Content>
-            <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
-            <ProjectList projects={filteredProjects} />
-          </Content>
-        </main>
+      <Layout className="w-full space-y-4">
+        <div className="space-y-2">
+          <h1 className="text-4xl font-semibold text-brand">
+            {t('common:projects')}
+          </h1>
+          <h2 className="text-lg">{t('common:projectsDesc')}</h2>
+        </div>
+        <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
+        <ProjectList projects={filteredProjects} />
       </Layout>
     </>
   );
@@ -46,8 +42,8 @@ const Projects = ({ projects }: ProjectsProps) => {
 
 export default Projects;
 
-export async function getStaticProps({ lang }) {
-  const projects = await getAllProjects(lang);
+export async function getStaticProps({ locale }) {
+  const projects = await getAllProjects(locale);
 
   return {
     props: {
@@ -56,14 +52,3 @@ export async function getStaticProps({ lang }) {
     },
   };
 }
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 2em;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;

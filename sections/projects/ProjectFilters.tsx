@@ -1,7 +1,6 @@
-import styled from "styled-components";
-import Fuse from "fuse.js";
-import { Filter, Search } from "components";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import Fuse from 'fuse.js';
+import { Filter, Search } from 'components';
 
 const options = {
   shouldSort: true,
@@ -11,21 +10,21 @@ const options = {
   maxPatternLength: 32,
   minMatchCharLength: 1,
   useExtendedSearch: true,
-  keys: ["buildWith.type", "name"],
+  keys: ['buildWith.type', 'name'],
 };
 
 const ProjectFilter = ({ onFilter, projects }) => {
   const filters = [
-    "React",
-    "Vue",
-    "Next.js",
-    "Gatsby",
-    "Electron",
-    "TypeScript",
+    'React',
+    'Vue',
+    'Next.js',
+    'Gatsby',
+    'Electron',
+    'TypeScript',
   ];
 
   const [appliedFilters, setAppliedFilters] = useState([]);
-  const [searchFilter, setSearchFilter] = useState("");
+  const [searchFilter, setSearchFilter] = useState('');
 
   const handleSearch = (name: string) => {
     if (searchFilter) {
@@ -34,7 +33,7 @@ const ProjectFilter = ({ onFilter, projects }) => {
       );
     }
     setSearchFilter(name);
-    if (name === "") return;
+    if (name === '') return;
     filterByTag(name);
   };
 
@@ -55,51 +54,47 @@ const ProjectFilter = ({ onFilter, projects }) => {
       return;
     }
     const fuse = new Fuse(projects, options);
-    const test = appliedFilters.join(" | ");
-    const result = fuse.search(test).map((item) => item.item);
+    const result = fuse
+      .search(appliedFilters.join(' | '))
+      .map((item) => item.item);
     onFilter(result);
   }, [appliedFilters]);
 
   return (
-    <Wrapper>
+    <div className="space-y-4">
       <Search callback={(name: string) => handleSearch(name)} />
-      <Filters>
-        {filters.map((filter) => (
+      <div
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex space-x-2 overflow-x-scroll "
+      >
+        {filters.map((filter: string) => (
           <Filter
             key={filter}
             name={filter}
             callback={(name: string) => filterByTag(name)}
           />
         ))}
-      </Filters>
-    </Wrapper>
+      </div>
+    </div>
   );
 };
 
 export default ProjectFilter;
 
-const Wrapper = styled.div`
-  margin-bottom: 1em;
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    width: 25%;
-    margin-bottom: 0;
-  }
-`;
-
-const Filters = styled.div`
-  margin-top: 1em;
-  display: flex;
-  width: 100%;
-  gap: 0.3em;
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    gap: 0.5em;
-  }
-`;
+// const Filters = styled.div`
+//   margin-top: 1em;
+//   display: flex;
+//   width: 100%;
+//   gap: 0.3em;
+//   overflow-x: scroll;
+//   -ms-overflow-style: none;
+//   scrollbar-width: none;
+//   ::-webkit-scrollbar {
+//     display: none;
+//   }
+//   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
+//     flex-wrap: wrap;
+//     overflow-x: visible;
+//     gap: 0.5em;
+//   }
+// `;

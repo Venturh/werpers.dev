@@ -1,38 +1,40 @@
-import styled from "styled-components";
-import useTranslation from "next-translate/useTranslation";
+import useTranslation from 'next-translate/useTranslation';
 
-import { SkillCard, Subheader } from "components";
+import { Skill } from 'components';
 
-import { breakpoints } from "styles";
-import { skills } from "content";
+import { skills } from 'content';
+import SectionHeader from 'components/SectionHeader';
 const Skills = () => {
   const { t } = useTranslation();
   return (
-    <Wrapper>
-      <Subheader style={{ alignSelf: "center", marginBottom: "0.5em" }}>
-        {t("common:skills")}
-      </Subheader>
-      {skills.map(
-        ({
-          type,
-          skills,
-        }: {
-          type: string;
-          skills: { name: string; icon: string }[];
-        }) => (
-          <SkillCard key={type} type={t(`common:${type}`)} skills={skills} />
-        )
-      )}
-    </Wrapper>
+    <div className="space-y-2">
+      <SectionHeader
+        title={t('common:skills')}
+        subtitle={t('common:skillsSub')}
+      />
+
+      <div className="grid space-y-2 lg:items-center grid-row-2 lg:grid-cols-2">
+        {skills.map(
+          ({
+            type,
+            skills,
+          }: {
+            type: string;
+            skills: { name: string; icon: string }[];
+          }) => (
+            <div key={type} className="space-y-3">
+              <p className="lg:text-lg text-brand">{t(`common:${type}`)}</p>
+              <div className="flex space-x-4">
+                {skills.map((skill) => (
+                  <Skill key={skill.name} {...skill} />
+                ))}
+              </div>
+            </div>
+          )
+        )}
+      </div>
+    </div>
   );
 };
 
 export default Skills;
-
-const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: ${breakpoints.lg}) {
-    width: 40%;
-  }
-`;

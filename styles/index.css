@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  @apply dark;
+}
+
+@layer base {
+  button {
+    @apply focus:ring focus:ring-brand focus:outline-none;
+  }
+}
+
+.dark {
+  --brand: #67e8f9;
+  --brandContrast: #08090a;
+  --bg: #040405;
+  --bg-secondary: #0d1117;
+  --bg-accent: #1c1f25;
+  --text-primary: #edf2f7;
+  --text-secondary: #cbd5e0;
+  --error: #fc8181;
+  --success: #9ae6b4;
+}
+
+.light {
+  --brand: #06b6d4;
+  --brandContrast: #1b2439;
+  --bg: #ffffff;
+  --bg-secondary: #f7fafc;
+  --bg-accent: #f5f5f5;
+  --text-primary: #000000;
+  --text-secondary: #4a5568;
+  --error: #f56565;
+  --success: #97e1b0;
+}

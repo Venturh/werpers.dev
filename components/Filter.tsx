@@ -1,18 +1,10 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { ButtonText } from "./Typography";
-
-import { card3 } from "styles/common";
-import { colors } from "styles";
+import { useState } from 'react';
+import clsx from 'clsx';
 
 type FilterProps = {
   name: string;
   callback: Function;
 };
-
-interface CardProps {
-  selected: boolean;
-}
 
 const Filter = ({ name, callback, ...rest }: FilterProps) => {
   const [selected, setSelected] = useState(false);
@@ -23,25 +15,17 @@ const Filter = ({ name, callback, ...rest }: FilterProps) => {
   };
 
   return (
-    <Card selected={selected} onClick={() => select(name)} {...rest}>
-      <ButtonText>{name}</ButtonText>
-    </Card>
+    <div
+      className={clsx(
+        'p-2 text-sm inline-flex rounded-lg bg-secondary items-center justify-center cursor-pointer hover:border-brand border  ',
+        { 'border-brand ': selected, 'border-accentBg': !selected }
+      )}
+      onClick={() => select(name)}
+      {...rest}
+    >
+      <span>{name}</span>
+    </div>
   );
 };
 
 export default Filter;
-
-const Card = styled.button<CardProps>`
-  ${card3}
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: ${(p) => (p.selected ? `2px solid ${colors.primary}` : null)};
-  padding: 0 1em;
-  height: 2.5em;
-  cursor: pointer;
-  :hover {
-    border: 2px solid ${colors.primary};
-  }
-`;

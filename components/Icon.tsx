@@ -1,30 +1,34 @@
-import styled from "styled-components";
+import clsx from 'clsx';
 
-import { colors } from "styles";
-
-type IconProps = {
-  color: string;
-  size: string;
-  viewbox?: string;
+type Props = {
+  path: string;
+  viewBox?: string;
+  className?: string;
+  colored?: boolean;
+  size?: 'sm' | 'md' | 'lg';
 };
 
 const Icon = ({
   path,
-  color = "primary",
-  size = "1em",
-  viewbox = "0 0 24 24",
-  ...rest
-}) => {
+  viewBox = '0 0 24 24',
+  className,
+  colored,
+  size,
+}: Props) => {
   return (
-    <StyledIcon color={color} size={size} viewBox={viewbox} {...rest}>
+    <svg
+      viewBox={viewBox}
+      className={clsx(className, {
+        'fill-current text-primary ': !colored,
+        'w-4 ': size === 'sm',
+        'h-5': size === undefined,
+        'h-6': size === 'md',
+        'w-7 ': size === 'lg',
+      })}
+    >
       <path d={path} />
-    </StyledIcon>
+    </svg>
   );
 };
-
-const StyledIcon = styled.svg<IconProps>`
-  fill: ${(p) => colors[p.color]};
-  height: ${(p) => p.size};
-`;
 
 export default Icon;

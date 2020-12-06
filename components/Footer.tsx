@@ -1,24 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import Button from "./Button";
-
-import { socials } from "content";
+import { socials } from 'content';
+import IconButton from './IconButton';
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <div className="flex items-center flex-shrink-0 p-8">
       {socials.map(({ link, icon }) => (
-        <Button
-          out
-          hover
+        <IconButton
+          className="mr-8 fill-current text-secondary"
+          iconSize="lg"
           to={link}
           key={link}
-          rightIcon={icon}
-          color="bodyContrast"
-          iconSize="1.5em"
+          icon={icon}
+          colored
         />
       ))}
-    </Wrapper>
+    </div>
   );
 };
 

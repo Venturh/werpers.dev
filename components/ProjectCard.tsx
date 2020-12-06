@@ -1,71 +1,31 @@
-import styled from "styled-components";
-import Link from "next-translate/Link";
+import Link from 'next/link';
 
-import { ButtonText, Text, Title } from "./Typography";
-import Icon from "./Icon";
+import { Project } from 'lib/prismic';
+import Label from './Label';
 
-import { card3 } from "styles/common";
-import Flair from "./Flair";
-import { Project } from "lib/prismic";
+export const BaseCard = ({ children }: { children: React.ReactNode }) => (
+  <div className="relative w-full p-2 pl-6 rounded-lg bg-secondaryBg">
+    {children}
+    <span className="absolute top-0 left-0 w-1.5 h-full rounded-sm bg-brand" />
+  </div>
+);
 
-const ProjectCard = ({ name, headline, slug, icon, buildWith }: Project) => {
-  return (
-    <Link passHref href={`/projects/${slug}`}>
-      <Content>
-        <Icon
-          style={{ padding: "0 1.5em" }}
-          color="primary"
-          size="2.5em"
-          path={icon}
-        />
-        <CardInfo>
-          <Title color="primary">{name}</Title>
-          <Description color="bodyContrast">{headline}</Description>
-          <Bottom>
-            <ButtonText>Open Source</ButtonText>
-            <Flairs>
-              {buildWith.map(({ icon }) => (
-                <Flair key={icon} icon={icon} />
-              ))}
-            </Flairs>
-          </Bottom>
-        </CardInfo>
-      </Content>
+const ProjectCard = ({ name, headline, slug, buildWith }: Project) => (
+  <BaseCard>
+    <Link href={`/projects/${slug}`}>
+      <a className="space-y-2">
+        <h3 className="text-2xl"> {name}</h3>
+        <p>{headline}</p>
+        <div className="flex space-x-2">
+          {buildWith.map(({ type }) => (
+            <Label variant="default" key={type}>
+              {type}
+            </Label>
+          ))}
+        </div>
+      </a>
     </Link>
-  );
-};
+  </BaseCard>
+);
 
 export default ProjectCard;
-
-const Content = styled.a`
-  display: flex;
-  align-items: center;
-  ${card3}
-  width: 100%;
-  padding: 0.5em 0.75em;
-`;
-const CardInfo = styled.div`
-  width: 100%;
-`;
-
-const Description = styled(Text)`
-  min-height: 2.5em;
-  @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-    min-height: 1em;
-  }
-`;
-
-const Bottom = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 0.25em;
-`;
-
-const Flairs = styled.div`
-  display: none;
-  @media (min-width: ${(props) => props.theme.breakpoints.xl}) {
-    display: flex;
-    gap: 0.25em;
-  }
-`;

@@ -1,10 +1,9 @@
 {
-  "allLanguages": ["en", "de"],
-  "defaultLanguage": "de",
+  "locales": ["en", "de"],
+  "defaultLocale": "de",
   "currentPagesDir": "pages_",
   "finalPagesDir": "pages",
   "localesPath": "locales",
-  "defaultLangRedirect": "lang-path",
   "pages": {
     "*": ["common", "about"]
   }

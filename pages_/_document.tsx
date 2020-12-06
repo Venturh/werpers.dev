@@ -4,42 +4,25 @@ import NextDocument, {
   Main,
   NextScript,
   DocumentContext,
-} from "next/document";
-import { ServerStyleSheet } from "styled-components";
-import documentLang from "next-translate/documentLang";
+} from 'next/document';
+import Cookies from 'universal-cookie';
+import { DARK_MODE_COOKIE } from 'hooks/darkMode';
 
-export default class Document extends NextDocument {
-  static getInitialProps = async (ctx: DocumentContext) => {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
+type Props = {
+  theme: string;
+};
+export default class Document extends NextDocument<Props> {
+  static async getInitialProps(context: DocumentContext) {
+    const initialProps = await NextDocument.getInitialProps(context);
+    const cookies = new Cookies(context.req.headers.cookie);
+    const theme = cookies.get(DARK_MODE_COOKIE);
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await NextDocument.getInitialProps(ctx);
-
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
-  };
+    return { ...initialProps, theme };
+  }
 
   render() {
     return (
-      <Html lang={documentLang(this.props)}>
+      <Html className={this.props.theme}>
         <Head>
           <link
             rel="apple-touch-icon"
@@ -67,7 +50,7 @@ export default class Document extends NextDocument {
           <meta name="msapplication-TileColor" content="#161821" />
           <meta name="theme-color" content="#161821"></meta>
         </Head>
-        <body>
+        <body className="min-h-screen text-base text-primary bg-primary">
           <Main />
           <NextScript />
         </body>
