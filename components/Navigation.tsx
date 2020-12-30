@@ -5,8 +5,6 @@ import Link from './Link';
 import LanguageSwitch from './LanguageSwitch';
 
 import { navlinks } from 'content';
-
-import ThemeColorToggle from './ThemeColorToggle';
 import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
@@ -38,7 +36,6 @@ const Navigation = () => {
 
         <div className="flex space-x-2 space-y-1 md:space-x-4">
           <span className="text-xl">|</span>
-          <ThemeColorToggle />
           <ThemeToggle />
           <LanguageSwitch />
         </div>

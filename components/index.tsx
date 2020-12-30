@@ -15,5 +15,4 @@ export { default as ProjectCard } from './ProjectCard';
 export { default as Search } from './Search';
 export { default as SectionHeader } from './SectionHeader';
 export { default as Skill } from './Skill';
-export { default as ThemeColorToggle } from './ThemeColorToggle';
 export { default as ThemeToggle } from './ThemeToggle';

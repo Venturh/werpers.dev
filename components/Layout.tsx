@@ -9,7 +9,7 @@ type Props = {
 
 const Layout = ({ children, className }: Props) => {
   return (
-    <main className="flex flex-col items-center min-h-screen mx-auto space-y-4 text-base max-w-xsm lg:text-lg lg:max-w-4xl">
+    <main className="flex flex-col items-center min-h-screen mx-auto space-y-4 text-base max-w-xsm md:max-w-3xl lg:text-lg lg:max-w-4xl">
       <Navigation />
       <div className={clsx(className, 'md:max-w-2xl flex flex-col flex-auto')}>
         {children}

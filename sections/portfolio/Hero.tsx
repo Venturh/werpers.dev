@@ -5,7 +5,7 @@ const Hero = () => {
 
   return (
     <div className="space-y-2">
-      <h1 className="text-4xl ">
+      <h1 className="text-4xl font-semibold ">
         {t('common:hey')}{' '}
         <p className="text-4xl text-brand"> Maximilian Werpers </p>
       </h1>
