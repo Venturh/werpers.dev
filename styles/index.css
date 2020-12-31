@@ -13,7 +13,7 @@
 }
 
 .dark {
-  --brand: #67e8f9;
+  --brand: #99f6e4;
   --brandContrast: #08090a;
   --bg: #040405;
   --bg-secondary: #0d1117;
@@ -26,7 +26,7 @@
 }
 
 .light {
-  --brand: #06b6d4;
+  --brand: #5eead4;
   --brandContrast: #1b2439;
   --bg: #ffffff;
   --bg-secondary: #f7fafc;

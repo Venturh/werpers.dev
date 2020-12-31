@@ -10,7 +10,7 @@ import {
 
 const Portfolio = ({ projects, career }) => {
   return (
-    <Layout className="space-y-4">
+    <Layout className="space-y-6">
       <Hero />
       <Projects projects={projects} />
       <Career career={career} />

@@ -11,7 +11,7 @@ const CareerCard = ({
   url,
   used,
 }: Careers) => (
-  <div className="relative space-y-1">
+  <div className="relative space-y-1.5">
     <div className="flex justify-between">
       <div className="flex items-center space-x-2">
         <Label variant="brand">{type}</Label>

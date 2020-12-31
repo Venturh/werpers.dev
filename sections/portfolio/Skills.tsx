@@ -4,6 +4,7 @@ import { Skill } from 'components';
 
 import { skills } from 'content';
 import SectionHeader from 'components/SectionHeader';
+import { BaseCard } from 'components/ProjectCard';
 const Skills = () => {
   const { t } = useTranslation();
   return (
@@ -23,14 +24,12 @@ const Skills = () => {
             skills: { name: string; icon: string }[];
           }) => (
             <div key={type} className="space-y-3">
-              <p className="text-lg md:text-xl text-brand">
-                {t(`common:${type}`)}
-              </p>
-              <div className="flex space-x-4">
+              <p className="text-lg md:text-xl ">{t(`common:${type}`)}</p>
+              <BaseCard brand className="flex ">
                 {skills.map((skill) => (
                   <Skill key={skill.name} {...skill} />
                 ))}
-              </div>
+              </BaseCard>
             </div>
           )
         )}
