@@ -23,10 +23,12 @@ const Footer = () => {
     count();
   }, []);
   return (
-    <div className="flex flex-col flex-shrink-0 w-1/2 p-8 space-y-4 ">
-      <BaseCard>
-        {t('common:views')}
-        <div>{loading ? '---' : count}</div>
+    <div className="flex flex-col flex-shrink-0 w-full p-8 space-y-4 md:w-1/2 ">
+      <BaseCard barPosition="none">
+        <div className="pl-4">
+          <div>{t('common:views')}</div>
+          <div>{loading ? '---' : count}</div>
+        </div>
       </BaseCard>
       <div className="flex justify-center space-x-4 ">
         {socials.map(({ link, icon }) => (

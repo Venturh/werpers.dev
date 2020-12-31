@@ -29,7 +29,7 @@ const CareerCard = ({
         <Label key={used}>{used}</Label>
       ))}
     </div>
-    <div className="w-full my-8 border-b border-accentBg" />
+    <div className="w-full my-8 border-b-2 border-accentBg" />
   </div>
 );
 

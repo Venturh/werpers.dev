@@ -7,18 +7,27 @@ import clsx from 'clsx';
 export const BaseCard = ({
   children,
   className,
+  barPosition = 'left',
 }: {
   className?: string;
   children: React.ReactNode;
+  barPosition?: 'left' | 'bottom' | 'none';
 }) => (
   <div
     className={clsx(
-      'relative w-full p-2 pl-6 rounded-lg bg-secondaryBg ',
+      'relative w-full py-2   rounded-lg bg-secondaryBg ',
+      { 'pl-6': barPosition === 'left' },
       className
     )}
   >
     {children}
-    <div className="absolute top-0 left-0 w-1.5 h-full rounded-sm bg-brand" />
+    <div
+      className={clsx('absolute  rounded-sm bg-brand', {
+        'bottom-0 w-full h-1': barPosition === 'bottom',
+        'top-0 left-0 w-1.5 h-full': barPosition === 'left',
+        hidden: barPosition === 'none',
+      })}
+    />
   </div>
 );
 
