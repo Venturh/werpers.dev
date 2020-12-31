@@ -16,12 +16,12 @@
 This is the third version of my personal portfolio.
 I moved from gatsby to try out nextjs. The new portfolio has a more compact structure and is build to stay for years.
 
-If you want to check out my portfolio yourself you can do so [here](https://maxwerpers.me/en "Title")
+If you want to check out my portfolio yourself you can do so [here](https://maxwerpers.me/en 'Title')
 
 ## Built Using
 
 - [Next.js](https://nextjs.org/)
-- [Styled Components](https://styled-components.com/)
+- [TailwindCSS](https://tailwindcss.com/)
 - [Prismic.io](https://prismic.io/)
 - [Vercel](https://vercel.com/)
 

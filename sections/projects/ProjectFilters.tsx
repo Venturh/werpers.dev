@@ -80,21 +80,3 @@ const ProjectFilter = ({ onFilter, projects }) => {
 };
 
 export default ProjectFilter;
-
-// const Filters = styled.div`
-//   margin-top: 1em;
-//   display: flex;
-//   width: 100%;
-//   gap: 0.3em;
-//   overflow-x: scroll;
-//   -ms-overflow-style: none;
-//   scrollbar-width: none;
-//   ::-webkit-scrollbar {
-//     display: none;
-//   }
-//   @media (min-width: ${(props) => props.theme.breakpoints.lg}) {
-//     flex-wrap: wrap;
-//     overflow-x: visible;
-//     gap: 0.5em;
-//   }
-// `;

@@ -1,10 +1,8 @@
-import styled from 'styled-components';
-
+import { useTranslation } from 'next-translate';
+import { useEffect, useState } from 'react';
 import { socials } from 'content';
 import IconButton from './IconButton';
-import { useEffect, useState } from 'react';
 import { BaseCard } from './ProjectCard';
-import { useTranslation } from 'next-translate';
 
 const Footer = () => {
   const { t } = useTranslation();
