@@ -7,7 +7,7 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     async function incrViews() {
       await fetch(
-        `https://api.countapi.xyz/hit/${process.env.VIEWCOUNT_KEY}/viewcount`
+        `https://api.countapi.xyz/hit/${process.env.NEXT_PUBLIC_VIEWCOUNT_KEY}/viewcount`
       );
     }
     incrViews();

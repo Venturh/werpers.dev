@@ -14,7 +14,7 @@ const Footer = () => {
     const count = async () => {
       setLoading(true);
       const res = await fetch(
-        `https://api.countapi.xyz/get/${process.env.VIEWCOUNT_KEY}/viewcount`
+        `https://api.countapi.xyz/get/${process.env.NEXT_PUBLIC_VIEWCOUNT_KEY}/viewcount`
       );
       const json: { value: number } = await res.json();
       setCount(json.value);
