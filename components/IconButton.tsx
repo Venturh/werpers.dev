@@ -11,6 +11,7 @@ type Props = {
   colored?: boolean;
   children?: React.ReactNode;
   className?: string;
+  outlined?: boolean;
 };
 const IconButton = ({
   icon,
@@ -20,6 +21,7 @@ const IconButton = ({
   iconSize,
   colored,
   out,
+  outlined,
   className,
   children,
 }: Props) => (
@@ -35,7 +37,7 @@ const IconButton = ({
       }
     )}
   >
-    <Icon size={iconSize} path={icon} colored={colored} />
+    <Icon size={iconSize} path={icon} colored={colored} outlined={outlined} />
     {children ? <div className="mx-1">{children}</div> : null}
   </ButtonOrLink>
 );

@@ -6,7 +6,7 @@ const About = () => {
   const { t } = useTranslation();
   return (
     <div className="space-y-4 ">
-      <SectionHeader title={t('about:about')} subtitle={t('about:aboutSub')} />
+      <SectionHeader title={t('about:about')} />
       <p>
         {t('about:1')}{' '}
         <Link out underline to="https://clickbar.dev/">

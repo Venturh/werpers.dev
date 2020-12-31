@@ -5,24 +5,21 @@ import IconButton from './IconButton';
 
 const Footer = () => {
   return (
-    <div className="flex items-center flex-shrink-0 p-8">
+    <div className="flex items-center flex-shrink-0 p-8 mx-auto">
       {socials.map(({ link, icon }) => (
         <IconButton
           className="mr-8 fill-current text-secondary"
-          iconSize="lg"
+          iconSize="md"
           to={link}
           key={link}
           icon={icon}
           colored
+          rounded
+          outlined
         />
       ))}
     </div>
   );
 };
-
-const Wrapper = styled.footer`
-  display: flex;
-  justify-content: center;
-`;
 
 export default Footer;

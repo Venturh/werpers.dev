@@ -18,6 +18,7 @@
   --bg: #040405;
   --bg-secondary: #0d1117;
   --bg-accent: #1c1f25;
+  --border-bg: #e5e7eb;
   --text-primary: #edf2f7;
   --text-secondary: #cbd5e0;
   --error: #fc8181;
@@ -30,6 +31,7 @@
   --bg: #ffffff;
   --bg-secondary: #f7fafc;
   --bg-accent: #f5f5f5;
+  --border-bg: #4b5563;
   --text-primary: #000000;
   --text-secondary: #4a5568;
   --error: #f56565;

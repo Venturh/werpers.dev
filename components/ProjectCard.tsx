@@ -14,7 +14,7 @@ const ProjectCard = ({ name, headline, slug, buildWith }: Project) => (
   <BaseCard>
     <Link href={`/projects/${slug}`}>
       <a className="">
-        <div className="text-2xl"> {name}</div>
+        <div className="text-xl"> {name}</div>
         <div>{headline}</div>
         <div className="flex mt-1 space-x-2">
           {buildWith.map(({ type }) => (

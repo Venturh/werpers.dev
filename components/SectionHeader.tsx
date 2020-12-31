@@ -2,7 +2,7 @@ import Button from './Button';
 
 type Props = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   buttonText?: string;
   to?: string;
 };

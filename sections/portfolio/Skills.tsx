@@ -23,7 +23,9 @@ const Skills = () => {
             skills: { name: string; icon: string }[];
           }) => (
             <div key={type} className="space-y-3">
-              <p className="lg:text-lg text-brand">{t(`common:${type}`)}</p>
+              <p className="text-lg md:text-xl text-brand">
+                {t(`common:${type}`)}
+              </p>
               <div className="flex space-x-4">
                 {skills.map((skill) => (
                   <Skill key={skill.name} {...skill} />

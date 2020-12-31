@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   colored?: boolean;
   size?: 'sm' | 'md' | 'lg';
+  outlined?: boolean;
 };
 
 const Icon = ({
@@ -14,16 +15,18 @@ const Icon = ({
   className,
   colored,
   size,
+  outlined,
 }: Props) => {
   return (
     <svg
       viewBox={viewBox}
       className={clsx(className, {
-        'fill-current text-primary ': !colored,
+        ' text-primary ': !colored,
         'w-4 ': size === 'sm',
         'h-5': size === undefined,
         'h-6': size === 'md',
         'w-7 ': size === 'lg',
+        'fill-current': !outlined,
       })}
     >
       <path d={path} />

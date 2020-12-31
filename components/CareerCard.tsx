@@ -11,7 +11,7 @@ const CareerCard = ({
   url,
   used,
 }: Careers) => (
-  <div className="space-y-1">
+  <div className="relative space-y-1">
     <div className="flex justify-between">
       <div className="flex items-center space-x-2">
         <Label variant="brand">{type}</Label>
@@ -29,6 +29,7 @@ const CareerCard = ({
         <Label key={used}>{used}</Label>
       ))}
     </div>
+    <div className="w-full my-8 border-b border-accentBg" />
   </div>
 );
 

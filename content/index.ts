@@ -1,4 +1,14 @@
-import { Github, LinkedIn, PlayStore, MailCheck, Postgres } from 'icons';
+import {
+  LinkedInOutlined,
+  Github,
+  PlayStore,
+  MailCheck,
+  Postgres,
+  GithubOutlined,
+  PlaystoreOutlined,
+  MailOutlined,
+  Discord,
+} from 'icons';
 import {
   React,
   Vue,
@@ -33,18 +43,23 @@ export const navlinks: Navlink[] = [
 ];
 
 export const socials: Social[] = [
-  { name: 'Venturh', link: 'https://github.com/Venturh', icon: Github },
+  { name: 'Venturh', link: 'https://github.com/Venturh', icon: GithubOutlined },
   {
     name: 'Max Werpers',
     link: 'https://www.linkedin.com/in/max-werpers-9474251a5/',
-    icon: LinkedIn,
+    icon: LinkedInOutlined,
+  },
+  {
+    name: 'My Discord Server',
+    link: 'https://discord.gg/pmsD8Qqvn9',
+    icon: Discord,
   },
   {
     name: 'Venturh',
     link: 'https://play.google.com/store/apps/developer?id=Venturh',
-    icon: PlayStore,
+    icon: PlaystoreOutlined,
   },
-  { name: 'Mail', link: 'mailto:contact@maxwerpers.me', icon: MailCheck },
+  { name: 'Mail', link: 'mailto:contact@maxwerpers.me', icon: MailOutlined },
 ];
 
 const frameworks = [
