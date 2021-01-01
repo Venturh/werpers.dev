@@ -14,7 +14,7 @@ const Skills = () => {
         subtitle={t('common:skillsSub')}
       />
 
-      <div className="grid space-y-2 lg:items-center grid-row-2 lg:grid-cols-2">
+      <div className="grid space-y-2 lg:items-center grid-row-2 ">
         {skills.map(
           ({
             type,

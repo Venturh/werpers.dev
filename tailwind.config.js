@@ -46,6 +46,9 @@ module.exports = {
       maxWidth: {
         xsm: '21rem',
       },
+      maxHeight: {
+        '1/2': '50%',
+      },
     },
   },
   variants: {

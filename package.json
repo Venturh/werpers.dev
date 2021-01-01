@@ -22,6 +22,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sitemap": "^6.3.0",
+    "swr": "^0.3.11",
     "tailwindcss": "^2.0.1",
     "universal-cookie": "^4.0.4"
   },
