@@ -1,6 +1,6 @@
 import Icon from './Icon';
 import { Github, Star } from 'icons';
-import { BaseCard } from './ProjectCard';
+import BaseCard from './BaseCard';
 import ButtonOrLink from './ButtonOrLink';
 
 const GithubCard = ({ repo }) => {

@@ -1,14 +1,13 @@
-import useTranslation from 'next-translate/useTranslation';
 import { socials } from 'content';
 import IconButton from './IconButton';
 import Discord from './Discord';
+import Logo from './Logo';
 
 const Footer = () => {
-  const { t } = useTranslation();
-
   return (
     <div className="flex flex-col flex-shrink-0 w-full py-2 space-y-4 md:py-8 md:max-w-2xl md:mx-auto ">
       <div className="w-full my-2 border-b-2 border-accentBg " />
+      <Logo className="self-center" type="desktop" />
       <Discord />
       <div className="flex justify-center space-x-4 ">
         {socials.map(({ link, icon }) => (

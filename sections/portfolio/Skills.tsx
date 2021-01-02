@@ -1,10 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
-
-import { Skill } from 'components';
-
+import { BaseCard, SectionHeader, Skill } from 'components';
 import { skills } from 'content';
-import SectionHeader from 'components/SectionHeader';
-import { BaseCard } from 'components/ProjectCard';
+
 const Skills = () => {
   const { t } = useTranslation();
   return (
@@ -25,7 +22,7 @@ const Skills = () => {
           }) => (
             <div key={type} className="space-y-3">
               <p className="text-lg md:text-xl ">{t(`common:${type}`)}</p>
-              <BaseCard className="flex ">
+              <BaseCard barPosition="left" className="flex ">
                 {skills.map((skill) => (
                   <Skill key={skill.name} {...skill} />
                 ))}

@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { fetcher } from 'lib/swr';
 import useSWR from 'swr';
+import BaseCard from './BaseCard';
 
 type DiscordResponse = {
   info?: string;
@@ -15,23 +16,6 @@ type DiscordPresence = {
   imgUrl: string;
 };
 
-export const Base = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className: string;
-}) => (
-  <div
-    className={clsx(
-      'rounded-lg bg-secondaryBg border border-accentBg shadow-sm px-2 py-1',
-      className
-    )}
-  >
-    {children}
-  </div>
-);
-
 export const DiscordCard = ({
   presence,
   info,
@@ -39,7 +23,11 @@ export const DiscordCard = ({
   presence?: DiscordPresence;
   info?: string;
 }) => (
-  <Base className="w-full md:max-w-sm md:mx-auto">
+  <BaseCard
+    outline
+    barPosition="none"
+    className="w-full md:max-w-sm md:mx-auto"
+  >
     {presence && (
       <span className="text-xs font-medium">{presence.currently}</span>
     )}
@@ -61,7 +49,7 @@ export const DiscordCard = ({
         </div>
       )}
     </div>
-  </Base>
+  </BaseCard>
 );
 
 const Discord = () => {

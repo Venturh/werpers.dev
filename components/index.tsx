@@ -1,6 +1,8 @@
+export { default as BaseCard } from './BaseCard';
 export { default as Button } from './Button';
 export { default as ButtonOrLink } from './ButtonOrLink';
 export { default as CareerCard } from './CareerCard';
+export { default as Discord } from './Discord';
 export { default as Filter } from './Filter';
 export { default as Footer } from './Footer';
 export { default as Github } from './Github';
@@ -10,6 +12,7 @@ export { default as Label } from './Label';
 export { default as LanguageSwitch } from './LanguageSwitch';
 export { default as Layout } from './Layout';
 export { default as Link } from './Link';
+export { default as Logo } from './Logo';
 export { default as Navigation } from './Navigation';
 export { default as ProjectCard } from './ProjectCard';
 export { default as Search } from './Search';
