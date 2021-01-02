@@ -25,7 +25,7 @@ export function genearateImage(title: string) {
   title = title.replace(' - ', '<br/>');
   return [
     {
-      url: `https://ogimage-gen.vercel.app/${title}?theme=dark&md=1&images=https://prismic-io.s3.amazonaws.com/maxwerpers-next/2b1533d4-e32c-4340-9c50-b5d2acba271c_maxwerpers.svg&widths=1200&heights=150`,
+      url: `${process.env.NEXT_PUBLIC_OG_IMG_GENERATOR}/${title}?theme=dark&md=1&images=https://prismic-io.s3.amazonaws.com/maxwerpers-next/2b1533d4-e32c-4340-9c50-b5d2acba271c_maxwerpers.svg&widths=1200&heights=150`,
       width: 1280,
       height: 720,
       alt: title,
