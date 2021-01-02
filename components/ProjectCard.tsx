@@ -15,7 +15,7 @@ export const BaseCard = ({
 }) => (
   <div
     className={clsx(
-      'relative w-full py-2   rounded-lg bg-secondaryBg ',
+      'relative w-full py-2 shadow-sm rounded-lg bg-secondaryBg',
       { 'pl-6': barPosition === 'left' },
       className
     )}

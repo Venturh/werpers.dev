@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { fetcher } from 'lib/swr';
 import useSWR from 'swr';
-import { BaseCard } from './ProjectCard';
 
 type DiscordResponse = {
   info?: string;
@@ -16,32 +15,69 @@ type DiscordPresence = {
   imgUrl: string;
 };
 
+export const Base = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className: string;
+}) => (
+  <div
+    className={clsx(
+      'rounded-lg bg-secondaryBg border border-accentBg shadow-sm px-2 py-1',
+      className
+    )}
+  >
+    {children}
+  </div>
+);
+
+export const DiscordCard = ({
+  presence,
+  info,
+}: {
+  presence?: DiscordPresence;
+  info?: string;
+}) => (
+  <Base className="w-full md:max-w-sm md:mx-auto">
+    {presence && (
+      <span className="text-xs font-medium">{presence.currently}</span>
+    )}
+    <div className="flex m-2 mt-2 space-x-4">
+      <img
+        className="h-16 rounded-lg"
+        src={
+          info
+            ? 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+            : presence.imgUrl
+        }
+      />
+      {info && <span>{info}</span>}
+      {presence && (
+        <div className="space-y-1 text-sm truncate ">
+          <p>{presence.details}</p>
+          <p>{presence.state}</p>
+          <p>{presence.time}</p>
+        </div>
+      )}
+    </div>
+  </Base>
+);
+
 const Discord = () => {
   const { data, error } = useSWR<DiscordResponse>(
     process.env.NEXT_PUBLIC_DISCORD_API,
-    fetcher
+    fetcher,
+    { refreshInterval: 1000 }
   );
 
-  if (!data && !error) return <span>Error</span>;
-  if (error) return <span>Error</span>;
-  if (data.info)
-    return (
-      <BaseCard className="w-full md:w-1/2 md:mx-auto">{data.info}</BaseCard>
-    );
+  if (!data && !error) return <span />;
+  if (error) return <span></span>;
+  if (data.info) return <DiscordCard info={data.info} />;
   return (
     <div className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0">
-      {data.presence.map(({ currently, details, state, imgUrl, time }) => (
-        <BaseCard className="md:max-w-xs md:mx-auto" key={details}>
-          <span className="text-sm font-medium">{currently}</span>
-          <div className="flex mt-2 space-x-4">
-            <img className="h-16 rounded-lg" src={imgUrl} />
-            <div className="flex flex-col space-y-1 text-sm">
-              <span>{details}</span>
-              <p className="overflow-hidden overflow-ellipsis">{state}</p>
-              <span>{time}</span>
-            </div>
-          </div>
-        </BaseCard>
+      {data.presence.map((presence) => (
+        <DiscordCard key={presence.details} presence={presence} />
       ))}
     </div>
   );
