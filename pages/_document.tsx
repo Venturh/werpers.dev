@@ -5,24 +5,17 @@ import NextDocument, {
   NextScript,
   DocumentContext,
 } from 'next/document';
-import Cookies from 'universal-cookie';
-import { DARK_MODE_COOKIE, DEFAULT_THEME } from 'hooks/darkMode';
 
-type Props = {
-  theme: string;
-};
-export default class Document extends NextDocument<Props> {
+export default class Document extends NextDocument {
   static async getInitialProps(context: DocumentContext) {
     const initialProps = await NextDocument.getInitialProps(context);
-    const cookies = new Cookies(context.req.headers.cookie);
-    const theme = cookies.get(DARK_MODE_COOKIE || DEFAULT_THEME);
 
-    return { ...initialProps, theme };
+    return { ...initialProps };
   }
 
   render() {
     return (
-      <Html className={this.props.theme}>
+      <Html>
         <Head>
           <link
             rel="apple-touch-icon"
