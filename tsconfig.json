@@ -20,9 +20,9 @@
     "**/*.ts",
     "**/*.tsx",
     "components/LanguageSwitch.tsx",
-    "pages_/_app.tsx",
+    "pages/_app.tsx",
     "styles/global.js",
-    "pages_/_document.tsx",
+    "pages/_document.tsx",
     "next.config.js"
   ],
   "exclude": ["node_modules"]

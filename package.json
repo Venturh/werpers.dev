@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next-translate && next dev",
-    "build": "next-translate && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -14,7 +14,7 @@
     "fuse.js": "^6.4.1",
     "next": "^10.0.3",
     "next-seo": "^4.7.3",
-    "next-translate": "^0.20.2",
+    "next-translate": "^1.0.1",
     "postcss": "^8.1.14",
     "prettier": "^2.1.1",
     "prismic-javascript": "^3.0.2",

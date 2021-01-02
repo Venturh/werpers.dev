@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-translate';
+import useTranslation from 'next-translate/useTranslation';
 import { socials } from 'content';
 import IconButton from './IconButton';
 import Discord from './Discord';
