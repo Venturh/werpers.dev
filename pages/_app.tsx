@@ -5,7 +5,7 @@ import 'styles/index.css';
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </ThemeProvider>

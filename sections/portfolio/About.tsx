@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className="space-y-4 ">
       <SectionHeader title={t('about:about')} />
-      <p>
+      <p className="prose dark:prose-dark">
         {t('about:1')}{' '}
         <Link out underline to="https://clickbar.dev/">
           clickbar {''}

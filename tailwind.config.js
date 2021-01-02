@@ -6,7 +6,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./**/*.tsx'],
+  purge: ['./**/*.{ts,tsx, js,jsx}'],
   theme: {
     colors: {
       brand: 'var(--brand)',

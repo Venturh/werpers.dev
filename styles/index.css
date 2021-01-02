@@ -12,6 +12,15 @@
   }
 }
 
+.prose {
+  @apply text-primary;
+}
+
+.prose a {
+  @apply text-primary;
+  @apply no-underline;
+}
+
 .dark {
   --brand: #99f6e4;
   --brandContrast: #08090a;
