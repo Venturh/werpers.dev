@@ -18,7 +18,7 @@ export function useDarkMode() {
     const { classList } = document.querySelector('html');
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme);
-    document.cookie = `${DARK_MODE_COOKIE}=${nextTheme};SameSite=None; Secure;`;
+    cookie.set(DARK_MODE_COOKIE, nextTheme, {maxAge: 10000000})
     if (nextTheme === 'dark') {
       classList.add('dark');
       classList.remove('light');
