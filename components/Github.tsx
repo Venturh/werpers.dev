@@ -19,7 +19,7 @@ const GithubCard = ({ repo }) => {
     JavaScript: '#F1E05A',
   };
   return (
-    <BaseCard>
+    <BaseCard barPosition="left">
       <ButtonOrLink className="space-y-1" out to={html_url}>
         <div className="flex items-center space-x-1">
           <span

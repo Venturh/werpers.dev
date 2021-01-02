@@ -7,22 +7,27 @@ import ProjectList from 'sections/projects/ProjectList';
 import ProjectFilter from 'sections/projects/ProjectFilters';
 
 import { getAllProjects } from '../lib/prismic';
+import { genearateImage } from 'next-seo.config';
 
 const Projects = ({ projects }) => {
-  const { t } = useTranslation();
-
+  const { t, lang } = useTranslation();
   const [filteredProjects, setFilteredProjects] = useState([]);
-  const url = 'https://www.maxwerpers.me/de/projects';
-  const title = 'Projekte Übersicht - Maximilian Werpers';
+
+  const title = `${t('common:projects')} - Maximilian Werpers`;
+  const description = t('commonn:projectsDesc');
+  const url = `https://www.maxwerpers.me/${lang}/projects`;
 
   return (
     <>
       <NextSeo
         title={title}
+        description={description}
         canonical={url}
         openGraph={{
           title,
+          description,
           url,
+          images: genearateImage(title),
           type: 'website',
         }}
       />

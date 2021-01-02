@@ -8,6 +8,8 @@ import {
   getProjectBySlug,
   Project as ProjectType,
 } from 'lib/prismic';
+import { genearateImage } from 'next-seo.config';
+import useTranslation from 'next-translate/useTranslation';
 
 type ProjectProps = {
   project: ProjectType;
@@ -15,8 +17,9 @@ type ProjectProps = {
 };
 
 const Project = ({ project, github }: ProjectProps) => {
+  const { t } = useTranslation();
   const url = `https://www.maxwerpers.me/de/projects/${project.slug}`;
-  const title = `${project.name} - Maximilian Werpers`;
+  const title = `${t('common:project')}: ${project.name} - Maximilian Werpers`;
   const description = project.headline;
 
   return (
@@ -29,9 +32,11 @@ const Project = ({ project, github }: ProjectProps) => {
           title,
           description,
           url,
+          images: genearateImage(title),
           type: 'website',
         }}
       />
+
       <Layout>
         <Hero project={project} github={github} />
       </Layout>

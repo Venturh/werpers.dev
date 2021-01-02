@@ -2,11 +2,14 @@ import { ThemeProvider } from 'next-themes';
 import { DefaultSeo } from 'next-seo';
 import SEO from 'next-seo.config';
 import 'styles/index.css';
+import useTranslation from 'next-translate/useTranslation';
 
 const MyApp = ({ Component, pageProps }) => {
+  const { lang } = useTranslation();
+
   return (
     <ThemeProvider attribute="class" defaultTheme="dark">
-      <DefaultSeo {...SEO} />
+      <DefaultSeo {...SEO(lang)} />
       <Component {...pageProps} />
     </ThemeProvider>
   );
