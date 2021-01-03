@@ -1,4 +1,3 @@
-import { useDarkMode } from 'hooks/darkMode';
 import { useTheme } from 'next-themes';
 import { Circle, Moon, Sun } from 'icons';
 import IconButton from './IconButton';
