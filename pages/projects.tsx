@@ -14,7 +14,7 @@ const Projects = ({ projects }) => {
   const [filteredProjects, setFilteredProjects] = useState([]);
 
   const title = `${t('common:projects')} - Maximilian Werpers`;
-  const description = t('commonn:projectsDesc');
+  const description = t('common:projectsDesc');
   const url = `https://www.maxwerpers.me/${lang}/projects`;
 
   return (

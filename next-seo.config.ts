@@ -26,8 +26,8 @@ export function genearateImage(title: string) {
   return [
     {
       url: `${process.env.NEXT_PUBLIC_OG_IMG_GENERATOR}/${title}?theme=dark&md=1&images=https://prismic-io.s3.amazonaws.com/maxwerpers-next/2b1533d4-e32c-4340-9c50-b5d2acba271c_maxwerpers.svg&widths=1200&heights=150`,
-      width: 1280,
-      height: 720,
+      width: 1500,
+      height: 1500,
       alt: title,
     },
   ];
