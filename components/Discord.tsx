@@ -53,11 +53,9 @@ export const DiscordCard = ({
 );
 
 const Discord = () => {
-  const { data, error } = useSWR<DiscordResponse>(
-    process.env.NEXT_PUBLIC_DISCORD_API,
-    fetcher,
-    { refreshInterval: 1000 }
-  );
+  const { data, error } = useSWR<DiscordResponse>('/api/discord', fetcher, {
+    refreshInterval: 1000,
+  });
 
   if (!data && !error) return <span />;
   if (error) return <span></span>;
