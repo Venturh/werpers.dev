@@ -1,3 +1,5 @@
+import { Activity } from 'discord.js';
+import getClient from 'lib/discord';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 function send(res: NextApiResponse, toSend: Object) {
@@ -6,7 +8,7 @@ function send(res: NextApiResponse, toSend: Object) {
   res.end(JSON.stringify(toSend));
 }
 
-function makePresence(presence) {
+function makePresence(presence: Activity[]) {
   return presence.map((d) => {
     const type =
       d.name === 'Visual Studio Code'
@@ -28,7 +30,7 @@ function makePresence(presence) {
     let time: string;
     if (d.timestamps) {
       var ago = require('s-ago');
-      time = ago(d.timestamps.start);
+      time = `started ${ago(d.timestamps.start)}`;
     } else time = ago(Date.now());
 
     return {
@@ -42,11 +44,10 @@ function makePresence(presence) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const Discord = require('discord.js');
-  const bot = new Discord.Client();
-  await bot.login(process.env.DISCORD_BOT_TOKEN);
+  const bot = await getClient();
+  const users = bot.users.cache;
 
-  const me = bot.users.cache.get('302595184271687681');
+  const me = users.get('302595184271687681');
   if (!me) return send(res, { info: 'ERROR' });
   const presence = me.presence;
   if (presence.status === 'offline') send(res, { info: 'Offline' });
