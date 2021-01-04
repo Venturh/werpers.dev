@@ -11,7 +11,7 @@ const Skills = () => {
         subtitle={t('common:skillsSub')}
       />
 
-      <div className="grid space-y-2 lg:items-center grid-row-2 ">
+      <div className="grid lg:items-center grid-row-2 ">
         {skills.map(
           ({
             type,
@@ -20,13 +20,13 @@ const Skills = () => {
             type: string;
             skills: { name: string; icon: string }[];
           }) => (
-            <div key={type} className="space-y-3">
+            <div key={type} className="space-y-1">
               <p className="text-lg md:text-xl ">{t(`common:${type}`)}</p>
-              <BaseCard barPosition="left" className="flex py-2">
+              <div className="flex py-2 space-x-4">
                 {skills.map((skill) => (
                   <Skill key={skill.name} {...skill} />
                 ))}
-              </BaseCard>
+              </div>
             </div>
           )
         )}

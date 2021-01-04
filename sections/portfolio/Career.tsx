@@ -7,7 +7,7 @@ import clsx from 'clsx';
 const Career = ({ career }) => {
   const { t } = useTranslation();
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       <SectionHeader
         title={t('common:experience')}
         subtitle={t('common:experienceSub')}
@@ -15,7 +15,7 @@ const Career = ({ career }) => {
       <div className="grid gap-4 ">
         {career.map((c: Careers) => (
           <div key={c.company} className={styles.timelinecards}>
-            <span className="relative flex-shrink-0 hidden w-3.5 h-3.5  rounded-full md:block bg-brand -left-2 top-1.5" />
+            <span className="relative flex-shrink-0 hidden w-3.5 h-3.5 rounded-full md:block bg-brand -left-2 top-2" />
             <CareerCard {...c} />
           </div>
         ))}

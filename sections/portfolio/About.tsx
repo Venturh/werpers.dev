@@ -5,8 +5,11 @@ import useTranslation from 'next-translate/useTranslation';
 const About = () => {
   const { t } = useTranslation();
   return (
-    <div className="w-full space-y-4">
-      <SectionHeader title={t('about:about')} />
+    <div className="w-full space-y-2">
+      <SectionHeader
+        title={t('common:about')}
+        subtitle={t('common:aboutSub')}
+      />
       <p className="w-full prose lg:prose-lg">
         {t('about:1')}{' '}
         <Link out underline to="https://clickbar.dev/">

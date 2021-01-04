@@ -12,23 +12,24 @@ const CareerCard = ({
   used,
   url,
 }: Careers) => (
-  <div className="relative space-y-0.5">
-    <div className="flex items-center space-x-2">
+  <div className="relative shadow-sm">
+    <div className="flex flex-wrap items-center justify-between">
       <Link out to={url} className="text-lg">
         <span className="font-medium">{company}</span>
       </Link>
+      <div className="flex space-x-2 ">
+        <Label variant="border">{type}</Label>
+        <span>
+          {start_time} - {end_time}
+        </span>
+      </div>
     </div>
-    <div className="flex justify-between">
-      <span className="text-sm">{type}</span>
-      <div className="flex items-center space-x-2"></div>
-      <span>
-        {start_time} - {end_time}
-      </span>
-    </div>
-    <p className="prose lg:w-10/12">{description}</p>
-    <div className="flex space-x-1 ">
+    <p className="prose ">{description}</p>
+    <div className="flex mt-1 space-x-1 ">
       {used.map(({ used }) => (
-        <Label key={used}>{used}</Label>
+        <Label className="" variant="border" key={used}>
+          {used}
+        </Label>
       ))}
     </div>
     <div className="w-full pt-2 border-b-2 border-accentBg" />

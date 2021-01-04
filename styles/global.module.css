@@ -17,9 +17,8 @@
   content: '';
   position: relative;
   width: 3px;
-  height: 80%;
   border-radius: 2px;
-  top: 25%;
+  margin-top: 2em;
 }
 
 @media only screen and (min-width: 600px) {

@@ -8,7 +8,7 @@ import SectionHeader from 'components/SectionHeader';
 const Projects = ({ projects }) => {
   const { t } = useTranslation();
   return (
-    <div className="space-y-4">
+    <div className="space-y-2">
       <SectionHeader
         title={t('common:projects')}
         subtitle={t('common:projectsSub')}
