@@ -1,4 +1,5 @@
 import { Careers } from 'lib/prismic';
+import Icon from './Icon';
 import Label from './Label';
 import Link from './Link';
 
@@ -8,28 +9,29 @@ const CareerCard = ({
   end_time,
   start_time,
   type,
-  url,
   used,
+  url,
 }: Careers) => (
-  <div className="relative space-y-1.5">
+  <div className="relative space-y-0.5">
+    <div className="flex items-center space-x-2">
+      <Link out to={url} className="text-lg">
+        <span className="font-medium">{company}</span>
+      </Link>
+    </div>
     <div className="flex justify-between">
-      <div className="flex items-center space-x-2">
-        <Label variant="brand">{type}</Label>
-        <Link out to={url} className="text-lg">
-          {company}
-        </Link>
-      </div>
+      <span className="text-sm">{type}</span>
+      <div className="flex items-center space-x-2"></div>
       <span>
         {start_time} - {end_time}
       </span>
     </div>
-    <p className="lg:w-10/12">{description}</p>
-    <div className="flex flex-wrap w-11/12 space-x-2">
+    <p className="prose lg:w-10/12">{description}</p>
+    <div className="flex space-x-1 ">
       {used.map(({ used }) => (
         <Label key={used}>{used}</Label>
       ))}
     </div>
-    <div className="w-full my-8 border-b-2 border-accentBg" />
+    <div className="w-full pt-2 border-b-2 border-accentBg" />
   </div>
 );
 

@@ -10,9 +10,9 @@ type Props = {
 const BaseCard = ({ children, barPosition, className, outline }: Props) => (
   <div
     className={clsx(
+      className,
       'relative w-full shadow-sm px-2 py-1 rounded-lg bg-secondaryBg',
-      { 'pl-6': barPosition === 'left', 'border border-accentBg': outline },
-      className
+      { 'pl-6': barPosition === 'left', 'border border-accentBg': outline }
     )}
   >
     {children}

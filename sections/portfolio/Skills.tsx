@@ -22,7 +22,7 @@ const Skills = () => {
           }) => (
             <div key={type} className="space-y-3">
               <p className="text-lg md:text-xl ">{t(`common:${type}`)}</p>
-              <BaseCard barPosition="left" className="flex ">
+              <BaseCard barPosition="left" className="flex py-2">
                 {skills.map((skill) => (
                   <Skill key={skill.name} {...skill} />
                 ))}

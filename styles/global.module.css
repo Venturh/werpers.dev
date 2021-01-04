@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.timelinecards::before {
+/* .timelinecards::before {
   content: '';
   display: none;
   position: relative;
@@ -10,21 +10,20 @@
   height: 80%;
   border-radius: 2px;
   top: 25%;
-}
-.timelinecards:not(:last-child)::before {
-  display: hidden;
+} */
+.timelinecards::before {
+  display: none;
   @apply bg-brand;
   content: '';
   position: relative;
   width: 3px;
-  height: 65%;
+  height: 80%;
   border-radius: 2px;
-  top: 35%;
+  top: 25%;
 }
 
 @media only screen and (min-width: 600px) {
-  .timelinecards::before,
-  .timelinecards:not(:last-child)::before {
+  .timelinecards::before {
     display: block;
   }
 }

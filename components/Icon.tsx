@@ -7,12 +7,14 @@ type Props = {
   colored?: boolean;
   size?: 'sm' | 'md' | 'lg';
   outlined?: boolean;
+  style?: React.CSSProperties;
 };
 
 const Icon = ({
   path,
   viewBox = '0 0 24 24',
   className,
+  style,
   colored,
   size,
   outlined,
@@ -20,6 +22,7 @@ const Icon = ({
   return (
     <svg
       viewBox={viewBox}
+      style={style}
       className={clsx(className, {
         ' text-primary ': !colored,
         'w-4 ': size === 'sm',

@@ -22,6 +22,7 @@ export interface Careers {
   start_time: string;
   type: string;
   used?: [{ used: string }];
+  icon?: string;
 }
 
 export interface Ressource {
@@ -211,7 +212,7 @@ export const getAllCareers = async (lang: string) => {
   const { allCareers } = await fetchAPI(
     `
     {
-      allCareers(lang: "${locale}") {
+      allCareers(lang: "${locale}", sortBy: start_time_DESC) {
         edges {
           node {
             company
@@ -220,6 +221,7 @@ export const getAllCareers = async (lang: string) => {
             end_time
             type
             description
+            icon
             body {
               ... on CareerBodyUsed {
                 fields {
@@ -236,7 +238,16 @@ export const getAllCareers = async (lang: string) => {
   );
   return allCareers.edges.map(
     ({
-      node: { company, url, description, end_time, start_time, type, body },
+      node: {
+        company,
+        url,
+        description,
+        end_time,
+        start_time,
+        type,
+        body,
+        icon,
+      },
     }) => ({
       company,
       url,
@@ -244,6 +255,7 @@ export const getAllCareers = async (lang: string) => {
       end_time,
       start_time,
       type,
+      icon,
       used: body[0].fields,
     })
   );
