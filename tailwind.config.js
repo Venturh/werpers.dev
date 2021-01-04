@@ -46,8 +46,9 @@ module.exports = {
       maxWidth: {
         xsm: '21rem',
       },
-      maxHeight: {
-        '1/2': '50%',
+      animation: {
+        'spin-0.5': 'spin 0.5s linear',
+        'spin-1': 'spin 1s linear',
       },
     },
   },

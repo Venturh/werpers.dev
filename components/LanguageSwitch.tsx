@@ -45,19 +45,12 @@ const LanguageSwitch = () => {
   };
 
   return (
-    <div className="relative">
-      <div
-        className="flex items-center space-x-2 cursor-pointer"
-        ref={displayRef}
+    <div className="relative" ref={displayRef}>
+      <IconButton
+        rounded
+        icon={Language3}
         onClick={() => setToggleDropdown(!toggleDropdown)}
-      >
-        {/* <span>{lang.toUpperCase()}</span> */}
-        <IconButton
-          rounded
-          icon={Language3}
-          onClick={() => setToggleDropdown(!toggleDropdown)}
-        />
-      </div>
+      />
       <div
         className={
           !toggleDropdown

@@ -17,18 +17,18 @@ const Navigation = () => {
       <Link to="/">
         <Logo />
       </Link>
-
-      <div className="flex items-center space-x-2 md:space-x-4">
-        {navlinks.map(({ name, to }) => {
-          return (
-            <Link active={pathname === to} block key={name} to={`${to}`}>
-              {t(`common:${name}`)}
-            </Link>
-          );
-        })}
-
-        <div className="flex space-x-2 space-y-1 md:space-x-4">
-          <span className="text-xl">|</span>
+      <div className="flex items-center space-x-4">
+        <div className="flex space-x-2">
+          {navlinks.map(({ name, to }) => {
+            return (
+              <Link active={pathname === to} block key={name} to={`${to}`}>
+                {t(`common:${name}`)}
+              </Link>
+            );
+          })}
+        </div>
+        <span className="text-xl">|</span>
+        <div className="flex items-center mt-1 space-x-4 md:space-x-2">
           <ThemeToggle />
           <LanguageSwitch />
         </div>
