@@ -25,10 +25,10 @@ const Icon = ({
       style={style}
       className={clsx(className, {
         ' text-primary ': !colored,
-        'w-4 ': size === 'sm',
-        'h-5': size === undefined,
-        'h-6': size === 'md',
-        'w-7 ': size === 'lg',
+        'h-3 md:h-4 ': size === 'sm',
+        'h-4.5 md:h-5': size === undefined,
+        'h-5 md:h-6': size === 'md',
+        'w-6 md:w-7 ': size === 'lg',
         'fill-current': !outlined,
       })}
     >

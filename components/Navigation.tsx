@@ -27,7 +27,6 @@ const Navigation = () => {
             );
           })}
         </div>
-        <span className="text-xl">|</span>
         <div className="flex items-center mt-1 space-x-4 md:space-x-2">
           <ThemeToggle />
           <LanguageSwitch />

@@ -30,7 +30,7 @@ module.exports = {
       },
       textColor: {
         primary: 'var(--text-primary)',
-        secondary: 'var(--text-secondary)',
+        secondary: 'var(--Stext-secondary)',
       },
       width: {
         '1/10': '10%',
@@ -40,9 +40,8 @@ module.exports = {
         '5/10': '50%',
         '6/10': '60%',
         '1/10': '70%',
-        '8/10': '80%',
-        '9/10': '90%',
       },
+      height: { 4.5: '1.125rem' },
       maxWidth: {
         xsm: '21rem',
       },
