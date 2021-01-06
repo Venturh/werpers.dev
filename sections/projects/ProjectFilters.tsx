@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Fuse from 'fuse.js';
 import { Filter, Search } from 'components';
+import clsx from 'clsx';
+import styles from 'styles/global.module.css';
 
 const options = {
   shouldSort: true,
@@ -64,8 +66,7 @@ const ProjectFilter = ({ onFilter, projects }) => {
     <div className="space-y-4">
       <Search callback={(name: string) => handleSearch(name)} />
       <div
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        className="flex space-x-2 overflow-x-scroll "
+        className={clsx('flex space-x-2 overflow-x-scroll', styles.hideScroll)}
       >
         {filters.map((filter: string) => (
           <Filter

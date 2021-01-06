@@ -26,3 +26,12 @@
     display: block;
   }
 }
+
+.hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hideScroll::-webkit-scrollbar {
+  display: none;
+}
