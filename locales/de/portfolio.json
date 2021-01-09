@@ -1,0 +1,36 @@
+{
+  "portfolio": "Portfolio",
+  "projects": "Projekte",
+
+  "hero_1": "Hey ich bin",
+  "hero_2": "Ich bin Enwickler mit besonderer Leidenschaft zur Webentwicklung. Derzeit befinde ich mich in meinem letzten Studienjahr der Medieninformatik. Danke für deinen Besuch auf meinem Portfolio. ",
+
+  "project": "Projekt",
+  "projectsSub": "Eine Auswahl meiner neusten Projekte.",
+  "show_more": "Mehr anzeigen",
+
+  "skills": "Fähigkeiten",
+  "skillsSub": "Meine meistgenutzen Technologien, mit denen ich Erfahrung gesammelt habe.",
+
+  "experience": "Erfahrung",
+  "experienceSub": "Meine Erfahrungen, zusammengefasst.",
+  "clickbar_description": "Derzeit absolviere ich ein Praktikum bei clickbar. Der Focus liegt dabei auf Fullstack Web Entwicklung.",
+  "clickbar_time": "2020 - heute",
+  "clickbar_type": "Praktikum",
+
+  "hsrm_description": "An der Hochschule studiere ich Medieninformartik in meinen letzten Semestern. Dort habe ich die verschiedensten Bereiche der Informatik kennen gelernt, z.B Datenbanken, Algorithmen, Scrum, and Software Development.",
+  "hsrm_time": "2017 - heute",
+  "hsrm_type": "Student",
+
+  "frameworks": "Frameworks",
+  "languages": "Sprachen",
+  "databases": "Datenbanken",
+  "others": "Sonstiges",
+
+  "about": "Über mich",
+  "aboutSub": "Entwickler - Student",
+  "about_1": "Hey ich bin Maximilian Werpers aus Wiesbaden. Ich arbeite derzeit Vollzeit bei ",
+  "about_2": "als Praktikant in der Fullstack Web Entwicklung und studiere Medieninformatik im siebten Semester.",
+  "about_3": "Während des Studiums habe ich meine Leidenschaft für die Webentwicklung entdeckt und verfolge in meiner Freizeit meine eigenen kleinen Projekte um weitere Konzepte und Ideen zu entwickeln und zu verfolgen.  Die komplette Liste der Projekte an denen ich gearbeitet habe befindet sich ",
+  "here": "hier."
+}

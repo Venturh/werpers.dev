@@ -7,18 +7,18 @@ const About = () => {
   return (
     <div className="w-full space-y-2">
       <SectionHeader
-        title={t('common:about')}
-        subtitle={t('common:aboutSub')}
+        title={t('portfolio:about')}
+        subtitle={t('portfolio:aboutSub')}
       />
       <p className="w-full prose lg:prose-lg">
-        {t('about:1')}{' '}
+        {t('portfolio:about_1')}{' '}
         <Link out underline to="https://clickbar.dev/">
           clickbar {''}
         </Link>
-        {t('about:2')} <br />
-        {t('about:3')}
+        {t('portfolio:about_2')} <br />
+        {t('portfolio:about_3')}
         <Link underline to="/projects">
-          {t('about:here')}
+          {t('portfolio:here')}
         </Link>
       </p>
     </div>

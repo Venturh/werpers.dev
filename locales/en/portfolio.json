@@ -1,0 +1,36 @@
+{
+  "portfolio": "Portfolio",
+  "projects": "Projects",
+
+  "hero_1": "Hey, I´m",
+  "hero_2": "I am a developer pasionated in web development. Currently in my last year of studying media science. Thank you for visiting my portfolio.",
+
+  "project": "Project",
+  "projectsSub": "A selection of my latest projects.",
+  "show_more": "Show more",
+
+  "skills": "Skills",
+  "skillsSub": "My most used techs I have experience in.",
+
+  "experience": "Experience",
+  "experienceSub": "My experience, summerized.",
+  "clickbar_description": "I landed my first internship at clickbar. At clickbar I mainly develop Full Stack Apps with Vue and Laravel/Symfony or Node.",
+  "clickbar_time": "2020 - present",
+  "clickbar_type": "Intern",
+
+  "hsrm_description": "I study Media Science in my final semesters. I experienced many fields of computer science , for example Databases, Algorithms, Scrum, and Software Development.",
+  "hsrm_time": "2017 - present",
+  "hsrm_type": "Intern",
+
+  "frameworks": "Frameworks",
+  "languages": "Languages",
+  "databases": "Databases",
+  "others": "Others",
+
+  "about": "About me",
+  "aboutSub": "Developer - Student",
+  "about_1": "Hi I´m Maximilian Werpers based in Wiesbaden, Germany. I currently work full-time as an as a Full Stack Web Developer intern at ",
+  "about_2": "and i study Media science in my seventh semester.",
+  "about_3": "During my studies i found my passion with web development and now i follow my own projects in my freetime. A list of projects I worked on can be found ",
+  "here": "here."
+}

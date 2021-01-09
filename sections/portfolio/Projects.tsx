@@ -10,9 +10,9 @@ const Projects = ({ projects }) => {
   return (
     <div className="space-y-2">
       <SectionHeader
-        title={t('common:projects')}
-        subtitle={t('common:projectsSub')}
-        buttonText={t('common:showmore')}
+        title={t('portfolio:projects')}
+        subtitle={t('portfolio:projectsSub')}
+        buttonText={t('portfolio:show_more')}
         to="/projects"
       />
       <div className="space-y-4">

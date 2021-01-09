@@ -29,7 +29,7 @@ const Search = ({ callback }: Props) => {
       <input
         className="block w-full py-1.5 border-none rounded-lg outline-none pl-9 sm:pl-14 bg-secondary focus:ring focus:ring-brand"
         type="text"
-        placeholder={t('common:search')}
+        placeholder={t('projects:search')}
         value={value}
         onChange={(e: React.FormEvent<HTMLInputElement>) =>
           search(e.currentTarget.value)

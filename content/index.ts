@@ -1,8 +1,6 @@
 import {
   LinkedInOutlined,
   Github,
-  PlayStore,
-  MailCheck,
   Postgres,
   GithubOutlined,
   PlaystoreOutlined,
@@ -24,22 +22,49 @@ import {
   MongoDB,
   Figma,
 } from 'icons';
-interface Navlink {
+export type Navlink = {
   name: string;
   to: string;
-}
+};
 
-interface Social {
+export type Social = {
   name: string;
   link?: string;
   icon?: string;
-}
+};
+export type Career = {
+  title: string;
+  description: string;
+  time: string;
+  type: string;
+  url: string;
+  tech: string[];
+};
 
 export type Skill = { name: string; icon: string };
 
 export const navlinks: Navlink[] = [
   { name: 'portfolio', to: '/' },
   { name: 'projects', to: '/projects' },
+];
+
+export const career: Career[] = [
+  {
+    title: 'clickbar',
+    description: 'clickbar_description',
+    time: 'clickbar_time',
+    type: 'clickbar_type',
+    url: 'https://clickbar.dev/',
+    tech: ['Vue', 'Node', 'Typescript', 'Laravel', 'Symfony', 'Php'],
+  },
+  {
+    title: 'Hochschule Rhein Main',
+    description: 'hsrm_description',
+    time: 'hsrm_time',
+    type: 'hsrm_type',
+    url: 'https://www.hs-rm.de/de/',
+    tech: ['Javascript', 'React', 'Java', 'Python', 'Scrum', 'Database'],
+  },
 ];
 
 export const socials: Social[] = [

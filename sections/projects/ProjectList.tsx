@@ -11,8 +11,8 @@ const ProjectList = ({ projects }) => {
       <thead>
         <tr className="w-full text-left text-brand">
           <th>Name</th>
-          <th className="hidden lg:table-cell"> {t('common:buildUsing')}</th>
-          <th>{t('common:year')}</th>
+          <th className="hidden lg:table-cell"> {t('projects:buildUsing')}</th>
+          <th>{t('projects:year')}</th>
           <th>Links</th>
         </tr>
       </thead>

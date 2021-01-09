@@ -13,8 +13,8 @@ const Projects = ({ projects }) => {
   const { t, lang } = useTranslation();
   const [filteredProjects, setFilteredProjects] = useState([]);
 
-  const title = `${t('common:projects')} - Maximilian Werpers`;
-  const description = t('common:projectsDesc');
+  const title = `${t('projects:projects')} - Maximilian Werpers`;
+  const description = t('projects:projectsDesc');
   const url = `https://www.maxwerpers.me/${lang}/projects`;
 
   return (
@@ -33,10 +33,8 @@ const Projects = ({ projects }) => {
       />
       <Layout className="w-full space-y-4">
         <div className="space-y-2">
-          <h1 className="text-4xl font-semibold text-brand">
-            {t('common:projects')}
-          </h1>
-          <h2 className="text-lg">{t('common:projectsDesc')}</h2>
+          <h1 className="text-4xl font-semibold text-brand">{title}</h1>
+          <h2 className="text-lg">{description}</h2>
         </div>
         <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
         <ProjectList projects={filteredProjects} />
