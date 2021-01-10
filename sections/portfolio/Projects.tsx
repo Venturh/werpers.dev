@@ -2,10 +2,10 @@ import useTranslation from 'next-translate/useTranslation';
 
 import { ProjectCard } from 'components';
 
-import { Project } from 'lib/prismic';
 import SectionHeader from 'components/SectionHeader';
+import { ProjectFrontMatter } from '@types';
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects }: { projects: ProjectFrontMatter[] }) => {
   const { t } = useTranslation();
   return (
     <div className="space-y-2">
@@ -15,10 +15,11 @@ const Projects = ({ projects }) => {
         buttonText={t('portfolio:show_more')}
         to="/projects"
       />
+
       <div className="space-y-4">
-        {projects.map((project: Project, index: number) => {
+        {projects.map((project: ProjectFrontMatter, index: number) => {
           if (index <= 2)
-            return <ProjectCard key={project.name} {...project} />;
+            return <ProjectCard key={project.title} {...project} />;
         })}
       </div>
     </div>

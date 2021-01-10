@@ -22,7 +22,7 @@ If you want to check out my portfolio yourself you can do so [here](https://maxw
 
 - [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Prismic.io](https://prismic.io/)
+- [Mdx Remote](https://github.com/hashicorp/next-mdx-remote)
 - [Vercel](https://vercel.com/)
 
 ## Forking
@@ -41,7 +41,10 @@ yarn dev
 Create a .env.local file containing:
 
 ```
-PRISMIC_API_TOKEN: your token
-PRISMIC_URL: your prismic url
-PRISMIC_REPOSITORY_NAME: your prismic repo name
+NEXT_PUBLIC_DISCORD_API=
+NEXT_PUBLIC_OG_IMG_GENERATOR=
 ```
+
+The DISCORD API KEY is the server url to display the current Discord Status on the website see: [here](https://github.com/Venturh/discordapi)
+
+The IMG_GENERATOR the server url using [this](https://github.com/vercel/og-image)

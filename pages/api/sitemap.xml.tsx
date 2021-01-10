@@ -1,33 +1,32 @@
-// Import built-in types for API routes
-import { getAllProjects } from "lib/prismic";
-import { NextApiRequest, NextApiResponse } from "next";
-import { SitemapStream, streamToPromise, EnumChangefreq } from "sitemap";
-import { createGzip } from "zlib";
+import { ProjectFrontMatter } from '@types';
+import { getAllFontmatter } from 'lib/mdx';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { SitemapStream, streamToPromise, EnumChangefreq } from 'sitemap';
+import { createGzip } from 'zlib';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (!res) return {};
   try {
-    res.setHeader("content-type", "application/xml");
-    res.setHeader("Content-Encoding", "gzip");
+    res.setHeader('content-type', 'application/xml');
+    res.setHeader('Content-Encoding', 'gzip');
 
     const smStream = new SitemapStream({
-      hostname: "https://maxwerpers.me",
+      hostname: 'https://maxwerpers.me',
     });
 
     const pipeline = smStream.pipe(createGzip());
-    // Add any static entries here
     smStream.write({
-      url: "/",
+      url: '/',
     });
     smStream.write({
-      url: "/about",
+      url: '/about',
     });
     smStream.write({
-      url: "/projects",
+      url: '/projects',
     });
 
-    const articles = await getAllProjects("de");
-    articles.map((project) => {
+    const projects = getAllFontmatter('de', 'projects') as ProjectFrontMatter[];
+    projects.map((project) => {
       smStream.write({
         url: `/projects/${project.slug}`,
         changefreq: EnumChangefreq.WEEKLY,
@@ -39,7 +38,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // streamToPromise.then(sm => sitemap = sm)
     streamToPromise(pipeline);
     // stream the response
-    pipeline.pipe(res).on("error", (e) => {
+    pipeline.pipe(res).on('error', (e) => {
       throw e;
     });
   } catch (e) {

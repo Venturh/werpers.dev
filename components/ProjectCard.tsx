@@ -1,20 +1,25 @@
 import Link from 'next/link';
 
-import { Project } from 'lib/prismic';
 import Label from './Label';
-import clsx from 'clsx';
-import BaseCard from './BaseCard';
 
-const ProjectCard = ({ name, headline, slug, buildWith }: Project) => (
+import BaseCard from './BaseCard';
+import { ProjectFrontMatter } from '@types';
+
+const ProjectCard = ({
+  title,
+  description,
+  slug,
+  tech,
+}: ProjectFrontMatter) => (
   <BaseCard barPosition="left">
     <Link href={`/projects/${slug}`}>
       <a className="">
-        <div className="text-xl"> {name}</div>
-        <div>{headline}</div>
+        <div className="text-xl"> {title}</div>
+        <div>{description}</div>
         <div className="flex mt-1 space-x-2">
-          {buildWith.map(({ type }) => (
-            <Label variant="default" key={type}>
-              <div className="text-sm">{type}</div>
+          {tech.map((build) => (
+            <Label variant="default" key={build}>
+              <div className="text-sm">{build}</div>
             </Label>
           ))}
         </div>

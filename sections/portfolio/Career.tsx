@@ -1,6 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
 import { CareerCard, SectionHeader } from 'components';
-import { Careers } from 'lib/prismic';
 import styles from 'styles/global.module.css';
 import { Career as CareerType, career } from 'content';
 

@@ -3,6 +3,7 @@ import Fuse from 'fuse.js';
 import { Filter, Search } from 'components';
 import clsx from 'clsx';
 import styles from 'styles/global.module.css';
+import { ProjectFrontMatter } from '@types';
 
 const options = {
   shouldSort: true,
@@ -12,10 +13,16 @@ const options = {
   maxPatternLength: 32,
   minMatchCharLength: 1,
   useExtendedSearch: true,
-  keys: ['buildWith.type', 'name'],
+  keys: ['tech', 'title'],
 };
 
-const ProjectFilter = ({ onFilter, projects }) => {
+const ProjectFilter = ({
+  onFilter,
+  projects,
+}: {
+  onFilter: any;
+  projects: ProjectFrontMatter[];
+}) => {
   const filters = [
     'React',
     'Vue',

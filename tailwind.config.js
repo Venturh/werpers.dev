@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     colors: {
       brand: 'var(--brand)',
+      brandDarker: 'var(--brandDarker)',
       brandContrast: 'var(--brandContrast)',
       error: 'var(--error)',
       success: 'var(--success)',

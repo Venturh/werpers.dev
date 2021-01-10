@@ -1,5 +1,6 @@
+import { ProjectFrontMatter } from '@types';
 import { Layout } from 'components';
-import { getAllProjects } from 'lib/prismic';
+import { getAllFontmatter } from 'lib/mdx';
 import {
   Projects,
   PortfolioHero as Hero,
@@ -8,7 +9,7 @@ import {
   About,
 } from 'sections';
 
-const Portfolio = ({ projects, career }) => {
+const Portfolio = ({ projects }: { projects: ProjectFrontMatter[] }) => {
   return (
     <Layout className="space-y-6">
       <Hero />
@@ -22,7 +23,7 @@ const Portfolio = ({ projects, career }) => {
 export default Portfolio;
 
 export async function getStaticProps({ locale }) {
-  const projects = await getAllProjects(locale);
+  const projects = getAllFontmatter(locale, 'projects') as ProjectFrontMatter[];
   return {
     props: {
       getStaticPropsWorks: true,

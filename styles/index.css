@@ -24,6 +24,7 @@
 
 .dark {
   --brand: #99f6e4;
+  --brandDarker: #8addcd;
   --brandContrast: #08090a;
   --bg: #040405;
   --bg-secondary: #0d1117;
@@ -37,6 +38,7 @@
 
 .light {
   --brand: #14b8a6;
+  --brandDarker: #12a695;
   --brandContrast: #1b2439;
   --bg: #ffffff;
   --bg-secondary: #f7fafc;

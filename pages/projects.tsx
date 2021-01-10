@@ -6,8 +6,9 @@ import Layout from 'components/Layout';
 import ProjectList from 'sections/projects/ProjectList';
 import ProjectFilter from 'sections/projects/ProjectFilters';
 
-import { getAllProjects } from '../lib/prismic';
 import { genearateImage } from 'next-seo.config';
+import { getAllFontmatter } from 'lib/mdx';
+import { ProjectFrontMatter } from '@types';
 
 const Projects = ({ projects }) => {
   const { t, lang } = useTranslation();
@@ -33,7 +34,9 @@ const Projects = ({ projects }) => {
       />
       <Layout className="w-full space-y-4">
         <div className="space-y-2">
-          <h1 className="text-4xl font-semibold text-brand">{title}</h1>
+          <h1 className="text-4xl font-semibold text-brand">
+            {t('projects:projects')}
+          </h1>
           <h2 className="text-lg">{description}</h2>
         </div>
         <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
@@ -46,7 +49,7 @@ const Projects = ({ projects }) => {
 export default Projects;
 
 export async function getStaticProps({ locale }) {
-  const projects = await getAllProjects(locale);
+  const projects = getAllFontmatter(locale, 'projects') as ProjectFrontMatter[];
 
   return {
     props: {
