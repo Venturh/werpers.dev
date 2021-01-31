@@ -13,12 +13,9 @@ type DiscordPresence = {
 export const DiscordCard = (presence: DiscordPresence) => (
   <BaseCard outline barPosition="none" className="w-full py-2 md:w-72">
     <div className="flex space-x-3">
-      <Image
+      <img
+        className="w-16 h-16 rounded-lg"
         alt="discord"
-        height={60}
-        width={60}
-        quality={100}
-        className="rounded-lg"
         src={presence.imgUrl}
       />
       <div className="w-56 space-y-1 md:w-48 ">
@@ -33,8 +30,7 @@ export const DiscordCard = (presence: DiscordPresence) => (
 const Discord = () => {
   const { data, error } = useSWR<DiscordPresence[]>(
     `https://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
-    fetcher,
-    { refreshInterval: 1000 }
+    fetcher
   );
 
   if (!data && !error) return <span />;
