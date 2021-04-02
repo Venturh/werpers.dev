@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Fuse from 'fuse.js';
+
 import { Filter, Search } from 'components';
-import clsx from 'clsx';
-import styles from 'styles/global.module.css';
+
 import { ProjectFrontMatter } from '@types';
 
 const options = {
@@ -72,9 +72,7 @@ const ProjectFilter = ({
   return (
     <div className="space-y-4">
       <Search callback={(name: string) => handleSearch(name)} />
-      <div
-        className={clsx('flex space-x-2 overflow-x-scroll', styles.hideScroll)}
-      >
+      <div className="flex space-x-2 overflow-x-scroll">
         {filters.map((filter: string) => (
           <Filter
             key={filter}

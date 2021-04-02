@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 
 import { Layout } from 'components';
-import Hero from 'sections/project/Hero';
+import Hero from 'sections/projects/Hero';
 
 import { genearateImage } from 'next-seo.config';
 import useTranslation from 'next-translate/useTranslation';
