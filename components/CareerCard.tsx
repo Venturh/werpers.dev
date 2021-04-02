@@ -19,7 +19,7 @@ const CareerCard = ({
       <div className="relative">
         {!last && (
           <span
-            className="hidden md:block absolute top-4 left-3 md:left-5  h-full w-0.5 bg-secondary"
+            className="hidden md:block absolute top-4 left-3 md:left-5 h-full w-0.5 bg-secondary"
             aria-hidden="true"
           />
         )}
@@ -29,8 +29,8 @@ const CareerCard = ({
             src={`/images/${logo}`}
             alt=""
           />
-          <div>
-            <div className="flex items-center justify-between w-full">
+          <div className="w-full">
+            <div className="flex items-center justify-between">
               <Link out to={url}>
                 <span className="text-lg font-medium">{title}</span>
               </Link>

@@ -20,7 +20,7 @@ const Skills = () => {
             type: string;
             skills: { name: string; icon: string }[];
           }) => (
-            <div key={type} className="space-y-1">
+            <div key={type} className="space-y-3">
               <p className="text-lg font-medium md:text-xl ">
                 {t(`portfolio:${type}`)}
               </p>

@@ -34,11 +34,11 @@ const ProjectList = ({ projects }: { projects: ProjectFrontMatter[] }) => {
 
               <td>{date}</td>
               <td className="flex space-x-2">
-                <IconButton
+                {/* <IconButton
                   rounded
                   to={`/projects/${slug}`}
                   icon={ArrowRightUp}
-                />
+                /> */}
                 <IconButton rounded out to={githubUrl} icon={Github} />
                 {pageUrl ? (
                   <IconButton rounded out to={pageUrl} icon={LinkOut} />
