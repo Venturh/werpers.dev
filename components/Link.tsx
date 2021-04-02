@@ -25,7 +25,7 @@ const Link = ({
       className={clsx({
         'hover:text-brand': !block,
         'flex items-center hover:ring-4 p-1 hover:ring-accentBg hover:bg-accentBg rounded-md': block,
-        'border-b border-brand': underline,
+        underline: underline,
         'text-brand': active,
         className,
       })}

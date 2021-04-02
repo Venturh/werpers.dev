@@ -6,6 +6,13 @@ import {
   PlaystoreOutlined,
   MailOutlined,
   Discord,
+  Spring,
+  Symfony,
+  Laravel,
+  Express,
+  MySql,
+  Graphql,
+  Tailwindcss,
 } from 'icons';
 import {
   React,
@@ -16,11 +23,8 @@ import {
   Html,
   Css,
   JavaScript,
-  Java,
-  Python,
-  C,
   MongoDB,
-  Figma,
+  Nuxt,
 } from 'icons';
 export type Navlink = {
   name: string;
@@ -39,9 +43,10 @@ export type Career = {
   type: string;
   url: string;
   tech: string[];
+  logo: string;
 };
 
-export type Skill = { name: string; icon: string };
+export type Skill = { name: string; icon: string; subSkills?: Skill[] };
 
 export const navlinks: Navlink[] = [
   { name: 'portfolio', to: '/' },
@@ -50,12 +55,22 @@ export const navlinks: Navlink[] = [
 
 export const career: Career[] = [
   {
-    title: 'clickbar',
+    title: 'clickbar.',
     description: 'clickbar_description',
     time: 'clickbar_time',
     type: 'clickbar_type',
     url: 'https://clickbar.dev/',
     tech: ['Vue', 'Node', 'Typescript', 'Laravel', 'Symfony', 'Php'],
+    logo: 'clickbar.jpg',
+  },
+  {
+    title: 'clickbar.',
+    description: 'clickbar_internship_description',
+    time: 'clickbar_internship_time',
+    type: 'clickbar_internship_type',
+    url: 'https://clickbar.dev/',
+    tech: ['Vue', 'Node', 'Typescript', 'Laravel', 'Symfony', 'Php'],
+    logo: 'clickbar.jpg',
   },
   {
     title: 'Hochschule Rhein Main',
@@ -64,6 +79,7 @@ export const career: Career[] = [
     type: 'hsrm_type',
     url: 'https://www.hs-rm.de/de/',
     tech: ['Javascript', 'React', 'Java', 'Python', 'Scrum', 'Database'],
+    logo: 'hsrm.jpg',
   },
 ];
 
@@ -87,33 +103,65 @@ export const socials: Social[] = [
   { name: 'Mail', link: 'mailto:contact@maxwerpers.me', icon: MailOutlined },
 ];
 
-const frameworks = [
-  { name: 'React', icon: React },
-  { name: 'Vue', icon: Vue },
-  { name: 'Next', icon: Next },
-  { name: 'Gatsby', icon: Gatsby },
-  { name: 'Electron', icon: Electron },
+const frontend: Skill[] = [
+  {
+    name: 'React',
+    icon: React,
+    subSkills: [
+      { name: 'Next', icon: Next },
+      { name: 'Gatsby', icon: Gatsby },
+      { name: 'Html', icon: Html },
+      { name: 'Css', icon: Css },
+      { name: 'Tailwindcss', icon: Tailwindcss },
+      { name: 'Electron', icon: Electron },
+    ],
+  },
+  {
+    name: 'Vue',
+    icon: Vue,
+    subSkills: [
+      { name: 'Nuxt', icon: Nuxt },
+      { name: 'Html', icon: Html },
+      { name: 'Css', icon: Css },
+      { name: 'Tailwindcss', icon: Tailwindcss },
+      { name: 'Electron', icon: Electron },
+    ],
+  },
 ];
 
-const languages = [
-  { name: 'HTML', icon: Html },
-  { name: 'CSS', icon: Css },
-  { name: 'Javascript', icon: JavaScript },
-  { name: 'Java', icon: Java },
-  { name: 'Python', icon: Python },
-  { name: 'C', icon: C },
-];
-
-const other = [
-  { name: 'Github', icon: Github },
-  { name: 'Figma', icon: Figma },
-  { name: 'MongoDB', icon: MongoDB },
-  { name: 'Postgres', icon: Postgres },
-  ,
+const backend: Skill[] = [
+  {
+    name: 'Express',
+    icon: Express,
+    subSkills: [
+      { icon: Graphql, name: 'Graphql' },
+      { icon: MongoDB, name: 'MongoDB' },
+      { icon: Postgres, name: 'Postgres' },
+      { icon: MySql, name: 'MySql' },
+    ],
+  },
+  {
+    name: 'Laravel',
+    icon: Laravel,
+    subSkills: [
+      { icon: MongoDB, name: 'MongoDB' },
+      { icon: Postgres, name: 'Postgres' },
+      { icon: MySql, name: 'MySql' },
+    ],
+  },
+  {
+    name: 'Symfony',
+    icon: Symfony,
+    subSkills: [
+      { icon: MongoDB, name: 'MongoDB' },
+      { icon: Postgres, name: 'Postgres' },
+      { icon: MySql, name: 'MySql' },
+    ],
+  },
+  { name: 'Spring', icon: Spring },
 ];
 
 export const skills = [
-  { type: 'frameworks', skills: frameworks },
-  { type: 'languages', skills: languages },
-  { type: 'others', skills: other },
+  { type: 'frontend', skills: frontend },
+  { type: 'backend', skills: backend },
 ];

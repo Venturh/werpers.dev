@@ -1,11 +1,48 @@
-import { Skill as SkillType } from 'content';
+import { useState } from 'react';
+import useTranslation from 'next-translate/useTranslation';
 import Icon from './Icon';
+import Label from './Label';
 
-const Skill = ({ name, icon }: SkillType) => (
-  <div className="flex flex-col items-center ">
-    <Icon size="md" path={icon} />
-    <span className="text-sm lg:text-base mt-0.5">{name}</span>
-  </div>
-);
+import { Skill as SkillType } from 'content';
+
+const Skill = ({ name, icon, subSkills }: SkillType) => {
+  const { t } = useTranslation();
+
+  const [hovered, setHovered] = useState('');
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-center w-10 h-10 rounded-md shadow-sm bg-secondary text-brand">
+            <Icon size="md" colored path={icon} />
+          </div>
+          <span className="text-sm font-medium lg:text-base">{name}</span>
+        </div>
+
+        <div className="relative">
+          <Label className="absolute -top-10">{hovered}</Label>
+          {subSkills && (
+            <div className="flex -space-x-2 text-primary">
+              {subSkills.map(({ icon, name }) => (
+                <div
+                  onMouseOver={() => setHovered(name)}
+                  onMouseLeave={() => setHovered('')}
+                  key={icon}
+                  className="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-brand"
+                >
+                  <Icon className="" size="sm" path={icon} colored />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <p className="prose">
+        {t(`portfolio:skill_description_${name.toLocaleLowerCase()}`)}
+      </p>
+    </div>
+  );
+};
 
 export default Skill;

@@ -24,7 +24,7 @@ const Icon = ({
       viewBox={viewBox}
       style={style}
       className={clsx(className, {
-        ' text-primary ': !colored,
+        'text-primary ': !colored,
         'h-3 md:h-4 ': size === 'sm',
         'h-4.5 md:h-5': size === undefined,
         'h-5 md:h-6': size === 'md',

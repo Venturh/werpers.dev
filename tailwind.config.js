@@ -31,7 +31,7 @@ module.exports = {
       },
       textColor: {
         primary: 'var(--text-primary)',
-        secondary: 'var(--Stext-secondary)',
+        secondary: 'var(--text-secondary)',
       },
       width: {
         '1/10': '10%',

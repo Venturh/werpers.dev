@@ -11,7 +11,7 @@ import {
 
 const Portfolio = ({ projects }: { projects: ProjectFrontMatter[] }) => {
   return (
-    <Layout className="space-y-6">
+    <Layout className="space-y-8">
       <Hero />
       <Projects projects={projects} />
       <Career />

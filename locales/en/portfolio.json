@@ -3,7 +3,7 @@
   "projects": "Projects",
 
   "hero_1": "Hey, I´m",
-  "hero_2": "I am a developer pasionated in web development. Currently in my last year of studying media science. Thank you for visiting my portfolio.",
+  "hero_2": "I am a developer passionate about web development. Currently in my last year of studying media science. Thank you for visiting my portfolio.",
 
   "project": "Project",
   "projectsSub": "A selection of my latest projects.",
@@ -13,24 +13,36 @@
   "skillsSub": "My most used techs I have experience in.",
 
   "experience": "Experience",
-  "experienceSub": "My experience, summerized.",
-  "clickbar_description": "I landed my first internship at clickbar. At clickbar I mainly develop Full Stack Apps with Vue and Laravel/Symfony or Node.",
-  "clickbar_time": "2020 - present",
-  "clickbar_type": "Intern",
+  "experienceSub": "My experience, summarized.",
+
+  "clickbar_description": "I currently work part-time at clickbar as a working student. I focus on fullstack development.",
+  "clickbar_time": "April 2021 - present",
+  "clickbar_type": "Working student",
+
+  "clickbar_internship_description": "I landed my first internship at clickbar. I mainly developed Full Stack Apps with Vue and Laravel/Symfony or Node.",
+  "clickbar_internship_time": "October 2020 - April 2021",
+  "clickbar_internship_type": "Intern",
 
   "hsrm_description": "I study Media Science in my final semesters. I experienced many fields of computer science , for example Databases, Algorithms, Scrum, and Software Development.",
   "hsrm_time": "2017 - present",
   "hsrm_type": "Student",
 
-  "frameworks": "Frameworks",
-  "languages": "Languages",
+  "frontend": "Frontend",
+  "backend": "Backend",
   "databases": "Databases",
   "others": "Others",
+
+  "skill_description_react": "This was the Framework I started with. I had to use it in an university class and felt in love with web development. Since then I improved a lot and it´s still my go to frontend framework.",
+  "skill_description_vue": "Vue was my second frontend framework I studied. Since it is the framework we use at work, I currently have more experience in Vue then React.",
+  "skill_description_express": "My favorite solution to implement the backend, it is really powerful in combination with Typescript and GraphQL.",
+  "skill_description_laravel": "Laravel is a php framework. We use it as our main backend framework at work. With it it is possible to quickly prototype a service.",
+  "skill_description_symfony": "Another php framework we use at work, but I prefer Laravel",
+  "skill_description_spring": "Spring is a based on java and i got some experience with it from a university class.",
 
   "about": "About me",
   "aboutSub": "Developer - Student",
   "about_1": "Hi I´m Maximilian Werpers based in Wiesbaden, Germany. I currently work full-time as an as a Full Stack Web Developer intern at ",
   "about_2": "and i study Media science in my seventh semester.",
-  "about_3": "During my studies i found my passion with web development and now i follow my own projects in my freetime. A list of projects I worked on can be found ",
+  "about_3": "During my studies i found my passion with web development and now i follow my own projects in my free time. A list of projects I worked on can be found ",
   "here": "here."
 }

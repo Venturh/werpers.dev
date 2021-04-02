@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  @apply dark;
-}
-
 @layer base {
   button {
     @apply focus:ring focus:ring-brand focus:outline-none;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .prose {
@@ -23,13 +23,13 @@
 }
 
 .dark {
-  --brand: #99f6e4;
-  --brandDarker: #8addcd;
+  --brand: #d1fae5;
+  --brandDarker: #a7f3d0;
   --brandContrast: #08090a;
   --bg: #040405;
   --bg-secondary: #0d1117;
   --bg-accent: #1c1f25;
-  --border-bg: #e5e7eb;
+  --border-bg: #0d1117;
   --text-primary: #edf2f7;
   --text-secondary: #cbd5e0;
   --error: #fc8181;
@@ -37,13 +37,13 @@
 }
 
 .light {
-  --brand: #14b8a6;
-  --brandDarker: #12a695;
+  --brand: #6ee7b7;
+  --brandDarker: #34d399;
   --brandContrast: #1b2439;
   --bg: #ffffff;
   --bg-secondary: #f7fafc;
   --bg-accent: #f5f5f5;
-  --border-bg: #4b5563;
+  --border-bg: #d1d5db;
   --text-primary: #000000;
   --text-secondary: #4a5568;
   --error: #f56565;
