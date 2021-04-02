@@ -15,11 +15,11 @@ const CareerCard = ({
 }: Props) => {
   const { t } = useTranslation();
   return (
-    <li className="py-4">
+    <li className="w-full py-4">
       <div className="relative">
         {!last && (
           <span
-            className="hidden md:block absolute top-4 left-3 md:left-5 -ml-px h-full w-0.5 bg-secondary"
+            className="hidden md:block absolute top-4 left-3 md:left-5  h-full w-0.5 bg-secondary"
             aria-hidden="true"
           />
         )}
