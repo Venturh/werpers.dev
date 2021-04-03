@@ -10,7 +10,7 @@ const Career = () => {
         title={t('portfolio:experience')}
         subtitle={t('portfolio:experienceSub')}
       />
-      <ul className="w-full">
+      <ul className="w-full divide-y divide-accentBg md:divide-y-0">
         {career.map((c: CareerType, index) => (
           <CareerCard
             key={index}

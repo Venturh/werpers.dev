@@ -11,7 +11,7 @@ const Skills = () => {
         subtitle={t('portfolio:skillsSub')}
       />
 
-      <div className="">
+      <div className="space-y-3 divide-y divide-accentBg md:divide-y-0">
         {skills.map(
           ({
             type,
@@ -24,7 +24,7 @@ const Skills = () => {
               <p className="text-lg font-medium md:text-xl ">
                 {t(`portfolio:${type}`)}
               </p>
-              <div className="grid grid-cols-2 gap-x-12 gap-y-4">
+              <div className="grid md:grid-cols-2 md:gap-x-12 gap-y-4">
                 {skills.map((skill) => (
                   <Skill key={skill.name} {...skill} />
                 ))}
