@@ -1,26 +1,18 @@
 import { socials } from 'content';
-import IconButton from './IconButton';
 import Discord from './Discord';
 import Logo from './Logo';
+import Link from './Link';
 
 const Footer = () => {
   return (
-    <div className="flex flex-col flex-shrink-0 w-full py-2 space-y-4 md:py-8 md:max-w-2xl md:mx-auto ">
-      <div className="w-full my-2 border-b-2 border-accentBg " />
-      <Logo className="self-center" type="desktop" />
+    <div className="flex flex-col flex-shrink-0 w-full py-6 space-y-2">
+      <div className="w-full border-b-2 border-accentBg " />
       <Discord />
-      <div className="flex justify-center space-x-4 ">
-        {socials.map(({ link, icon }) => (
-          <IconButton
-            className="fill-current text-secondary"
-            iconSize="md"
-            to={link}
-            key={link}
-            icon={icon}
-            colored
-            rounded
-            outlined
-          />
+      <div className="grid grid-cols-3">
+        {socials.map(({ link, internal, name }) => (
+          <Link key={name} to={link} out={!internal}>
+            <span className="text-base text-secondary">{name}</span>
+          </Link>
         ))}
       </div>
     </div>

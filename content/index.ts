@@ -35,6 +35,7 @@ export type Social = {
   name: string;
   link?: string;
   icon?: string;
+  internal?: boolean;
 };
 export type Career = {
   title: string;
@@ -84,23 +85,25 @@ export const career: Career[] = [
 ];
 
 export const socials: Social[] = [
-  { name: 'Venturh', link: 'https://github.com/Venturh', icon: GithubOutlined },
+  { name: 'Portfolio', link: '/', internal: true },
+  { name: 'Github', link: 'https://github.com/Venturh', icon: GithubOutlined },
   {
-    name: 'Max Werpers',
+    name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/max-werpers-9474251a5/',
     icon: LinkedInOutlined,
   },
+  { name: 'Projects', link: '/projects', internal: true },
   {
-    name: 'My Discord Server',
+    name: 'Discord',
     link: 'https://discord.gg/pmsD8Qqvn9',
     icon: Discord,
   },
-  {
-    name: 'Venturh',
-    link: 'https://play.google.com/store/apps/developer?id=Venturh',
-    icon: PlaystoreOutlined,
-  },
-  { name: 'Mail', link: 'mailto:contact@maxwerpers.me', icon: MailOutlined },
+  // {
+  //   name: 'Playstore',
+  //   link: 'https://play.google.com/store/apps/developer?id=Venturh',
+  //   icon: PlaystoreOutlined,
+  // },
+  { name: 'Email', link: 'mailto:contact@maxwerpers.me', icon: MailOutlined },
 ];
 
 const frontend: Skill[] = [

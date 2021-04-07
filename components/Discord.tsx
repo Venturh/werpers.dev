@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { fetcher } from 'lib/swr';
 import useSWR from 'swr';
-import BaseCard from './BaseCard';
 
 type DiscordPresence = {
   currently: string;
@@ -11,20 +10,14 @@ type DiscordPresence = {
 };
 
 export const DiscordCard = (presence: DiscordPresence) => (
-  <BaseCard outline barPosition="none" className="w-full py-2 md:w-72">
-    <div className="flex space-x-3">
-      <img
-        className="w-16 h-16 rounded-lg"
-        alt="discord"
-        src={presence.imgUrl}
-      />
-      <div className="w-56 space-y-1 md:w-48 ">
-        <p className="text-xs font-medium truncate ">{presence.currently}</p>
-        <p className="truncate">{presence.details}</p>
-        <p className="text-xs truncate">{presence.time}</p>
-      </div>
+  <div className="flex items-center w-full py-2 space-x-2 md:justify-start md:w-72">
+    <img className="w-6 h-6 rounded-lg " alt="discord" src={presence.imgUrl} />
+    <div className="flex space-x-1 text-sm truncate">
+      <span>{presence.currently}</span>
+      <span className="hidden md:block"> - </span>
+      <span>{presence.details}</span>
     </div>
-  </BaseCard>
+  </div>
 );
 
 const Discord = () => {
@@ -36,7 +29,7 @@ const Discord = () => {
   if (!data && !error) return <span />;
   if (error) return <span></span>;
   return (
-    <div className="flex flex-col space-y-2 md:justify-center md:space-x-2 md:flex-row md:space-y-0">
+    <div className="flex flex-col space-y-2 md:space-x-2 md:flex-row md:space-y-0">
       {data.map((presence) => (
         <DiscordCard key={presence.details} {...presence} />
       ))}
