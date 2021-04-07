@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
-import { BaseCard, SectionHeader, Skill } from 'components';
+import { SectionHeader, Skill } from 'components';
 import { skills } from 'content';
 
 const Skills = () => {

@@ -13,6 +13,7 @@ module.exports = {
       brand: 'var(--brand)',
       brandDarker: 'var(--brandDarker)',
       brandContrast: 'var(--brandContrast)',
+      brand15: 'var(--brand15)',
       error: 'var(--error)',
       success: 'var(--success)',
       primaryText: 'var(--text-primary)',

@@ -18,7 +18,7 @@ const ProjectCard = ({
         <div>{description}</div>
         <div className="flex mt-1 space-x-2">
           {tech.map((build) => (
-            <Label variant="25" key={build}>
+            <Label variant="15" key={build}>
               <div className="text-sm">{build}</div>
             </Label>
           ))}

@@ -4,7 +4,7 @@ export default function SEO(lang: string) {
     lang === 'de' ? 'von' : 'of'
   } Maximilian Werpers, Fullstack Developer`;
   const locale = lang === 'de' ? 'de_DE' : 'en_US';
-  const home = 'https://maxwerpers.me';
+  const home = 'https://werpers.dev';
 
   return {
     title,

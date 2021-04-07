@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 type Props = {
   children: React.ReactNode;
-  variant?: 'brand' | 'default' | 'border' | 'secondary' | '25';
+  variant?: 'brand' | 'default' | 'border' | 'secondary' | '15';
   className?: string;
 };
 
@@ -15,8 +15,7 @@ const Label = ({ children, variant, className }: Props) => (
         'bg-primary text-primary p-1': variant === 'default',
         'border border-accentBg': variant === 'border',
         'bg-secondary': variant === 'secondary',
-        'bg-accentBg text-primary dark:bg-secondary dark:text-brand':
-          variant === '25',
+        'bg-brand15 text-brandDarker': variant === '15',
       },
       className
     )}

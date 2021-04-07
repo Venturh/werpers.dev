@@ -10,7 +10,7 @@ type DiscordPresence = {
 };
 
 export const DiscordCard = (presence: DiscordPresence) => (
-  <div className="flex items-center w-full py-2 space-x-2 md:justify-start md:w-72">
+  <div className="flex items-center w-full space-x-2 md:justify-start md:w-72">
     <img className="w-6 h-6 rounded-lg " alt="discord" src={presence.imgUrl} />
     <div className="flex space-x-1 text-sm truncate">
       <span>{presence.currently}</span>

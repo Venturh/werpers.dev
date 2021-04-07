@@ -34,7 +34,7 @@ const CareerCard = ({
               <Link out to={url}>
                 <span className="text-lg font-medium">{title}</span>
               </Link>
-              <Label variant="25">{t(`portfolio:${type}`)}</Label>
+              <Label variant="15">{t(`portfolio:${type}`)}</Label>
             </div>
             <p className="text-sm">{t(`portfolio:${time}`)}</p>
             <p className="prose ">{t(`portfolio:${description}`)}</p>

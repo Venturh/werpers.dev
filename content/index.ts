@@ -1,9 +1,7 @@
 import {
   LinkedInOutlined,
-  Github,
   Postgres,
   GithubOutlined,
-  PlaystoreOutlined,
   MailOutlined,
   Discord,
   Spring,
@@ -22,7 +20,6 @@ import {
   Electron,
   Html,
   Css,
-  JavaScript,
   MongoDB,
   Nuxt,
 } from 'icons';
