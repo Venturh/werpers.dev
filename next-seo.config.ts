@@ -1,4 +1,5 @@
-export default function SEO(lang: string) {
+import { NextSeoProps } from 'next-seo';
+export default function SEO(lang: string): NextSeoProps {
   const title = 'Maximilian Werpers - Web Developer & Student';
   const description = `Portfolio ${
     lang === 'de' ? 'von' : 'of'
@@ -10,6 +11,14 @@ export default function SEO(lang: string) {
     title,
     description,
     canonical: home,
+    additionalMetaTags: [
+      { property: 'author', content: 'Maximilian Werpers' },
+      {
+        property: 'keywords',
+        content:
+          'bio,homepage,portfolio,developer,remote,typescript,node.js,node,react,vue, laravel, php, open-source,open source, github, werpers',
+      },
+    ],
     openGraph: {
       type: 'website',
       locale,
@@ -17,6 +26,10 @@ export default function SEO(lang: string) {
       title,
       description,
       images: genearateImage(title),
+      profile: {
+        firstName: 'Maximilian',
+        lastName: 'Werpers',
+      },
     },
   };
 }

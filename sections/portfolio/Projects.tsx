@@ -8,7 +8,7 @@ import { ProjectFrontMatter } from '@types';
 const Projects = ({ projects }: { projects: ProjectFrontMatter[] }) => {
   const { t } = useTranslation();
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       <SectionHeader
         title={t('portfolio:projects')}
         subtitle={t('portfolio:projectsSub')}

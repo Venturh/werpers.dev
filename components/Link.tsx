@@ -24,7 +24,7 @@ const Link = ({
     <ButtonOrLink
       className={clsx({
         'hover:text-brand': !block,
-        'flex items-center hover:ring-4 p-1 hover:ring-accentBg hover:bg-accentBg rounded-md': block,
+        'flex items-center hover:ring-4 p-1 hover:ring-secondaryBg hover:bg-secondary rounded-md': block,
         underline: underline,
         'text-brand': active,
         className,

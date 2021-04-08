@@ -16,7 +16,7 @@ type ProjectProps = {
 const Project = ({ project, github }: ProjectProps) => {
   const { t } = useTranslation();
   const url = `https://www.maxwerpers.me/de/projects/${project.frontmatter.slug}`;
-  const title = `${t('common:project')}: ${
+  const title = `${t('portfolio:project')}: ${
     project.frontmatter.title
   } - Maximilian Werpers`;
   const { description } = project.frontmatter;

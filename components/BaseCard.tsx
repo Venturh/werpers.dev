@@ -11,7 +11,7 @@ const BaseCard = ({ children, barPosition, className }: Props) => (
   <div
     className={clsx(
       className,
-      'relative dark:ring dark:ring-borderBg  w-full shadow-md px-2 py-1 rounded-lg',
+      'relative dark:ring-2 dark:ring-accentBg w-full shadow-md p-2 rounded-lg',
       {
         'pl-6': barPosition === 'left',
       }
@@ -19,7 +19,7 @@ const BaseCard = ({ children, barPosition, className }: Props) => (
   >
     {children}
     <div
-      className={clsx('absolute  rounded-sm bg-brand', {
+      className={clsx('absolute rounded-sm bg-brand', {
         'bottom-0 w-full h-1': barPosition === 'bottom',
         'top-0 left-0 w-1.5 h-full': barPosition === 'left',
         hidden: barPosition === 'none',

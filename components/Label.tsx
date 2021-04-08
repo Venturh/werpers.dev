@@ -15,7 +15,7 @@ const Label = ({ children, variant, className }: Props) => (
         'bg-primary text-primary p-1': variant === 'default',
         'border border-accentBg': variant === 'border',
         'bg-secondary': variant === 'secondary',
-        'bg-brand15 text-brandDarker': variant === '15',
+        'bg-brand15 text-primary dark:text-brand': variant === '15',
       },
       className
     )}

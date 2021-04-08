@@ -32,9 +32,7 @@
   --bg-accent: #1c1f25;
   --border-bg: #0d1117;
   --text-primary: #edf2f7;
-  --text-secondary: #cbd5e0;
-  --error: #fc8181;
-  --success: #9ae6b4;
+  --text-secondary: #f9fafb;
 }
 
 .light {
@@ -44,10 +42,7 @@
   --brand15: rgba(110, 231, 183, 0.15);
   --bg: #ffffff;
   --bg-secondary: #f7fafc;
-  --bg-accent: #f5f5f5;
-  --border-bg: #d1d5db;
-  --text-primary: #000000;
-  --text-secondary: #4a5568;
-  --error: #f56565;
-  --success: #97e1b0;
+  --bg-accent: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
 }

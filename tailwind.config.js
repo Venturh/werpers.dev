@@ -14,8 +14,6 @@ module.exports = {
       brandDarker: 'var(--brandDarker)',
       brandContrast: 'var(--brandContrast)',
       brand15: 'var(--brand15)',
-      error: 'var(--error)',
-      success: 'var(--success)',
       primaryText: 'var(--text-primary)',
       secondaryText: 'var(--text-secondary)',
       primaryBg: 'var(--bg)',
@@ -54,9 +52,11 @@ module.exports = {
     },
   },
   variants: {
-    ringColor: ['hover', 'active', 'focus'],
-    ringWidth: ['hover', 'active', 'focus'],
-    ringOffsetWidth: ['hover', 'active', 'focus'],
+    extend: {
+      ringColor: ['hover', 'active', 'focus'],
+      ringWidth: ['hover', 'active', 'focus'],
+      ringOffsetWidth: ['hover', 'active', 'focus'],
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };

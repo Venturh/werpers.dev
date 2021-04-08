@@ -22,7 +22,7 @@ const Navigation = () => {
           {navlinks.map(({ name, to }) => {
             return (
               <Link active={pathname === to} block key={name} to={`${to}`}>
-                {t(`common:${name}`)}
+                {t(`portfolio:${name}`)}
               </Link>
             );
           })}
