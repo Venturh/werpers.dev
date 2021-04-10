@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import useTranslation from 'next-translate/useTranslation';
 import Icon from './Icon';
 import { Language2, Language3 } from 'icons';
 import IconButton from './IconButton';
 
 const LanguageSwitch = () => {
-  const { lang } = useTranslation();
   const { push, pathname, query } = useRouter();
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const dropdownRef = useRef<HTMLInputElement>();
@@ -25,7 +23,7 @@ const LanguageSwitch = () => {
     };
   }, [toggleDropdown]);
 
-  const handleClickOutside = (e) => {
+  const handleClickOutside = (e: any) => {
     if (
       dropdownRef.current.contains(e.target) ||
       displayRef.current.contains(e.target)
@@ -35,11 +33,11 @@ const LanguageSwitch = () => {
     setToggleDropdown(false);
   };
 
-  const onChangeLang = () => {
+  const onChangeLang = (lang: string) => {
     push(
       { pathname, query },
       { pathname, query },
-      { locale: lang === 'en' ? 'de' : 'en' }
+      { locale: lang === 'Deutsch' ? 'de' : 'en' }
     );
     setToggleDropdown(false);
   };
@@ -55,15 +53,15 @@ const LanguageSwitch = () => {
         className={
           !toggleDropdown
             ? 'hidden'
-            : 'flex flex-col justify-center items-center  right-0 w-32 rounded-lg h-24 absolute top-9 md:top-12 md:right-1 space-y-4 bg-secondary'
+            : 'flex flex-col right-1 p-2 rounded-md absolute top-8 space-y-2 shadow-sm ring-1 bg-primary ring-accentBg'
         }
         ref={dropdownRef}
       >
         {allLanguages.map((language) => (
           <div
-            className="flex items-center space-x-1 rounded-md cursor-pointer text-primary hover:text-brand "
+            className="flex items-center space-x-1 rounded-md cursor-pointer text-primary hover:text-brand"
             key={language}
-            onClick={() => onChangeLang()}
+            onClick={() => onChangeLang(language)}
           >
             <Icon className="fill-current" colored path={Language2} />
             <span>{language}</span>

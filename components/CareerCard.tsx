@@ -25,7 +25,7 @@ const CareerCard = ({
         )}
         <div className="relative flex items-start md:space-x-3">
           <img
-            className="items-center justify-center hidden w-6 h-6 rounded-full md:flex md:w-10 md:h-10 bg-primary ring-8 ring-primaryBg ring-offset-secondaryBg ring-offset-2"
+            className="items-center justify-center hidden w-6 h-6 rounded-full md:flex md:w-10 md:h-10 bg-primary ring-8 ring-primaryBg ring-offset-accentBg ring-offset-1"
             src={`/images/${logo}`}
             alt=""
           />

@@ -3,12 +3,11 @@ import { NextSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
 
 import Layout from 'components/Layout';
-import ProjectList from 'sections/projects/ProjectList';
-import ProjectFilter from 'sections/projects/ProjectFilters';
+import { ProjectFilters, ProjectList } from 'sections/projects';
+
+import { projects } from 'content';
 
 import { genearateImage } from 'next-seo.config';
-import { getAllFontmatter } from 'lib/mdx';
-import { ProjectFrontMatter } from '@types';
 
 const Projects = ({ projects }) => {
   const { t, lang } = useTranslation();
@@ -39,7 +38,7 @@ const Projects = ({ projects }) => {
           </h1>
           <h2 className="text-lg">{description}</h2>
         </div>
-        <ProjectFilter projects={projects} onFilter={setFilteredProjects} />
+        <ProjectFilters projects={projects} onFilter={setFilteredProjects} />
         <ProjectList projects={filteredProjects} />
       </Layout>
     </>
@@ -48,9 +47,7 @@ const Projects = ({ projects }) => {
 
 export default Projects;
 
-export async function getStaticProps({ locale }) {
-  const projects = getAllFontmatter(locale, 'projects') as ProjectFrontMatter[];
-
+export async function getStaticProps() {
   return {
     props: {
       projects,

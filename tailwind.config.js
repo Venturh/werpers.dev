@@ -17,7 +17,6 @@ module.exports = {
       primaryText: 'var(--text-primary)',
       secondaryText: 'var(--text-secondary)',
       primaryBg: 'var(--bg)',
-      secondaryBg: 'var(--bg-secondary)',
       accentBg: 'var(--bg-accent)',
       borderBg: 'var(--border-bg)',
     },
@@ -26,7 +25,6 @@ module.exports = {
       sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       backgroundColor: {
         primary: 'var(--bg)',
-        secondary: 'var(--bg-secondary)',
       },
       textColor: {
         primary: 'var(--text-primary)',

@@ -24,9 +24,10 @@ const Footer = () => {
         ))}
       </div>
       <p className="text-sm text-secondary">
-        © 2020, Maximilian Werpers • werpers.dev •{' '}
+        © 2020, Maximilian Werpers • werpers.dev
         {data &&
-          `${t('portfolio:updated')}: ${new Date(
+          data.updated_at &&
+          `• ${t('portfolio:updated')}: ${new Date(
             data.updated_at
           ).toLocaleDateString('de-DE', {
             year: '2-digit',

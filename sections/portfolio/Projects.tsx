@@ -1,11 +1,15 @@
 import useTranslation from 'next-translate/useTranslation';
 
-import { ProjectCard } from 'components';
+import { ProjectCard, SectionHeader } from 'components';
+import { Project } from 'content';
 
-import SectionHeader from 'components/SectionHeader';
-import { ProjectFrontMatter } from '@types';
-
-const Projects = ({ projects }: { projects: ProjectFrontMatter[] }) => {
+const Projects = ({
+  projects,
+  locale,
+}: {
+  projects: Project[];
+  locale: string;
+}) => {
   const { t } = useTranslation();
   return (
     <div className="space-y-4">
@@ -17,9 +21,15 @@ const Projects = ({ projects }: { projects: ProjectFrontMatter[] }) => {
       />
 
       <div className="space-y-4">
-        {projects.map((project: ProjectFrontMatter, index: number) => {
+        {projects.map((project: Project, index: number) => {
           if (index <= 2)
-            return <ProjectCard key={project.title} {...project} />;
+            return (
+              <ProjectCard
+                key={project.slug}
+                project={project}
+                locale={locale}
+              />
+            );
         })}
       </div>
     </div>

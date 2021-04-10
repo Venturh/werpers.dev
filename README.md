@@ -22,7 +22,6 @@ If you want to check out my portfolio yourself you can do so [here](https://maxw
 
 - [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Mdx Remote](https://github.com/hashicorp/next-mdx-remote)
 - [Vercel](https://vercel.com/)
 
 ## Forking

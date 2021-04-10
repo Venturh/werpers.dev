@@ -15,7 +15,6 @@ export { default as Link } from './Link';
 export { default as Logo } from './Logo';
 export { default as Navigation } from './Navigation';
 export { default as ProjectCard } from './ProjectCard';
-export { default as Search } from './Search';
 export { default as SectionHeader } from './SectionHeader';
 export { default as Skill } from './Skill';
 export { default as ThemeToggle } from './ThemeToggle';

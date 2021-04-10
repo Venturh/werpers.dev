@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Fuse from 'fuse.js';
 
-import { Filter, Search } from 'components';
+import { Filter } from 'components';
 
 import { ProjectFrontMatter } from '@types';
 
@@ -35,17 +35,6 @@ const ProjectFilter = ({
   const [appliedFilters, setAppliedFilters] = useState([]);
   const [searchFilter, setSearchFilter] = useState('');
 
-  const handleSearch = (name: string) => {
-    if (searchFilter) {
-      setAppliedFilters((appliedFilters) =>
-        appliedFilters.filter((n) => n !== searchFilter)
-      );
-    }
-    setSearchFilter(name);
-    if (name === '') return;
-    filterByTag(name);
-  };
-
   const filterByTag = (name: string) => {
     const find = appliedFilters.findIndex((n) => n === name);
     if (find !== -1) {
@@ -71,7 +60,6 @@ const ProjectFilter = ({
 
   return (
     <div className="space-y-4">
-      <Search callback={(name: string) => handleSearch(name)} />
       <div className="flex space-x-2 overflow-x-scroll">
         {filters.map((filter: string) => (
           <Filter

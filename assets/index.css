@@ -28,11 +28,10 @@
   --brandContrast: #08090a;
   --brand15: rgba(167, 243, 208, 0.15);
   --bg: #040405;
-  --bg-secondary: #0d1117;
   --bg-accent: #1c1f25;
   --border-bg: #0d1117;
-  --text-primary: #edf2f7;
-  --text-secondary: #f9fafb;
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
 }
 
 .light {
@@ -41,8 +40,7 @@
   --brandContrast: #1b2439;
   --brand15: rgba(110, 231, 183, 0.15);
   --bg: #ffffff;
-  --bg-secondary: #f7fafc;
   --bg-accent: #e5e7eb;
   --text-primary: #111827;
-  --text-secondary: #4b5563;
+  --text-secondary: #6b7280;
 }

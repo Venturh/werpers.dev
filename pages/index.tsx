@@ -1,19 +1,19 @@
-import { ProjectFrontMatter } from '@types';
 import { Layout } from 'components';
-import { getAllFontmatter } from 'lib/mdx';
-import {
-  Projects,
-  PortfolioHero as Hero,
-  Career,
-  Skills,
-  About,
-} from 'sections';
+import { Projects, Hero, Career, Skills, About } from 'sections/portfolio';
+import { projects } from 'content';
+import { Project } from '@types';
 
-const Portfolio = ({ projects }: { projects: ProjectFrontMatter[] }) => {
+const Portfolio = ({
+  projects,
+  locale,
+}: {
+  projects: Project[];
+  locale: string;
+}) => {
   return (
     <Layout className="space-y-8">
       <Hero />
-      <Projects projects={projects} />
+      <Projects projects={projects} locale={locale} />
       <Career />
       <Skills />
       <About />
@@ -22,12 +22,11 @@ const Portfolio = ({ projects }: { projects: ProjectFrontMatter[] }) => {
 };
 export default Portfolio;
 
-export async function getStaticProps({ locale }) {
-  const projects = getAllFontmatter(locale, 'projects') as ProjectFrontMatter[];
+export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       getStaticPropsWorks: true,
-      lang: locale,
+      locale: locale,
       projects,
     },
     revalidate: 1,

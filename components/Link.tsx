@@ -5,28 +5,19 @@ import ButtonOrLink from './ButtonOrLink';
 type Props = {
   to: string;
   out?: boolean;
+  inherit?: boolean;
   underline?: boolean;
-  block?: boolean;
   active?: boolean;
   children: React.ReactNode;
   className?: string;
 };
-const Link = ({
-  to,
-  out,
-  children,
-  className,
-  underline,
-  block,
-  active,
-}: Props) => {
+const Link = ({ to, out, children, className, underline, active }: Props) => {
   return (
     <ButtonOrLink
-      className={clsx({
-        'hover:text-brand': !block,
-        'flex items-center hover:ring-4 p-1 hover:ring-secondaryBg hover:bg-secondary rounded-md': block,
+      className={clsx('font-medium', {
         underline: underline,
-        'text-brand': active,
+        'text-primary hover:text-primary': active,
+        'hover:text-primary text-secondary': !active,
         className,
       })}
       to={to}

@@ -17,7 +17,7 @@ const Filter = ({ name, callback, ...rest }: FilterProps) => {
   return (
     <div
       className={clsx(
-        'p-2 text-sm inline-flex rounded-lg bg-secondary items-center justify-center cursor-pointer hover:border-brand border  ',
+        'p-2 text-sm inline-flex rounded-lg bg-brand15 text-primary items-center justify-center cursor-pointer hover:border-brand border  ',
         { 'border-brand ': selected, 'border-accentBg': !selected }
       )}
       onClick={() => select(name)}

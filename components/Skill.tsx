@@ -13,7 +13,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="flex items-center justify-center w-10 h-10 rounded-md shadow-sm bg-secondary text-brand">
+          <div className="flex items-center justify-center w-10 h-10 rounded-lg shadow-sm bg-brand15 text-brand">
             <Icon size="md" colored path={icon} />
           </div>
           <span className="text-sm font-medium lg:text-base">{name}</span>
@@ -28,7 +28,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
                   onMouseOver={() => setHovered(name)}
                   onMouseLeave={() => setHovered('')}
                   key={icon}
-                  className="flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-brand"
+                  className="flex items-center justify-center w-5 h-5 rounded-full bg-brand15 text-brand"
                 >
                   <Icon size="sm" path={icon} colored />
                 </div>

@@ -1,9 +1,34 @@
-export type ProjectFrontMatter = {
+export type Navlink = {
+  name: string;
+  to: string;
+};
+
+export type Social = {
+  name: string;
+  link?: string;
+  icon?: string;
+  internal?: boolean;
+};
+
+export type Career = {
   title: string;
   description: string;
-  slug: string;
+  time: string;
+  type: string;
+  url: string;
   tech: string[];
-  date: string;
-  githubUrl: string;
-  pageUrl: string;
+  logo: string;
 };
+
+export type Project = {
+  title: string;
+  description?: string;
+  descriptionEn?: string;
+  tech: Array<string>;
+  slug: string;
+  date: string;
+  githubUrl?: string;
+  pageUrl?: string;
+};
+
+export type Skill = { name: string; icon: string; subSkills?: Skill[] };

@@ -18,10 +18,10 @@ const Navigation = () => {
         <Logo />
       </Link>
       <div className="flex items-center space-x-4">
-        <div className="flex space-x-2">
+        <div className="flex space-x-4">
           {navlinks.map(({ name, to }) => {
             return (
-              <Link active={pathname === to} block key={name} to={`${to}`}>
+              <Link active={pathname === to} key={name} to={`${to}`}>
                 {t(`portfolio:${name}`)}
               </Link>
             );

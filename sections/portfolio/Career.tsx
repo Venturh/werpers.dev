@@ -1,6 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
 import { CareerCard, SectionHeader } from 'components';
-import { Career as CareerType, career } from 'content';
+import { career } from 'content';
+import { Career as CareerType } from '@types';
 
 const Career = () => {
   const { t } = useTranslation();
