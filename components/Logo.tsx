@@ -10,7 +10,7 @@ const Logo = ({ type = 'auto', className }: Props) => (
     <div
       className={clsx('font-semibold ', {
         hidden: type === 'mobile',
-        'hidden lg:inline-flex': type === 'auto',
+        'hidden md:inline-flex': type === 'auto',
       })}
     >
       <span className="text-3xl text-brand">werpers</span>
@@ -18,7 +18,7 @@ const Logo = ({ type = 'auto', className }: Props) => (
     </div>
     <div
       className={clsx({
-        'lg:hidden': type === 'auto',
+        'md:hidden': type === 'auto',
         hidden: type === 'desktop',
       })}
     >
