@@ -1,10 +1,10 @@
 import useTranslation from 'next-translate/useTranslation';
 
-import { ArrowRightUp, Github, LinkOut } from 'icons';
+import { Github, LinkOut } from 'icons';
 import { IconButton } from 'components';
-import { ProjectFrontMatter } from '@types';
+import { Project } from '@types';
 
-const ProjectList = ({ projects }: { projects: ProjectFrontMatter[] }) => {
+const ProjectList = ({ projects }: { projects: Project[] }) => {
   const { t } = useTranslation();
   return (
     <table className="w-full">
@@ -34,11 +34,6 @@ const ProjectList = ({ projects }: { projects: ProjectFrontMatter[] }) => {
 
               <td>{date}</td>
               <td className="flex space-x-2">
-                {/* <IconButton
-                  rounded
-                  to={`/projects/${slug}`}
-                  icon={ArrowRightUp}
-                /> */}
                 <IconButton rounded out to={githubUrl} icon={Github} />
                 {pageUrl ? (
                   <IconButton rounded out to={pageUrl} icon={LinkOut} />

@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 
 import { Filter } from 'components';
 
-import { ProjectFrontMatter } from '@types';
+import { Project } from '@types';
 
 const options = {
   shouldSort: true,
@@ -21,7 +21,7 @@ const ProjectFilter = ({
   projects,
 }: {
   onFilter: any;
-  projects: ProjectFrontMatter[];
+  projects: Project[];
 }) => {
   const filters = [
     'React',

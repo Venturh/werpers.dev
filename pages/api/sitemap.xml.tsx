@@ -1,4 +1,3 @@
-import { ProjectFrontMatter } from '@types';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { SitemapStream, streamToPromise, EnumChangefreq } from 'sitemap';
 import { createGzip } from 'zlib';

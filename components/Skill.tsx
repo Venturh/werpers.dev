@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import useTranslation from 'next-translate/useTranslation';
-import Icon from './Icon';
-import Label from './Label';
 
-import { Skill as SkillType } from 'content';
+import { Icon, Label } from 'components';
+import { Skill as SkillType } from '@types';
 
 const Skill = ({ name, icon, subSkills }: SkillType) => {
   const { t } = useTranslation();

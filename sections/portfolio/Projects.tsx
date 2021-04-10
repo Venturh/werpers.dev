@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
 
 import { ProjectCard, SectionHeader } from 'components';
-import { Project } from 'content';
+import { Project } from '@types';
 
 const Projects = ({
   projects,

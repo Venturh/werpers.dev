@@ -1,8 +1,8 @@
 import useTranslation from 'next-translate/useTranslation';
 
-import Label from './Label';
-import Link from './Link';
-import { Career } from 'content';
+import { Label, Link } from 'components';
+import { career } from 'content';
+import { Career } from '@types';
 
 type Props = {
   career: Career;
@@ -40,7 +40,7 @@ const CareerCard = ({
             <p className="prose ">{t(`portfolio:${description}`)}</p>
             <div className="flex mt-1 space-x-1">
               {tech.map((t) => (
-                <Label variant="secondary" key={t}>
+                <Label variant="15" key={t}>
                   {t}
                 </Label>
               ))}
