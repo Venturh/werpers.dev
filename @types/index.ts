@@ -26,7 +26,8 @@ export type Project = {
   descriptionEn?: string;
   tech: Array<string>;
   slug: string;
-  date: string;
+  type: 'Frontend' | 'Backend' | 'Fullstack';
+  year: string;
   githubUrl?: string;
   pageUrl?: string;
 };

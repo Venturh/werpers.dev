@@ -9,7 +9,7 @@ type Props = {
 const Label = ({ children, variant, className }: Props) => (
   <div
     className={clsx(
-      'py-0.5 px-1 text-sm rounded-md shadow-sm dark:shadow-none',
+      'py-0.5 px-1 text-sm rounded-md leading-5 inline-flex',
       {
         'bg-brand text-brandContrast': variant === 'brand',
         'bg-primary text-primary p-1': variant === 'default',

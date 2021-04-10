@@ -13,7 +13,7 @@ const options = {
   maxPatternLength: 32,
   minMatchCharLength: 1,
   useExtendedSearch: true,
-  keys: ['tech', 'title'],
+  keys: ['tech', 'type'],
 };
 
 const ProjectFilter = ({
@@ -26,14 +26,16 @@ const ProjectFilter = ({
   const filters = [
     'React',
     'Vue',
+    'Frontend',
+    'Backend',
+    'Fullstack',
     'Next.js',
-    'Gatsby',
+    'Express',
     'Electron',
     'TypeScript',
   ];
 
   const [appliedFilters, setAppliedFilters] = useState([]);
-  const [searchFilter, setSearchFilter] = useState('');
 
   const filterByTag = (name: string) => {
     const find = appliedFilters.findIndex((n) => n === name);

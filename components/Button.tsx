@@ -2,12 +2,13 @@ import ButtonOrLink from './ButtonOrLink';
 type Props = {
   children: React.ReactNode;
   to?: string;
+  onClick?: () => void;
 };
 
-const Button = ({ children, to }: Props) => (
+const Button = ({ children, to, onClick }: Props) => (
   <ButtonOrLink
-    className="inline-flex items-center px-2 py-1.5 text-sm font-medium border-none rounded-md shadow-sm outline-none lg:px-4 text-brandContrast bg-brand
-     hover:bg-brandDarker focus:ring-2 focus:ring-offset focus:ring-primaryText"
+    onClick={onClick}
+    className="inline-flex items-center px-4 py-2 text-sm font-medium border border-transparent rounded-md shadow-sm text-brandContrast bg-brand hover:bg-brandDarker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand15"
     to={to}
   >
     {children}

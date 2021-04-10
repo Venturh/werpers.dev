@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  button {
-    @apply focus:ring focus:ring-brand focus:outline-none;
-  }
-}
-
 ::-webkit-scrollbar {
   display: none;
 }

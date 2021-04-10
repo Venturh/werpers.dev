@@ -19,6 +19,7 @@ module.exports = {
       primaryBg: 'var(--bg)',
       accentBg: 'var(--bg-accent)',
       borderBg: 'var(--border-bg)',
+      ...colors,
     },
 
     extend: {
