@@ -3,8 +3,9 @@ import { useRouter } from 'next/router';
 import Icon from './Icon';
 import { Language2, Language3 } from 'icons';
 import IconButton from './IconButton';
+import clsx from 'clsx';
 
-const LanguageSwitch = () => {
+const LanguageSwitch = ({ positioned = true }) => {
   const { push, pathname, query } = useRouter();
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const dropdownRef = useRef<HTMLInputElement>();
@@ -50,11 +51,12 @@ const LanguageSwitch = () => {
         onClick={() => setToggleDropdown(!toggleDropdown)}
       />
       <div
-        className={
-          !toggleDropdown
-            ? 'hidden'
-            : 'flex flex-col right-1 p-2 rounded-md absolute top-8 space-y-2 shadow-sm ring-1 bg-primary ring-accentBg'
-        }
+        className={clsx({
+          hidden: !toggleDropdown,
+          'flex flex-col  p-2 rounded-md absolute space-y-2 shadow-sm ring-1 bg-primary ring-accentBg': toggleDropdown,
+          'top-8 right-1 ': positioned,
+          'top-8 ': !positioned,
+        })}
         ref={dropdownRef}
       >
         {allLanguages.map((language) => (

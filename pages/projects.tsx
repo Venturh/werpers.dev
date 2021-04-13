@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { NextSeo } from 'next-seo';
 import useTranslation from 'next-translate/useTranslation';
 
-import { Button, Layout } from 'components';
+import { DefaultLayout } from 'components/layouts';
+import { Button } from 'components';
 import { ProjectFilters, ProjectList } from 'sections/projects';
 
 import { projects } from 'content';
@@ -14,8 +15,8 @@ const Projects = ({ projects }) => {
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  const title = `${t('projects:projects')} - Maximilian Werpers`;
-  const description = t('projects:projectsDesc');
+  const title = `${t('portfolio:projects')} - Maximilian Werpers`;
+  const description = t('portfolio:projectsDesc');
   const url = `https://www.werpers.dev/${lang}/projects`;
   return (
     <>
@@ -31,11 +32,11 @@ const Projects = ({ projects }) => {
           type: 'website',
         }}
       />
-      <Layout className="w-full space-y-4">
+      <DefaultLayout className="w-full space-y-4">
         <div className="flex items-center justify-between">
           <div className="space-y-2">
             <h1 className="text-4xl font-semibold text-brand">
-              {t('projects:projects')}
+              {t('portfolio:projects')}
             </h1>
             <h2 className="text-lg">{description}</h2>
           </div>
@@ -47,7 +48,7 @@ const Projects = ({ projects }) => {
           <ProjectFilters projects={projects} onFilter={setFilteredProjects} />
         )}
         <ProjectList projects={filteredProjects} />
-      </Layout>
+      </DefaultLayout>
     </>
   );
 };

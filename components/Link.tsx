@@ -16,8 +16,8 @@ const Link = ({ to, out, children, className, underline, active }: Props) => {
     <ButtonOrLink
       className={clsx('font-medium', {
         underline: underline,
-        'text-primary hover:text-primary': active,
-        'hover:text-primary text-secondary': !active,
+        'text-brand hover:text-brand': active,
+        'hover:text-brand text-secondary': !active,
         className,
       })}
       to={to}

@@ -13,10 +13,10 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
           <tr className="text-sm tracking-wider text-left text-secondary">
             <th className="px-3 py-2">Name</th>
             <th className="hidden px-3 py-2 lg:table-cell">
-              {t('projects:buildUsing')}
+              {t('portfolio:buildUsing')}
             </th>
-            <th className="px-3 py-2">{t('projects:type')}</th>
-            <th className="px-3 py-2">{t('projects:year')}</th>
+            <th className="px-3 py-2">{t('portfolio:type')}</th>
+            <th className="px-3 py-2">{t('portfolio:year')}</th>
             <th className="px-3 py-2">Links</th>
           </tr>
         </thead>

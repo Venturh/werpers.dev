@@ -2,7 +2,6 @@
   "locales": ["en", "de"],
   "defaultLocale": "de",
   "pages": {
-    "*": ["portfolio"],
-    "/projects": ["projects"]
+    "*": ["portfolio"]
   }
 }

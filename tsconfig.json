@@ -18,10 +18,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.js",
     "**/*.tsx",
-    "components/LanguageSwitch.tsx",
-    "pages/_app.tsx",
-    "pages/_document.tsx",
     "next.config.js"
   ],
   "exclude": ["node_modules", ".next"]

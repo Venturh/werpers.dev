@@ -1,4 +1,4 @@
-import { Layout } from 'components';
+import { DefaultLayout } from 'components/layouts';
 import { Projects, Hero, Career, Skills, About } from 'sections/portfolio';
 import { projects } from 'content';
 import { Project } from '@types';
@@ -11,13 +11,13 @@ const Portfolio = ({
   locale: string;
 }) => {
   return (
-    <Layout className="space-y-8">
+    <DefaultLayout className="space-y-8">
       <Hero />
       <Projects projects={projects} locale={locale} />
       <Career />
       <Skills />
       <About />
-    </Layout>
+    </DefaultLayout>
   );
 };
 export default Portfolio;

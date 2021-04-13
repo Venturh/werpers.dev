@@ -8,6 +8,15 @@ export { default as skills } from './skills';
 export const navlinks: Navlink[] = [
   { name: 'portfolio', to: '/' },
   { name: 'projects', to: '/projects' },
+  { name: 'design', to: '/design' },
+];
+
+export const designLinks: Navlink[] = [
+  { name: 'design', to: '/design' },
+  { name: 'logos', to: '/design/logos' },
+  { name: 'colors', to: '/design/colors' },
+  { name: 'buttons', to: '/design/buttons' },
+  { name: 'labels', to: '/design/labels' },
 ];
 
 export const socials: Social[] = [

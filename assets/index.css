@@ -22,8 +22,8 @@
   --brandContrast: #08090a;
   --brand15: rgba(167, 243, 208, 0.15);
   --bg: #040405;
+  --bg-secondary: #09090a;
   --bg-accent: #1c1f25;
-  --border-bg: #0d1117;
   --text-primary: #f9fafb;
   --text-secondary: #e5e7eb;
 }
@@ -34,6 +34,7 @@
   --brandContrast: #1b2439;
   --brand15: rgba(110, 231, 183, 0.15);
   --bg: #ffffff;
+  --bg-secondary: #fafafa;
   --bg-accent: #e5e7eb;
   --text-primary: #111827;
   --text-secondary: #6b7280;

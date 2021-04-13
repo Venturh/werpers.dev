@@ -1,6 +1,7 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projects",
+  "design": "Design",
 
   "hero_1": "Hey, I´m",
   "hero_2": "I am a developer passionate about web development. Currently in my last year of studying media science. Thank you for visiting my portfolio.",
@@ -46,5 +47,17 @@
   "about_3": "During my studies i found my passion with web development and now i follow my own projects in my free time. A list of projects I worked on can be found ",
   "here": "here.",
 
-  "updated": "Updated"
+  "updated": "Updated",
+
+  "projectsDesc": "A list of projects I worked on",
+  "buildUsing": "Build using",
+  "progress": "Progress",
+  "type": "Type",
+  "year": "Year",
+  "views": "Views",
+
+  "labels": "Labels",
+  "buttons": "Buttons",
+  "colors": "Farben",
+  "logos": "Logos"
 }

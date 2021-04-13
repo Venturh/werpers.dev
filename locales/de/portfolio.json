@@ -1,6 +1,7 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projekte",
+  "design": "Design",
 
   "hero_1": "Hey ich bin",
   "hero_2": "Ich bin Entwickler mit besonderer Leidenschaft zur Webentwicklung. Derzeit befinde ich mich in meinem letzten Studienjahr der Medieninformatik. Danke für deinen Besuch auf meinem Portfolio. ",
@@ -46,5 +47,17 @@
   "about_3": "Während des Studiums habe ich meine Leidenschaft für die Webentwicklung entdeckt und verfolge in meiner Freizeit meine eigenen kleinen Projekte um weitere Konzepte und Ideen zu entwickeln und zu verfolgen.  Die komplette Liste der Projekte an denen ich gearbeitet habe befindet sich ",
   "here": "hier.",
 
-  "updated": "Aktualisiert"
+  "updated": "Aktualisiert",
+
+  "projectsDesc": "Eine Liste an Projekten an denen ich gearbeitet habe",
+  "buildUsing": "Gebaut mit",
+  "progress": "Fortschritt",
+  "type": "Type",
+  "year": "Jahr",
+  "views": "Ansichten",
+
+  "labels": "Labels",
+  "buttons": "Buttons",
+  "colors": "Colors",
+  "logos": "Logos"
 }

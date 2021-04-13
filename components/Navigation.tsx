@@ -19,13 +19,11 @@ const Navigation = () => {
       </Link>
       <div className="flex items-center space-x-4">
         <div className="flex space-x-4">
-          {navlinks.map(({ name, to }) => {
-            return (
-              <Link active={pathname === to} key={name} to={`${to}`}>
-                {t(`portfolio:${name}`)}
-              </Link>
-            );
-          })}
+          {navlinks.map(({ name, to }) => (
+            <Link active={pathname === to} key={name} to={`${to}`}>
+              {t(`portfolio:${name}`)}
+            </Link>
+          ))}
         </div>
         <div className="flex items-center mt-1 space-x-4 md:space-x-2">
           <ThemeToggle />
