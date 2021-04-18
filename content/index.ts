@@ -39,6 +39,6 @@ export const footer = {
       link: 'https://discord.gg/pmsD8Qqvn9',
       internal: false,
     },
-    { name: 'Email', link: 'mailto:contact@maxwerpers.me', icon: MailOutlined },
+    { name: 'Email', link: 'mailto:contact@maxwerpers.me', internal: false },
   ],
 };
