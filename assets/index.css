@@ -8,7 +8,8 @@
 
 .prose {
   @apply text-primary;
-  @apply max-w-2xl;
+  @apply max-w-xs;
+  @apply sm:max-w-3xl;
 }
 
 .prose a {

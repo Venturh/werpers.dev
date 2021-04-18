@@ -29,7 +29,6 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
     '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-var-requires': false,

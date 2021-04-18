@@ -14,7 +14,7 @@ import {
   Postgres,
   MySql,
   Laravel,
-  React,
+  ReactIcon,
   Symfony,
   Spring,
 } from 'icons';
@@ -22,7 +22,7 @@ import {
 const frontend: Skill[] = [
   {
     name: 'React',
-    icon: React,
+    icon: ReactIcon,
     subSkills: [
       { name: 'Next', icon: Next },
       { name: 'Gatsby', icon: Gatsby },

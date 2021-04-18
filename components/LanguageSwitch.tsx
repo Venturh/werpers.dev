@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Dropdown from './Dropdown';
 import { Language2, Language3 } from 'icons';
 
-const LanguageSwitch = ({ positioned = true }) => {
+const LanguageSwitch = ({ withDisplay = false }) => {
   const { push, pathname, query } = useRouter();
 
   const allLanguages = [
@@ -23,6 +23,7 @@ const LanguageSwitch = ({ positioned = true }) => {
       options={allLanguages}
       onClick={(name) => changeLanguage(name)}
       withIcon={Language3}
+      withDisplay={withDisplay}
     />
   );
 };

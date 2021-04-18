@@ -13,6 +13,7 @@
   "project": "Projekt",
   "projectsSub": "Eine Auswahl meiner neusten Projekte.",
   "show_more": "Mehr anzeigen",
+  "show_less": "Weniger anzeigen",
 
   "skills": "Fähigkeiten",
   "skillsSub": "Meine meistgenutzen Technologien, mit denen ich Erfahrung gesammelt habe.",
@@ -44,12 +45,36 @@
   "skill_description_symfony": "Ein weiteres php Backendframework das auch auf der Arbeit eingesetzt wird, allerdings bevorzuge ich Laravel.",
   "skill_description_spring": "Spring ist ein Framework basierend auf Java. Hier habe ich nur Erfahrung durch einen Unikurs gesammelt, da Java nicht meine Lieblingsprache ist.",
 
-  "about": "Über mich",
+  "about": "Über",
+  "aboutMe": "Über mich",
   "aboutSub": "Entwickler - Student",
-  "about_1": "Hey ich bin Maximilian Werpers aus Wiesbaden. Ich arbeite derzeit Vollzeit bei ",
-  "about_2": "als Praktikant in der Fullstack Web Entwicklung und studiere Medieninformatik im siebten Semester.",
-  "about_3": "Während des Studiums habe ich meine Leidenschaft für die Webentwicklung entdeckt und verfolge in meiner Freizeit meine eigenen kleinen Projekte um weitere Konzepte und Ideen zu entwickeln und zu verfolgen.  Die komplette Liste der Projekte an denen ich gearbeitet habe befindet sich ",
+  "about_1": "Ich bin Maximilian Werpers, ein Developer/Student aus Wiesbaden. Ich arbeite derzeit in der Fullstack Web Entwicklung bei ",
+  "about_2": "als Werkstudent und studiere Medieninformatik an der Hoschschule Rhein Main in Wiesbaden.",
+  "about_3": "Während des Studiums habe ich meine Leidenschaft für die Webentwicklung entdeckt und verfolge in meiner Freizeit meine eigenen kleinen Projekte um weitere Konzepte und Ideen zu entwickeln und zu verfolgen. Die komplette Liste der Projekte an denen ich gearbeitet habe befindet sich ",
   "here": "hier.",
+  "about_4": "In meiner Freizeit treibe ich als Ausgleich für die vielen Stunden die ich code oder regelmäßig zocke, viel Sport. Ich gehe ins Fitnessstudio und gehe gerne joggen.",
+
+  "timeline": "Timeline",
+  "timelineSub": "Meine bisherigen 'Errungenschaften'",
+
+  "timeline_2021_1": "Rememoir veröffentlicht",
+  "timeline_2021_2": "Positionswechsel bei clickbar",
+  "timeline_2021_2_sub": "Nach dem Ende meines Praktikums, blieb ich bei clickbar und arbeitete weiter als Werkstudent.",
+
+  "timeline_2020_1": "clickbar. beigetreten",
+  "timeline_2020_1_sub": "Nach einigen Schwierigkeiten, aufgrund von Corona, eine Stelle als Praktikant zu finden, startete ich mein Praktikum etwas verspätet bei clickbar.",
+  "timeline_2020_2": "Vue gelernt 💚",
+  "timeline_2020_2_sub": "Vue war mein zweites Frontend Framework, da ich in React schon gut aufgestellt war und ich etwas neues ausprobieren wollte.",
+
+  "timeline_2019_1": "Webentwicklung entdeckt ❤",
+  "timeline_2019_1_sub": "React war mein erster Kontaktpunkt mit der Webentwicklung. Innerhalb eines Studienfachs habe ich meine erste Web Applikation erstellt und seitdem nicht aufgehört :D",
+  "timeline_2019_2": "Todo",
+
+  "timeline_2018_1": "Todo",
+  "timeline_2018_2": "Todo",
+
+  "timeline_2017_1": "Erstes Java Programm entwickelt",
+  "timeline_2017_2": "Studienanfang Medieninformatik",
 
   "updated": "Aktualisiert",
 
@@ -65,5 +90,6 @@
   "colors": "Farben",
   "logos": "Logos",
   "pages": "Seiten",
-  "socials": "Kontakt"
+  "socials": "Kontakt",
+  "language": "Sprache"
 }

@@ -38,7 +38,7 @@ const CareerCard = ({
             </div>
             <p className="text-sm">{t(`${time}`)}</p>
             <p className="prose ">{t(`${description}`)}</p>
-            <Labels labels={tech} variant="15" max={4} />
+            <Labels labels={tech} variant="15" max={5} />
           </div>
         </div>
       </div>

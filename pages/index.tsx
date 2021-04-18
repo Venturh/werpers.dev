@@ -1,5 +1,5 @@
 import { DefaultLayout } from 'components/layouts';
-import { Projects, Hero, Career, Skills, About } from 'sections/portfolio';
+import { Projects, Hero, Career, Skills } from 'sections/portfolio';
 import { projects } from 'content';
 import { Project } from '@types';
 
@@ -16,7 +16,6 @@ const Portfolio = ({
       <Projects projects={projects} locale={locale} />
       <Career />
       <Skills />
-      <About />
     </DefaultLayout>
   );
 };

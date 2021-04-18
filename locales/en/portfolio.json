@@ -8,11 +8,12 @@
   "whatsNewDesc": "Added design page",
 
   "hero_1": "Hey, I´m",
-  "hero_2": "I am a developer passionate about web development. Currently in my last year of studying media science. Thank you for visiting my portfolio.",
+  "hero_2": "I am a developer passionate about web development. Currently in my last year of studying media informatics. Thank you for visiting my portfolio.",
 
   "project": "Project",
   "projectsSub": "A selection of my latest projects.",
   "show_more": "Show more",
+  "show_less": "Show less",
 
   "skills": "Skills",
   "skillsSub": "My most used techs I have experience in.",
@@ -28,7 +29,7 @@
   "clickbar_internship_time": "October 2020 - April 2021",
   "clickbar_internship_type": "Intern",
 
-  "hsrm_description": "I study Media Science in my final semesters. I experienced many fields of computer science , for example Databases, Algorithms, Scrum, and Software Development.",
+  "hsrm_description": "I study media informatics in my final semester. I experienced many fields of computer science , for example Databases, Algorithms, Scrum, and Software Development.",
   "hsrm_time": "2017 - present",
   "hsrm_type": "Student",
 
@@ -44,12 +45,36 @@
   "skill_description_symfony": "Another php framework we use at work, but I prefer Laravel",
   "skill_description_spring": "Spring is a based on java and i got some experience with it from a university class.",
 
-  "about": "About me",
+  "about": "About",
+  "aboutMe": "About me",
   "aboutSub": "Developer - Student",
-  "about_1": "Hi I´m Maximilian Werpers based in Wiesbaden, Germany. I currently work full-time as an as a Full Stack Web Developer intern at ",
-  "about_2": "and i study Media science in my seventh semester.",
-  "about_3": "During my studies i found my passion with web development and now i follow my own projects in my free time. A list of projects I worked on can be found ",
+  "about_1": "I´m Maximilian Werpers a developer/student based in Wiesbaden, Germany. I currently work part-time as an as a full-stack web developer at ",
+  "about_2": "and I study media informatics at Hochschule Rhein Main in Wiesbaden.",
+  "about_3": "During my studies I have found my passion with web development and now I follow my own projects in my free time. A list of projects I worked on can be found ",
   "here": "here.",
+  "about_4": "In my freetime I´m into fitness, I go to the gym and like to go jogging. This helps me compensating the hours I sit to code and playing video games :D",
+
+  "timeline": "Timeline",
+  "timelineSub": "My previous 'achievements'",
+
+  "timeline_2021_1": "Deployed Rememoir",
+  "timeline_2021_2": "Rejoined clickbar.",
+  "timeline_2021_2_sub": "After the end of my internship I continued to work part-time as a working student at clickbar.",
+
+  "timeline_2020_1": "Joined clickbar.",
+  "timeline_2020_1_sub": "After some trouble finding a good internship due to Covid I got my first internship",
+  "timeline_2020_2": "Learned Vue 💚",
+  "timeline_2020_2_sub": "Vue was my second frontend framework, since I got confident in React and wanted to try out something new.",
+
+  "timeline_2019_1": "Discovered web development ❤",
+  "timeline_2019_1_sub": "React was my first entry to web development. I build my first application and felt in love with web development.",
+  "timeline_2019_2": "Todo",
+
+  "timeline_2018_1": "Todo",
+  "timeline_2018_2": "Todo",
+
+  "timeline_2017_1": "Developed first java application",
+  "timeline_2017_2": "Started to study Media informatics ",
 
   "updated": "Updated",
 
@@ -65,5 +90,6 @@
   "colors": "Colors",
   "logos": "Logos",
   "pages": "Pages",
-  "socials": "Socials"
+  "socials": "Socials",
+  "language": "Languages"
 }

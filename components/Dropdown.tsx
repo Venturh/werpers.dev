@@ -60,7 +60,7 @@ const Dropdown = ({
           onClick={() => setToggleDropdown(!toggleDropdown)}
         >
           {!withDisplay && <span className="sr-only">Open options</span>}
-          {withDisplay && <span className="">{options[0].name}</span>}
+          {withDisplay && <span className="text-sm">{options[0].name}</span>}
           <Icon path={withDisplay ? ArrowDownS : withIcon || Menu1} colored />
         </button>
       </div>
@@ -87,7 +87,10 @@ const Dropdown = ({
               tabIndex={-1}
               id={`menu-item-${name}`}
               key={name}
-              onClick={() => onClick(name)}
+              onClick={() => {
+                onClick(name);
+                setToggleDropdown(false);
+              }}
             >
               {icon && <Icon className="fill-current" colored path={icon} />}
               <span>{name}</span>

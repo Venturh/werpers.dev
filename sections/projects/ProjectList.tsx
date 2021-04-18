@@ -37,7 +37,7 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
                   </Label>
                 </td>
                 <td className="px-3 py-2 space-x-2">{year}</td>
-                <td className="flex px-3 py-2 space-x-2">
+                <td className="flex h-16 px-3 py-2 space-x-2">
                   <IconButton rounded out to={githubUrl} icon={Github} />
                   {pageUrl ? (
                     <IconButton rounded out to={pageUrl} icon={LinkOut} />
