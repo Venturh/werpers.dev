@@ -1,14 +1,23 @@
-import { Button, SectionHeader, IconButton, LanguageSwitch } from 'components';
+import {
+  Button,
+  SectionHeader,
+  IconButton,
+  LanguageSwitch,
+  Dropdown,
+} from 'components';
 import { DefaultLayout, DesignLayout } from 'components/layouts';
 import { Github, LinkOut } from 'icons';
 
 const Logos = () => {
+  const dropdownItems = [
+    { name: 'Frontend' },
+    { name: 'Backend' },
+    { name: 'Fullstack' },
+  ];
   return (
     <DefaultLayout>
       <DesignLayout>
-        <div>
-          <SectionHeader title="Buttons" />
-        </div>
+        <SectionHeader title="buttons" />
         <div className="space-y-4">
           <Button onClick={() => {}}>Click me</Button>
           <div className="flex space-x-2">
@@ -25,7 +34,19 @@ const Logos = () => {
               icon={LinkOut}
             />
           </div>
-          <LanguageSwitch positioned={false} />
+          <div className="flex items-center space-x-8 ">
+            <Dropdown
+              onClick={() => {}}
+              options={dropdownItems}
+              direction="topLeft"
+              withDisplay
+            />
+            <Dropdown
+              onClick={() => {}}
+              options={dropdownItems}
+              direction="topRight"
+            />
+          </div>
         </div>
       </DesignLayout>
     </DefaultLayout>

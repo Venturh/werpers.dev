@@ -11,12 +11,12 @@ import { projects } from 'content';
 import { genearateImage } from 'next-seo.config';
 
 const Projects = ({ projects }) => {
-  const { t, lang } = useTranslation();
+  const { t, lang } = useTranslation('portfolio');
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  const title = `${t('portfolio:projects')} - Maximilian Werpers`;
-  const description = t('portfolio:projectsDesc');
+  const title = `${t('projects')} - Maximilian Werpers`;
+  const description = t('projectsDesc');
   const url = `https://www.werpers.dev/${lang}/projects`;
   return (
     <>
@@ -36,7 +36,7 @@ const Projects = ({ projects }) => {
         <div className="flex items-center justify-between">
           <div className="space-y-2">
             <h1 className="text-4xl font-semibold text-brand">
-              {t('portfolio:projects')}
+              {t('projects')}
             </h1>
             <h2 className="text-lg">{description}</h2>
           </div>

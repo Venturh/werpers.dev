@@ -1,4 +1,4 @@
-import { Label, BaseCard, ButtonOrLink } from 'components';
+import { Labels, BaseCard, ButtonOrLink } from 'components';
 import { Project } from '@types';
 
 const ProjectCard = ({
@@ -12,13 +12,7 @@ const ProjectCard = ({
     <ButtonOrLink to={pageUrl ? pageUrl : githubUrl} out>
       <div className="text-xl"> {title}</div>
       <div>{locale === 'en' ? descriptionEn : description}</div>
-      <div className="flex mt-1 space-x-2">
-        {tech.map((build) => (
-          <Label variant="15" key={build}>
-            <div className="text-sm">{build}</div>
-          </Label>
-        ))}
-      </div>
+      <Labels labels={tech} variant="15" />
     </ButtonOrLink>
   </BaseCard>
 );

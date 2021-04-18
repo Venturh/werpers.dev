@@ -2,6 +2,10 @@
   "portfolio": "Portfolio",
   "projects": "Projects",
   "design": "Design",
+  "designSub": " ",
+
+  "whatsNew": "Whats new?",
+  "whatsNewDesc": "Added design page",
 
   "hero_1": "Hey, I´m",
   "hero_2": "I am a developer passionate about web development. Currently in my last year of studying media science. Thank you for visiting my portfolio.",
@@ -59,5 +63,7 @@
   "labels": "Labels",
   "buttons": "Buttons",
   "colors": "Colors",
-  "logos": "Logos"
+  "logos": "Logos",
+  "pages": "Pages",
+  "socials": "Socials"
 }

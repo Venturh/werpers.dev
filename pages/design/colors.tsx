@@ -6,9 +6,7 @@ const Colors = () => {
   return (
     <DefaultLayout>
       <DesignLayout>
-        <div>
-          <SectionHeader title="Colors" />
-        </div>
+        <SectionHeader title="colors" />
         <div className="grid gap-2 sm:grid-cols-4">
           {Object.entries(theme.colors).map((color) => (
             <div

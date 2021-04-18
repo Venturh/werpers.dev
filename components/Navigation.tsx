@@ -9,7 +9,7 @@ import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
 
 const Navigation = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
   const { pathname } = useRouter();
 
   return (
@@ -21,7 +21,7 @@ const Navigation = () => {
         <div className="flex space-x-4">
           {navlinks.map(({ name, to }) => (
             <Link active={pathname === to} key={name} to={`${to}`}>
-              {t(`portfolio:${name}`)}
+              {t(`${name}`)}
             </Link>
           ))}
         </div>

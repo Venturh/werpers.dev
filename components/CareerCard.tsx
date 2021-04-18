@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 
-import { Label, Link } from 'components';
+import { Label, Labels, Link } from 'components';
 import { career } from 'content';
 import { Career } from '@types';
 
@@ -13,7 +13,7 @@ const CareerCard = ({
   career: { title, description, time, type, tech, url, logo },
   last,
 }: Props) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
   return (
     <li className="w-full py-2">
       <div className="relative">
@@ -34,17 +34,11 @@ const CareerCard = ({
               <Link out to={url}>
                 <span className="text-lg font-medium">{title}</span>
               </Link>
-              <Label variant="15">{t(`portfolio:${type}`)}</Label>
+              <Label variant="15">{t(`${type}`)}</Label>
             </div>
-            <p className="text-sm">{t(`portfolio:${time}`)}</p>
-            <p className="prose ">{t(`portfolio:${description}`)}</p>
-            <div className="flex mt-1 space-x-1">
-              {tech.map((t) => (
-                <Label variant="15" key={t}>
-                  {t}
-                </Label>
-              ))}
-            </div>
+            <p className="text-sm">{t(`${time}`)}</p>
+            <p className="prose ">{t(`${description}`)}</p>
+            <Labels labels={tech} variant="15" max={4} />
           </div>
         </div>
       </div>

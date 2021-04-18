@@ -1,27 +1,23 @@
 import Link from 'components/Link';
-import SectionHeader from 'components/SectionHeader';
+import Section from 'components/Section';
 import useTranslation from 'next-translate/useTranslation';
 
 const About = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
   return (
-    <div className="w-full space-y-2">
-      <SectionHeader
-        title={t('portfolio:about')}
-        subtitle={t('portfolio:aboutSub')}
-      />
+    <Section title="about" subtitle="aboutSub" withPadding={false}>
       <p className="w-full prose">
-        {t('portfolio:about_1')}{' '}
+        {t('about_1')}{' '}
         <Link out underline to="https://clickbar.dev/">
           clickbar {''}
         </Link>
-        {t('portfolio:about_2')} <br />
-        {t('portfolio:about_3')}
+        {t('about_2')} <br />
+        {t('about_3')}
         <Link underline to="/projects">
-          {t('portfolio:here')}
+          {t('here')}
         </Link>
       </p>
-    </div>
+    </Section>
   );
 };
 

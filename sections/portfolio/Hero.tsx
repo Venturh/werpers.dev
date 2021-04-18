@@ -1,15 +1,25 @@
+import { Label, Icon, Link } from 'components';
 import useTranslation from 'next-translate/useTranslation';
+import { ArrowRightS } from 'icons';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
 
   return (
     <div className="space-y-2">
+      <div className="inline-flex items-center space-x-2">
+        <Label variant="15">{t('whatsNew')}</Label>
+        <Link to="/design">
+          <div className="flex items-center space-x-4 text-sm text-brand hover:text-brandDarker">
+            {t('whatsNewDesc')}
+            <Icon path={ArrowRightS} colored />
+          </div>
+        </Link>
+      </div>
       <h1 className="text-3xl font-bold sm:text-4xl ">
-        {t('portfolio:hero_1')}{' '}
-        <span className="text-brand"> Maximilian Werpers </span>
+        {t('hero_1')} <span className="text-brand"> Maximilian Werpers </span>
       </h1>
-      <p className="lg:text-lg">{t('portfolio:hero_2')}</p>
+      <p className="lg:text-lg">{t('hero_2')}</p>
     </div>
   );
 };

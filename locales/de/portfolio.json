@@ -2,6 +2,10 @@
   "portfolio": "Portfolio",
   "projects": "Projekte",
   "design": "Design",
+  "designSub": " ",
+
+  "whatsNew": "Neu",
+  "whatsNewDesc": "Design Seite hinzugefügt",
 
   "hero_1": "Hey ich bin",
   "hero_2": "Ich bin Entwickler mit besonderer Leidenschaft zur Webentwicklung. Derzeit befinde ich mich in meinem letzten Studienjahr der Medieninformatik. Danke für deinen Besuch auf meinem Portfolio. ",
@@ -59,5 +63,7 @@
   "labels": "Labels",
   "buttons": "Buttons",
   "colors": "Farben",
-  "logos": "Logos"
+  "logos": "Logos",
+  "pages": "Seiten",
+  "socials": "Kontakt"
 }

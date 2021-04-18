@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 
-import { ProjectCard, SectionHeader } from 'components';
+import { ProjectCard, Section, SectionHeader } from 'components';
 import { Project } from '@types';
 
 const Projects = ({
@@ -10,16 +10,13 @@ const Projects = ({
   projects: Project[];
   locale: string;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
   return (
-    <div className="space-y-4">
-      <SectionHeader
-        title={t('portfolio:projects')}
-        subtitle={t('portfolio:projectsSub')}
-        buttonText={t('portfolio:show_more')}
-        to="/projects"
-      />
-
+    <Section
+      title="projects"
+      subtitle="projectsSub"
+      button={{ text: 'show_more', to: '/projects' }}
+    >
       <div className="space-y-4">
         {projects.map((project: Project, index: number) => {
           if (index <= 2)
@@ -32,7 +29,7 @@ const Projects = ({
             );
         })}
       </div>
-    </div>
+    </Section>
   );
 };
 

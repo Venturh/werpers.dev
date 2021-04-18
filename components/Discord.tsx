@@ -14,7 +14,7 @@ export const DiscordCard = (presence: DiscordPresence) => (
     <img className="w-6 h-6 rounded-lg " alt="discord" src={presence.imgUrl} />
     <div className="flex space-x-1 text-sm truncate">
       <span>{presence.currently}</span>
-      <span className="hidden md:block"> - </span>
+      <span> - </span>
       <span>{presence.details}</span>
     </div>
   </div>

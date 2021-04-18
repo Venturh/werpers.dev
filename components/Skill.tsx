@@ -5,7 +5,7 @@ import { Icon, Label } from 'components';
 import { Skill as SkillType } from '@types';
 
 const Skill = ({ name, icon, subSkills }: SkillType) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
 
   const [hovered, setHovered] = useState('');
   return (
@@ -38,7 +38,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
       </div>
 
       <p className="prose">
-        {t(`portfolio:skill_description_${name.toLocaleLowerCase()}`)}
+        {t(`skill_description_${name.toLocaleLowerCase()}`)}
       </p>
     </div>
   );

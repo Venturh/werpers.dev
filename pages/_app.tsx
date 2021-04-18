@@ -5,7 +5,7 @@ import 'assets/index.css';
 import useTranslation from 'next-translate/useTranslation';
 
 const MyApp = ({ Component, pageProps }) => {
-  const { lang } = useTranslation();
+  const { lang } = useTranslation('portfolio');
 
   return (
     <ThemeProvider attribute="class" defaultTheme="dark">

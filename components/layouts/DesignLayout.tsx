@@ -1,21 +1,21 @@
-import { designLinks } from 'content';
-import { Link } from 'components';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
+import { designLinks } from 'content';
+import { Link } from 'components';
 
 type Props = {
   children: React.ReactNode;
 };
 
 const DesignLayout = ({ children }: Props) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
   const { pathname } = useRouter();
   return (
     <div className="flex flex-col flex-1 h-full space-y-4 md:space-y-0 md:space-x-8 sm:flex-row">
-      <nav className="flex space-x-2 sm:space-x-0 sm:space-y-2 sm:flex-col">
+      <nav className="flex space-x-4 sm:space-x-0 sm:space-y-2 sm:flex-col">
         {designLinks.map(({ to, name }) => (
           <Link active={pathname === to} key={name} to={`${to}`}>
-            {t(`portfolio:${name}`)}
+            {t(`${name}`)}
           </Link>
         ))}
       </nav>

@@ -1,16 +1,12 @@
 import useTranslation from 'next-translate/useTranslation';
-import { CareerCard, SectionHeader } from 'components';
+import { CareerCard, Section } from 'components';
 import { career } from 'content';
 import { Career as CareerType } from '@types';
 
 const Career = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('portfolio');
   return (
-    <div className="space-y-2">
-      <SectionHeader
-        title={t('portfolio:experience')}
-        subtitle={t('portfolio:experienceSub')}
-      />
+    <Section title="experience" subtitle="experienceSub">
       <ul className="w-full space-y-2 divide-y divide-accentBg md:divide-y-0">
         {career.map((c: CareerType, index) => (
           <CareerCard
@@ -20,7 +16,7 @@ const Career = () => {
           />
         ))}
       </ul>
-    </div>
+    </Section>
   );
 };
 
