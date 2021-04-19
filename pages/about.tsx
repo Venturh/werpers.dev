@@ -3,6 +3,7 @@ import { Button, Link, Section, Icon } from 'components';
 import { DefaultLayout } from 'components/layouts';
 import { timeline } from 'content';
 import { useState } from 'react';
+import { ArrowDownS, ArrowUpS } from 'icons';
 
 const About = () => {
   const { t } = useTranslation('portfolio');
@@ -100,10 +101,16 @@ const Timeline = () => {
         </div>
       ))}
 
-      <span className="flex justify-center">
+      <span className="flex items-center justify-center">
+        <div className="flex-1 border-t border-accentBg" />
         <Button onClick={() => setShowMore(!showMore)} variant="inherit">
-          {!showMore ? t('show_more') : t('show_less')}
+          <div className="flex items-center space-x-2">
+            {!showMore ? t('show_more') : t('show_less')}
+            <Icon colored path={!showMore ? ArrowDownS : ArrowUpS} />
+          </div>
         </Button>
+
+        <div className="flex-1 border-t border-accentBg" />
       </span>
     </div>
   );

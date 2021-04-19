@@ -15,8 +15,7 @@ const Button = ({ children, to, onClick, variant = 'primary' }: Props) => (
       {
         'bg-brand text-brandContrast hover:bg-brandDarker focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand15':
           variant === 'primary',
-        'text-primary focus:ring-1 focus:ring-primaryText':
-          variant === 'inherit',
+        'text-brand focus:ring-1 focus:ring-primaryText': variant === 'inherit',
       }
     )}
     to={to}

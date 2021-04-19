@@ -19,6 +19,7 @@ const Dropdown = ({
   onClick,
 }: Props) => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const [selected, setSelected] = useState(options[0].name);
   const dropdownRef = useRef<HTMLInputElement>();
   const displayRef = useRef<HTMLInputElement>();
 
@@ -42,6 +43,12 @@ const Dropdown = ({
     }
     setToggleDropdown(false);
   };
+
+  const handleChange = (name: string) => {
+    onClick(name);
+    setToggleDropdown(false);
+    setSelected(name);
+  };
   return (
     <div ref={displayRef} className="relative inline-block text-left">
       <div>
@@ -60,7 +67,7 @@ const Dropdown = ({
           onClick={() => setToggleDropdown(!toggleDropdown)}
         >
           {!withDisplay && <span className="sr-only">Open options</span>}
-          {withDisplay && <span className="text-sm">{options[0].name}</span>}
+          {withDisplay && <span className="text-sm">{selected}</span>}
           <Icon path={withDisplay ? ArrowDownS : withIcon || Menu1} colored />
         </button>
       </div>
@@ -88,8 +95,7 @@ const Dropdown = ({
               id={`menu-item-${name}`}
               key={name}
               onClick={() => {
-                onClick(name);
-                setToggleDropdown(false);
+                handleChange(name);
               }}
             >
               {icon && <Icon className="fill-current" colored path={icon} />}
