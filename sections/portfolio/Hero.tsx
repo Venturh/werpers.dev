@@ -10,16 +10,19 @@ const Hero = () => {
       <div className="inline-flex items-center space-x-2">
         <Label variant="15">{t('whatsNew')}</Label>
         <Link to="/design">
-          <div className="flex items-center space-x-4 text-sm text-brand hover:text-brandDarker">
+          <Label
+            variant="border"
+            className="flex items-center space-x-4 text-sm bg-secondary text-brand hover:text-brand-darker"
+          >
             {t('whatsNewDesc')}
             <Icon path={ArrowRightS} colored />
-          </div>
+          </Label>
         </Link>
       </div>
       <h1 className="text-3xl font-bold sm:text-4xl ">
         {t('hero_1')} <span className="text-brand"> Maximilian Werpers </span>
       </h1>
-      <p className="lg:text-lg">{t('hero_2')}</p>
+      <p className="prose">{t('hero_2')}</p>
     </div>
   );
 };

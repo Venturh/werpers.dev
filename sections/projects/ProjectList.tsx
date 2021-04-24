@@ -7,8 +7,8 @@ import { Project } from '@types';
 const ProjectList = ({ projects }: { projects: Project[] }) => {
   const { t } = useTranslation('portfolio');
   return (
-    <div className="rounded-md shadow ring-1 ring-accentBg sm:rounded-lg">
-      <table className="min-w-full divide-y divide-accentBg">
+    <div className="rounded-md shadow ring-1 ring-accent sm:rounded-lg">
+      <table className="min-w-full divide-y divide-accent">
         <thead>
           <tr className="text-sm tracking-wider text-left text-secondary">
             <th className="px-3 py-2">Name</th>
@@ -20,7 +20,7 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
             <th className="px-3 py-2">Links</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-accentBg">
+        <tbody className="divide-y divide-accent">
           {projects.map(({ type, githubUrl, pageUrl, tech, title, year }) => {
             return (
               <tr key={title}>

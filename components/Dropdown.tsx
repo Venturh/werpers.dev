@@ -7,6 +7,7 @@ type Props = {
   options: { icon?: string; name: string }[];
   withDisplay?: boolean;
   withIcon?: string;
+  defaultSelected?: string;
   direction?: 'topRight' | 'topLeft';
   onClick: (name: string) => void;
 };
@@ -17,6 +18,7 @@ const Dropdown = ({
   withIcon,
   direction = 'topRight',
   onClick,
+  defaultSelected,
 }: Props) => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [selected, setSelected] = useState(options[0].name);
@@ -51,30 +53,29 @@ const Dropdown = ({
   };
   return (
     <div ref={displayRef} className="relative inline-block text-left">
-      <div>
-        <button
-          type="button"
-          className={clsx(
-            'flex items-center text-primary focus:outline-none focus:ring-1 focus:ring-brand',
-            {
-              'rounded-full': !withDisplay,
-              'ring-1 ring-accentBg rounded-md px-2 py-1 hover:ring-brand': withDisplay,
-            }
-          )}
-          id="menu-button"
-          aria-expanded="true"
-          aria-haspopup="true"
-          onClick={() => setToggleDropdown(!toggleDropdown)}
-        >
-          {!withDisplay && <span className="sr-only">Open options</span>}
-          {withDisplay && <span className="text-sm">{selected}</span>}
-          <Icon path={withDisplay ? ArrowDownS : withIcon || Menu1} colored />
-        </button>
-      </div>
+      <button
+        type="button"
+        className={clsx(
+          'flex items-center text-primary focus:outline-none focus:ring-1 focus:ring-brand',
+          {
+            'rounded-full': !withDisplay,
+            'ring-1 ring-accent rounded-md px-2 py-1 hover:ring-brand': withDisplay,
+          }
+        )}
+        aria-expanded="true"
+        aria-haspopup="true"
+        onClick={() => setToggleDropdown(!toggleDropdown)}
+      >
+        {!withDisplay && <span className="sr-only">Open options</span>}
+        {withDisplay && (
+          <span className="text-sm">{defaultSelected || selected}</span>
+        )}
+        <Icon path={withDisplay ? ArrowDownS : withIcon || Menu1} colored />
+      </button>
       <div
         ref={dropdownRef}
         className={clsx(
-          'absolute z-50 w-32 mt-2 rounded-md shadow-sm ring-1 bg-primary ring-accentBg focus:outline-none',
+          'absolute z-50 w-32 mt-2 rounded-md shadow-sm ring-1 bg-primary ring-accent focus:outline-none',
           {
             hidden: !toggleDropdown,
             'origin-top-left left-0': direction === 'topLeft',
@@ -89,7 +90,7 @@ const Dropdown = ({
         <div className="py-1" role="none">
           {options.map(({ name, icon }) => (
             <button
-              className="flex items-center w-full px-4 py-2 space-x-2 text-sm text-primary hover:bg-secondaryBg focus:outline-none focus:ring-1 focus:ring-brand"
+              className="flex items-center w-full px-4 py-2 space-x-2 text-sm text-primary hover:bg-bg-secondary focus:outline-none focus:ring-1 focus:ring-brand"
               role="menuitem"
               tabIndex={-1}
               id={`menu-item-${name}`}

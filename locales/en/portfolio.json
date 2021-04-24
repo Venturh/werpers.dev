@@ -88,8 +88,14 @@
   "labels": "Labels",
   "buttons": "Buttons",
   "colors": "Colors",
+  "colorsSub": "Gallery of colors used in this portfolio.",
   "logos": "Logos",
+  "icons": "Icons",
+
   "pages": "Pages",
   "socials": "Socials",
-  "language": "Languages"
+  "language": "Languages",
+
+  "from": "from",
+  "and": "and"
 }

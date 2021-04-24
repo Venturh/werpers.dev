@@ -11,7 +11,7 @@ const BaseCard = ({ children, barPosition, className }: Props) => (
   <div
     className={clsx(
       className,
-      'relative bg-secondaryBg w-full shadow-sm p-2 rounded-lg',
+      'relative bg-bg-secondary w-full shadow-sm p-2 rounded-lg',
       {
         'pl-6': barPosition === 'left',
       }

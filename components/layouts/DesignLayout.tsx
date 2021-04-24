@@ -1,13 +1,15 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import { designLinks } from 'content';
-import { Link } from 'components';
+import { Link, SectionHeader } from 'components';
 
 type Props = {
   children: React.ReactNode;
+  title: string;
+  subtitle?: string;
 };
 
-const DesignLayout = ({ children }: Props) => {
+const DesignLayout = ({ children, title, subtitle }: Props) => {
   const { t } = useTranslation('portfolio');
   const { pathname } = useRouter();
   return (
@@ -19,7 +21,8 @@ const DesignLayout = ({ children }: Props) => {
           </Link>
         ))}
       </nav>
-      <div className="flex-1 p-4 rounded-sm shadow-sm bg-secondaryBg ring-1 ring-accentBg">
+      <div className="flex-1 px-4 py-6 space-y-6 rounded-sm shadow-sm bg-bg-secondary ring-1 ring-accent">
+        <SectionHeader title={title} subtitle={subtitle} />
         {children}
       </div>
     </div>

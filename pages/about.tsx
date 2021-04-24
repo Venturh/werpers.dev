@@ -17,14 +17,14 @@ const About = () => {
             <p className="w-full prose">
               {t('about_1')}{' '}
               <Link className="text-brand" out to="https://clickbar.dev/">
-                <span className="underline text-brand hover:text-brandDarker">
+                <span className="underline text-brand hover:text-brand-darker">
                   clickbar
                 </span>
               </Link>{' '}
               {t('about_2')} <br />
               {t('about_3')}
               <Link underline to="/projects">
-                <span className="underline text-brand hover:text-brandDarker">
+                <span className="underline text-brand hover:text-brand-darker">
                   {t('here')} <br />
                 </span>
               </Link>
@@ -63,13 +63,13 @@ const Timeline = () => {
                 <div className="relative pb-6">
                   {index !== timeline.length - 1 ? (
                     <span
-                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-accentBg"
+                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-accent"
                       aria-hidden="true"
                     />
                   ) : null}
                   <div className="relative flex space-x-3">
                     <div>
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondaryBg ">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-bg-secondary ">
                         <Icon
                           path={icon}
                           colored
@@ -102,7 +102,7 @@ const Timeline = () => {
       ))}
 
       <span className="flex items-center justify-center">
-        <div className="flex-1 border-t border-accentBg" />
+        <div className="flex-1 border-t border-accent" />
         <Button onClick={() => setShowMore(!showMore)} variant="inherit">
           <div className="flex items-center space-x-2">
             {!showMore ? t('show_more') : t('show_less')}
@@ -110,7 +110,7 @@ const Timeline = () => {
           </div>
         </Button>
 
-        <div className="flex-1 border-t border-accentBg" />
+        <div className="flex-1 border-t border-accent" />
       </span>
     </div>
   );

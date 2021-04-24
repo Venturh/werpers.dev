@@ -10,7 +10,6 @@ export default function SEO(lang: string): NextSeoProps {
   return {
     title,
     description,
-    canonical: home,
     additionalMetaTags: [
       { property: 'author', content: 'Maximilian Werpers' },
       {

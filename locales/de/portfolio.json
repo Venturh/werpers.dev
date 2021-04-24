@@ -88,8 +88,14 @@
   "labels": "Labels",
   "buttons": "Buttons",
   "colors": "Farben",
+  "colorsSub": "Eine Gallerie der Farben die innerhalb des Portfolios verwendet werden",
   "logos": "Logos",
+  "icons": "Icons",
+
   "pages": "Seiten",
   "socials": "Kontakt",
-  "language": "Sprache"
+  "language": "Sprache",
+
+  "from": "von",
+  "and": "und"
 }

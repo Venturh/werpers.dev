@@ -14,8 +14,9 @@ export const navlinks: Navlink[] = [
 export const designLinks: Navlink[] = [
   { name: 'design', to: '/design' },
   { name: 'colors', to: '/design/colors' },
-  { name: 'buttons', to: '/design/buttons' },
   { name: 'labels', to: '/design/labels' },
+  { name: 'buttons', to: '/design/buttons' },
+  { name: 'icons', to: '/design/icons' },
 ];
 
 export const timeline = {

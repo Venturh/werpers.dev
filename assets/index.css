@@ -7,36 +7,36 @@
 }
 
 .prose {
-  @apply text-primary;
+  @apply text-secondary;
   @apply max-w-xs;
   @apply sm:max-w-3xl;
 }
 
 .prose a {
-  @apply text-primary;
+  @apply text-secondary;
   @apply no-underline;
 }
 
 .dark {
   --brand: #d1fae5;
-  --brandDarker: #a7f3d0;
-  --brandContrast: #08090a;
+  --brand-darker: #6ee7b7;
+  --brand-contrast: #08090a;
   --brand15: rgba(167, 243, 208, 0.15);
-  --bg: #040405;
+  --bg-primary: #040405;
   --bg-secondary: #09090a;
-  --bg-accent: #1c1f25;
+  --accent: #1c1f25;
   --text-primary: #f9fafb;
   --text-secondary: #e5e7eb;
 }
 
 .light {
   --brand: #6ee7b7;
-  --brandDarker: #34d399;
-  --brandContrast: #1b2439;
+  --brand-darker: #10b981;
+  --brand-contrast: #1b2439;
   --brand15: rgba(110, 231, 183, 0.15);
-  --bg: #ffffff;
+  --bg-primary: #ffffff;
   --bg-secondary: #fafafa;
-  --bg-accent: #e5e7eb;
+  --accent: #e5e7eb;
   --text-primary: #111827;
   --text-secondary: #6b7280;
 }

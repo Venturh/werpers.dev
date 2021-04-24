@@ -36,7 +36,12 @@ const ButtonOrLink = ({ out, to, onClick, children, className }: Props) => {
     }
   } else {
     return (
-      <button className={className} type="button" onClick={onClick}>
+      <button
+        className={className}
+        type="button"
+        aria-label="button"
+        onClick={onClick}
+      >
         {children}
       </button>
     );

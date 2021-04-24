@@ -9,7 +9,7 @@ type Props = {
 
 const DefaultLayout = ({ children, className }: Props) => {
   return (
-    <main className="flex flex-col items-center min-h-screen mx-auto space-y-6 text-base max-w-xsm md:max-w-2xl lg:text-lg lg:max-w-3xl">
+    <main className="flex flex-col items-center mx-auto space-y-6 text-base max-w-xsm md:max-w-2xl lg:text-lg lg:max-w-3xl">
       <Navigation />
       <div
         className={clsx(

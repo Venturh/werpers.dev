@@ -16,8 +16,12 @@ const Logo = ({ type = 'auto', className, small }: Props) => (
         'text-xl': small,
       })}
     >
-      <span className="text-brand">werpers</span>
-      <span className="text-primary">.dev</span>
+      <div
+        style={{ color: 'transparent' }}
+        className="text-2xl font-bold bg-clip-text bg-gradient-to-r grad via-brand from-brand to-brand-darker"
+      >
+        werpers.dev
+      </div>
     </div>
     <div
       className={clsx({
@@ -27,9 +31,12 @@ const Logo = ({ type = 'auto', className, small }: Props) => (
         'text-lg': small,
       })}
     >
-      <span className="text-brand">
-        M<span className="text-primary">W</span>
-      </span>
+      <div
+        style={{ color: 'transparent' }}
+        className="font-bold bg-clip-text bg-gradient-to-r from-brand to-brand-darker"
+      >
+        MW
+      </div>
     </div>
   </div>
 );

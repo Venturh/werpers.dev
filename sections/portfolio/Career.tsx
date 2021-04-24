@@ -7,7 +7,7 @@ const Career = () => {
   const { t } = useTranslation('portfolio');
   return (
     <Section title="experience" subtitle="experienceSub">
-      <ul className="w-full space-y-2 divide-y divide-accentBg md:divide-y-0">
+      <ul className="w-full space-y-2 divide-y divide-accent md:divide-y-0">
         {career.map((c: CareerType, index) => (
           <CareerCard
             key={index}

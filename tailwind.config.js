@@ -10,22 +10,21 @@ module.exports = {
   purge: ['./**/*.{ts,tsx, js,jsx}'],
   theme: {
     colors: {
+      'bg-primary': 'var(--bg-primary)',
+      'bg-secondary': 'var(--bg-secondary)',
+      accent: 'var(--accent)',
+      'text-primary': 'var(--text-primary)',
+      'text-secondary': 'var(--text-secondary)',
+      'brand-contrast': 'var(--brand-contrast)',
+      'brand-darker': 'var(--brand-darker)',
       brand: 'var(--brand)',
-      brandDarker: 'var(--brandDarker)',
-      brandContrast: 'var(--brandContrast)',
       brand15: 'var(--brand15)',
-      primaryText: 'var(--text-primary)',
-      secondaryText: 'var(--text-secondary)',
-      primaryBg: 'var(--bg)',
-      secondaryBg: 'var(--bg-secondary)',
-      accentBg: 'var(--bg-accent)',
-      borderBg: 'var(--border-bg)',
     },
 
     extend: {
       sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       backgroundColor: {
-        primary: 'var(--bg)',
+        primary: 'var(--bg-primary)',
       },
       textColor: {
         primary: 'var(--text-primary)',
@@ -41,7 +40,7 @@ module.exports = {
         '1/10': '70%',
       },
       height: { 4.5: '1.125rem' },
-      minHeight:{50: '50vh'},
+      minHeight: { 50: '50vh' },
       maxWidth: {
         xsm: '21rem',
       },

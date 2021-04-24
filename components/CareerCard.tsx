@@ -19,15 +19,15 @@ const CareerCard = ({
       <div className="relative">
         {!last && (
           <span
-            className="hidden md:block absolute top-4 left-3 md:left-5 h-full w-0.5 bg-accentBg"
+            className="hidden md:block absolute top-4 left-3 md:left-5 h-full w-0.5 bg-accent"
             aria-hidden="true"
           />
         )}
         <div className="relative flex items-start md:space-x-3">
           <img
-            className="items-center justify-center hidden w-6 h-6 rounded-full md:flex md:w-10 md:h-10 bg-primary ring-8 ring-primaryBg ring-offset-accentBg ring-offset-1"
+            className="items-center justify-center hidden w-6 h-6 rounded-full md:flex md:w-10 md:h-10 bg-primary ring-8 ring-bg-primary ring-offset-accent ring-offset-1"
             src={`/images/${logo}`}
-            alt=""
+            alt="career"
           />
           <div className="w-full">
             <div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ const CareerCard = ({
               </Link>
               <Label variant="15">{t(`${type}`)}</Label>
             </div>
-            <p className="text-sm">{t(`${time}`)}</p>
+            <p className="text-sm text-secondary">{t(`${time}`)}</p>
             <p className="prose ">{t(`${description}`)}</p>
             <Labels labels={tech} variant="15" max={5} />
           </div>

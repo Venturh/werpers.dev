@@ -11,9 +11,9 @@ const Label = ({ children, variant, className }: Props) => (
     className={clsx(
       'py-0.5 px-1.5 sm:px-2 text-xs sm:text-sm rounded-md leading-5 inline-flex items-center',
       {
-        'bg-brand text-brandContrast': variant === 'brand',
+        'bg-brand text-brand-contrast': variant === 'brand',
         'bg-primary text-primary p-1': variant === 'default',
-        'border border-accentBg': variant === 'border',
+        'border border-accent': variant === 'border',
         'bg-brand15 text-primary dark:text-brand': variant === '15',
       },
       className

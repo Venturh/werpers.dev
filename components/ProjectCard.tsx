@@ -10,8 +10,8 @@ const ProjectCard = ({
 }) => (
   <BaseCard barPosition="left">
     <ButtonOrLink to={pageUrl ? pageUrl : githubUrl} out>
-      <div className="text-xl"> {title}</div>
-      <div>{locale === 'en' ? descriptionEn : description}</div>
+      <p className="text-xl"> {title}</p>
+      <p className="prose">{locale === 'en' ? descriptionEn : description}</p>
       <Labels labels={tech} variant="15" />
     </ButtonOrLink>
   </BaseCard>

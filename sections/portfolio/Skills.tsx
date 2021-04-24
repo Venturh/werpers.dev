@@ -6,7 +6,7 @@ const Skills = () => {
   const { t } = useTranslation('portfolio');
   return (
     <Section title="skills" subtitle="skillsSub">
-      <div className="space-y-3 divide-y divide-accentBg md:divide-y-0">
+      <div className="space-y-3 divide-y divide-accent md:divide-y-0">
         {skills.map(
           ({
             type,

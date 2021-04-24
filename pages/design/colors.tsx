@@ -1,27 +1,47 @@
-import { theme } from 'tailwind.config';
-import { SectionHeader } from 'components';
+import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 import { DefaultLayout, DesignLayout } from 'components/layouts';
+import { theme as twTheme } from 'tailwind.config';
 
 const Colors = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [colors, setColors] = useState([]);
+  useEffect(() => {
+    const computedColors = Object.entries(twTheme.colors).map((c) => {
+      const bg = getComputedStyle(document.documentElement).getPropertyValue(
+        `--${c[0]}`
+      );
+      return {
+        name: c[0],
+        var: c[1],
+        color: bg,
+        foreground:
+          parseInt(bg.replace('#', ''), 16) > 0xffffff / 2 ? '#000' : '#fff',
+      };
+    });
+    setColors(computedColors);
+    setMounted(true);
+  }, []);
+
   return (
     <DefaultLayout>
-      <DesignLayout>
-        <SectionHeader title="colors" />
-        <div className="grid gap-2 sm:grid-cols-4">
-          {Object.entries(theme.colors).map((color) => (
-            <div
-              key={color[0]}
-              className="relative w-full h-16 rounded-md ring-2 ring-accentBg"
-              style={{ background: color[1] }}
-            >
-              <span
-                className="absolute bottom-0 right-0 text-xs dark:text-primary text-secondary"
-                style={{ mixBlendMode: 'difference' }}
+      <DesignLayout title="colors" subtitle="colorsSub">
+        <div className="grid rounded-lg shadow-sm ring-2 ring-accent">
+          {mounted &&
+            colors.map(({ name, color, foreground }) => (
+              <div
+                key={name}
+                className="flex items-center justify-between w-full h-24 p-6 sm:p-6 "
+                style={{ background: color, color: foreground }}
               >
-                {color[0]}
-              </span>
-            </div>
-          ))}
+                <span className="font-semibold capitalize sm:text-xl">
+                  {name}
+                </span>
+                <span className="font-mono text-sm">{`var(--${name})`}</span>
+                <span className="text-sm">{color}</span>
+              </div>
+            ))}
         </div>
       </DesignLayout>
     </DefaultLayout>

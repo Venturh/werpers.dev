@@ -2,7 +2,6 @@ import { useTheme } from 'next-themes';
 import { Circle, Moon, Sun } from 'icons';
 import IconButton from './IconButton';
 import { useEffect, useState } from 'react';
-import Icon from './Icon';
 import clsx from 'clsx';
 
 const ThemeToggle = () => {

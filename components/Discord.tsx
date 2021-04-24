@@ -10,12 +10,16 @@ type DiscordPresence = {
 };
 
 export const DiscordCard = (presence: DiscordPresence) => (
-  <div className="flex items-center w-full space-x-2 md:justify-start md:w-72">
+  <div className="flex flex-row-reverse sm:flex-row sm:space-x-2">
     <img className="w-6 h-6 rounded-lg " alt="discord" src={presence.imgUrl} />
-    <div className="flex space-x-1 text-sm truncate">
-      <span>{presence.currently}</span>
-      <span> - </span>
-      <span>{presence.details}</span>
+    <div className="inline-flex flex-col w-full truncate sm:flex-row">
+      <p className="font-medium truncate text-primary max-w-max">
+        {presence.currently}
+      </p>
+      {presence.details && (
+        <span className="hidden mx-2 text-secondary sm:block"> - </span>
+      )}
+      <p className="truncate text-secondary max-w-max">{presence.details}</p>
     </div>
   </div>
 );
@@ -28,13 +32,7 @@ const Discord = () => {
 
   if (!data && !error) return <span />;
   if (error) return <span></span>;
-  return (
-    <div className="flex flex-col space-y-2 md:space-x-2 md:flex-row md:space-y-0">
-      {data.map((presence) => (
-        <DiscordCard key={presence.details} {...presence} />
-      ))}
-    </div>
-  );
+  return <DiscordCard key={data[0].details} {...data[0]} />;
 };
 
 export default Discord;
