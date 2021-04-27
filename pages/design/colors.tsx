@@ -22,7 +22,7 @@ const Colors = () => {
     });
     setColors(computedColors);
     setMounted(true);
-  }, []);
+  }, [theme]);
 
   return (
     <DefaultLayout>
@@ -35,17 +35,25 @@ const Colors = () => {
                 className="flex items-center justify-between w-full h-24 p-6 sm:p-6 "
                 style={{ background: color, color: foreground }}
               >
-                <span className="font-semibold capitalize sm:text-xl">
+                <span className="flex-1 font-semibold capitalize sm:text-xl">
                   {name}
                 </span>
-                <span className="font-mono text-sm">{`var(--${name})`}</span>
-                <span className="text-sm">{color}</span>
+                <span className="flex-1 font-mono text-xs sm:text-sm">{`var(--${name})`}</span>
+                <div className="flex justify-end">
+                  <span className="text-xs truncate sm:text-sm">
+                    {color[1].startsWith('r') ? color.slice(6, -1) : color}
+                  </span>
+                </div>
               </div>
             ))}
         </div>
       </DesignLayout>
     </DefaultLayout>
   );
+};
+
+export const getServerSideProps = () => {
+  return { props: {} };
 };
 
 export default Colors;

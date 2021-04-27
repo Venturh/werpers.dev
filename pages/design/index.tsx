@@ -5,7 +5,8 @@ const Design = () => {
   return (
     <DefaultLayout>
       <DesignLayout title="design" subtitle="designSub">
-        <div className="space-y-2">
+        <div className="space-y-4">
+          <h4 className="text-xl">Layout</h4>
           <div className="space-y-2">
             <div className="p-4 px-12 space-y-4 shadow-sm sm:w-1/2 bg-primary">
               <div className="flex items-center justify-between ">
@@ -47,6 +48,7 @@ const Design = () => {
               </div>
             </div>
           </div>
+          <h4 className="text-xl">Logos</h4>
           <div className="space-y-2">
             <Logo type="mobile" />
             <Logo type="desktop" />

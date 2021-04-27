@@ -2,7 +2,7 @@
   "portfolio": "Portfolio",
   "projects": "Projects",
   "design": "Design",
-  "designSub": " ",
+  "designSub": "This style-guide displays all components, colors and icons used to build this portfolio.",
 
   "whatsNew": "Whats new?",
   "whatsNewDesc": "Added design page",

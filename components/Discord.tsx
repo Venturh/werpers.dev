@@ -27,7 +27,8 @@ export const DiscordCard = (presence: DiscordPresence) => (
 const Discord = () => {
   const { data, error } = useSWR<DiscordPresence[]>(
     `https://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
-    fetcher
+    fetcher,
+    { shouldRetryOnError: false }
   );
 
   if (!data && !error) return <span />;
