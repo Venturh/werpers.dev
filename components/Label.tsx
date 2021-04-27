@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useState } from 'react';
 
 type Props = {
   children: React.ReactNode;
@@ -29,19 +30,36 @@ type LabelsProps = {
   max?: number;
 };
 
-export const Labels = ({ labels, variant, max = 3 }: LabelsProps) => (
-  <div className="flex items-center">
-    {labels.slice(0, max).map((field) => (
-      <span key={field}>
-        <Label className="mr-2" variant={variant}>
-          {field}
-        </Label>
-      </span>
-    ))}
-    {labels.length > 3 && (
-      <Label variant={variant}>+ {labels.length - max}</Label>
-    )}
-  </div>
-);
+export const Labels = ({ labels, variant, max = 3 }: LabelsProps) => {
+  const [show, setShow] = useState(false);
+  return (
+    <div className="flex items-center">
+      {labels.slice(0, max).map((field) => (
+        <span key={field}>
+          <Label className="mr-2" variant={variant}>
+            {field}
+          </Label>
+        </span>
+      ))}
+      {labels.length > 3 && (
+        <span
+          className="cursor-pointer"
+          onMouseEnter={() => setShow(true)}
+          onMouseLeave={() => setShow(false)}
+        >
+          <Label variant={variant}>+ {labels.length - max}</Label>
+        </span>
+      )}
+      <div className="flex ml-2 space-x-2 ">
+        {show &&
+          labels.slice(max, labels.length).map((field) => (
+            <Label key={field} variant={variant}>
+              {field}
+            </Label>
+          ))}
+      </div>
+    </div>
+  );
+};
 
 export default Label;
