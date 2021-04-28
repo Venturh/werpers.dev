@@ -29,15 +29,17 @@ const CareerCard = ({
             src={`/images/${logo}`}
             alt="career"
           />
-          <div className="w-full">
+          <div className="w-full space-y-2">
             <div className="flex items-center justify-between">
               <Link out to={url}>
                 <span className="text-lg font-medium">{title}</span>
               </Link>
               <Label variant="15">{t(`${type}`)}</Label>
             </div>
-            <p className="text-sm text-secondary">{t(`${time}`)}</p>
-            <p className="prose ">{t(`${description}`)}</p>
+            <div>
+              <p className="text-sm text-secondary">{t(`${time}`)}</p>
+              <p className="prose ">{t(`${description}`)}</p>
+            </div>
             <Labels labels={tech} variant="15" max={5} />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { NextSeoProps } from 'next-seo';
+
 export default function SEO(lang: string): NextSeoProps {
   const title = 'Maximilian Werpers - Web Developer & Student';
   const description = `Portfolio ${
@@ -18,6 +19,11 @@ export default function SEO(lang: string): NextSeoProps {
           'bio,homepage,portfolio,developer,remote,typescript,node.js,node,react,vue, laravel, php, open-source,open source, github, werpers',
       },
     ],
+    twitter: {
+      cardType: 'summary_large_image',
+      handle: 'venturh94',
+      site: 'venturh94',
+    },
     openGraph: {
       type: 'website',
       locale,
@@ -38,8 +44,8 @@ export function genearateImage(title: string) {
   return [
     {
       url: `${process.env.NEXT_PUBLIC_OG_IMG_GENERATOR}/${title}?theme=dark&md=1&images=https://prismic-io.s3.amazonaws.com/maxwerpers-next/2b1533d4-e32c-4340-9c50-b5d2acba271c_maxwerpers.svg&widths=1200&heights=150`,
-      width: 1500,
-      height: 1500,
+      width: 1280,
+      height: 720,
       alt: title,
     },
   ];

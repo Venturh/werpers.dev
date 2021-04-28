@@ -4,6 +4,9 @@
   "design": "Design",
   "designSub": "This style-guide displays all components, colors and icons used to build this portfolio.",
 
+  "blog": "Blog",
+  "blogSub": "Currently I try to write more, so i started this blog",
+
   "whatsNew": "Whats new?",
   "whatsNewDesc": "Added design page",
 
@@ -84,6 +87,9 @@
   "type": "Type",
   "year": "Year",
   "views": "Views",
+
+  "recentBlogPosts": "Recent Blogposts",
+  "allBlogposts": "All Blogposts",
 
   "labels": "Labels",
   "buttons": "Buttons",

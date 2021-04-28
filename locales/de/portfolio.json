@@ -4,6 +4,8 @@
   "design": "Design",
   "designSub": "Dieser Style-Guide zeigt alle Komponenten, Farben und Icons die innerhalb des Portfolios verwendet werden.",
 
+  "blog": "Blog",
+  "blogSub": "Ich versuche derzeit mehr in das Schreiben zu kommen, daher der Blog",
   "whatsNew": "Neu",
   "whatsNewDesc": "Design Seite hinzugefügt",
 
@@ -84,6 +86,9 @@
   "type": "Type",
   "year": "Jahr",
   "views": "Ansichten",
+
+  "recentBlogPosts": "Neue Blogposts",
+  "allBlogposts": "Alle Blogposts",
 
   "labels": "Labels",
   "buttons": "Buttons",

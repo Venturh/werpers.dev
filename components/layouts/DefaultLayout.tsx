@@ -1,26 +1,58 @@
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import clsx from 'clsx';
+import { NextSeo } from 'next-seo';
+import { genearateImage } from 'next-seo.config';
 
 type Props = {
   children: React.ReactNode;
   className?: string;
+  title?: string;
+  description?: string;
+  url?: string;
 };
 
-const DefaultLayout = ({ children, className }: Props) => {
+const DefaultLayout = ({
+  children,
+  className,
+  title,
+  description,
+  url,
+}: Props) => {
   return (
-    <main className="flex flex-col items-center mx-auto space-y-6 text-base max-w-xsm md:max-w-2xl lg:text-lg lg:max-w-3xl">
-      <Navigation />
-      <div
-        className={clsx(
-          className,
-          'md:max-w-3xl flex flex-col flex-auto w-full h-full'
-        )}
-      >
-        {children}
-      </div>
-      <Footer />
-    </main>
+    <>
+      {title && (
+        <NextSeo
+          title={title}
+          description={description}
+          canonical={url}
+          twitter={{
+            cardType: 'summary_large_image',
+            handle: 'venturh94',
+            site: 'venturh94',
+          }}
+          openGraph={{
+            title,
+            description,
+            url,
+            images: genearateImage(title),
+            type: 'website',
+          }}
+        />
+      )}
+      <main className="flex flex-col items-center mx-auto space-y-6 text-base max-w-xsm md:max-w-2xl lg:text-lg lg:max-w-3xl">
+        <Navigation />
+        <div
+          className={clsx(
+            className,
+            'md:max-w-3xl flex flex-col flex-auto w-full h-full'
+          )}
+        >
+          {children}
+        </div>
+        <Footer />
+      </main>
+    </>
   );
 };
 

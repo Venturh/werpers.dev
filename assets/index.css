@@ -12,6 +12,14 @@
   @apply sm:max-w-3xl;
 }
 
+.prose h3 {
+  @apply text-primary;
+}
+
+.prose pre {
+  @apply border shadow-sm bg-bg-secondary text-primary border-accent;
+}
+
 .prose a {
   @apply text-secondary;
   @apply no-underline;

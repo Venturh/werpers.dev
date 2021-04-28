@@ -3,7 +3,7 @@ import { SectionHeader } from 'components';
 
 type Props = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   button?: { text: string; to: string };
   withPadding?: boolean;
   children: React.ReactChild;

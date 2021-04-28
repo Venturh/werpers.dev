@@ -33,3 +33,13 @@ export type Project = {
 };
 
 export type Skill = { name: string; icon: string; subSkills?: Skill[] };
+
+export type BlogFrontMatter = {
+  title: string;
+  summary: string;
+  categories: Array<string>;
+  slug: string;
+  date: string;
+  readingTime: string;
+  image?: string;
+};

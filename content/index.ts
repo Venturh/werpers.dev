@@ -9,6 +9,7 @@ export const navlinks: Navlink[] = [
   { name: 'portfolio', to: '/' },
   { name: 'projects', to: '/projects' },
   { name: 'about', to: '/about' },
+  //{ name: 'blog', to: '/blog' },
 ];
 
 export const designLinks: Navlink[] = [

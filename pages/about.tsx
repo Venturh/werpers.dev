@@ -1,41 +1,40 @@
 import useTranslation from 'next-translate/useTranslation';
-import { Button, Link, Section, Icon } from 'components';
+import { Container, Button, Link, Section, Icon } from 'components';
 import { DefaultLayout } from 'components/layouts';
 import { timeline } from 'content';
 import { useState } from 'react';
 import { ArrowDownS, ArrowUpS } from 'icons';
 
 const About = () => {
-  const { t } = useTranslation('portfolio');
+  const { t, lang } = useTranslation('portfolio');
+  const title = `${t('about')} - Maximilian Werpers`;
+  const description = t('aboutSub');
+  const url = `https://www.werpers.dev/${lang}/projects`;
   return (
-    <DefaultLayout>
-      <div className="space-y-8">
-        <div className="space-y-2">
-          <h1 className="text-4xl font-semibold text-brand">{t('aboutMe')}</h1>
-          <h2 className="text-lg"> {t('aboutSub')}</h2>
-          <div className="space-y-2">
-            <p className="w-full prose">
-              {t('about_1')}{' '}
-              <Link className="text-brand" out to="https://clickbar.dev/">
-                <span className="underline text-brand hover:text-brand-darker">
-                  clickbar
-                </span>
-              </Link>{' '}
-              {t('about_2')} <br />
-              {t('about_3')}
-              <Link underline to="/projects">
-                <span className="underline text-brand hover:text-brand-darker">
-                  {t('here')} <br />
-                </span>
-              </Link>
-              {t('about_4')}
-            </p>
-          </div>
+    <DefaultLayout title={title} description={description} url={url}>
+      <Container title="aboutMe" subtitle="aboutSub">
+        <div className="space-y-8">
+          <p className="prose">
+            {t('about_1')}{' '}
+            <Link className="text-brand" out to="https://clickbar.dev/">
+              <span className="underline text-brand hover:text-brand-darker">
+                clickbar
+              </span>
+            </Link>{' '}
+            {t('about_2')} <br />
+            {t('about_3')}
+            <Link underline to="/projects">
+              <span className="underline text-brand hover:text-brand-darker">
+                {t('here')} <br />
+              </span>
+            </Link>
+            {t('about_4')}
+          </p>
+          <Section title="timeline" subtitle="timelineSub" withPadding={false}>
+            <Timeline />
+          </Section>
         </div>
-        <Section title="timeline" subtitle="timelineSub" withPadding={false}>
-          <Timeline />
-        </Section>
-      </div>
+      </Container>
     </DefaultLayout>
   );
 };
