@@ -26,8 +26,13 @@ async function generateOgImage(path: string, baseUrl = 'https://werpers.dev') {
   const buffer = await page.screenshot({ type: 'png' });
   await browser.close();
 
+  console.log(
+    '🚀 ~ file: ogImage.ts ~ line 27 ~ generateOgImage ~ buffer',
+    buffer
+  );
+
   fs.mkdirSync(ogImageDir, { recursive: true });
-  fs.writeFileSync(imagePath, buffer as string);
+  fs.writeFileSync(imagePath, buffer as any);
 
   return publicPath;
 }
