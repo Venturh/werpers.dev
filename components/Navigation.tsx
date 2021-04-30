@@ -1,3 +1,4 @@
+import { useLayoutEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -12,26 +13,62 @@ const Navigation = () => {
   const { t } = useTranslation('portfolio');
   const { pathname } = useRouter();
 
+  const scrollPosition = useScroll();
+
   return (
-    <nav className="flex items-center justify-between w-full h-12">
-      <Link to="/">
-        <Logo small />
-      </Link>
-      <div className="flex items-center space-x-4">
-        <div className="flex space-x-4">
-          {navlinks.map(({ name, to }) => (
-            <Link active={pathname === to} key={name} to={`${to}`}>
-              {t(`${name}`)}
-            </Link>
-          ))}
+    <div className="w-full ">
+      <div
+        className="fixed top-0 left-0 z-40 h-0.5 bg-brand bg-opacity-75"
+        style={{ width: `${scrollPosition}%` }}
+      />
+      <nav className="flex items-center justify-between">
+        <Link to="/">
+          <Logo small />
+        </Link>
+        <div className="flex items-center space-x-4">
+          <div className="flex space-x-4">
+            {navlinks.map(({ name, to }) => (
+              <Link active={pathname === to} key={name} to={`${to}`}>
+                {t(`${name}`)}
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center space-x-4 md:space-x-2">
+            <ThemeToggle />
+            <LanguageSwitch />
+          </div>
         </div>
-        <div className="flex items-center mt-1 space-x-4 md:space-x-2">
-          <ThemeToggle />
-          <LanguageSwitch />
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
 export default Navigation;
+
+export function useScroll() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useLayoutEffect(() => {
+    let requestRunning = null;
+    function handleScroll() {
+      if (requestRunning === null) {
+        requestRunning = window.requestAnimationFrame(() => {
+          const winScroll =
+            document.body.scrollTop || document.documentElement.scrollTop;
+          const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
+          const scrolled = (winScroll / height) * 100;
+          setScrollPosition(scrolled);
+
+          requestRunning = null;
+        });
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return scrollPosition;
+}
