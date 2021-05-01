@@ -30,22 +30,10 @@ export default function SEO(lang: string): NextSeoProps {
       url: home,
       title,
       description,
-      images: genearateImage(locale),
       profile: {
         firstName: 'Maximilian',
         lastName: 'Werpers',
       },
     },
   };
-}
-
-export function genearateImage(locale: string) {
-  return [
-    {
-      url: `https://werpers.dev/images/${locale}
-      width: 1280,
-      height: 720,
-      alt: title,
-    },
-  ];
 }

@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import useTranslation from 'next-translate/useTranslation';
 
 import { DefaultLayout } from 'components/layouts';
 import { Projects, Hero, Career, Skills } from 'sections/portfolio';
@@ -15,8 +16,17 @@ const Portfolio = ({
   locale: string;
   ogImage: ogImage;
 }) => {
+  const { t } = useTranslation('portfolio');
+  const title = `${t('portfolio')} - Maximilian Werpers`;
+  const description = t('hero_2');
+
   return (
-    <DefaultLayout className="space-y-8" ogImage={ogImage}>
+    <DefaultLayout
+      className="space-y-8"
+      ogImage={ogImage}
+      title={title}
+      description={description}
+    >
       <Hero />
       <Projects projects={projects} locale={locale} />
       <Career />
