@@ -11,7 +11,7 @@ type Props = {
   title?: string;
   description?: string;
   url?: string;
-  ogImage: ogImage;
+  ogImage?: ogImage;
 };
 
 const DefaultLayout = ({
@@ -38,7 +38,7 @@ const DefaultLayout = ({
             title,
             description,
             url,
-            images: [ogImage],
+            images: ogImage ? [ogImage] : null,
             type: 'website',
           }}
         />

@@ -9,6 +9,7 @@ async function generateOgImage(
   locale: string,
   title = 'portfolio'
 ) {
+  if (isDev) return null;
   let url = `${baseUrl}/${locale}/${path}`;
   if (title) url += `?title=${title}`;
   const ogImageDir = `./public/images/og/${locale}`;

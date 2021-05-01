@@ -24,7 +24,7 @@ const Navigation = () => {
       />
       <nav className="flex items-center justify-between">
         <Link to="/">
-          <Logo small />
+          <Logo />
         </Link>
         <div className="flex items-center space-x-4">
           <div className="flex space-x-4">
