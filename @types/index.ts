@@ -43,3 +43,10 @@ export type BlogFrontMatter = {
   readingTime: string;
   image?: string;
 };
+
+export type ogImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};

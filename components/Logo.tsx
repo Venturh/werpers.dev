@@ -1,44 +1,48 @@
 import clsx from 'clsx';
+import { useTheme } from 'next-themes';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 type Props = {
   type?: 'mobile' | 'desktop' | 'auto';
   className?: string;
-  small?: boolean;
+  h?: string;
 };
 
-const Logo = ({ type = 'auto', className, small }: Props) => (
-  <div className={className}>
-    <div
-      className={clsx('font-semibold ', {
-        hidden: type === 'mobile',
-        'hidden md:inline-flex': type === 'auto',
-        'text-3xl': !small,
-        'text-xl': small,
-      })}
-    >
+const Logo = ({ type = 'auto', h = 'h-10', className }: Props) => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, [theme]);
+  return (
+    <div className={className}>
       <div
-        style={{ color: 'transparent' }}
-        className="text-2xl font-bold bg-clip-text bg-gradient-to-r grad via-brand from-brand to-brand-darker"
+        className={clsx({
+          hidden: type === 'mobile',
+          'hidden md:inline-flex': type === 'auto',
+        })}
       >
-        werpers.dev
+        {mounted && (
+          <div className="flex items-center space-x-2">
+            <img className={`w-auto ${h}`} src={`/logo_${theme}.png`} />
+            <span>werpers.dev</span>
+          </div>
+        )}
+      </div>
+      <div
+        className={clsx({
+          'md:hidden': type === 'auto',
+          hidden: type === 'desktop',
+        })}
+      >
+        {mounted && (
+          <img className={`w-auto ${h}`} src={`/logo_${theme}.png`} />
+        )}
       </div>
     </div>
-    <div
-      className={clsx({
-        'md:hidden': type === 'auto',
-        hidden: type === 'desktop',
-        'text-2xl': !small,
-        'text-lg': small,
-      })}
-    >
-      <div
-        style={{ color: 'transparent' }}
-        className="font-bold bg-clip-text bg-gradient-to-r from-brand to-brand-darker"
-      >
-        MW
-      </div>
-    </div>
-  </div>
-);
+  );
+};
 
 export default Logo;

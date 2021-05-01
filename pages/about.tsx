@@ -1,17 +1,26 @@
+import { GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
+
 import { Container, Button, Link, Section, Icon } from 'components';
 import { DefaultLayout } from 'components/layouts';
 import { timeline } from 'content';
 import { useState } from 'react';
 import { ArrowDownS, ArrowUpS } from 'icons';
+import generateOgImage from 'lib/ogImage';
+import { ogImage } from '@types';
 
-const About = () => {
+const About = ({ ogImage }: { ogImage: ogImage }) => {
   const { t, lang } = useTranslation('portfolio');
   const title = `${t('about')} - Maximilian Werpers`;
   const description = t('aboutSub');
   const url = `https://www.werpers.dev/${lang}/projects`;
   return (
-    <DefaultLayout title={title} description={description} url={url}>
+    <DefaultLayout
+      title={title}
+      description={description}
+      url={url}
+      ogImage={ogImage}
+    >
       <Container title="aboutMe" subtitle="aboutSub">
         <div className="space-y-8">
           <p className="prose">
@@ -116,3 +125,9 @@ const Timeline = () => {
 };
 
 export default About;
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: { ogImage: await generateOgImage('og', locale, 'aboutMe') },
+  };
+};

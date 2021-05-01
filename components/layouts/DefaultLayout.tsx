@@ -1,8 +1,9 @@
+import { NextSeo } from 'next-seo';
+
 import Navigation from '../Navigation';
 import Footer from '../Footer';
 import clsx from 'clsx';
-import { NextSeo } from 'next-seo';
-import { genearateImage } from 'next-seo.config';
+import { ogImage } from '@types';
 
 type Props = {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ type Props = {
   title?: string;
   description?: string;
   url?: string;
+  ogImage: ogImage;
 };
 
 const DefaultLayout = ({
@@ -18,6 +20,7 @@ const DefaultLayout = ({
   title,
   description,
   url,
+  ogImage,
 }: Props) => {
   return (
     <>
@@ -35,7 +38,7 @@ const DefaultLayout = ({
             title,
             description,
             url,
-            images: genearateImage(title),
+            images: [ogImage],
             type: 'website',
           }}
         />

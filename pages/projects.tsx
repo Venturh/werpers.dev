@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
 
 import { DefaultLayout } from 'components/layouts';
@@ -6,8 +7,16 @@ import { Button, Container } from 'components';
 import { ProjectFilters, ProjectList } from 'sections/projects';
 
 import { projects } from 'content';
+import generateOgImage from 'lib/ogImage';
+import { ogImage, Project } from '@types';
 
-const Projects = ({ projects }) => {
+const Projects = ({
+  projects,
+  ogImage,
+}: {
+  projects: Project[];
+  ogImage: ogImage;
+}) => {
   const { t, lang } = useTranslation('portfolio');
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -17,7 +26,12 @@ const Projects = ({ projects }) => {
   const url = `https://www.werpers.dev/${lang}/projects`;
 
   return (
-    <DefaultLayout title={title} description={description} url={url}>
+    <DefaultLayout
+      title={title}
+      description={description}
+      url={url}
+      ogImage={ogImage}
+    >
       <Container
         title="projects"
         subtitle="projectsDesc"
@@ -44,11 +58,11 @@ const Projects = ({ projects }) => {
 
 export default Projects;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       projects,
-      revalidate: 1,
+      ogImage: await generateOgImage('og', locale, 'projects'),
     },
   };
-}
+};

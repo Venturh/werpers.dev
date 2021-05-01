@@ -8,6 +8,7 @@ import LanguageSwitch from './LanguageSwitch';
 import { navlinks } from 'content';
 import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
+import { useEffect } from 'react';
 
 const Navigation = () => {
   const { t } = useTranslation('portfolio');
@@ -16,7 +17,7 @@ const Navigation = () => {
   const scrollPosition = useScroll();
 
   return (
-    <div className="w-full ">
+    <div className="w-full mt-4">
       <div
         className="fixed top-0 left-0 z-40 h-0.5 bg-brand bg-opacity-75"
         style={{ width: `${scrollPosition}%` }}
@@ -48,7 +49,7 @@ export default Navigation;
 export function useScroll() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     let requestRunning = null;
     function handleScroll() {
       if (requestRunning === null) {
