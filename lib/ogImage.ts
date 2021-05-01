@@ -2,7 +2,6 @@ import chrome from 'chrome-aws-lambda';
 import { mkdirSync } from 'fs';
 
 const isDev = process.env.NODE_ENV === 'development';
-const baseUrl = isDev ? 'http:localhost:3000' : 'https://werpers.dev';
 
 async function generateOgImage(
   path: string,
@@ -10,6 +9,7 @@ async function generateOgImage(
   title = 'portfolio'
 ) {
   if (isDev) return null;
+  const baseUrl = `https://werpers.dev`;
   let url = `${baseUrl}/${locale}/${path}`;
   if (title) url += `?title=${title}`;
   const ogImageDir = `./public/images/og/${locale}`;
