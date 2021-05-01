@@ -2,18 +2,24 @@ import hydrate from 'next-mdx-remote/hydrate';
 import { DefaultLayout } from 'components/layouts';
 
 import { getAllFontmatter, getFileBySlug } from 'lib/mdx';
-import { BlogFrontMatter } from '@types';
+import generateOgImage from 'lib/ogImage';
+import { BlogFrontMatter, ogImage } from '@types';
 
 type Props = {
   source: any;
   frontmatter: BlogFrontMatter;
+  ogImage: ogImage;
 };
 
-export default function Blog({ source, frontmatter }: Props) {
+export default function Blog({ source, frontmatter, ogImage }: Props) {
   const content = hydrate(source, {});
 
   return (
-    <DefaultLayout>
+    <DefaultLayout
+      title={frontmatter.title}
+      description={frontmatter.summary}
+      ogImage={ogImage}
+    >
       <div className="space-y-4">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-primary">
           {frontmatter.title}
@@ -27,16 +33,29 @@ export default function Blog({ source, frontmatter }: Props) {
 export async function getStaticProps({ params, locale }) {
   const { slug } = params;
 
-  const mdx = (await getFileBySlug(locale, 'blog', slug)) as {
+  const { mdxSource, frontmatter } = (await getFileBySlug(
+    locale,
+    'blog',
+    slug
+  )) as {
     mdxSource: any;
-    frontmatter: any;
+    frontmatter: BlogFrontMatter;
   };
 
   return {
+    revalidate: 1,
     props: {
-      source: mdx.mdxSource,
-      frontmatter: mdx.frontmatter,
-      revalidate: 1,
+      source: mdxSource,
+      frontmatter: frontmatter,
+      ogImage: await generateOgImage(
+        'og/blog',
+        locale,
+        frontmatter.title,
+        'blog',
+        frontmatter.summary,
+        frontmatter.readingTime,
+        frontmatter.date
+      ),
     },
   };
 }

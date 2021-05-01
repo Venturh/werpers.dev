@@ -1,21 +1,40 @@
 import chrome from 'chrome-aws-lambda';
-import { mkdirSync } from 'fs';
+import { mkdirSync, statSync } from 'fs';
 
 const isDev = process.env.NODE_ENV === 'development';
 
 async function generateOgImage(
   path: string,
   locale: string,
-  title = 'portfolio'
+  title = 'portfolio',
+  type = 'portfolio',
+  summary?: string,
+  readingTime?: string,
+  date?: string
 ) {
-  if (isDev) return null;
   const baseUrl = `https://werpers.dev`;
   let url = `${baseUrl}/${locale}/${path}`;
   if (title) url += `?title=${title}`;
+  if (type === 'blog') {
+    url += `&summary=${summary}&readinTime=${readingTime}&date=${date}`;
+  }
   const ogImageDir = `./public/images/og/${locale}`;
 
   const imagePath = `${ogImageDir}/${title}.png`;
   const publicPath = `${baseUrl}/images/og/${locale}/${title}.png`;
+
+  // try {
+  //   statSync(imagePath);
+  //   return {
+  //     url: publicPath,
+  //     width: 1200,
+  //     height: 630,
+  //     alt: title,
+  //   };
+  //   return publicPath;
+  // } catch (error) {
+  //   //
+  // }
 
   mkdirSync(ogImageDir, { recursive: true });
 

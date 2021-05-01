@@ -14,6 +14,7 @@ const About = ({ ogImage }: { ogImage: ogImage }) => {
   const title = `${t('about')} - Maximilian Werpers`;
   const description = t('aboutSub');
   const url = `https://www.werpers.dev/${lang}/projects`;
+
   return (
     <DefaultLayout
       title={title}

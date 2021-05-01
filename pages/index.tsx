@@ -3,9 +3,9 @@ import useTranslation from 'next-translate/useTranslation';
 
 import { DefaultLayout } from 'components/layouts';
 import { Projects, Hero, Career, Skills } from 'sections/portfolio';
+import generateOgImage from 'lib/ogImage';
 import { projects } from 'content';
 import { ogImage, Project } from '@types';
-import generateOgImage from 'lib/ogImage';
 
 const Portfolio = ({
   projects,
@@ -16,16 +16,18 @@ const Portfolio = ({
   locale: string;
   ogImage: ogImage;
 }) => {
-  const { t } = useTranslation('portfolio');
+  const { t, lang } = useTranslation('portfolio');
+
   const title = `${t('portfolio')} - Maximilian Werpers`;
   const description = t('hero_2');
-
+  const url = `https://www.werpers.dev/${lang}`;
   return (
     <DefaultLayout
       className="space-y-8"
-      ogImage={ogImage}
       title={title}
       description={description}
+      url={url}
+      ogImage={ogImage}
     >
       <Hero />
       <Projects projects={projects} locale={locale} />
@@ -39,7 +41,6 @@ export default Portfolio;
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      getStaticPropsWorks: true,
       locale: locale,
       projects,
       ogImage: await generateOgImage('og', locale, 'portfolio'),

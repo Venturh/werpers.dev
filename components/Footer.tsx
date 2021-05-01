@@ -12,7 +12,6 @@ const Footer = () => {
       <div className="flex flex-col-reverse sm:flex-col sm:grid sm:grid-cols-4">
         <div className="col-span-2 mb-4 space-y-1">
           <div className="mt-4 space-y-2 sm:mt-0">
-            <Logo />
             <Discord />
             <p className="text-sm text-secondary">
               © 2020-2021 - Maximilian Werpers{' '}
