@@ -48,7 +48,7 @@ const DefaultLayout = ({
         <div
           className={clsx(
             className,
-            'md:max-w-3xl flex flex-col flex-auto w-full h-full'
+            'md:max-w-2xl flex flex-col flex-auto w-full h-full'
           )}
         >
           {children}

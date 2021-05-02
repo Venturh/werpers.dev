@@ -1,18 +1,19 @@
-import { useTheme } from 'next-themes';
-import { Circle, Moon, Sun } from 'icons';
-import IconButton from './IconButton';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import { useTheme } from 'next-themes';
+
+import IconButton from './IconButton';
+import { Circle, Moon, Sun } from 'icons';
 
 const ThemeToggle = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
   function changeTheme() {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
     setAnimate(true);
     setTimeout(() => {
       setAnimate(false);
@@ -24,7 +25,7 @@ const ThemeToggle = () => {
       <IconButton
         rounded
         onClick={() => changeTheme()}
-        icon={!mounted ? Circle : theme === 'dark' ? Sun : Moon}
+        icon={!mounted ? Circle : resolvedTheme === 'dark' ? Sun : Moon}
         className={clsx({ 'animate-spin-0.5': animate })}
       />
     </div>

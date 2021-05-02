@@ -40,7 +40,7 @@ const About = ({ ogImage }: { ogImage: ogImage }) => {
             </Link>
             {t('about_4')}
           </p>
-          <Section title="timeline" subtitle="timelineSub" withPadding={false}>
+          <Section title="timeline" subtitle="timelineSub">
             <Timeline />
           </Section>
         </div>
@@ -50,7 +50,7 @@ const About = ({ ogImage }: { ogImage: ogImage }) => {
 };
 
 const Timeline = () => {
-  const { t } = useTranslation('portfolio');
+  const { t, lang } = useTranslation('portfolio');
   const [showMore, setShowMore] = useState(false);
 
   const data = !showMore
@@ -67,45 +67,50 @@ const Timeline = () => {
         <div className="space-y-2 " key={year}>
           <h3 className="font-semibold">{year}</h3>
           <ul>
-            {timeline.map(({ id, icon, date, hasSub }, index) => (
-              <li key={id}>
-                <div className="relative pb-6">
-                  {index !== timeline.length - 1 ? (
-                    <span
-                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-accent"
-                      aria-hidden="true"
-                    />
-                  ) : null}
-                  <div className="relative flex space-x-3">
-                    <div>
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-bg-secondary ">
-                        <Icon
-                          path={icon}
-                          colored
-                          className="text-brand"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </div>
-                    <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+            {timeline.map(
+              (
+                { title, titleEn, description, descriptionEn, icon, date },
+                index: number
+              ) => (
+                <li key={index}>
+                  <div className="relative pb-6">
+                    {index !== timeline.length - 1 ? (
+                      <span
+                        className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-accent"
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                    <div className="relative flex space-x-3">
                       <div>
-                        <p className="text-base font-medium text-primary">
-                          {t(`timeline_${year}_${id}`)}
-                        </p>
-                        {hasSub && (
-                          <p className="text-sm text-secondary">
-                            {t(`timeline_${year}_${id}_sub`)}
-                          </p>
-                        )}
+                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-bg-secondary ">
+                          <Icon
+                            path={icon}
+                            colored
+                            className="text-brand"
+                            aria-hidden="true"
+                          />
+                        </span>
                       </div>
-                      <div className="text-base text-right text-secondary whitespace-nowrap">
-                        <time>{date}</time>
+                      <div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                        <div>
+                          <p className="text-base font-medium text-primary">
+                            {lang === 'en' ? titleEn : title}
+                          </p>
+                          {(description || descriptionEn) && (
+                            <p className="prose">
+                              {lang === 'en' ? descriptionEn : description}
+                            </p>
+                          )}
+                        </div>
+                        <div className="text-base text-right text-secondary whitespace-nowrap">
+                          <time>{date}</time>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              )
+            )}
           </ul>
         </div>
       ))}

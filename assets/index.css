@@ -27,7 +27,7 @@
 
 .dark {
   --brand: #d1fae5;
-  --brand-darker: #6ee7b7;
+  --brand-darker: #a7f3d0;
   --brand-contrast: #08090a;
   --brand15: rgba(167, 243, 208, 0.15);
   --bg-primary: #040405;
@@ -39,12 +39,12 @@
 
 .light {
   --brand: #6ee7b7;
-  --brand-darker: #10b981;
+  --brand-darker: #34d399;
   --brand-contrast: #1b2439;
   --brand15: rgba(110, 231, 183, 0.15);
   --bg-primary: #ffffff;
   --bg-secondary: #fafafa;
   --accent: #e5e7eb;
   --text-primary: #111827;
-  --text-secondary: #6b7280;
+  --text-secondary: #4b5563;
 }

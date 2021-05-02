@@ -10,12 +10,12 @@ type Props = {
 };
 
 const Logo = ({ type = 'auto', h = 'h-10', className }: Props) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, [theme]);
+  }, [resolvedTheme]);
   return (
     <div className={className}>
       <div
@@ -26,7 +26,7 @@ const Logo = ({ type = 'auto', h = 'h-10', className }: Props) => {
       >
         {mounted && (
           <div className="flex items-center space-x-2">
-            <img className={`w-auto ${h}`} src={`/logo_${theme}.png`} />
+            <img className={`w-auto ${h}`} src={`/logo_${resolvedTheme}.png`} />
             <span>werpers.dev</span>
           </div>
         )}
@@ -38,7 +38,7 @@ const Logo = ({ type = 'auto', h = 'h-10', className }: Props) => {
         })}
       >
         {mounted && (
-          <img className={`w-auto ${h}`} src={`/logo_${theme}.png`} />
+          <img className={`w-auto ${h}`} src={`/logo_${resolvedTheme}.png`} />
         )}
       </div>
     </div>

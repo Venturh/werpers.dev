@@ -17,7 +17,7 @@ const Link = ({ to, out, children, className, underline, active }: Props) => {
       className={clsx({
         underline: underline,
         'text-brand hover:text-brand': active,
-        'hover:text-brand text-secondary': !active,
+        'hover:text-brand text-primary': !active,
         className,
       })}
       to={to}

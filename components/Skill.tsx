@@ -27,7 +27,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
                   onMouseOver={() => setHovered(name)}
                   onMouseLeave={() => setHovered('')}
                   key={icon}
-                  className="flex items-center justify-center w-5 h-5 rounded-full bg-brand15 text-brand"
+                  className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-secondary text-brand"
                 >
                   <Icon size="sm" path={icon} colored />
                 </div>

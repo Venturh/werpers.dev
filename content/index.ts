@@ -1,9 +1,9 @@
-import { Navlink, Social } from '@types';
-import { Check, MailOutlined } from 'icons';
+import { Navlink } from '@types';
 
 export { default as projects } from './projects';
 export { default as career } from './career';
 export { default as skills } from './skills';
+export { default as timeline } from './timeline';
 
 export const navlinks: Navlink[] = [
   { name: 'portfolio', to: '/' },
@@ -19,89 +19,6 @@ export const designLinks: Navlink[] = [
   { name: 'buttons', to: '/design/buttons' },
   { name: 'icons', to: '/design/icons' },
 ];
-
-export const timeline = {
-  2021: [
-    {
-      id: 1,
-      keyWord: 'rememoir',
-      date: 'Apr 02',
-      icon: Check,
-      hasSub: false,
-    },
-    {
-      id: 2,
-      keyWord: 'workingStudent',
-      date: 'Mar 01',
-      icon: Check,
-      hasSub: true,
-    },
-  ],
-  2020: [
-    {
-      id: 1,
-      keyWord: 'internship',
-      date: 'Oct 01',
-      icon: Check,
-      hasSub: true,
-    },
-    {
-      id: 2,
-      keyWord: 'vue',
-      date: 'Feb 09',
-      icon: Check,
-      hasSub: true,
-    },
-  ],
-  2019: [
-    {
-      id: 1,
-      keyWord: 'firstWeb',
-      date: 'Nov 10',
-      icon: Check,
-      hasSub: true,
-    },
-    {
-      id: 2,
-      keyWord: 'todo',
-      date: 'Sep 22',
-      icon: Check,
-      hasSub: false,
-    },
-  ],
-  2018: [
-    {
-      id: 1,
-      keyWord: 'todo',
-      date: 'Sep 20',
-      icon: Check,
-      hasSub: false,
-    },
-    {
-      id: 2,
-      keyWord: 'todo',
-      date: 'Sep 22',
-      icon: Check,
-      hasSub: false,
-    },
-  ],
-  2017: [
-    {
-      id: 1,
-      keyWord: 'studyStart',
-      date: 'Oct 01',
-      icon: Check,
-      hasSub: false,
-    },
-    {
-      id: 2,
-      keyWord: 'firstProgram',
-      date: 'Dec 07',
-      icon: Check,
-      hasSub: false,
-    },
-  ],
-};
 
 export const footer = {
   pages: [

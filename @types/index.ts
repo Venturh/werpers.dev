@@ -50,3 +50,12 @@ export type ogImage = {
   height: number;
   alt: string;
 };
+
+export type Timeline = {
+  title: string;
+  titleEn: string;
+  description?: string;
+  descriptionEn?: string;
+  date: string;
+  icon: string;
+};

@@ -12,6 +12,7 @@ async function generateOgImage(
   readingTime?: string,
   date?: string
 ) {
+  if (isDev) return null;
   const baseUrl = `https://werpers.dev`;
   let url = `${baseUrl}/${locale}/${path}`;
   if (title) url += `?title=${title}`;
@@ -23,18 +24,18 @@ async function generateOgImage(
   const imagePath = `${ogImageDir}/${title}.png`;
   const publicPath = `${baseUrl}/images/og/${locale}/${title}.png`;
 
-  // try {
-  //   statSync(imagePath);
-  //   return {
-  //     url: publicPath,
-  //     width: 1200,
-  //     height: 630,
-  //     alt: title,
-  //   };
-  //   return publicPath;
-  // } catch (error) {
-  //   //
-  // }
+  try {
+    statSync(imagePath);
+    return {
+      url: publicPath,
+      width: 1200,
+      height: 630,
+      alt: title,
+    };
+    return publicPath;
+  } catch (error) {
+    //
+  }
 
   mkdirSync(ogImageDir, { recursive: true });
 

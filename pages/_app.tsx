@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps }) => {
   const { lang } = useTranslation('portfolio');
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
+    <ThemeProvider attribute="class">
       <DefaultSeo {...SEO(lang)} />
       <Component {...pageProps} />
     </ThemeProvider>
