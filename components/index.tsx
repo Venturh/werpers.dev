@@ -1,4 +1,5 @@
 export { default as BaseCard } from './BaseCard';
+export { default as BlogPostCard } from './BlogPostCard';
 export { default as Button } from './Button';
 export { default as ButtonOrLink } from './ButtonOrLink';
 export { default as CareerCard } from './CareerCard';
@@ -21,3 +22,4 @@ export { default as Section } from './Section';
 export { default as SectionHeader } from './SectionHeader';
 export { default as Skill } from './Skill';
 export { default as ThemeToggle } from './ThemeToggle';
+export { default as ViewCounter } from './ViewCounter';

@@ -65,7 +65,7 @@
   "progress": "Progress",
   "type": "Type",
   "year": "Year",
-  "views": "Views",
+  "views": "views",
 
   "recentBlogPosts": "Recent Blogposts",
   "allBlogposts": "All Blogposts",
@@ -83,5 +83,6 @@
   "playground": "Playground",
   "updated": "Updated",
   "from": "from",
-  "and": "and"
+  "and": "and",
+  "readingTime": "read"
 }

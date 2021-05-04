@@ -15,6 +15,7 @@
     "clsx": "^1.1.1",
     "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.3",
+    "ioredis": "^4.27.1",
     "next": "^10.0.4",
     "next-mdx-remote": "^2.1.4",
     "next-seo": "^4.7.3",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@tailwindcss/jit": "^0.1.18",
+    "@types/ioredis": "^4.26.1",
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",

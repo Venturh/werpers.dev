@@ -20,8 +20,6 @@ export async function getFileBySlug(
   type: string,
   slug: string
 ) {
-  console.log('🚀 ~ file: mdx.ts ~ line 23 ~ slug', slug);
-  console.log('🚀 ~ file: mdx.ts ~ line 23 ~ type', type);
   const location = `content/${locale}/${type}`;
   const fileLocation = `${location}/${slug + '.mdx'}`;
 
