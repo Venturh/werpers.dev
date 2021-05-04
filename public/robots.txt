@@ -1,4 +1,4 @@
-Sitemap: https://maxwerpers.me/api/sitemap.xml
+Sitemap: https://werpers.dev/api/sitemap.xml
 
 User-agent: *
 Allow: /*
