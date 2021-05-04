@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       locale: locale,
       projects,
-      ogImage: null,
+      ogImage: await generateOgImage('og', locale, 'portfolio'),
     },
   };
 };

@@ -8,11 +8,11 @@ async function generateOgImage(
   locale: string,
   title = 'portfolio',
   type = 'portfolio',
+  slug = 'portfolio',
   summary?: string,
   readingTime?: string,
   date?: string
 ) {
-  if (isDev) return null;
   const baseUrl = `https://werpers.dev`;
   let url = `${baseUrl}/${locale}/${path}`;
   if (title) url += `?title=${title}`;
@@ -21,8 +21,8 @@ async function generateOgImage(
   }
   const ogImageDir = `./public/images/og/${locale}`;
 
-  const imagePath = `${ogImageDir}/${title}.png`;
-  const publicPath = `${baseUrl}/images/og/${locale}/${title}.png`;
+  const imagePath = `${ogImageDir}/${slug}.png`;
+  const publicPath = `${baseUrl}/images/og/${locale}/${slug}.png`;
 
   try {
     statSync(imagePath);
@@ -32,7 +32,6 @@ async function generateOgImage(
       height: 630,
       alt: title,
     };
-    return publicPath;
   } catch (error) {
     //
   }

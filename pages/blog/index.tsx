@@ -41,7 +41,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
   return {
     props: {
       blogFrontmatter,
-      ogImage: null,
+      ogImage: await generateOgImage('og', locale, 'blog'),
     },
   };
 }

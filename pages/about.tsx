@@ -134,6 +134,6 @@ export default About;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
-    props: { ogImage: null },
+    props: { ogImage: await generateOgImage('og', locale, 'aboutMe') },
   };
 };

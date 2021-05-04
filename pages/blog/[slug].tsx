@@ -60,7 +60,16 @@ export async function getStaticProps({ params, locale }) {
     props: {
       source: mdxSource,
       frontmatter: frontmatter,
-      ogImage: null,
+      ogImage: await generateOgImage(
+        'og/blog',
+        locale,
+        frontmatter.title,
+        'blog',
+        frontmatter.slug,
+        frontmatter.summary,
+        frontmatter.readingTime,
+        frontmatter.date
+      ),
     },
   };
 }
