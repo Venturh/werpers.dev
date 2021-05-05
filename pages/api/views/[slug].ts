@@ -3,11 +3,12 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-const redis = new Redis(
-  isDev ? 'redis://127.0.0.1:6379' : process.env.REDIS_URL
-);
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (isDev) return res.status(200).json({});
+
+  const redis = new Redis(
+    isDev ? 'redis://127.0.0.1:6379' : process.env.REDIS_URL
+  );
   if (req.method === 'POST') {
     const { slug } = req.query;
     const current = JSON.parse(

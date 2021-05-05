@@ -13,6 +13,7 @@ async function generateOgImage(
   readingTime?: string,
   date?: string
 ) {
+  if (isDev) return null;
   const baseUrl = `https://werpers.dev`;
   let url = `${baseUrl}/${locale}/${path}`;
   if (title) url += `?title=${title}`;
@@ -21,8 +22,9 @@ async function generateOgImage(
   }
   const ogImageDir = `./public/images/og/${locale}`;
 
-  const imagePath = `${ogImageDir}/${slug}.png`;
-  const publicPath = `${baseUrl}/images/og/${locale}/${slug}.png`;
+  const name = type === 'portfolio' ? title : slug;
+  const imagePath = `${ogImageDir}/${name}.png`;
+  const publicPath = `${baseUrl}/images/og/${locale}/${name}.png`;
 
   try {
     statSync(imagePath);

@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
 
 import { DefaultLayout } from 'components/layouts';
-import { Button, Container } from 'components';
+import { Container } from 'components';
 import { ProjectFilters, ProjectList } from 'sections/projects';
 
 import { projects } from 'content';
@@ -17,6 +17,7 @@ const Projects = ({
   projects: Project[];
   ogImage: ogImage;
 }) => {
+  console.log('🚀 ~ file: projects.tsx ~ line 20 ~ ogImage', ogImage);
   const { t, lang } = useTranslation('portfolio');
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);

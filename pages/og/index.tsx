@@ -5,6 +5,8 @@ import useTranslation from 'next-translate/useTranslation';
 import { Logo } from 'components';
 
 const DefaultGenerator = () => {
+  const { resolvedTheme } = useTheme();
+
   const { t } = useTranslation('portfolio');
 
   const router = useRouter();
