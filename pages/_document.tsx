@@ -40,6 +40,12 @@ export default class Document extends NextDocument {
             href="/favicons/safari-pinned-tab.svg"
             color="#161821"
           />
+          <script
+            async
+            defer
+            data-website-id="37743e86-3ae5-45ba-9122-8d5dfd42af51"
+            src="https://unami-analytics-production.up.railway.app/umami.js"
+          />
           <meta name="msapplication-TileColor" content="#161821" />
           <meta name="theme-color" content="#161821"></meta>
         </Head>
