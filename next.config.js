@@ -2,13 +2,13 @@ const nextTranslate = require('next-translate');
 
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
   child-src 'none';
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
   font-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://unami-analytics-production.up.railway.app/umami.js;
 `;
 
 const securityHeaders = [
