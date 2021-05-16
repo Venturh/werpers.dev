@@ -8,7 +8,7 @@ async function generateOgImage(
   readingTime?: string,
   date?: string
 ) {
-  const imagePath = `./images/og/portfolio.png`;
+  const imagePath = `https://werpers.dev/images/og/portfolio.png`;
 
   return {
     url: imagePath,
