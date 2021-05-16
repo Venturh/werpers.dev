@@ -6,12 +6,10 @@
     "dev": "docker-compose up",
     "dev:next": "next dev",
     "build": "next build",
-    "start": "next start",
-    "postinstall": "node node_modules/puppeteer-core/install.js"
+    "start": "next start"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
-    "chrome-aws-lambda": "^9.1.0",
     "clsx": "^1.1.1",
     "fuse.js": "^6.4.6",
     "gray-matter": "^4.0.3",
@@ -22,7 +20,6 @@
     "next-themes": "^0.0.14",
     "next-translate": "^1.0.1",
     "prettier": "^2.3.0",
-    "puppeteer-core": "^9.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sitemap": "^7.0.0",

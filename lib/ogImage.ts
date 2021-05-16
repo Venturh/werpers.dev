@@ -1,8 +1,3 @@
-import chrome from 'chrome-aws-lambda';
-import { mkdirSync, statSync } from 'fs';
-
-const isDev = process.env.NODE_ENV === 'development';
-
 async function generateOgImage(
   path: string,
   locale: string,
@@ -13,47 +8,10 @@ async function generateOgImage(
   readingTime?: string,
   date?: string
 ) {
-  if (isDev) return null;
-  const baseUrl = `https://werpers.dev`;
-  let url = `${baseUrl}/${locale}/${path}`;
-  if (title) url += `?title=${title}`;
-  if (type === 'blog') {
-    url += `&summary=${summary}&readinTime=${readingTime}&date=${date}`;
-  }
-  const ogImageDir = `./public/images/og/${locale}`;
-
-  const name = type === 'portfolio' ? title : slug;
-  const imagePath = `${ogImageDir}/${name}.png`;
-  const publicPath = `${baseUrl}/images/og/${locale}/${name}.png`;
-
-  try {
-    statSync(imagePath);
-    return {
-      url: publicPath,
-      width: 1200,
-      height: 630,
-      alt: title,
-    };
-  } catch (error) {
-    //
-  }
-
-  mkdirSync(ogImageDir, { recursive: true });
-
-  const browser = await chrome.puppeteer.launch({
-    args: chrome.args,
-    executablePath: await chrome.executablePath,
-    headless: true,
-  });
-
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 630 });
-  await page.goto(url, { waitUntil: 'networkidle2' });
-  await page.screenshot({ type: 'png', path: imagePath });
-  await browser.close();
+  const imagePath = `./images/og/portfolio.png`;
 
   return {
-    url: publicPath,
+    url: imagePath,
     width: 1200,
     height: 630,
     alt: title,
