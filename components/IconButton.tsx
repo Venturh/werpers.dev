@@ -1,18 +1,13 @@
 import clsx from 'clsx';
-import ButtonOrLink from './ButtonOrLink';
+import ButtonOrLink, { Props as ButtonOrLinkProps } from './ButtonOrLink';
 import Icon from './Icon';
-type Props = {
+interface Props extends ButtonOrLinkProps {
   icon: string;
-  to?: string;
   rounded?: boolean;
-  onClick?: () => void;
   iconSize?: 'sm' | 'md' | 'lg';
-  out?: boolean;
   colored?: boolean;
-  children?: React.ReactNode;
-  className?: string;
   outlined?: boolean;
-};
+}
 const IconButton = ({
   icon,
   to,

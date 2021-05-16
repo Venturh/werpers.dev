@@ -32,12 +32,19 @@ type LabelsProps = {
   variant: Props['variant'];
   max?: number;
   small?: boolean;
+  overflowDirection?: 'down' | 'right';
 };
 
-export const Labels = ({ labels, variant, max = 3, small }: LabelsProps) => {
+export const Labels = ({
+  labels,
+  variant,
+  max = 3,
+  small,
+  overflowDirection = 'right',
+}: LabelsProps) => {
   const [show, setShow] = useState(false);
   return (
-    <div className="flex items-center">
+    <div className="relative flex items-center">
       {labels.slice(0, max).map((field) => (
         <span key={field}>
           <Label className="mr-2" small={small} variant={variant}>
@@ -52,11 +59,17 @@ export const Labels = ({ labels, variant, max = 3, small }: LabelsProps) => {
           onMouseLeave={() => setShow(false)}
         >
           <Label small={small} variant={variant}>
-            + {labels.length - max}
+            +{labels.length - max}
           </Label>
         </span>
       )}
-      <div className="flex ml-2 space-x-2 ">
+      <div
+        className={clsx('flex space-x-2', {
+          'ml-2': overflowDirection === 'right',
+          'space-x-2 absolute right-0 -bottom-8 z-50 ':
+            overflowDirection === 'down',
+        })}
+      >
         {show &&
           labels.slice(max, labels.length).map((field) => (
             <Label key={field} variant={variant} small={small}>

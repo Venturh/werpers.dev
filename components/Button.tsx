@@ -1,15 +1,11 @@
 import clsx from 'clsx';
-import ButtonOrLink from './ButtonOrLink';
-type Props = {
-  children: React.ReactNode;
-  to?: string;
-  onClick?: () => void;
+import ButtonOrLink, { Props as ButtonOrLinkProps } from './ButtonOrLink';
+interface Props extends ButtonOrLinkProps {
   variant?: 'primary' | 'inherit';
-};
+}
 
-const Button = ({ children, to, onClick, variant = 'primary' }: Props) => (
+const Button = ({ variant = 'primary', ...props }: Props) => (
   <ButtonOrLink
-    onClick={onClick}
     className={clsx(
       'inline-flex items-center px-4 py-2 text-sm font-medium rounded-md shadow-sm  focus:outline-none',
       {
@@ -19,10 +15,8 @@ const Button = ({ children, to, onClick, variant = 'primary' }: Props) => (
           variant === 'inherit',
       }
     )}
-    to={to}
-  >
-    {children}
-  </ButtonOrLink>
+    {...props}
+  />
 );
 
 export default Button;

@@ -17,7 +17,6 @@ const Projects = ({
   projects: Project[];
   ogImage: ogImage;
 }) => {
-  console.log('🚀 ~ file: projects.tsx ~ line 20 ~ ogImage', ogImage);
   const { t, lang } = useTranslation('portfolio');
   const [showFilters, setShowFilters] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState(projects);

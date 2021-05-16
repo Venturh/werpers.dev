@@ -7,7 +7,7 @@ const Hero = () => {
 
   return (
     <div className="space-y-2">
-      <div className="inline-flex items-center space-x-2">
+      {/* <div className="inline-flex items-center space-x-2">
         <Label variant="15">{t('whatsNew')}</Label>
         <Link to="/design">
           <Label
@@ -18,7 +18,7 @@ const Hero = () => {
             <Icon path={ArrowRightS} colored />
           </Label>
         </Link>
-      </div>
+      </div> */}
       <h1 className="text-3xl font-bold sm:text-5xl ">
         {t('hero_1')} <span className="text-brand"> Maximilian Werpers </span>
       </h1>

@@ -1,51 +1,31 @@
 import Link from 'next/link';
+import { ComponentProps } from 'react';
 
-type Props = {
+type ButtonOrLinkProps = ComponentProps<'button'> & ComponentProps<'a'>;
+
+export interface Props extends ButtonOrLinkProps {
   out?: boolean;
   to?: string;
-  onClick?: () => void;
   children?: React.ReactNode;
+  type?: 'button' | 'submit' | 'reset' | undefined;
+  disabled?: boolean;
   className?: string;
-};
+}
 
-const ButtonOrLink = ({ out, to, onClick, children, className }: Props) => {
-  if (!onClick) {
-    if (out) {
-      return (
-        <a
-          className={className}
-          href={to}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {children}
-        </a>
-      );
-    } else if (onClick) {
-      return (
-        <Link href={to}>
-          <a className={className}> {children}</a>
-        </Link>
-      );
-    } else {
-      return (
-        <Link href={to}>
-          <a className={className}>{children}</a>
-        </Link>
-      );
-    }
-  } else {
-    return (
-      <button
-        className={className}
-        type="button"
-        aria-label="button"
-        onClick={onClick}
-      >
-        {children}
-      </button>
-    );
+const ButtonOrLink = ({ out, to, ...props }: Props) => {
+  const isLink = typeof to !== 'undefined';
+  const ButtonOrLink = isLink ? 'a' : 'button';
+  const content = (
+    <ButtonOrLink
+      target={out ? '_blank' : undefined}
+      rel={out ? 'noopener noreferrer' : undefined}
+      {...props}
+    />
+  );
+  if (isLink) {
+    return <Link href={to!}>{content}</Link>;
   }
+  return content;
 };
 
 export default ButtonOrLink;

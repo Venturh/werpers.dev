@@ -28,7 +28,11 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
                   <span>{title}</span>
                 </td>
                 <td className="hidden px-3 py-2 md:table-cell">
-                  <Labels labels={tech} variant="border" />
+                  <Labels
+                    labels={tech}
+                    variant="border"
+                    overflowDirection="down"
+                  />
                 </td>
 
                 <td className="px-3 py-2">
