@@ -1,8 +1,7 @@
 ---
 title: Custom localhost domain in development
-summary: 'Write your content in Markdown and add interactivity with our library of built-in components.'
-date: '27. April 2021'
-image: '/images/placeholder.jpg'
+summary: How to setup docker with a reverse-proxy to run a custom domain locally.
+date: '16 Mai 2021'
 slug: custom-localhost
 readingTime: 5 min
 categories:
@@ -13,8 +12,8 @@ A nice way to improve your developer workflow is to add a custom domain to your 
 With this you will get a 'yourdomain'.localhost domain, which can help organizing your local development servers.
 It is also possible to expose different ports, to run multiple servers at once or even always start the dev server on startup.
 
-To archieve this, we will use docker and traefik as a reverse-proxy. If you haven´t setup docker yet, follow these steps.
-
+To archieve this, we will use docker and traefik as a reverse-proxy. If you haven´t setup docker yet, [follow the getting started guide from docker](https://www.docker.com/get-started)
+You will also need docker.compose, if you don´t habe it already [from here](https://docs.docker.com/compose/install/)
 After installing docker you are ready to go!
 
 We will be using a NextJS app, but it should work with any framkework.
@@ -28,17 +27,18 @@ These will be the basic steps to set it up:
 Let´s go:
 We will use the script tag dev to run docker-compose, and web:dev to start the next dev server:
 
+_package.json_
+
 ```json
   "scripts": {
     "dev": "docker-compose up",
-    "dev:next": "next dev",
+    "dev:next": "next dev -p 1337",
     "build": "next build",
     "start": "next start"
   },
 ```
 
-We
-This ist the config file, where we will setup our next-app and the traefik service.
+_docker-compose-yml_
 
 ```yml
 version: '3'
@@ -59,7 +59,7 @@ services:
     image: node:14
     # export nextjs port, you can use any port on the right side
     ports:
-      - '3000:3000'
+      - '1337:1337'
     volumes:
       - .:/srv/web:rw
     working_dir: /srv/web
@@ -73,6 +73,6 @@ services:
       - 'traefik.http.routers.frontend.rule=Host(`portfolio.localhost`)'
 ```
 
-This is the basic setup for the reverse-proxy, you can see all option here.
-
 ### Conclusion
+
+I like the idea a lot to use custom domains, since it makes organizing a little bit simpler and it is simple to setup.

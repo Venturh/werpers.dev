@@ -25,6 +25,7 @@ export const footer = {
     { name: 'portfolio', link: '/', internal: true },
     { name: 'projects', link: '/projects', internal: true },
     { name: 'about', link: '/about', internal: true },
+    { name: 'blog', link: '/blog', internal: true },
     { name: 'design', link: '/design', internal: true },
   ],
   socials: [

@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation';
-import hydrate from 'next-mdx-remote/hydrate';
+import { MDXRemote } from 'next-mdx-remote';
 import { DefaultLayout } from 'components/layouts';
 import { ViewCounter } from 'components';
 
@@ -15,7 +15,6 @@ type Props = {
 
 export default function Blog({ source, frontmatter, ogImage }: Props) {
   const { t } = useTranslation('portfolio');
-  const content = hydrate(source, {});
 
   return (
     <DefaultLayout
@@ -37,7 +36,9 @@ export default function Blog({ source, frontmatter, ogImage }: Props) {
           </h1>
         </div>
 
-        <div className="prose">{content}</div>
+        <div className="prose">
+          <MDXRemote {...source} />
+        </div>
       </div>
     </DefaultLayout>
   );

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import renderToString from 'next-mdx-remote/render-to-string';
+import { serialize } from 'next-mdx-remote/serialize';
 const root = process.cwd();
 
 export function getAllFontmatter(locale: string, type: string) {
@@ -24,7 +24,7 @@ export async function getFileBySlug(
   const fileLocation = `${location}/${slug + '.mdx'}`;
 
   const { data, content } = matter(fs.readFileSync(fileLocation).toString());
-  const mdxSource = await renderToString(content);
+  const mdxSource = await serialize(content);
 
   return { mdxSource, frontmatter: data };
 }
