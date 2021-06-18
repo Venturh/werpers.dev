@@ -7,7 +7,7 @@ const Footer = () => {
   const { t } = useTranslation('portfolio');
 
   return (
-    <div className="flex flex-col w-full max-w-2xl py-6 space-y-6 text-base">
+    <div className="flex flex-col w-full py-6 space-y-6 text-base">
       <div className="w-full border-t-2 border-accent" />
       <Discord />
       <div className="grid grid-cols-2 gap-4 text-base sm:grid-cols-3">

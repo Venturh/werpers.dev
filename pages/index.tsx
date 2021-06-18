@@ -18,8 +18,8 @@ const Portfolio = ({
 }) => {
   const { t, lang } = useTranslation('portfolio');
 
-  const title = `${t('portfolio')} - Maximilian Werpers`;
-  const description = t('hero_2');
+  const title = 'Portfolio - Maximilian Werpers';
+  const description = 'Maximilian Werpers -  Web Developer, Student';
   const url = `https://www.werpers.dev/${lang}`;
   return (
     <DefaultLayout

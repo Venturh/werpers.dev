@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -9,7 +8,7 @@ type Props = {
   h?: string;
 };
 
-const Logo = ({ type = 'auto', h = 'h-10', className }: Props) => {
+const Logo = ({ type = 'auto', h = 'h-8', className }: Props) => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -18,25 +17,7 @@ const Logo = ({ type = 'auto', h = 'h-10', className }: Props) => {
   }, [resolvedTheme]);
   return (
     <div className={className}>
-      <div
-        className={clsx({
-          hidden: type === 'mobile',
-          'hidden md:inline-flex': type === 'auto',
-        })}
-      >
-        {mounted && (
-          <div className="flex items-center space-x-2">
-            <img className={`w-auto ${h}`} src={`/logo_${resolvedTheme}.png`} />
-            <span>werpers.dev</span>
-          </div>
-        )}
-      </div>
-      <div
-        className={clsx({
-          'md:hidden': type === 'auto',
-          hidden: type === 'desktop',
-        })}
-      >
+      <div>
         {mounted && (
           <img className={`w-auto ${h}`} src={`/logo_${resolvedTheme}.png`} />
         )}

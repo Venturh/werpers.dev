@@ -1,12 +1,10 @@
 import { NextSeoProps } from 'next-seo';
 
 export default function SEO(lang: string): NextSeoProps {
-  const title = 'Maximilian Werpers - Web Developer & Student';
-  const description = `Portfolio ${
-    lang === 'de' ? 'von' : 'of'
-  } Maximilian Werpers, Fullstack Developer`;
+  const title = 'Portfolio - Maximilian Werpers';
+  const description = 'Maximilian Werpers -  Web Developer, Student';
   const locale = lang === 'de' ? 'de_DE' : 'en_US';
-  const home = 'https://werpers.dev';
+  const url = `https://www.werpers.dev/${lang}`;
 
   return {
     title,
@@ -27,7 +25,7 @@ export default function SEO(lang: string): NextSeoProps {
     openGraph: {
       type: 'website',
       locale,
-      url: home,
+      url,
       title,
       description,
       profile: {
