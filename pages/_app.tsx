@@ -7,13 +7,6 @@ import 'assets/index.css';
 
 const App = ({ Component, pageProps }) => {
   const { lang } = useTranslation('portfolio');
-  useEffect(() => {
-    const addView = () =>
-      fetch(`/api/views/home}`, {
-        method: 'POST',
-      });
-    addView();
-  }, []);
 
   return (
     <ThemeProvider attribute="class">

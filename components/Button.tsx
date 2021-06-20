@@ -9,11 +9,11 @@ const Button = ({ variant = 'primary', size = 'base', ...props }: Props) => {
   function getSize() {
     switch (size) {
       case 'xs':
-        return 'px-2.5 py-1.5 text-xs';
+        return 'px-2 py-1 text-xs';
       case 'sm':
         return 'px-3 py-1.5 text-sm';
       case 'base':
-        return 'px-3 py-1.5 text-sm';
+        return 'px-4 py-2 text-sm';
     }
   }
   return (
