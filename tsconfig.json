@@ -16,12 +16,5 @@
     "jsx": "preserve",
     "downlevelIteration": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.js",
-    "**/*.tsx",
-    "next.config.js"
-  ],
-  "exclude": ["node_modules", ".next"]
+  "exclude": ["node_modules", ".next", ".vercel"]
 }

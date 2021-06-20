@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import clsx from 'clsx';
+import Button from 'components/Button';
 
 type FilterProps = {
   name: string;
@@ -15,16 +16,14 @@ const Filter = ({ name, callback, ...rest }: FilterProps) => {
   };
 
   return (
-    <div
-      className={clsx(
-        'p-2 text-sm inline-flex rounded-lg bg-brand15 text-primary items-center justify-center cursor-pointer hover:border-brand border  ',
-        { 'border-brand ': selected, 'border-accent': !selected }
-      )}
+    <Button
+      variant={selected ? 'primary' : '15'}
+      size="xs"
       onClick={() => select(name)}
       {...rest}
     >
-      <span>{name}</span>
-    </div>
+      {name}
+    </Button>
   );
 };
 

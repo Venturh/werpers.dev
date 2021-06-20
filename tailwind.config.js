@@ -27,6 +27,7 @@ module.exports = {
       },
       backgroundColor: {
         primary: 'var(--bg-primary)',
+        secondary: 'var(--bg-secondary)',
       },
       textColor: {
         primary: 'var(--text-primary)',
@@ -45,6 +46,7 @@ module.exports = {
       minHeight: { 50: '50vh' },
       maxWidth: {
         xsm: '21rem',
+        '2.5xl': '45rem'
       },
       animation: {
         'spin-0.5': 'spin 0.5s linear',

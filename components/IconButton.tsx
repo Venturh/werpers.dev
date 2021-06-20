@@ -26,7 +26,7 @@ const IconButton = ({
     onClick={onClick}
     className={clsx(
       className,
-      'flex items-center  md:p-1 hover:ring-4 hover:ring-accent hover:bg-accent focus:outline-none',
+      'flex items-center md:p-1 hover:ring-4 hover:ring-accent hover:bg-accent focus:outline-none',
       {
         'rounded-full': rounded,
       }

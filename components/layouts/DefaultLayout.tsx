@@ -43,7 +43,7 @@ const DefaultLayout = ({
           }}
         />
       )}
-      <main className="flex flex-col items-center mx-auto space-y-12 text-base max-w-xsm md:max-w-3xl lg:text-lg">
+      <main className="flex flex-col items-center mx-auto space-y-12 text-base max-w-xsm md:max-w-2.5xl lg:text-lg">
         <Navigation />
         <div
           className={clsx(className, 'flex flex-col flex-auto w-full h-full')}

@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
+
 import Dropdown from './Dropdown';
 import { Language2, Language3 } from 'icons';
-import useTranslation from 'next-translate/useTranslation';
-import { useEffect, useState } from 'react';
 
 const LanguageSwitch = ({ withDisplay = false }) => {
   const { lang } = useTranslation();

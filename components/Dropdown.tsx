@@ -1,7 +1,7 @@
-import clsx from 'clsx';
-import { Icon } from 'components';
-import { ArrowDownS, Menu1 } from 'icons';
 import { useEffect, useRef, useState } from 'react';
+import clsx from 'clsx';
+import { Icon, IconButton } from 'components';
+import { ArrowDownS, Menu1 } from 'icons';
 
 type Props = {
   options: { icon?: string; name: string }[];
@@ -53,25 +53,32 @@ const Dropdown = ({
   };
   return (
     <div ref={displayRef} className="relative inline-block text-left">
-      <button
-        type="button"
-        className={clsx(
-          'flex items-center text-primary focus:outline-none focus:ring-1 focus:ring-brand',
-          {
-            'rounded-full': !withDisplay,
-            'ring-1 ring-accent rounded-md px-2 py-1 hover:ring-brand': withDisplay,
-          }
-        )}
-        aria-expanded="true"
-        aria-haspopup="true"
-        onClick={() => setToggleDropdown(!toggleDropdown)}
-      >
-        {!withDisplay && <span className="sr-only">Open options</span>}
-        {withDisplay && (
+      {withDisplay && (
+        <button
+          type="button"
+          className="flex items-center px-2 py-1 rounded-md text-primary focus:outline-none focus:ring-1 focus:ring-brand ring-1 ring-accent hover:ring-brand"
+          aria-expanded="true"
+          aria-haspopup="true"
+          onClick={() => setToggleDropdown(!toggleDropdown)}
+        >
           <span className="text-sm">{defaultSelected || selected}</span>
-        )}
-        <Icon path={withDisplay ? ArrowDownS : withIcon || Menu1} colored />
-      </button>
+
+          <Icon path={withDisplay ? ArrowDownS : withIcon || Menu1} colored />
+        </button>
+      )}
+      {!withDisplay && (
+        <IconButton
+          icon={withDisplay ? ArrowDownS : withIcon || Menu1}
+          aria-expanded="true"
+          aria-haspopup="true"
+          rounded
+          onClick={() => setToggleDropdown(!toggleDropdown)}
+        >
+          {withDisplay && (
+            <span className="text-sm">{defaultSelected || selected}</span>
+          )}
+        </IconButton>
+      )}
       <div
         ref={dropdownRef}
         className={clsx(

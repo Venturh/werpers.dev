@@ -52,7 +52,7 @@ export default class Document extends NextDocument {
           <meta name="msapplication-TileColor" content="#161821" />
           <meta name="theme-color" content="#161821"></meta>
         </Head>
-        <body className="min-h-screen font-sans text-base text-primary bg-primary">
+        <body className="min-h-screen text-base text-primary bg-primary">
           <Main />
           <NextScript />
         </body>

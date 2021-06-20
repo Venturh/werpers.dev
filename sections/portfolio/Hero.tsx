@@ -6,7 +6,7 @@ const Hero = () => {
   const { t } = useTranslation('portfolio');
 
   return (
-    <div className="space-y-2">
+    <div>
       {/* <div className="inline-flex items-center space-x-2">
         <Label variant="15">{t('whatsNew')}</Label>
         <Link to="/design">
@@ -22,7 +22,7 @@ const Hero = () => {
       <h1 className="text-3xl font-bold sm:text-5xl ">
         {t('hero_1')} <span className="text-brand"> Maximilian Werpers </span>
       </h1>
-      <p className="prose">{t('hero_2')}</p>
+      <p className="mt-4 prose">{t('hero_2')}</p>
     </div>
   );
 };
