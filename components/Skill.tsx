@@ -21,7 +21,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
         <div className="relative">
           <Label className="absolute -top-10">{hovered}</Label>
           {subSkills && (
-            <div className="flex -space-x-2 text-primary">
+            <div className="flex -space-x-1.5 text-primary">
               {subSkills.map(({ icon, name }) => (
                 <div
                   onMouseOver={() => setHovered(name)}
@@ -29,7 +29,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
                   key={icon}
                   className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-secondary text-brand"
                 >
-                  <Icon size="sm" path={icon} colored />
+                  <Icon zoomOnHover size="md" path={icon} colored />
                 </div>
               ))}
             </div>
@@ -37,7 +37,7 @@ const Skill = ({ name, icon, subSkills }: SkillType) => {
         </div>
       </div>
 
-      <p className="prose">
+      <p className="prose-sm text-secondary">
         {t(`skill_description_${name.toLocaleLowerCase()}`)}
       </p>
     </div>

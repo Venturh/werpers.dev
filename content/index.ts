@@ -44,6 +44,10 @@ export const footer = {
       link: 'https://discord.gg/pmsD8Qqvn9',
       internal: false,
     },
-    { name: 'Email', link: 'mailto:contact@maxwerpers.me', internal: false },
+    {
+      name: 'Email',
+      link: 'mailto:maximilian.werpers@googlemail.com',
+      internal: false,
+    },
   ],
 };

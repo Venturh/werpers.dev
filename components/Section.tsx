@@ -9,9 +9,9 @@ type Props = {
 };
 
 const Section = ({ title, subtitle, button, children }: Props) => (
-  <div className="space-y-2">
+  <div>
     <SectionHeader title={title} subtitle={subtitle} button={button} />
-    <div>{children}</div>
+    <div className="mt-4">{children}</div>
   </div>
 );
 

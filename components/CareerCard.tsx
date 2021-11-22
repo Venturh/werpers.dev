@@ -36,7 +36,9 @@ const CareerCard = ({
               </Link>
               <p className="text-sm text-secondary">{t(`${time}`)}</p>
             </div>
-            <p className="mb-1.5 prose ">{t(`${description}`)}</p>
+            <p className="mb-1.5 prose-sm text-secondary">
+              {t(`${description}`)}
+            </p>
             <Labels labels={tech} variant="15" max={5} />
           </div>
         </div>

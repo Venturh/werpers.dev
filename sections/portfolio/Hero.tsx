@@ -1,28 +1,23 @@
-import { Label, Icon, Link } from 'components';
 import useTranslation from 'next-translate/useTranslation';
-import { ArrowRightS } from 'icons';
+import { Link } from 'components';
 
 const Hero = () => {
   const { t } = useTranslation('portfolio');
 
   return (
     <div>
-      {/* <div className="inline-flex items-center space-x-2">
-        <Label variant="15">{t('whatsNew')}</Label>
-        <Link to="/design">
-          <Label
-            variant="border"
-            className="flex items-center space-x-4 text-sm bg-secondary text-brand hover:text-brand-darker"
-          >
-            {t('whatsNewDesc')}
-            <Icon path={ArrowRightS} colored />
-          </Label>
-        </Link>
-      </div> */}
-      <h1 className="text-3xl font-bold sm:text-5xl ">
-        {t('hero_1')} <span className="text-brand"> Maximilian Werpers </span>
+      <h1 className="text-3xl font-bold tracking-tight sm:text-5xl ">
+        Maximilian Werpers
       </h1>
-      <p className="mt-4 prose">{t('hero_2')}</p>
+      <h2 className="tracking-tight text-secondary">
+        Software Engineer at{' '}
+        <Link className="text-brand" out to="https://clickbar.dev/">
+          <span className="font-medium text-brand hover:text-brand-darker">
+            clickbar
+          </span>
+        </Link>
+      </h2>
+      <p className="mt-2 prose-sm sm:w-1/2">{t('hero_2')}</p>
     </div>
   );
 };

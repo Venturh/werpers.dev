@@ -12,10 +12,15 @@ const SectionHeader = ({ title, subtitle, button }: Props) => {
   return (
     <div className="pb-1 space-y-2 ">
       <div className="flex items-center justify-between mb-1">
-        <h2 className="text-2xl font-semibold sm:text-3xl ">{t(title)}</h2>
-        {button ? <Button to={button.to}> {t(button.text)}</Button> : null}
+        <h1 className="text-2xl font-semibold sm:text-3xl ">{t(title)}</h1>
+        {button ? (
+          <Button size="sm" to={button.to}>
+            {' '}
+            {t(button.text)}
+          </Button>
+        ) : null}
       </div>
-      {subtitle && <h3 className="lg:text-lg text-secondary">{t(subtitle)}</h3>}
+      {subtitle && <h2 className="text-secondary">{t(subtitle)}</h2>}
     </div>
   );
 };

@@ -97,7 +97,7 @@ const Timeline = () => {
                             {lang === 'en' ? titleEn : title}
                           </p>
                           {(description || descriptionEn) && (
-                            <p className="prose">
+                            <p className="prose-sm">
                               {lang === 'en' ? descriptionEn : description}
                             </p>
                           )}

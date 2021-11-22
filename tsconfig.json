@@ -2,7 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -16,5 +20,14 @@
     "jsx": "preserve",
     "downlevelIteration": true
   },
-  "exclude": ["node_modules", ".next", ".vercel"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".vercel"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

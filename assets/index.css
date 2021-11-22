@@ -12,6 +12,10 @@
   @apply sm:max-w-3xl;
 }
 
+.prose small {
+  @apply text-secondary;
+}
+
 .prose h3 {
   @apply text-primary;
 }
@@ -33,7 +37,7 @@
   --bg-primary: #040405;
   --bg-secondary: #09090a;
   --accent: #1c1f25;
-  --text-primary: #f9fafb;
+  --text-primary: #f3f4f6;
   --text-secondary: #e5e7eb;
 }
 
@@ -46,5 +50,5 @@
   --bg-secondary: #fafafa;
   --accent: #e5e7eb;
   --text-primary: #111827;
-  --text-secondary: #4b5563;
+  --text-secondary: #1f2937;
 }
