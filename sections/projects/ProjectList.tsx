@@ -12,7 +12,7 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
         <thead>
           <tr className="tracking-wider text-left text-secondary">
             <th className="p-3 text-xs font-medium">Name</th>
-            <th className="hidden p-3 text-xs font-medium lg:table-cell">
+            <th className="hidden p-3 text-xs font-medium md:table-cell">
               {t('buildUsing')}
             </th>
             <th className="p-3 text-xs font-medium">{t('type')}</th>
