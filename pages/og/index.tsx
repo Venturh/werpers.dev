@@ -2,8 +2,6 @@ import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 
-import { Logo } from 'components';
-
 const DefaultGenerator = () => {
   const { resolvedTheme } = useTheme();
 
@@ -20,7 +18,6 @@ const DefaultGenerator = () => {
         className="relative flex flex-col items-center w-full h-full m-auto space-y-16 text-center shadow-md max-w-7xl text-primary bg-primary "
         style={{}}
       >
-        <Logo className="mt-24" type="mobile" h="h-32 md:h-48 " />
         <div className="space-y-4">
           <h3 className="text-xl font-medium md:text-4xl">
             {t('portfolio')} - {t('blog')} - {t('playground')}

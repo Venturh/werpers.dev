@@ -8,8 +8,11 @@
 
 .prose {
   @apply text-secondary;
-  @apply max-w-xs;
-  @apply sm:max-w-3xl;
+}
+
+.prose > :first-child {
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
 }
 
 .prose small {
@@ -21,7 +24,7 @@
 }
 
 .prose pre {
-  @apply border shadow-sm bg-bg-secondary text-primary border-accent;
+  @apply border shadow-sm bg-bg-secondary text-primary border-accent-primary;
 }
 
 .prose a {
@@ -30,25 +33,31 @@
 }
 
 .dark {
-  --brand: #d1fae5;
-  --brand-darker: #a7f3d0;
-  --brand-contrast: #08090a;
-  --brand15: rgba(167, 243, 208, 0.15);
-  --bg-primary: #040405;
-  --bg-secondary: #09090a;
-  --accent: #1c1f25;
-  --text-primary: #f3f4f6;
-  --text-secondary: #e5e7eb;
+  --text-primary: 255, 255, 255;
+  --text-secondary: 229, 231, 235;
+  --bg-primary: 24, 24, 27;
+  --bg-secondary: 30, 30, 33;
+  --accent-primary: 41, 41, 44;
+  --accent-secondary: 37, 37, 40;
+  --brand-primary: 125, 211, 252;
+  --brand-secondary: 56, 189, 248;
+  --success-primary: 154, 230, 180;
+  --success-secondary: 104, 211, 145;
+  --error-primary: 254, 178, 178;
+  --error-secondary: 252, 129, 129;
 }
 
 .light {
-  --brand: #6ee7b7;
-  --brand-darker: #34d399;
-  --brand-contrast: #1b2439;
-  --brand15: rgba(110, 231, 183, 0.15);
-  --bg-primary: #ffffff;
-  --bg-secondary: #fafafa;
-  --accent: #e5e7eb;
-  --text-primary: #111827;
-  --text-secondary: #1f2937;
+  --text-primary: 24, 24, 27;
+  --text-secondary: 39, 39, 42;
+  --bg-primary: 255, 255, 255;
+  --bg-secondary: 243, 244, 246;
+  --accent-primary: 243, 244, 246;
+  --accent-secondary: 244, 245, 248;
+  --brand-primary: 14, 165, 233;
+  --brand-secondary: 2, 132, 199;
+  --success-primary: 72, 187, 120;
+  --success-secondary: 56, 161, 105;
+  --error-primary: 245, 101, 101;
+  --error-secondary: 229, 62, 62;
 }

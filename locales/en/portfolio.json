@@ -1,17 +1,12 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projects",
-  "design": "Design",
-  "designSub": "This style-guide displays all components, colors and icons used to build this portfolio.",
 
   "blog": "Blog",
   "blogSub": "Currently I try to write more, so i started this blog",
 
-  "whatsNew": "Whats new?",
-  "whatsNewDesc": "Added design page",
-
-  "hero_1": "Hi I´m",
-  "hero_2": "I´m a developer and student passionate about web development.",
+  "hero_1": "I´m a developer passionate about web development. I work at @",
+  "hero_2": "as a fullstack developer and I´m in my last year of media computer science studies at @",
 
   "project": "Project",
   "projectsSub": "A selection of my latest projects.",
@@ -51,8 +46,8 @@
   "about": "About",
   "aboutMe": "About me",
   "aboutSub": "Developer - Sport -  Gamer",
-  "about_1": "I´m Maximilian Werpers a developer and student based in Wiesbaden, Germany. I currently work part-time as an as a full-stack web developer at ",
-  "about_2": "and I study media computer science at Hochschule Rhein Main in Wiesbaden.",
+  "about_1": "Hello, I´m a developer passionate about web development. I work at ",
+  "about_2": "as a fullstack developer and currently in my last year of media computer science studies at ",
   "about_3": "During my studies I have found my passion with web development and now I follow my own projects in my free time. A list of projects I worked on can be found ",
   "here": "here.",
   "about_4": "In my freetime I´m into fitness, I go to the gym and like to go jogging. This helps me compensating the hours I sit to code and playing video games :D",

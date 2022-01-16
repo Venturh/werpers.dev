@@ -1,16 +1,12 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projekte",
-  "design": "Design",
-  "designSub": "Dieser Style-Guide zeigt alle Komponenten, Farben und Icons die innerhalb des Portfolios verwendet werden.",
 
   "blog": "Blog",
   "blogSub": "Ich versuche derzeit mehr in das Schreiben zu kommen, daher der Blog",
-  "whatsNew": "Neu",
-  "whatsNewDesc": "Design Seite hinzugefügt",
 
-  "hero_1": "Hi ich bin",
-  "hero_2": "Ich bin Entwickler und Student mit besonderer Leidenschaft zur Webentwicklung.",
+  "hero_1": "Hallo, ich bin Entwickler mit besonderer Leidenschaft zur Webentwicklung. Derzeit arbeite ich bei ",
+  "hero_2": "als Fullstack Webentwickler und studiere in meinem letzten Semester Medieninformatik an der ",
 
   "project": "Projekt",
   "projectsSub": "Eine Auswahl meiner neusten Projekte.",
@@ -50,8 +46,8 @@
   "about": "Über",
   "aboutMe": "Über mich",
   "aboutSub": "Entwickler - Sports - Gamer",
-  "about_1": "Ich bin Maximilian Werpers, ein Developer/Student aus Wiesbaden. Ich arbeite derzeit in der Fullstack Web Entwicklung bei ",
-  "about_2": "als Werkstudent und studiere Medieninformatik an der Hoschschule Rhein Main in Wiesbaden.",
+  "about_1": "Ich bin Entwickler mit besonderer Leidenschaft zur Webentwicklung. Derzeit arbeite ich bei ",
+  "about_2": "als Fullstack Webentwickler und studiere in meinem letzten Semester Medieninformatik an der ",
   "about_3": "Während des Studiums habe ich meine Leidenschaft für die Webentwicklung entdeckt und verfolge in meiner Freizeit meine eigenen kleinen Projekte um weitere Konzepte und Ideen zu entwickeln und zu verfolgen. Die komplette Liste der Projekte an denen ich gearbeitet habe befindet sich ",
   "here": "hier.",
   "about_4": "In meiner Freizeit treibe ich als Ausgleich für die vielen Stunden die ich code oder regelmäßig zocke, viel Sport. Ich gehe ins Fitnessstudio und gehe gerne joggen.",

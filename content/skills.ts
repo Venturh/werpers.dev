@@ -65,16 +65,6 @@ const backend: Skill[] = [
       { icon: MySql, name: 'MySql' },
     ],
   },
-  {
-    name: 'Symfony',
-    icon: Symfony,
-    subSkills: [
-      { icon: MongoDB, name: 'MongoDB' },
-      { icon: Postgres, name: 'Postgres' },
-      { icon: MySql, name: 'MySql' },
-    ],
-  },
-  { name: 'Spring', icon: Spring },
 ];
 
 const skills = [

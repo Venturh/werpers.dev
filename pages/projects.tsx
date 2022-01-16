@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
 
-import { DefaultLayout } from 'components/layouts';
-import { Container } from 'components';
-import { ProjectFilters, ProjectList } from 'sections/projects';
+import Layout from 'components/layouts/Layout';
+import Container from 'components/ui/Container';
+import ProjectFilters from 'components/projects/ProjectFilters';
+import ProjectList from 'components/projects/ProjectList';
 
 import { projects } from 'content';
 import generateOgImage from 'lib/ogImage';
+
 import { ogImage, Project } from '@types';
 
 const Projects = ({
@@ -26,12 +28,7 @@ const Projects = ({
   const url = `https://www.werpers.dev/${lang}/projects`;
 
   return (
-    <DefaultLayout
-      title={title}
-      description={description}
-      url={url}
-      ogImage={ogImage}
-    >
+    <Layout title={title} description={description} url={url} ogImage={ogImage}>
       <Container
         title="projects"
         subtitle="projectsDesc"
@@ -42,7 +39,7 @@ const Projects = ({
           },
         }}
       >
-        <div className="space-y-8">
+        <div className="space-y-6">
           {showFilters && (
             <ProjectFilters
               projects={projects}
@@ -52,7 +49,7 @@ const Projects = ({
           <ProjectList projects={filteredProjects} />
         </div>
       </Container>
-    </DefaultLayout>
+    </Layout>
   );
 };
 

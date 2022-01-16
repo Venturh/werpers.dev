@@ -1,11 +1,16 @@
 import { GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
 
-import { DefaultLayout } from 'components/layouts';
-import { Projects, Hero, Career, Skills } from 'sections/portfolio';
+import Layout from 'components/layouts/Layout';
+import Projects from 'components/portfolio/Projects';
+import Hero from 'components/portfolio/Hero';
+import Career from 'components/portfolio/Career';
+import Skills from 'components/portfolio/Skills';
+
 import generateOgImage from 'lib/ogImage';
 import { projects } from 'content';
 import { ogImage, Project } from '@types';
+import About from 'components/portfolio/About';
 
 const Portfolio = ({
   projects,
@@ -22,7 +27,7 @@ const Portfolio = ({
   const description = 'Maximilian Werpers -  Web Developer, Student';
   const url = `https://www.werpers.dev/${lang}`;
   return (
-    <DefaultLayout
+    <Layout
       className="space-y-8"
       title={title}
       description={description}
@@ -33,7 +38,8 @@ const Portfolio = ({
       <Projects projects={projects} locale={locale} />
       <Career />
       <Skills />
-    </DefaultLayout>
+      <About />
+    </Layout>
   );
 };
 export default Portfolio;

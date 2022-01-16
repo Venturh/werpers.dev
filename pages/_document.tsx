@@ -9,7 +9,6 @@ import NextDocument, {
 export default class Document extends NextDocument {
   static async getInitialProps(context: DocumentContext) {
     const initialProps = await NextDocument.getInitialProps(context);
-
     return { ...initialProps };
   }
 
@@ -41,14 +40,16 @@ export default class Document extends NextDocument {
             color="#161821"
           />
           <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-          <script
-            async
-            defer
-            data-website-id="37743e86-3ae5-45ba-9122-8d5dfd42af51"
-            src="https://unami-analytics-production.up.railway.app/umami.js"
-            data-do-not-track="true"
-            data-domains="werpers.dev"
-          />
+          {process.env.NODE_ENV === 'production' && (
+            <script
+              async
+              defer
+              data-website-id="37743e86-3ae5-45ba-9122-8d5dfd42af51"
+              src="https://unami-analytics-production.up.railway.app/umami.js"
+              data-do-not-track="true"
+              data-domains="werpers.dev"
+            />
+          )}
           <meta name="msapplication-TileColor" content="#161821" />
           <meta name="theme-color" content="#161821"></meta>
         </Head>
