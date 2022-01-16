@@ -7,24 +7,12 @@
 }
 
 .prose {
-  @apply text-secondary;
+  @apply text-secondary md:max-w-3xl;
 }
 
 .prose > :first-child {
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
-}
-
-.prose small {
-  @apply text-secondary;
-}
-
-.prose h3 {
-  @apply text-primary;
-}
-
-.prose pre {
-  @apply border shadow-sm bg-bg-secondary text-primary border-accent-primary;
 }
 
 .prose a {
@@ -34,7 +22,7 @@
 
 .dark {
   --text-primary: 255, 255, 255;
-  --text-secondary: 229, 231, 235;
+  --text-secondary: 209, 213, 219;
   --bg-primary: 24, 24, 27;
   --bg-secondary: 30, 30, 33;
   --accent-primary: 41, 41, 44;

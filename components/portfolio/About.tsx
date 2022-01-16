@@ -8,7 +8,7 @@ export default function About() {
 
   return (
     <Section title="aboutMe" subtitle="aboutSub">
-      <p className="mt-2 prose">
+      <p className="mt-2 prose dark:prose-invert">
         {t('about_1')}
         <Link out to="https://clickbar.dev/">
           <span className="font-medium text-brand-primary hover:text-brand-secondary">

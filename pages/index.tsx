@@ -36,8 +36,8 @@ const Portfolio = ({
     >
       <Hero />
       <Projects projects={projects} locale={locale} />
-      <Career />
       <Skills />
+      <Career />
       <About />
     </Layout>
   );

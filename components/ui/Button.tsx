@@ -69,7 +69,7 @@ const Button = forwardRef<any, ButtonProps>(
               {label}
             </label>
           )}
-          <div className={clsx('flex items-center w-full', { 'mt-1': label })}>
+          <div className={clsx('', { 'mt-1': label })}>
             {leftIcon && (
               <ButtonIcon
                 className={clsx('-ml-0.5 mr-1.5', leadingIconClasses[size])}
