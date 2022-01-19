@@ -17,7 +17,7 @@ export default function Navigation() {
       <Link to="/">
         <Label> werpers.dev</Label>
       </Link>
-      <div className="flex divide-x divide-accent-primary">
+      <div className="flex items-center divide-x divide-accent-primary">
         <div className="pr-2">
           <IconButton
             title="Projects"

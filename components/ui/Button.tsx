@@ -69,7 +69,7 @@ const Button = forwardRef<any, ButtonProps>(
               {label}
             </label>
           )}
-          <div className={clsx('', { 'mt-1': label })}>
+          <div className={clsx('flex items-center', { 'mt-1': label })}>
             {leftIcon && (
               <ButtonIcon
                 className={clsx('-ml-0.5 mr-1.5', leadingIconClasses[size])}
@@ -115,7 +115,7 @@ export function ButtonIcon({
   children,
   className,
   ...rest
-}: ComponentProps<'span'>) {
+}: ComponentProps<'div'>) {
   const element = children;
   const _children = isValidElement(element)
     ? cloneElement(element as any, {
@@ -124,15 +124,15 @@ export function ButtonIcon({
       })
     : null;
   return (
-    <span
+    <div
       className={clsx(
-        'inline-flex items-center justify-center flex-shrink-0 text-currentColor',
+        'flex items-center justify-center flex-shrink-0 text-currentColor',
         className
       )}
       {...rest}
     >
       {_children}
-    </span>
+    </div>
   );
 }
 

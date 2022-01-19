@@ -12,7 +12,7 @@ const Hero = () => {
           Maximilian Werpers
         </h1>
         <h2 className="tracking-tight text-secondary">
-          Full Stack Developer at{' '}
+          Full Stack Developer {t('at') + ' '}
           <Link className="text-brand-primary" out to="https://clickbar.dev/">
             <span className="font-medium text-brand-primary hover:text-brand-secondary">
               clickbar

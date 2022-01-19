@@ -36,12 +36,11 @@ export default function ThemeToggle() {
         !mounted ? (
           <DotsCircleHorizontalIcon />
         ) : resolvedTheme === 'dark' ? (
-          <SunIcon />
+          <SunIcon className={clsx({ 'animate-spin-0.5': animate })} />
         ) : (
-          <MoonIcon />
+          <MoonIcon className={clsx({ 'animate-spin-0.5': animate })} />
         )
       }
-      className={clsx({ 'animate-spin-0.5': animate })}
     />
   );
 }
