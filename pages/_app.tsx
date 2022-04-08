@@ -5,14 +5,14 @@ import SEO from 'next-seo.config';
 import 'assets/index.css';
 
 const App = ({ Component, pageProps }) => {
-  const { lang } = useTranslation('portfolio');
+	const { lang } = useTranslation('portfolio');
 
-  return (
-    <ThemeProvider attribute="class">
-      <DefaultSeo {...SEO(lang)} />
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider attribute="class">
+			<DefaultSeo {...SEO(lang)} />
+			<Component {...pageProps} />
+		</ThemeProvider>
+	);
 };
 
 export default App;

@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 1337",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "fix": "next lint --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -15,39 +16,29 @@
     "@tailwindcss/typography": "^0.5.0",
     "clsx": "^1.1.1",
     "fuse.js": "^6.5.3",
-    "gray-matter": "^4.0.3",
     "next": "^12.0.8",
-    "next-seo": "^4.28.1",
-    "next-themes": "^0.0.15",
+    "next-seo": "^5.4.0",
+    "next-themes": "^0.1.1",
     "next-translate": "^1.2.0",
     "prettier": "^2.5.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
     "sitemap": "^7.1.0",
     "swr": "^1.1.2"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/jit": "^0.1.18",
+    "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@types/node": "^17.0.8",
-    "@types/react": "^17.0.38",
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "@typescript-eslint/parser": "^4.23.0",
+    "@types/react": "^18.0.0",
     "autoprefixer": "^10.4.2",
-    "eslint": "^7.26.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.28.0",
+    "eslint": "8.12.0",
+    "eslint-config-next": "12.1.4",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.15",
     "typescript": "^4.5.4"
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": true,
-    "tabWidth": 2
   }
 }
