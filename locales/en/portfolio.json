@@ -1,47 +1,26 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projects",
-
-  "blog": "Blog",
-  "blogSub": "Currently I try to write more, so i started this blog",
-
-  "hero_1": "I´m a developer passionate about web development. I work at @",
-  "hero_2": "as a fullstack developer and I´m in my last year of media computer science studies at @",
+  "projectsDesc": "A list of projects I worked on",
 
   "project": "Project",
-  "projectsSub": "A selection of my latest projects.",
   "show_more": "Show more",
-  "show_less": "Show less",
 
-  "skills": "Skills",
-  "skillsSub": "My most used techs I have experience in.",
+  "skills": "Current Stack",
 
   "experience": "Experience",
-  "experienceSub": "My experience, summarized.",
 
-  "clickbar_description": "I currently work part-time at clickbar as a working student. I focus on fullstack development.",
-  "clickbar_time": "April 2021 - present",
-  "clickbar_type": "Working student",
+  "clickbar_1": "develop fullstack web applications",
+  "clickbar_2": "lead projects",
+  "clickbar_3": "using Vue, Laravel, TypeScript",
+  "clickbar_time": "October 2020 - present",
+  "clickbar_role": "Software Engineer, Fullstack",
 
-  "clickbar_internship_description": "I landed my first internship at clickbar. I mainly developed full stack apps with Vue and Laravel/Symfony or Node.",
   "clickbar_internship_time": "October 2020 - April 2021",
-  "clickbar_internship_type": "Intern",
+  "clickbar_internship_role": "Full Stack Developer - Intern",
 
-  "hsrm_description": "I study media computer science in my final semester. I experienced many fields of computer science , for example Databases, Algorithms, Scrum, and Software Development but learned basics of design, too.",
   "hsrm_time": "2017 - present",
-  "hsrm_type": "Student",
-
-  "frontend": "Frontend",
-  "backend": "Backend",
-  "databases": "Databases",
-  "others": "Others",
-
-  "skill_description_react": "This was the Framework I started with. I had to use it in an university class and felt in love with web development. Since then I improved a lot and it´s still my go to frontend framework.",
-  "skill_description_vue": "My second frontend framework I got in touch with. Since it is the framework we use at work, I currently have more experience in Vue then React.",
-  "skill_description_express": "My favorite solution to implement the backend, it is really powerful in combination with Typescript and GraphQL.",
-  "skill_description_laravel": "This is a php backend framework and it is the main backend soultion I use at work. With it it is possible to quickly prototype a service.",
-  "skill_description_symfony": "Another php framework I use at work, but not that often.",
-  "skill_description_spring": "This is a backend framework on java and I got some experience with it from a university class.",
+  "hsrm_role": "Bachelor of Science - Media Computer Science",
 
   "about": "About",
   "aboutMe": "About me",
@@ -52,25 +31,13 @@
   "here": "here.",
   "about_4": "In my freetime I´m into fitness, I go to the gym and like to go jogging. This helps me compensating the hours I sit to code and playing video games :D",
 
-  "timeline": "Timeline",
-  "timelineSub": "My previous 'achievements'",
 
-  "projectsDesc": "A list of projects I worked on",
   "buildUsing": "Build using",
   "progress": "Progress",
+  "madeAt": "Made At",
   "type": "Type",
   "year": "Year",
   "views": "views",
-
-  "recentBlogPosts": "Recent Blogposts",
-  "allBlogposts": "All Blogposts",
-
-  "labels": "Labels",
-  "buttons": "Buttons",
-  "colors": "Colors",
-  "colorsSub": "Gallery of colors used in this portfolio.",
-  "logos": "Logos",
-  "icons": "Icons",
 
   "pages": "Pages",
   "socials": "Socials",

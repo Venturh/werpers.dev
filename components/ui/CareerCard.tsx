@@ -4,41 +4,52 @@ import { Labels } from './Label';
 import Link from './Link';
 
 import { Career } from '@types';
+import clsx from 'clsx';
 
 type Props = {
 	career: Career;
+	first: boolean;
 	last: boolean;
 };
 
-const CareerCard = ({
-	career: { title, description, time, type, tech, url, logo },
-	last,
-}: Props) => {
+const CareerCard = ({ career: { title, description, time, role, url }, first, last }: Props) => {
 	const { t } = useTranslation('portfolio');
 	return (
 		<li className="py-2">
 			<div className="relative">
 				{!last && (
 					<span
-						className="hidden md:block absolute top-4 left-3 md:left-5 h-full w-0.5 bg-accent-primary"
+						className="hidden md:block absolute top-4 left-2.5 rounded  h-full w-0.5 bg-accent-primary"
 						aria-hidden="true"
 					/>
 				)}
-				<div className="relative flex items-start md:space-x-3">
-					<img
-						className="items-center justify-center hidden w-6 h-6 rounded-full md:flex md:w-10 md:h-10 bg-primary ring-8 ring-bg-primary ring-offset-accent-primary ring-offset-1"
-						src={`/images/${logo}`}
-						alt="career"
-					/>
+				<div className="relative flex items-start md:space-x-2">
+					<div className="items-center justify-center hidden w-6 h-6 rounded-full md:flex  bg-primary  ring-bg-primary ring-offset-accent-primary ring-offset-1">
+						<span
+							className={clsx(
+								'absolute inline-flex h-3 w-3 rounded-full bg-brand-primary opacity-75',
+								{
+									'animate-ping': first,
+								}
+							)}
+						/>
+						<span className="relative inline-flex rounded-full h-3 w-3 bg-brand-primary" />
+					</div>
 					<div className="w-full">
-						<div className="flex items-center justify-between">
+						<span className="font-medium text-primary">{t(`${role}`)}</span>
+						<div className="flex items-center justify-between text-sm text-secondary pt-1.5">
 							<Link out to={url}>
-								<span className="text-lg font-medium">{title}</span>
+								<span>{title}</span>
 							</Link>
-							<p className="text-sm text-secondary">{t(`${time}`)}</p>
+							<span>{t(`${time}`)}</span>
 						</div>
-						<p className="mb-1.5 prose">{t(`${description}`)}</p>
-						<Labels labels={tech} max={5} />
+						<div className="prose prose-sm">
+							<ul>
+								{description.map((d, i) => (
+									<li key={i}>{t(d)}</li>
+								))}
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

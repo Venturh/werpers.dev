@@ -21,31 +21,35 @@
 }
 
 .dark {
-  --text-primary: 255, 255, 255;
-  --text-secondary: 209, 213, 219;
-  --bg-primary: 24, 24, 27;
-  --bg-secondary: 30, 30, 33;
-  --accent-primary: 41, 41, 44;
-  --accent-secondary: 37, 37, 40;
-  --brand-primary: 125, 211, 252;
-  --brand-secondary: 56, 189, 248;
-  --success-primary: 154, 230, 180;
-  --success-secondary: 104, 211, 145;
-  --error-primary: 254, 178, 178;
-  --error-secondary: 252, 129, 129;
+	--text-primary: 255, 255, 255;
+	--text-secondary: 229, 231, 235;
+	--bg-primary: 24, 24, 27;
+	--bg-secondary: 30, 30, 33;
+	--accent-primary: 41, 41, 44;
+	--accent-secondary: 37, 37, 40;
+	--brand-primary: 165, 243, 252;
+	--brand-secondary:103, 232, 249;
+	--success-primary: 110, 231, 183;
+	--success-secondary: 52, 211, 153;
+	--error-primary: 253, 164, 175;
+	--error-secondary: 251, 113, 133;
+	--warning-primary: 252, 211, 77;
+	--warning-secondary: 251, 191, 36;
 }
 
 .light {
-  --text-primary: 24, 24, 27;
-  --text-secondary: 39, 39, 42;
-  --bg-primary: 255, 255, 255;
-  --bg-secondary: 243, 244, 246;
-  --accent-primary: 243, 244, 246;
-  --accent-secondary: 244, 245, 248;
-  --brand-primary: 14, 165, 233;
-  --brand-secondary: 2, 132, 199;
-  --success-primary: 72, 187, 120;
-  --success-secondary: 56, 161, 105;
-  --error-primary: 245, 101, 101;
-  --error-secondary: 229, 62, 62;
+	--text-primary: 17, 24, 39;
+	--text-secondary: 75, 85, 99;
+	--bg-primary: 249, 250, 251;
+	--bg-secondary: 255, 255, 255;
+	--accent-primary: 229, 231, 235;
+	--accent-secondary: 209, 213, 219;
+	--brand-primary:6, 182, 212;
+	--brand-secondary:8, 145, 178;
+	--success-primary: 16, 185, 129;
+	--success-secondary: 5, 150, 105;
+	--error-primary: 244, 63, 94;
+	--error-secondary: 225, 29, 72;
+	--warning-primary: 245, 158, 11;
+	--warning-secondary: 217, 119, 6;
 }

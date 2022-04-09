@@ -8,14 +8,13 @@ import { ogImage } from '@types';
 
 type Props = {
 	children: React.ReactNode;
-	className?: string;
 	title?: string;
 	description?: string;
 	url?: string;
 	ogImage?: ogImage;
 };
 
-export default function Layout({ children, className, title, description, url, ogImage }: Props) {
+export default function Layout({ children, title, description, url, ogImage }: Props) {
 	return (
 		<>
 			{title && (
@@ -37,11 +36,9 @@ export default function Layout({ children, className, title, description, url, o
 					}}
 				/>
 			)}
-			<main className="flex flex-col items-center mx-auto text-base max-w-xsm md:max-w-3xl lg:text-lg">
+			<main className="flex flex-col items-center mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 				<Navigation />
-				<div className={clsx(className, 'flex mt-4 flex-col flex-auto w-full h-full')}>
-					{children}
-				</div>
+				<div className="flex w-full space-y-6 mt-4 flex-col flex-auto">{children}</div>
 				<Footer />
 			</main>
 		</>

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
+import { ChevronDownIcon } from '@heroicons/react/outline';
 
 import Button from './Button';
 import IconButton from './IconButton';
@@ -17,28 +17,27 @@ type Props = {
 const Dropdown = ({ options, withDisplay = false, icon, onClick, defaultSelected }: Props) => {
 	return (
 		<Menu as="div" className="relative inline-block text-left">
-			<div>
-				<Menu.Button as="div">
-					<span className="sr-only">Open options</span>
-					{withDisplay ? (
-						<Button
-							color="secondary"
-							size="sm"
-							rightIcon={icon || <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />}
-						>
-							{defaultSelected}
-						</Button>
-					) : (
-						<IconButton
-							fullRounded
-							variant="ghost"
-							size="sm"
-							ariaLabel="Open options"
-							icon={icon || <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />}
-						/>
-					)}
-				</Menu.Button>
-			</div>
+			<Menu.Button as="div">
+				<span className="sr-only">Open options</span>
+				{withDisplay ? (
+					<Button
+						color="secondary"
+						variant="solid"
+						size="sm"
+						rightIcon={icon || <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />}
+					>
+						{defaultSelected}
+					</Button>
+				) : (
+					<IconButton
+						fullRounded
+						variant="ghost"
+						size="sm"
+						ariaLabel="Open options"
+						icon={icon || <ChevronDownIcon className="w-5 h-5" aria-hidden="true" />}
+					/>
+				)}
+			</Menu.Button>
 
 			<Transition
 				as={Fragment}

@@ -1,4 +1,5 @@
 import { fetcher } from 'lib/swr';
+import Image from 'next/image';
 import useSWR from 'swr';
 
 type DiscordPresence = {
@@ -10,7 +11,13 @@ type DiscordPresence = {
 
 export const DiscordCard = (presence: DiscordPresence) => (
 	<div className="flex flex-row-reverse sm:flex-row sm:space-x-2">
-		<img className="w-6 h-6 rounded-lg " alt="discord" src={presence.imgUrl} />
+		<Image
+			width={24}
+			height={24}
+			className="w-6 h-6 rounded-lg "
+			alt="discord"
+			src={presence.imgUrl}
+		/>
 		<div className="inline-flex flex-col w-full truncate sm:flex-row">
 			<p className="font-medium truncate text-primary max-w-max">{presence.currently}</p>
 			{presence.details && <span className="hidden mx-2 text-secondary sm:block"> - </span>}

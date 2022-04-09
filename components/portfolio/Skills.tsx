@@ -1,7 +1,7 @@
 import useTranslation from 'next-translate/useTranslation';
 
 import Section from 'components/ui/Section';
-import Skill from 'components/ui/Skill';
+import Icon from 'components/ui/Icon';
 
 import { skills } from 'content';
 
@@ -9,19 +9,18 @@ const Skills = () => {
 	const { t } = useTranslation('portfolio');
 	return (
 		<Section title="skills" subtitle="skillsSub">
-			<div className="space-y-3 divide-y divide-accent-primary md:divide-y-0">
-				{skills.map(
-					({ type, skills }: { type: string; skills: { name: string; icon: string }[] }) => (
-						<div key={type} className="space-y-3">
-							<p className="text-lg font-medium md:text-xl">{t(`${type}`)}</p>
-							<div className="grid md:grid-cols-2 md:gap-x-12 gap-y-4">
-								{skills.map((skill) => (
-									<Skill key={skill.name} {...skill} />
-								))}
-							</div>
+			<div className="grid grid-cols-2 gap-2 lg:grid-cols-3">
+				{skills.map(({ name, icon }) => (
+					<div
+						key={name}
+						className="col-span-1 flex justify-center p-5  border border-accent-primary rounded"
+					>
+						<div className="flex items-center space-x-2 text-secondary">
+							<Icon colored path={icon} />
+							<span>{name}</span>
 						</div>
-					)
-				)}
+					</div>
+				))}
 			</div>
 		</Section>
 	);

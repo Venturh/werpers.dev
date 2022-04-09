@@ -1,47 +1,28 @@
 {
   "portfolio": "Portfolio",
   "projects": "Projekte",
-
-  "blog": "Blog",
-  "blogSub": "Ich versuche derzeit mehr in das Schreiben zu kommen, daher der Blog",
-
-  "hero_1": "Hallo, ich bin Entwickler mit besonderer Leidenschaft zur Webentwicklung. Derzeit arbeite ich bei ",
-  "hero_2": "als Fullstack Webentwickler und studiere in meinem letzten Semester Medieninformatik an der ",
-
+  "projectsDesc": "Eine Liste an Projekten an denen ich gearbeitet habe",
   "project": "Projekt",
-  "projectsSub": "Eine Auswahl meiner neusten Projekte.",
+
+
   "show_more": "Mehr anzeigen",
   "show_less": "Weniger anzeigen",
 
-  "skills": "Fähigkeiten",
-  "skillsSub": "Meine meistgenutzen Technologien, mit denen ich Erfahrung gesammelt habe.",
-
+  "skills": "Aktueller Stack",
   "experience": "Erfahrung",
-  "experienceSub": "Meine Erfahrungen, zusammengefasst.",
 
-  "clickbar_description": "Nach meinen Praktikum arbeite ich derzeit weiter teilzeit als Werkstudent bei clickbar. Der Fokus liegt dabei weiterhin auf die Fullstack Web Entwicklung.",
-  "clickbar_time": "April 2021 - heute",
-  "clickbar_type": "Werkstudent",
 
-  "clickbar_internship_description": "Meinen erste Erfahrung in der professionellen Webentwicklung habe ich als Praktikant bei clickbar gesammelt. Der Fokus lag dabei auf die Fullstack Web Entwicklung.",
+  "clickbar_1": "entwickele Fullstack Web-Plattformen",
+  "clickbar_2": "übernehme Projektlead",
+  "clickbar_3": "mit Vue, Laravel, TypeScript",
+  "clickbar_time": "Oktober 2020 - heute",
+  "clickbar_role": "Software Engineer, Fullstack",
+
   "clickbar_internship_time": "Oktober 2020 - April 2021",
-  "clickbar_internship_type": "Praktikum",
+  "clickbar_internship_role": "Fullstack Developer - Praktikum",
 
-  "hsrm_description": "An der Hochschule studiere ich Medieninformatik in meinen letzten Semestern. Dort habe ich die verschiedensten Bereiche der Informatik kennen gelernt, z.B Datenbanken, Algorithmen, Scrum, and Software Development.",
   "hsrm_time": "2017 - heute",
-  "hsrm_type": "Student",
-
-  "frontend": "Frontend",
-  "backend": "Backend",
-  "databases": "Datenbanken",
-  "others": "Sonstiges",
-
-  "skill_description_react": "React war mein erster Kontaktpunkt mit der Webentwicklung durch einen Kurs an der Hochschule. Dort habe ich auch meine Leidenschaft für die Webentwicklung entdeckt.",
-  "skill_description_vue": "Das war mein zweites Framework das ich gelernt habe. Da ich Vue auf der Arbeit verwende habe ich in diesem Framework die meiste Erfahrung derzeit.",
-  "skill_description_express": "Meine favorisierende Backendlösung, gerade in Kombination mit Typescript und GraphQL.",
-  "skill_description_laravel": "Auf der Arbeit wird vor allem auf Laravel gesetzt, daher kann ich hier einiges an Erfahrung einbringen.",
-  "skill_description_symfony": "Ein weiteres php Backendframework das auch auf der Arbeit eingesetzt wird, allerdings bevorzuge ich Laravel.",
-  "skill_description_spring": "Spring ist ein Framework basierend auf Java. Hier habe ich nur Erfahrung durch einen Unikurs gesammelt, da Java nicht meine Lieblingsprache ist.",
+  "hsrm_role": "Bachelor of Science - Medieninformatik",
 
   "about": "Über",
   "aboutMe": "Über mich",
@@ -52,25 +33,13 @@
   "here": "hier.",
   "about_4": "In meiner Freizeit treibe ich als Ausgleich für die vielen Stunden die ich code oder regelmäßig zocke, viel Sport. Ich gehe ins Fitnessstudio und gehe gerne joggen.",
 
-  "timeline": "Timeline",
-  "timelineSub": "Meine bisherigen 'Errungenschaften'",
 
-  "projectsDesc": "Eine Liste an Projekten an denen ich gearbeitet habe",
   "buildUsing": "Gebaut mit",
   "progress": "Fortschritt",
+  "madeAt": "Bei",
   "type": "Type",
   "year": "Jahr",
   "views": "Ansichten",
-
-  "recentBlogPosts": "Neue Blogposts",
-  "allBlogposts": "Alle Blogposts",
-
-  "labels": "Labels",
-  "buttons": "Buttons",
-  "colors": "Farben",
-  "colorsSub": "Eine Gallerie der Farben die innerhalb des Portfolios verwendet werden",
-  "logos": "Logos",
-  "icons": "Icons",
 
   "pages": "Seiten",
   "socials": "Kontakt",

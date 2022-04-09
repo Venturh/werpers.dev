@@ -19,9 +19,6 @@ const DefaultGenerator = () => {
 				style={{}}
 			>
 				<div className="space-y-4">
-					<h3 className="text-xl font-medium md:text-4xl">
-						{t('portfolio')} - {t('blog')} - {t('playground')}
-					</h3>
 					{title && <h2 className="text-2xl font-bold md:text-5xl">{t(title)}</h2>}
 				</div>
 				<div className="absolute bottom-0 flex justify-between w-full p-4 text-lg md:text-3xl ">

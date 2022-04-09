@@ -3,7 +3,6 @@ import { GetStaticProps } from 'next';
 import useTranslation from 'next-translate/useTranslation';
 
 import Layout from 'components/layouts/Layout';
-import Container from 'components/ui/Container';
 import ProjectFilters from 'components/projects/ProjectFilters';
 import ProjectList from 'components/projects/ProjectList';
 
@@ -11,6 +10,7 @@ import { projects } from 'content';
 import generateOgImage from 'lib/ogImage';
 
 import { ogImage, Project } from '@types';
+import Button from 'components/ui/Button';
 
 const Projects = ({ projects, ogImage }: { projects: Project[]; ogImage: ogImage }) => {
 	const { t, lang } = useTranslation('portfolio');
@@ -23,21 +23,22 @@ const Projects = ({ projects, ogImage }: { projects: Project[]; ogImage: ogImage
 
 	return (
 		<Layout title={title} description={description} url={url} ogImage={ogImage}>
-			<Container
-				title="projects"
-				subtitle="projectsDesc"
-				button={{
-					text: lang === 'de' ? 'Filter' : 'Filters',
-					onClick: () => {
-						setShowFilters(!showFilters);
-					},
-				}}
-			>
-				<div className="space-y-6">
+			<div>
+				<div className="sm:flex sm:items-center">
+					<div className="sm:flex-auto">
+						<h1 className="text-xl font-semibold text-primary">{t('projects')}</h1>
+						<p className="mt-2 text-sm text-secondary">{t('projectsDesc')}</p>
+					</div>
+					<div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+						<Button onClick={() => setShowFilters(!showFilters)}>Filter</Button>
+					</div>
+				</div>
+
+				<div className="space-y-6 mt-6">
 					{showFilters && <ProjectFilters projects={projects} onFilter={setFilteredProjects} />}
 					<ProjectList projects={filteredProjects} />
 				</div>
-			</Container>
+			</div>
 		</Layout>
 	);
 };

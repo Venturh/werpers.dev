@@ -10,7 +10,6 @@ import Skills from 'components/portfolio/Skills';
 import generateOgImage from 'lib/ogImage';
 import { projects } from 'content';
 import { ogImage, Project } from '@types';
-import About from 'components/portfolio/About';
 
 const Portfolio = ({
 	projects,
@@ -27,18 +26,12 @@ const Portfolio = ({
 	const description = 'Maximilian Werpers -  Web Developer, Student';
 	const url = `https://www.werpers.dev/${lang}`;
 	return (
-		<Layout
-			className="space-y-8"
-			title={title}
-			description={description}
-			url={url}
-			ogImage={ogImage}
-		>
+		<Layout title={title} description={description} url={url} ogImage={ogImage}>
 			<Hero />
 			<Projects projects={projects} locale={locale} />
-			<Skills />
 			<Career />
-			<About />
+			<Skills />
+			{/* <About /> */}
 		</Layout>
 	);
 };

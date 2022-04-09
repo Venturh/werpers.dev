@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import ButtonOrLink from './ButtonOrLink';
+import Clickable from './Clickable';
 
 type Props = {
 	to: string;
@@ -13,17 +13,17 @@ type Props = {
 
 export default function Link({ to, out, children, className, underline, active }: Props) {
 	return (
-		<ButtonOrLink
+		<Clickable
 			className={clsx({
 				underline: underline,
 				'text-brand-primary hover:text-brand-primary': active,
 				'hover:text-brand-primary text-primary': !active,
 				className,
 			})}
-			to={to}
+			href={to}
 			out={out}
 		>
 			{children}
-		</ButtonOrLink>
+		</Clickable>
 	);
 }

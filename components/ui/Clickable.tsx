@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import { ComponentProps, ElementType, forwardRef } from 'react';
+import { Url } from 'url';
 
 type ComponentProp = ComponentProps<'button'> & ComponentProps<'a'>;
 
-export interface ClickableProps extends ComponentProp {
+export interface ClickableProps extends Omit<ComponentProp, 'href'> {
 	out?: boolean;
-	to?: string;
 	ref?: any;
+	href?: Url | string;
 	as?: ElementType;
 }
 
 const Clickable = forwardRef<any, ClickableProps>(
-	({ out, to, as, ...props }: ClickableProps, ref) => {
-		const isLink = typeof to !== 'undefined';
+	({ out, href, as, ...props }: ClickableProps, ref) => {
+		const isLink = typeof href !== 'undefined';
 		const Clickable = as ? as : isLink ? 'a' : 'button';
 		const content = (
 			<Clickable
@@ -24,7 +25,7 @@ const Clickable = forwardRef<any, ClickableProps>(
 		);
 		if (isLink) {
 			return (
-				<Link href={to!} {...props}>
+				<Link href={href} {...props}>
 					{content}
 				</Link>
 			);

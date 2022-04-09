@@ -3,7 +3,7 @@ import { cloneElement, ComponentProps, forwardRef, isValidElement } from 'react'
 import Clickable, { ClickableProps } from './Clickable';
 
 export type Color = 'brand' | 'accent' | 'secondary';
-export type Variant = 'ghost' | 'oppacity';
+export type Variant = 'solid' | 'ghost' | 'oppacity';
 export type Size = 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
 export type Position = 'left' | 'center';
 
@@ -51,6 +51,7 @@ const Button = forwardRef<any, ButtonProps>(
 					positions[position],
 					label ? 'flex flex-col' : 'inline-flex items-center',
 					{ 'rounded-md': rounded },
+					{ 'rounded-full': circle },
 					className
 				)}
 				{...rest}
@@ -133,10 +134,10 @@ const sizes = {
 };
 const sizesCircle = {
 	xxs: '',
-	xs: 'p-1 text-sm rounded-full',
-	sm: 'p-1.5 text-sm rounded-full',
-	md: 'p-2 text-sm rounded-full',
-	lg: 'p-2 text-base rounded-full',
+	xs: 'p-1 text-sm',
+	sm: 'p-1.5 text-sm',
+	md: 'p-2 text-sm',
+	lg: 'p-2 text-base',
 };
 
 export const solid = {
@@ -145,7 +146,7 @@ export const solid = {
 	accent:
 		'bg-accent-primary hover:bg-accent-secondary shadow-sm focus:ring-1 focus:ring-accent-primary ring-offset-2 ring-offset-bg-primary disabled:hover:bg-accent-primary',
 	secondary:
-		'text-primary bg-bg-secondary hover:bg-accent-secondary shadow-sm focus:ring-1 focus:ring-accent-primary ring-offset-2 ring-offset-bg-primary disabled:hover:bg-bg-secondary',
+		'text-primary bg-primary hover:bg-accent-secondary border border-accent-primary shadow-sm focus:ring-1 focus:ring-accent-primary ring-offset-2 ring-offset-bg-primary disabled:hover:bg-bg-secondary',
 };
 
 export const ghost = {
@@ -159,7 +160,7 @@ export const ghost = {
 
 const oppacity = {
 	brand:
-		'text-brand-primary bg-brand-primary bg-opacity-20 hover:bg-opacity-10 shadow-sm focus:ring-1 focus:ring-brand-primary ring-offset-2 ring-offset-bg-primary disabled:hover:bg-opacity-20',
+		'bg-cyan-50 text-cyan-800 hover:bg-cyan-100 dark:text-brand-primary dark:text-opacity-80 dark:bg-brand-primary dark:bg-opacity-10 dark:hover:bg-opacity-10 shadow-sm focus:ring-1 focus:ring-brand-primary ring-offset-2 ring-offset-bg-primary disabled:hover:bg-opacity-20',
 	accent:
 		'text-accent-primary bg-text-primary bg-opacity-20 hover:bg-opacity-10 shadow-sm focus:ring-1 focus:ring-accent-primary ring-offset-2 ring-offset-bg-primary disabled:hover:bg-opacity-20',
 	secondary:

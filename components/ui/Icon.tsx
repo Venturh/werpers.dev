@@ -5,7 +5,7 @@ type Props = {
 	viewBox?: string;
 	className?: string;
 	colored?: boolean;
-	size?: 'sm' | 'md' | 'lg';
+	size?: 'sm' | 'md' | 'lg' | 'xl';
 	outlined?: boolean;
 	style?: React.CSSProperties;
 	zoomOnHover?: boolean;
@@ -34,6 +34,7 @@ const Icon = ({
 					'h-4.5 md:h-5': size === undefined,
 					'h-5 md:h-6': size === 'md',
 					'w-6 md:w-7 ': size === 'lg',
+					'w-8 md:w-10 ': size === 'xl',
 					'fill-current': !outlined,
 					'hover:transform hover:scale-[1.5] hover:bg-accent rounded-full transition-all':
 						zoomOnHover,
