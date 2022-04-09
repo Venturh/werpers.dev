@@ -1,7 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 
 import Discord from './Discord';
-import Link from './Link';
 
 import { footer } from 'content';
 import Clickable from './Clickable';
