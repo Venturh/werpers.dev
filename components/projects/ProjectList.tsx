@@ -13,7 +13,7 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
 	return (
 		<div className="rounded-md shadow bg-secondary ring-1 ring-accent-primary sm:rounded-lg">
 			<table className="min-w-full divide-y divide-accent-secondary">
-				<thead className="bg-accent-primary">
+				<thead>
 					<tr className="text-xs font-medium text-left text-secondary">
 						<th className="p-3">Name</th>
 						<th className="p-3">{t('madeAt')}</th>

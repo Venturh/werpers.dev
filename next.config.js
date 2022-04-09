@@ -1,13 +1,15 @@
 const nextTranslate = require('next-translate');
 
-
 module.exports = nextTranslate({
-    async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap'
-      }
-    ];
-  },
+	images: {
+		domains: [process.env.NEXT_PUBLIC_DISCORD_API],
+	},
+	async rewrites() {
+		return [
+			{
+				source: '/sitemap.xml',
+				destination: '/api/sitemap',
+			},
+		];
+	},
 });
