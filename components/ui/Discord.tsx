@@ -1,4 +1,5 @@
 import { fetcher } from 'lib/swr';
+import Image from 'next/image';
 import useSWR from 'swr';
 
 type DiscordPresence = {
@@ -15,16 +16,17 @@ export default function Discord() {
 		{ shouldRetryOnError: false }
 	);
 
-	if (!data && !error) return <span />;
-	if (error) return <span></span>;
+	const presence = data ? data[0] : null;
+
+	// if (!data && !error) return <span />;
+	// if (error) return <span></span>;
 	return (
-		<div className="flex flex-row-reverse sm:flex-row sm:space-x-2">
-			<img className="w-6 h-6 rounded-lg " alt="discord" src={data[0]?.imgUrl} />
-			<div className="inline-flex flex-col w-full truncate sm:flex-row">
-				<p className="font-medium truncate text-primary max-w-max">{data[0]?.currently}</p>
-				{data[0].details && <span className="hidden mx-2 text-secondary sm:block"> - </span>}
-				<p className="truncate text-secondary max-w-max">{data[0]?.details}</p>
+		<div className="flex justify-between  ">
+			<div className="truncate text-sm">
+				<div className="font-medium  truncate text-primary">{presence?.currently}</div>
+				<div className="truncate mt-1 text-secondary">{presence?.details}</div>
 			</div>
+			<img className="w-10 h-full rounded-lg flex-shrink-0 " alt="discord" src={presence?.imgUrl} />
 		</div>
 	);
 }
