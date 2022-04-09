@@ -7,26 +7,18 @@ import Hero from 'components/portfolio/Hero';
 import Career from 'components/portfolio/Career';
 import Skills from 'components/portfolio/Skills';
 
-import generateOgImage from 'lib/ogImage';
 import { projects } from 'content';
-import { ogImage, Project } from '@types';
+import { Project } from '@types';
 
-const Portfolio = ({
-	projects,
-	locale,
-	ogImage,
-}: {
-	projects: Project[];
-	locale: string;
-	ogImage: ogImage;
-}) => {
+const Portfolio = ({ projects, locale }: { projects: Project[]; locale: string }) => {
 	const { t, lang } = useTranslation('portfolio');
 
 	const title = 'Portfolio - Maximilian Werpers';
-	const description = 'Maximilian Werpers -  Web Developer, Student';
+	const description = 'Maximilian Werpers - Fullstack Software Engineer';
 	const url = `https://www.werpers.dev/${lang}`;
+
 	return (
-		<Layout title={title} description={description} url={url} ogImage={ogImage}>
+		<Layout title={title} description={description} url={url}>
 			<Hero />
 			<Projects projects={projects} locale={locale} />
 			<Career />
@@ -42,7 +34,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 		props: {
 			locale: locale,
 			projects,
-			ogImage: await generateOgImage('og', locale, 'portfolio'),
 		},
 	};
 };

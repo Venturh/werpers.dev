@@ -1,20 +1,16 @@
 import { NextSeo } from 'next-seo';
-import clsx from 'clsx';
 
 import Navigation from 'components/ui/Navigation';
 import Footer from 'components/ui/Footer';
-
-import { ogImage } from '@types';
 
 type Props = {
 	children: React.ReactNode;
 	title?: string;
 	description?: string;
 	url?: string;
-	ogImage?: ogImage;
 };
 
-export default function Layout({ children, title, description, url, ogImage }: Props) {
+export default function Layout({ children, title, description, url }: Props) {
 	return (
 		<>
 			{title && (
@@ -31,7 +27,7 @@ export default function Layout({ children, title, description, url, ogImage }: P
 						title,
 						description,
 						url,
-						images: ogImage ? [ogImage] : null,
+						images: [{ url: 'https://werpers.dev/images/banner.png', alt: 'banner' }],
 						type: 'website',
 					}}
 				/>

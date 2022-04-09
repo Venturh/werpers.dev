@@ -18,8 +18,8 @@ export default function Discord() {
 
 	const presence = data ? data[0] : null;
 
-	// if (!data && !error) return <span />;
-	// if (error) return <span></span>;
+	if ((!data && !error) || error) return <span />;
+
 	return (
 		<div className="flex justify-between  ">
 			<div className="truncate text-sm">

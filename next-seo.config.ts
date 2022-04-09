@@ -28,6 +28,7 @@ export default function SEO(lang: string): NextSeoProps {
 			url,
 			title,
 			description,
+			images: [{ url: 'https://werpers.dev/images/banner.png', alt: 'banner' }],
 			profile: {
 				firstName: 'Maximilian',
 				lastName: 'Werpers',

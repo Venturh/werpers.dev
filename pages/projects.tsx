@@ -7,12 +7,11 @@ import ProjectFilters from 'components/projects/ProjectFilters';
 import ProjectList from 'components/projects/ProjectList';
 
 import { projects } from 'content';
-import generateOgImage from 'lib/ogImage';
 
 import { ogImage, Project } from '@types';
 import Button from 'components/ui/Button';
 
-const Projects = ({ projects, ogImage }: { projects: Project[]; ogImage: ogImage }) => {
+const Projects = ({ projects }: { projects: Project[] }) => {
 	const { t, lang } = useTranslation('portfolio');
 	const [showFilters, setShowFilters] = useState(false);
 	const [filteredProjects, setFilteredProjects] = useState(projects);
@@ -22,7 +21,7 @@ const Projects = ({ projects, ogImage }: { projects: Project[]; ogImage: ogImage
 	const url = `https://www.werpers.dev/${lang}/projects`;
 
 	return (
-		<Layout title={title} description={description} url={url} ogImage={ogImage}>
+		<Layout title={title} description={description} url={url}>
 			<div>
 				<div className="sm:flex sm:items-center">
 					<div className="sm:flex-auto">
@@ -49,7 +48,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	return {
 		props: {
 			projects,
-			ogImage: await generateOgImage('og', locale, 'projects'),
 		},
 	};
 };
