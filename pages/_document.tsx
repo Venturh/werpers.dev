@@ -20,14 +20,12 @@ export default class Document extends NextDocument {
 						<script
 							async
 							defer
-							data-website-id="37743e86-3ae5-45ba-9122-8d5dfd42af51"
-							src="https://unami-analytics-production.up.railway.app/umami.js"
-							data-do-not-track="true"
-							data-domains="werpers.dev"
-						/>
+							data-website-id="2fcdc9c2-7210-4afc-8ff9-30dd77cecc46"
+							src="https://umami-analytic.up.railway.app/umami.js"
+						></script>
 					)}
 					<meta name="msapplication-TileColor" content="#161821" />
-					<meta name="theme-color" content="#161821"></meta>
+					<meta name="theme-color" content="#161821" />
 				</Head>
 				<body className="min-h-screen text-base text-primary bg-primary">
 					<Main />

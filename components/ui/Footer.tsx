@@ -17,13 +17,13 @@ const Footer = () => {
 			<div className="grid grid-cols-2 gap-4 text-base sm:grid-cols-3">
 				{Object.entries(footer).map(([title, values]) => (
 					<div className="space-y-2" key={title}>
-						<h3 className="text-xs font-semibold tracking-wider uppercase text-secondary">
+						<span className="text-xs font-semibold tracking-wider uppercase text-secondary">
 							{t(`${title}`)}
-						</h3>
+						</span>
 						<div className={clsx('grid gap-2', { 'grid-cols-2': values.length > 2 })}>
 							{values.map(({ link, name, internal }) => (
 								<Clickable
-									className="text-sm text-secondary hover:text-primary"
+									className="md:text-sm text-secondary hover:text-primary"
 									key={name}
 									href={link}
 									out={!internal}
