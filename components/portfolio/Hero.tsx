@@ -2,7 +2,7 @@ import useTranslation from 'next-translate/useTranslation';
 
 import Link from 'components/ui/Link';
 
-const Hero = () => {
+function Hero() {
 	const { t } = useTranslation('portfolio');
 
 	return (
@@ -21,6 +21,6 @@ const Hero = () => {
 			{/* <div className="w-32 h-32 rounded-full bg-gradient-to-r from-brand-primary to-teal-400 dark:to-teal-400" /> */}
 		</div>
 	);
-};
+}
 
 export default Hero;

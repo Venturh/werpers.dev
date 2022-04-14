@@ -3,9 +3,9 @@ import { Project } from '@types';
 const projects: Project[] = [
 	{
 		title: 'coinity.co',
-		description: 'Die Portfolioplattform für Kryptowährungen',
+		description: 'Portfolioplattform für Kryptowährungen',
 		descriptionEn: 'A cryptocurrency portfolio platform',
-		tech: ['NextJs', 'TypeScript', 'GraphQL', 'Prisma', 'tailwindcss'],
+		tech: ['NextJs', 'TypeScript', 'GraphQL', 'Prisma', 'TailwindCss'],
 		slug: 'coinity',
 		type: 'Fullstack',
 		pageUrl: 'https://coinity.vercel.app',
@@ -17,7 +17,7 @@ const projects: Project[] = [
 		title: 'clickbar.dev',
 		description: 'Firmenwebsite für clickbar',
 		descriptionEn: 'Company website for clickbar',
-		tech: ['Nuxt', 'Vue', 'tailwindss', 'MDX'],
+		tech: ['Nuxt', 'Vue', 'TailwindCss', 'MDX'],
 		slug: 'clickbar',
 		type: 'Frontend',
 		madeAt: 'clickbar',
@@ -27,7 +27,7 @@ const projects: Project[] = [
 	},
 	{
 		title: 'Galerie Elisabeth Werpers',
-		tech: ['NextJs', 'TypeScript', 'GraphQL', 'tailwindcss', 'storyblok'],
+		tech: ['NextJs', 'TypeScript', 'GraphQL', 'TailwindCss', 'Storyblok'],
 		slug: 'galery',
 		type: 'Frontend',
 		githubUrl: 'https://github.com/Venturh/elisabeth-werpers',

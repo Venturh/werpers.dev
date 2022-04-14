@@ -8,7 +8,7 @@
   "show_more": "Mehr anzeigen",
   "show_less": "Weniger anzeigen",
 
-  "skills": "Aktueller Stack",
+  "stack": "Aktueller Stack",
   "experience": "Erfahrung",
 
 
@@ -16,7 +16,7 @@
   "clickbar_2": "übernehme Projektlead",
   "clickbar_3": "mit Vue, Laravel, TypeScript",
   "clickbar_time": "Oktober 2020 - heute",
-  "clickbar_role": "Software Engineer, Fullstack",
+  "clickbar_role": "Fullstack Software Engineer",
 
   "clickbar_internship_time": "Oktober 2020 - April 2021",
   "clickbar_internship_role": "Fullstack Developer - Praktikum",

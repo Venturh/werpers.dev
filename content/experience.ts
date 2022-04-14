@@ -1,6 +1,6 @@
-import { Career } from '@types';
+import { Experience } from '@types';
 
-const career: Career[] = [
+const experience: Experience[] = [
 	{
 		title: 'clickbar.',
 		description: ['clickbar_1', 'clickbar_2', 'clickbar_3'],
@@ -17,4 +17,4 @@ const career: Career[] = [
 	},
 ];
 
-export default career;
+export default experience;

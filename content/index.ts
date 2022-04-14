@@ -1,8 +1,8 @@
 import { Navlink } from '@types';
 
 export { default as projects } from './projects';
-export { default as career } from './career';
-export { default as skills } from './skills';
+export { default as experience } from './experience';
+export { default as stack } from './stack';
 
 export const navlinks: Navlink[] = [
 	{ name: 'portfolio', to: '/' },

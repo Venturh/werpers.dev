@@ -5,11 +5,11 @@ import useTranslation from 'next-translate/useTranslation';
 import Layout from 'components/layouts/Layout';
 import ProjectFilters from 'components/projects/ProjectFilters';
 import ProjectList from 'components/projects/ProjectList';
+import Button from 'components/ui/Button';
 
 import { projects } from 'content';
 
-import { ogImage, Project } from '@types';
-import Button from 'components/ui/Button';
+import { Project } from '@types';
 
 const Projects = ({ projects }: { projects: Project[] }) => {
 	const { t, lang } = useTranslation('portfolio');

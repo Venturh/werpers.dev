@@ -4,8 +4,8 @@ import LanguageSwitch from './LanguageSwitch';
 
 import ThemeToggle from './ThemeToggle';
 import IconButton from './IconButton';
-import Icon from './Icon';
-import { Github } from 'icons';
+import GithubIcon from '../icons/GithubIcon';
+
 import Link from './Link';
 import Label from './Label';
 
@@ -37,7 +37,7 @@ export default function Navigation() {
 							ariaLabel="github-icon"
 							fullRounded
 							size="sm"
-							icon={<Icon colored path={Github} />}
+							icon={<GithubIcon />}
 						/>
 					</div>
 					<div className="pl-2 space-x-2">

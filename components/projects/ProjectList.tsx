@@ -1,11 +1,10 @@
 import useTranslation from 'next-translate/useTranslation';
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 
-import Icon from 'components/ui/Icon';
 import IconButton from 'components/ui/IconButton';
 import { Labels } from 'components/ui/Label';
+import GithubIcon from 'components/icons/GithubIcon';
 
-import { Github } from 'icons';
 import { Project } from '@types';
 
 const ProjectList = ({ projects }: { projects: Project[] }) => {
@@ -44,7 +43,7 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
 										size="xs"
 										variant="ghost"
 										href={githubUrl}
-										icon={<Icon colored path={Github} />}
+										icon={<GithubIcon />}
 										disabled={!githubUrl}
 									/>
 

@@ -6,7 +6,7 @@
   "project": "Project",
   "show_more": "Show more",
 
-  "skills": "Current Stack",
+  "stack": "Current Stack",
 
   "experience": "Experience",
 
@@ -14,7 +14,7 @@
   "clickbar_2": "lead projects",
   "clickbar_3": "using Vue, Laravel, TypeScript",
   "clickbar_time": "October 2020 - present",
-  "clickbar_role": "Software Engineer, Fullstack",
+  "clickbar_role": "Fullstack Software Engineer",
 
   "clickbar_internship_time": "October 2020 - April 2021",
   "clickbar_internship_role": "Full Stack Developer - Intern",

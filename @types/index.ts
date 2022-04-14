@@ -10,7 +10,7 @@ export type Social = {
 	internal?: boolean;
 };
 
-export type Career = {
+export type Experience = {
 	title: string;
 	description: string[];
 	time: string;
@@ -30,13 +30,4 @@ export type Project = {
 	githubUrl?: string;
 	pageUrl?: string;
 	main?: boolean;
-};
-
-export type Skill = { name: string; icon: string };
-
-export type ogImage = {
-	url: string;
-	width: number;
-	height: number;
-	alt: string;
 };

@@ -44,9 +44,7 @@ const IconButton = forwardRef<any, IconButtonsProps>(
 			<Button circle={fullRounded} loading={loading} size={size} {...rest}>
 				<span className="sr-only">{ariaLabel}</span>
 				{!loading && (
-					<ButtonIcon className={clsx('text-currentColor ', iconSizes[size])}>
-						{_children}
-					</ButtonIcon>
+					<ButtonIcon className={clsx('text-current ', iconSizes[size])}>{_children}</ButtonIcon>
 				)}
 			</Button>
 		);
