@@ -12,7 +12,6 @@ const Footer = () => {
 	return (
 		<div className="flex flex-col w-full py-6 space-y-6 text-base">
 			<div className="w-full border-t border-accent-primary" />
-			{/* {process.env.NODE_ENV === 'production' && <Discord />} */}
 
 			<div className="grid grid-cols-2 gap-4 text-base sm:grid-cols-3">
 				{Object.entries(footer).map(([title, values]) => (
@@ -35,10 +34,10 @@ const Footer = () => {
 					</div>
 				))}
 				<div className="col-span-2 md:col-span-1 space-y-2">
-					<h3 className="text-xs font-semibold tracking-wider uppercase text-secondary">
+					<span className="text-xs font-semibold tracking-wider uppercase text-secondary">
 						Currently
-					</h3>
-					<Discord />
+					</span>
+					{process.env.NODE_ENV === 'production' && <Discord />}
 				</div>
 			</div>
 		</div>

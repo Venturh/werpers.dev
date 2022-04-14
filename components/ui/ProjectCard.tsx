@@ -18,7 +18,7 @@ export default function ProjectCard({
 		<div className="shadow-sm border border-accent-primary  rounded divide-y divide-accent-primary">
 			<Clickable out href={pageUrl ?? githubUrl}>
 				<div className="px-4 py-2">
-					<h3 className="font-medium text-left"> {title}</h3>
+					<span className="font-medium text-left block"> {title}</span>
 					<span className="text-sm">{locale === 'en' ? descriptionEn : description}</span>
 				</div>
 			</Clickable>

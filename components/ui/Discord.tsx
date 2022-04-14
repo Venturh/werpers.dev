@@ -1,5 +1,4 @@
 import { fetcher } from 'lib/swr';
-import Image from 'next/image';
 import useSWR from 'swr';
 
 type DiscordPresence = {
