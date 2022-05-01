@@ -33,11 +33,11 @@ const Footer = () => {
 						</div>
 					</div>
 				))}
-				<div className="col-span-2 md:col-span-1 space-y-2">
+				<div className="col-span-2 space-y-2 md:col-span-1">
 					<span className="text-xs font-semibold tracking-wider uppercase text-secondary">
 						Currently
 					</span>
-					{process.env.NODE_ENV === 'production' && <Discord />}
+					<Discord />
 				</div>
 			</div>
 		</div>

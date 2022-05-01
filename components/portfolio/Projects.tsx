@@ -18,35 +18,25 @@ function Projects({ projects, locale }: Props) {
 			subtitle="projectsSub"
 			button={{ text: 'show_more', to: '/projects' }}
 		>
-			<div className="space-y-4">
+			<div className="space-y-2">
 				{projects
 					.filter(({ main }) => main)
 					.map((project: Project, index: number) => (
-						<div
+						<Clickable
 							key={project.title}
-							className="shadow-sm border border-accent-primary  rounded divide-y divide-accent-primary"
+							className="block w-full p-4 text-left border rounded-lg shadow-sm border-accent-primary bg-secondary hover:bg-accent-primary"
+							href={project.pageUrl ?? project.githubUrl}
+							out
 						>
-							<Clickable out href={project.pageUrl ?? project.githubUrl}>
-								<div className="px-4 py-2">
-									<span className="font-medium text-left block"> {project.title}</span>
-									<span className="text-sm">
-										{locale === 'en' ? project.descriptionEn : project.description}
-									</span>
-								</div>
-							</Clickable>
-							<div className="px-4 py-2 flex justify-between items-center">
-								<Labels small labels={project.tech} />
-								<IconButton
-									out
-									fullRounded
-									ariaLabel="github"
-									size="sm"
-									variant="ghost"
-									href={project.githubUrl}
-									icon={<GithubIcon />}
-								/>
+							<div className="block font-medium "> {project.title}</div>
+							<div className="text-sm">
+								{locale === 'en' ? project.descriptionEn : project.description}
 							</div>
-						</div>
+
+							<div className="mt-2">
+								<Labels small labels={project.tech} />
+							</div>
+						</Clickable>
 					))}
 			</div>
 		</Section>
