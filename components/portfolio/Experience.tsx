@@ -30,16 +30,18 @@ function Experience() {
 	return (
 		<Section title="experience" subtitle="experienceSub">
 			<ul className="w-full -mt-4 divide-y divide-accent-primary">
-				{experience.map(({ company, location, steps, url, startTime }: ExperienceType, idx) => {
+				{experience.map(({ company, steps, url, startTime }: ExperienceType, idx) => {
 					const { years, months, days } = times[idx] || {
 						years: undefined,
 						months: undefined,
 						days: undefined,
 					};
 					return (
-						<Clickable className="block pt-4" href={url} key={startTime}>
+						<div className="block pt-4" key={startTime}>
 							<div className="flex items-center justify-between">
-								<div className="font-medium">{company}</div>
+								<Clickable href={url} out className="text-sm font-medium hover:text-brand-primary">
+									{company}
+								</Clickable>
 								<div className="text-sm text-secondary">
 									{years > 0 && `${years} ${t('year')}${pluralize(years)} `}
 									{months > 0 && `${months} ${t('month')}${pluralize(months)} `}
@@ -77,7 +79,7 @@ function Experience() {
 									</div>
 								</li>
 							))}
-						</Clickable>
+						</div>
 					);
 				})}
 			</ul>

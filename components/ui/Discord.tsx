@@ -21,7 +21,7 @@ export default function Discord() {
 	if ((!data && !error) || error) return <span />;
 
 	return (
-		<div className="flex justify-between p-2 border rounded-lg shadow-sm border-accent-primary bg-secondary">
+		<div className="flex justify-between p-2 border rounded-lg border-accent-primary bg-secondary">
 			<div className="text-sm truncate">
 				<div className="truncate text-brand-primary">{presence?.name}</div>
 				<div className="mt-1 truncate text-primary">{presence?.state ?? presence.details}</div>

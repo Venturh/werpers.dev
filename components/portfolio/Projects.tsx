@@ -24,7 +24,7 @@ function Projects({ projects, locale }: Props) {
 					.map((project: Project, index: number) => (
 						<Clickable
 							key={project.title}
-							className="block w-full p-4 text-left border rounded-lg shadow-sm border-accent-primary bg-secondary hover:bg-accent-primary"
+							className="block w-full p-4 text-left border rounded-lg border-accent-primary bg-secondary hover:bg-accent-primary"
 							href={project.pageUrl ?? project.githubUrl}
 							out
 						>
