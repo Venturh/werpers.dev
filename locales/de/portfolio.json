@@ -12,17 +12,21 @@
   "experience": "Erfahrung",
 
 
-  "clickbar_1": "entwickele Fullstack Web-Plattformen",
-  "clickbar_2": "übernehme Projektlead",
-  "clickbar_3": "mit Vue, Laravel, TypeScript",
-  "clickbar_time": "Oktober 2020 - heute",
-  "clickbar_role": "Fullstack Software Engineer",
+  "clickbar_step1_desc_1": "entwickele Fullstack Web-Plattformen",
+  "clickbar_step1_desc_2": "übernehme Projektlead",
+  "clickbar_step1_desc_3": "mit Vue, Laravel, TypeScript",
+  "clickbar_step1_role": "Fullstack Software Engineer",
+  "clickbar_step1_time": "Oktober 2020 - heute",
+  "clickbar_step1_status": "Vollzeit",
 
-  "clickbar_internship_time": "Oktober 2020 - April 2021",
-  "clickbar_internship_role": "Fullstack Developer - Praktikum",
+  "clickbar_step2_time": "Oktober 2020 - April 2021",
+  "clickbar_step2_role": "Fullstack Software Engineer",
+  "clickbar_step2_status": "Praktikum",
 
   "hsrm_time": "2017 - heute",
   "hsrm_role": "Bachelor of Science - Medieninformatik",
+  "hsrm_status": "Student",
+
 
   "about": "Über",
   "aboutMe": "Über mich",
@@ -44,9 +48,13 @@
   "pages": "Seiten",
   "socials": "Kontakt",
   "language": "Sprache",
-  "playground": "Spielwiese",
   "updated": "Aktualisiert",
   "from": "von",
   "and": "und",
-  "at": "bei"
+  "at": "bei",
+
+
+  "month": "Monat",
+  "day": "Tag"
+
 }

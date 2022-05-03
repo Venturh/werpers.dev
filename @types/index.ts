@@ -11,11 +11,17 @@ export type Social = {
 };
 
 export type Experience = {
-	title: string;
-	description: string[];
-	time: string;
-	role: string;
+	company: string;
+	startTime: string;
+	endTime?: string;
+	location: string;
 	url: string;
+	steps: {
+		role: string;
+		description: string[];
+		status: string;
+		time: string;
+	}[];
 };
 
 export type Project = {

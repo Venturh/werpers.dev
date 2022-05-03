@@ -10,17 +10,23 @@
 
   "experience": "Experience",
 
-  "clickbar_1": "develop fullstack web applications",
-  "clickbar_2": "lead projects",
-  "clickbar_3": "using Vue, Laravel, TypeScript",
-  "clickbar_time": "October 2020 - present",
-  "clickbar_role": "Fullstack Software Engineer",
+  "clickbar_step1_desc_1": "develop fullstack web applications",
+  "clickbar_step1_desc_2": "lead projects",
+  "clickbar_step1_desc_3": "using Vue, Laravel, TypeScript",
+  "clickbar_step1_time": "October 2020 - present",
+  "clickbar_step1_role": "Fullstack Software Engineer",
+  "clickbar_step1_status": "Fulltime",
 
-  "clickbar_internship_time": "October 2020 - April 2021",
-  "clickbar_internship_role": "Full Stack Developer - Intern",
+
+  "clickbar_step2_time": "October 2020 - April 2021",
+  "clickbar_step2_role": "(Intern) Full Stack Developer",
+  "clickbar_step2_status": "Intern",
+
 
   "hsrm_time": "2017 - present",
   "hsrm_role": "Bachelor of Science - Media Computer Science",
+  "hsrm_status": "Student",
+
 
   "about": "About",
   "aboutMe": "About me",
@@ -32,19 +38,22 @@
   "about_4": "In my freetime I´m into fitness, I go to the gym and like to go jogging. This helps me compensating the hours I sit to code and playing video games :D",
 
 
-  "buildUsing": "Build using",
-  "progress": "Progress",
-  "madeAt": "Made At",
-  "type": "Type",
-  "year": "Year",
+  "buildUsing": "build using",
+  "progress": "progress",
+  "madeAt": "made at",
+  "type": "type",
+  "year": "year",
   "views": "views",
 
   "pages": "Pages",
   "socials": "Socials",
   "language": "Languages",
-  "playground": "Playground",
   "updated": "Updated",
   "from": "from",
   "and": "and",
-  "at": "at"
+  "at": "at",
+
+
+  "month": "month",
+  "day": "day"
 }

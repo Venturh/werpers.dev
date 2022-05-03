@@ -13,13 +13,13 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
 		<div className="rounded-md shadow bg-secondary ring-1 ring-accent-primary sm:rounded-lg">
 			<table className="min-w-full divide-y divide-accent-secondary">
 				<thead>
-					<tr className="text-xs font-medium text-left text-secondary">
+					<tr className="text-xs font-medium text-left uppercase text-secondary">
 						<th className="p-3">Name</th>
 						<th className="p-3">{t('madeAt')}</th>
 						<th className="hidden p-3 md:table-cell">{t('buildUsing')}</th>
-						<th className="hidden md:table-cell p-3">{t('type')}</th>
+						<th className="hidden p-3 md:table-cell">{t('type')}</th>
 						<th className="p-3">{t('year')}</th>
-						<th className="p-3"></th>
+						<th className="p-3">Links</th>
 					</tr>
 				</thead>
 				<tbody className="text-sm divide-y divide-accent-primary">
@@ -33,7 +33,7 @@ const ProjectList = ({ projects }: { projects: Project[] }) => {
 									<Labels small labels={tech} overflowDirection="down" />
 								</td>
 
-								<td className="hidden md:table-cell p-3">{type}</td>
+								<td className="hidden p-3 md:table-cell">{type}</td>
 								<td className="p-3">{year}</td>
 								<td className="flex p-3 space-x-2">
 									<IconButton

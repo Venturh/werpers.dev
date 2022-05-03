@@ -21,8 +21,8 @@ const Portfolio = ({ projects, locale }: { projects: Project[]; locale: string }
 		<Layout title={title} description={description} url={url}>
 			<Hero />
 			<Projects projects={projects} locale={locale} />
-			<Stack />
 			<Experience />
+			<Stack />
 		</Layout>
 	);
 };

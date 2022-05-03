@@ -11,6 +11,7 @@ specifiers:
   '@types/react': ^18.0.0
   autoprefixer: ^10.4.2
   clsx: ^1.1.1
+  dayjs: ^1.11.1
   eslint: 8.12.0
   eslint-config-next: 12.1.4
   eslint-config-prettier: ^8.4.0
@@ -34,6 +35,7 @@ dependencies:
   '@heroicons/react': 1.0.6_react@18.0.0
   '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
   clsx: 1.1.1
+  dayjs: 1.11.1
   fuse.js: 6.5.3
   next: 12.1.4_react-dom@18.0.0+react@18.0.0
   next-seo: 5.4.0_c0abbb53577d424fe320649841fdc7d4
@@ -725,6 +727,10 @@ packages:
   /damerau-levenshtein/1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
     dev: true
+
+  /dayjs/1.11.1:
+    resolution: {integrity: sha512-ER7EjqVAMkRRsxNCC5YqJ9d9VQYuWdGt7aiH2qA5R5wt8ZmWaP2dLUSIK6y/kVzLMlmh1Tvu5xUf4M/wdGJ5KA==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
