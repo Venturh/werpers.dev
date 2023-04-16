@@ -26,8 +26,8 @@ export default class Document extends NextDocument {
 						<script
 							async
 							defer
-							data-website-id="2fcdc9c2-7210-4afc-8ff9-30dd77cecc46"
-							src="https://umami-analytic.up.railway.app/umami.js"
+							data-website-id="c4375a93-dd92-40f2-a93b-39f725c8d54c"
+							src="https://umami-analytics-sage.vercel.app/umami.js"
 						></script>
 					)}
 					<meta name="msapplication-TileColor" content="#161821" />
