@@ -1,3 +1,4 @@
+'use client';
 import { fetcher } from 'lib/swr';
 import useSWR from 'swr';
 
@@ -11,7 +12,7 @@ type DiscordPresence = {
 
 export default function Discord() {
 	const { data, error } = useSWR<DiscordPresence[]>(
-		`https://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
+		`http://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
 		fetcher,
 		{ shouldRetryOnError: false },
 	);

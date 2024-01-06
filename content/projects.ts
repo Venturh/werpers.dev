@@ -3,7 +3,7 @@ import { Project } from 'types';
 const projects: Project[] = [
 	{
 		title: 'elisabethwerpers.com',
-		description: 'Art gallery website',
+		description: 'Art gallery website.',
 		tech: ['NextJs', 'TypeScript', 'TailwindCss'],
 		slug: 'galery',
 		type: 'Frontend',
@@ -14,7 +14,7 @@ const projects: Project[] = [
 	},
 	{
 		title: 'clickbar.dev',
-		description: 'Company website for clickbar',
+		description: 'Company website for clickbar.',
 		tech: ['Nuxt', 'Vue', 'TailwindCss', 'MDX'],
 		slug: 'clickbar',
 		type: 'Frontend',
