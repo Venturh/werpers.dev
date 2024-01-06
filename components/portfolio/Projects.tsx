@@ -1,6 +1,4 @@
 import Section from 'components/ui/Section';
-import GithubIcon from 'components/icons/GithubIcon';
-import IconButton from 'components/ui/IconButton';
 import Clickable from 'components/ui/Clickable';
 
 import { Project } from '@types';

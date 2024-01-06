@@ -2,15 +2,13 @@ import { Project } from '@types';
 
 const projects: Project[] = [
 	{
-		title: 'coinity.co',
-		description: 'Portfolioplattform für Kryptowährungen',
-		descriptionEn: 'A cryptocurrency portfolio platform',
-		tech: ['NextJs', 'TypeScript', 'GraphQL', 'Prisma', 'TailwindCss'],
-		slug: 'coinity',
-		type: 'Fullstack',
-		pageUrl: 'https://coinity.vercel.app',
-		githubUrl: 'https://github.com/Venturh/coinity.co',
-		year: '2022',
+		title: 'elisabethwerpers.com',
+		tech: ['NextJs', 'TypeScript', 'TailwindCss'],
+		slug: 'galery',
+		type: 'Frontend',
+		githubUrl: 'https://github.com/Venturh/elisabethwerpers.com',
+		pageUrl: 'https://elisabethwerpers.com',
+		year: '2023',
 		main: true,
 	},
 	{
@@ -25,16 +23,7 @@ const projects: Project[] = [
 		year: '2022',
 		main: true,
 	},
-	{
-		title: 'Galerie Elisabeth Werpers',
-		tech: ['NextJs', 'TypeScript', 'GraphQL', 'TailwindCss', 'Storyblok'],
-		slug: 'galery',
-		type: 'Frontend',
-		githubUrl: 'https://github.com/Venturh/elisabeth-werpers',
-		pageUrl: 'https://elisabeth-werpers.vercel.app/en',
-		year: '2021',
-		main: true,
-	},
+
 	{
 		title: 'Rememoir',
 		description:

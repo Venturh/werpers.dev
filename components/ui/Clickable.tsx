@@ -25,13 +25,13 @@ const Clickable = forwardRef<any, ClickableProps>(
 		);
 		if (isLink) {
 			return (
-				<Link href={href} {...props}>
+				<Link legacyBehavior href={href} {...props}>
 					{content}
 				</Link>
 			);
 		}
 		return content;
-	}
+	},
 );
 
 export default Clickable;

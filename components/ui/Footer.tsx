@@ -33,12 +33,12 @@ const Footer = () => {
 						</div>
 					</div>
 				))}
-				<div className="col-span-2 space-y-2 md:col-span-1">
+				{/* <div className="col-span-2 space-y-2 md:col-span-1">
 					<span className="text-xs font-semibold tracking-wider uppercase text-secondary">
 						Currently
 					</span>
 					<Discord />
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

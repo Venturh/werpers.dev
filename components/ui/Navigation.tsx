@@ -1,8 +1,3 @@
-import { CollectionIcon } from '@heroicons/react/outline';
-
-import LanguageSwitch from './LanguageSwitch';
-
-import ThemeToggle from './ThemeToggle';
 import IconButton from './IconButton';
 import GithubIcon from '../icons/GithubIcon';
 
@@ -17,17 +12,6 @@ export default function Navigation() {
 					<Label> werpers.dev</Label>
 				</Link>
 				<div className="flex items-center divide-x divide-accent-primary">
-					<div className="pr-2">
-						<IconButton
-							title="Projects"
-							variant="ghost"
-							href="/projects"
-							ariaLabel="projects"
-							fullRounded
-							size="sm"
-							icon={<CollectionIcon />}
-						/>
-					</div>
 					<div className="px-2">
 						<IconButton
 							title="Github"
@@ -39,10 +23,6 @@ export default function Navigation() {
 							size="sm"
 							icon={<GithubIcon />}
 						/>
-					</div>
-					<div className="pl-2 space-x-2">
-						<LanguageSwitch />
-						<ThemeToggle />
 					</div>
 				</div>
 			</div>

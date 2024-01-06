@@ -31,14 +31,14 @@ const IconButton = forwardRef<any, IconButtonsProps>(
 			loading,
 			...rest
 		}: IconButtonsProps,
-		_
+		_,
 	) => {
 		const element = icon || children;
 		const _children = isValidElement(element)
 			? cloneElement(element as any, {
 					'aria-hidden': true,
 					focusable: false,
-			  })
+				})
 			: null;
 		return (
 			<Button circle={fullRounded} loading={loading} size={size} {...rest}>
@@ -48,7 +48,7 @@ const IconButton = forwardRef<any, IconButtonsProps>(
 				)}
 			</Button>
 		);
-	}
+	},
 );
 
 export default IconButton;
