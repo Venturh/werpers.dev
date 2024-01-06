@@ -8,7 +8,7 @@ export default function Portfolio() {
 		<div className="space-y-8">
 			<Hero />
 			<Projects />
-			{/* <Experience /> */}
+			<Experience />
 			<Stack />
 		</div>
 	);

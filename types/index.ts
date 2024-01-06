@@ -12,16 +12,14 @@ export type Social = {
 
 export type Experience = {
 	company: string;
+	status?: string;
+	description?: string;
+	role?: string;
 	startTime: string;
 	endTime?: string;
 	location: string;
 	url: string;
-	steps: {
-		role: string;
-		description: string[];
-		status: string;
-		time: string;
-	}[];
+	steps?: Omit<Experience, 'steps' | 'company' | 'url' | 'location'>[];
 };
 
 export type Project = {

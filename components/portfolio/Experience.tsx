@@ -6,32 +6,24 @@ import Clickable from 'components/ui/Clickable';
 import { experience } from 'content';
 import { Experience as ExperienceType } from 'types';
 function Experience() {
-	function pluralize(n: number) {
-		return n === 1 ? '' : `${lang === 'en' ? 's' : 'e'}`;
-	}
-
 	return (
 		<Section title="experience" subtitle="experienceSub">
 			<ul className="w-full -mt-4 divide-y divide-accent-primary">
 				{experience.map(({ company, steps, url, startTime }: ExperienceType, idx) => {
-					const { years, months, days } = times[idx] || {
-						years: undefined,
-						months: undefined,
-						days: undefined,
-					};
+					// const { years, months, days } = times[idx] || {
+					// 	years: undefined,
+					// 	months: undefined,
+					// 	days: undefined,
+					// };
 					return (
 						<div className="block pt-4" key={startTime}>
 							<div className="flex items-center justify-between">
 								<Clickable href={url} out className="text-sm font-medium hover:text-brand-primary">
 									{company}
 								</Clickable>
-								<div className="text-sm text-secondary">
-									{years > 0 && `${years} ${t('year')}${pluralize(years)} `}
-									{months > 0 && `${months} ${t('month')}${pluralize(months)} `}
-									{days > 0 && !months && !years && `${days} ${t('day')}${pluralize(days)}`}
-								</div>
+								<div className="text-sm text-secondary">kp</div>
 							</div>
-							{steps.map((step, stepIdx) => (
+							{steps?.map((step, stepIdx) => (
 								<li key={step.role} className="relative pt-2">
 									{!(stepIdx === steps.length - 1) && (
 										<span
@@ -45,19 +37,13 @@ function Experience() {
 										</div>
 										<div className="w-full">
 											<div className="flex flex-col md:flex-row md:justify-between">
-												<div className="font-medium text-primary">{t(step.role)}</div>
+												<div className="font-medium text-primary">{step.role}</div>
 												<div>
-													<span className="text-sm text-secondary">{t(step.status)} • </span>
-													<span className="text-sm text-secondary">{t(step.time)}</span>
+													<span className="text-sm text-secondary">{step.status} • </span>
+													<span className="text-sm text-secondary">{step.startTime}</span>
 												</div>
 											</div>
-											<div className="-my-2 prose-sm prose">
-												<ul>
-													{step.description.map((description) => (
-														<li key={description}>{t(description)}</li>
-													))}
-												</ul>
-											</div>
+											<div className="-my-2 prose-sm prose">{step.description}</div>
 										</div>
 									</div>
 								</li>
