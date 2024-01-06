@@ -3,19 +3,11 @@ import Clickable from 'components/ui/Clickable';
 
 import { Project } from '@types';
 import { Labels } from 'components/ui/Label';
+import { projects } from 'content';
 
-type Props = {
-	projects: Project[];
-	locale: string;
-};
-
-function Projects({ projects, locale }: Props) {
+export default function Projects() {
 	return (
-		<Section
-			title="projects"
-			subtitle="projectsSub"
-			button={{ text: 'show_more', to: '/projects' }}
-		>
+		<Section title="projects" subtitle="projectsSub">
 			<div className="space-y-2">
 				{projects
 					.filter(({ main }) => main)
@@ -27,9 +19,7 @@ function Projects({ projects, locale }: Props) {
 							out
 						>
 							<div className="block font-medium "> {project.title}</div>
-							<div className="text-sm">
-								{locale === 'en' ? project.descriptionEn : project.description}
-							</div>
+							<div className="text-sm">{project.descriptionEn}</div>
 
 							<div className="mt-2">
 								<Labels small labels={project.tech} />
@@ -40,5 +30,3 @@ function Projects({ projects, locale }: Props) {
 		</Section>
 	);
 }
-
-export default Projects;

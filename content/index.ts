@@ -4,16 +4,10 @@ export { default as projects } from './projects';
 export { default as experience } from './experience';
 export { default as stack } from './stack';
 
-export const navlinks: Navlink[] = [
-	{ name: 'portfolio', to: '/' },
-	{ name: 'projects', to: '/projects' },
-];
+export const navlinks: Navlink[] = [{ name: 'Portfolio', to: '/' }];
 
 export const footer = {
-	pages: [
-		{ name: 'portfolio', link: '/', internal: true },
-		{ name: 'projects', link: '/projects', internal: true },
-	],
+	pages: [{ name: 'Portfolio', link: '/', internal: true }],
 	socials: [
 		{
 			name: 'Github',

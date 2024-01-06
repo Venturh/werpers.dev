@@ -1,4 +1,3 @@
-import useTranslation from 'next-translate/useTranslation';
 import dayjs from 'dayjs';
 
 import Section from 'components/ui/Section';
@@ -6,26 +5,10 @@ import Clickable from 'components/ui/Clickable';
 
 import { experience } from 'content';
 import { Experience as ExperienceType } from '@types';
-import { useEffect, useState } from 'react';
-
 function Experience() {
-	const { t, lang } = useTranslation('portfolio');
-	const [times, setTimes] = useState([]);
-
 	function pluralize(n: number) {
 		return n === 1 ? '' : `${lang === 'en' ? 's' : 'e'}`;
 	}
-
-	useEffect(() => {
-		const today = dayjs(new Date());
-		const t = experience.map(({ startTime }) => {
-			const years = today.diff(startTime, 'year');
-			const months = today.diff(startTime, 'month') - years * 12;
-			const days = today.diff(dayjs(startTime).add(years, 'year').add(months, 'month'), 'day');
-			return { years, months, days };
-		});
-		setTimes(t);
-	}, []);
 
 	return (
 		<Section title="experience" subtitle="experienceSub">
