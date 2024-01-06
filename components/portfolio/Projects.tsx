@@ -1,20 +1,20 @@
 import Section from 'components/ui/Section';
-import Clickable from 'components/ui/Clickable';
 
 import { Project } from 'types';
 import { Labels } from 'components/ui/Label';
 import { projects } from 'content';
+import InteractableCard from 'components/ui/InteractableCard';
 
 export default function Projects() {
 	return (
 		<Section title="projects">
-			<div className="space-y-2">
+			<div>
 				{projects
 					.filter(({ main }) => main)
-					.map((project: Project, index: number) => (
-						<Clickable
+					.map((project: Project) => (
+						<InteractableCard
 							key={project.title}
-							className="block w-full p-4 text-left border rounded-lg border-accent-primary bg-secondary hover:bg-accent-primary"
+							className="p-4 mt-2"
 							href={project.pageUrl ?? project.githubUrl}
 							out
 						>
@@ -24,7 +24,7 @@ export default function Projects() {
 							<div className="mt-2">
 								<Labels small labels={project.tech} />
 							</div>
-						</Clickable>
+						</InteractableCard>
 					))}
 			</div>
 		</Section>

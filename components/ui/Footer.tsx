@@ -1,5 +1,3 @@
-import useTranslation from 'next-translate/useTranslation';
-
 import Discord from './Discord';
 
 import { footer } from 'content';

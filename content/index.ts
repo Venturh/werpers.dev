@@ -8,7 +8,7 @@ export const navlinks: Navlink[] = [{ name: 'Portfolio', to: '/' }];
 
 export const footer = {
 	pages: [{ name: 'Portfolio', link: '/', internal: true }],
-	socials: [
+	contact: [
 		{
 			name: 'Github',
 			link: 'https://github.com/Venturh',
@@ -16,7 +16,7 @@ export const footer = {
 		},
 		{
 			name: 'LinkedIn',
-			link: 'https://www.linkedin.com/in/max-werpers-9474251a5/',
+			link: 'https://www.linkedin.com/in/maximilian-w-9474251a5/',
 			internal: false,
 		},
 		{

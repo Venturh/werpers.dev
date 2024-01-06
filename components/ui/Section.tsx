@@ -1,12 +1,10 @@
-import useTranslation from 'next-translate/useTranslation';
-
 import Clickable from './Clickable';
 
 type Props = {
 	title: string;
 	subtitle?: string;
 	button?: { text: string; to: string };
-	children: React.ReactChild;
+	children: React.ReactNode;
 };
 
 export default function Section({ title, button, children }: Props) {
@@ -30,7 +28,7 @@ export default function Section({ title, button, children }: Props) {
 					</Clickable>
 				)}
 			</div>
-			<div className="mt-4">{children}</div>
+			<div className="mt-3">{children}</div>
 		</div>
 	);
 }

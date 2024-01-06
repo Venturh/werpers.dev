@@ -14,7 +14,7 @@ function getDates(steps: ExperienceStep[]) {
 	return `${startDate} - ${endDate}`;
 }
 
-function Experience() {
+export default function Experience() {
 	return (
 		<Section title="experience">
 			<ul className="w-full -mt-4 divide-y divide-accent-primary">
@@ -32,7 +32,7 @@ function Experience() {
 								<div className="text-sm text-secondary">{getDates(experience.steps)}</div>
 							</div>
 							{experience.steps?.map((step, stepIdx) => (
-								<li key={step.role} className="relative pt-2">
+								<li key={step.role} className="relative pt-6">
 									{!(experience.steps && stepIdx === experience.steps.length - 1) && (
 										<span
 											className="absolute top-4 left-2.5 rounded  h-full w-0.5 bg-accent-primary"
@@ -65,5 +65,3 @@ function Experience() {
 		</Section>
 	);
 }
-
-export default Experience;

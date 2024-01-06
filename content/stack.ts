@@ -1,18 +1,13 @@
 const stack = [
-	'TypeScript',
-	'React',
 	'Vue',
+	'React',
+	'Nuxt',
 	'NextJs',
-	'React Native',
 	'TailwindCss',
-	'NodeJs',
-	'GraphQL',
-	'PHP',
 	'Laravel',
 	'InertiaJs',
 	'Postgres',
-	'Html',
-	'Css',
+	'TypeScript',
 ];
 
 export default stack;

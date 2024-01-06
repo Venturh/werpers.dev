@@ -1,15 +1,11 @@
+/** @type {import('next').NextConfig} */
 const config = {
 	images: {
 		domains: ['cdn.discordapp.com'],
 	},
-	// async rewrites() {
-	// 	return [
-	// 		{
-	// 			source: '/sitemap.xml',
-	// 			destination: '/api/sitemap',
-	// 		},
-	// 	];
-	// },
+	experimental: {
+		useLightningcss: true,
+	},
 };
 
 export default config;

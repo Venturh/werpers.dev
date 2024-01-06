@@ -17,13 +17,13 @@ const experience: Experience[] = [
 				role: 'Fullstack Software Developer (working student)',
 				description:
 					'Working and taking lead on a variety of projects for clients, as well as internal projects.',
-				startTime: '2021-04-01',
-				endTime: '2022-07-31',
+				startTime: '2021-03-01',
+				endTime: '2022-08-01',
 			},
 			{
 				role: 'Full Stack Developer (intern)',
 				startTime: '2020-10-01',
-				endTime: '2021-03-31',
+				endTime: '2021-03-01',
 			},
 		],
 	},
@@ -33,7 +33,7 @@ const experience: Experience[] = [
 		url: 'https://www.hs-rm.de/de/',
 		steps: [
 			{
-				role: 'Student Bachelor of Science in Computer Science',
+				role: 'Bachelor of Science in Computer Science',
 				startTime: '2017-10-01',
 				endTime: '2022-06-15',
 			},
