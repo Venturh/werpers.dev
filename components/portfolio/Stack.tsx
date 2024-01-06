@@ -5,7 +5,7 @@ import { stack } from 'content';
 
 function Stack() {
 	return (
-		<Section title="stack" subtitle="stackSub">
+		<Section title="stack">
 			<div className="flex flex-wrap gap-y-2">
 				{stack.map((name) => (
 					<Label className="ml-2" key={name}>

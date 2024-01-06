@@ -7,7 +7,7 @@ import { projects } from 'content';
 
 export default function Projects() {
 	return (
-		<Section title="projects" subtitle="projectsSub">
+		<Section title="projects">
 			<div className="space-y-2">
 				{projects
 					.filter(({ main }) => main)
@@ -18,7 +18,7 @@ export default function Projects() {
 							href={project.pageUrl ?? project.githubUrl}
 							out
 						>
-							<div className="block font-medium "> {project.title}</div>
+							<div className="block font-medium"> {project.title}</div>
 							<div className="text-sm">{project.description}</div>
 
 							<div className="mt-2">
