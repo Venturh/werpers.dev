@@ -5,7 +5,6 @@ import Clickable from 'components/ui/Clickable';
 
 import { experience } from 'content';
 import { ExperienceStep, Experience as ExperienceType } from 'types';
-import Label from 'components/ui/Label';
 
 function getDates(steps: ExperienceStep[]) {
 	const startDate = dayjs(steps[steps.length - 1].startTime).format('MMM YYYY');

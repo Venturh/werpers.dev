@@ -3,6 +3,36 @@ import { GeistSans } from 'geist/font/sans';
 import Navigation from 'components/ui/Navigation';
 import clsx from 'clsx';
 import Footer from 'components/ui/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+	metadataBase: new URL('https://werpers.dev'),
+	title: {
+		default: 'Maximilian Werpers',
+		template: '%s | Maximilian Werpers',
+	},
+	description: 'Fullstack developer.',
+	openGraph: {
+		title: 'Maximilian Werpers',
+		description: 'Fullstack developer.',
+		url: 'https://werpers.dev',
+		siteName: 'Maximilian Werpers',
+		locale: 'en_US',
+		type: 'website',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+		},
+	},
+	twitter: {
+		title: 'Maximilian Werpers',
+		card: 'summary_large_image',
+	},
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
