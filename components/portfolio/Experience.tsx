@@ -4,7 +4,7 @@ import Section from 'components/ui/Section';
 import Clickable from 'components/ui/Clickable';
 
 import { experience } from 'content';
-import { Experience as ExperienceType } from '@types';
+import { Experience as ExperienceType } from 'types';
 function Experience() {
 	function pluralize(n: number) {
 		return n === 1 ? '' : `${lang === 'en' ? 's' : 'e'}`;

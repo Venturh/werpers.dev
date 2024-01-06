@@ -1,8 +1,9 @@
-import { Project } from '@types';
+import { Project } from 'types';
 
 const projects: Project[] = [
 	{
 		title: 'elisabethwerpers.com',
+		description: 'Art gallery website',
 		tech: ['NextJs', 'TypeScript', 'TailwindCss'],
 		slug: 'galery',
 		type: 'Frontend',
@@ -13,8 +14,7 @@ const projects: Project[] = [
 	},
 	{
 		title: 'clickbar.dev',
-		description: 'Firmenwebsite für clickbar',
-		descriptionEn: 'Company website for clickbar',
+		description: 'Company website for clickbar',
 		tech: ['Nuxt', 'Vue', 'TailwindCss', 'MDX'],
 		slug: 'clickbar',
 		type: 'Frontend',
@@ -23,23 +23,10 @@ const projects: Project[] = [
 		year: '2022',
 		main: true,
 	},
-
-	{
-		title: 'Rememoir',
-		description:
-			'Eine  App in der Nutzer Daten wie Links oder Notizen sicher durch Verschlüsselung gesammelt speichern können.',
-		descriptionEn: 'An App that allows users to securly save data like links or notes.',
-		tech: ['Vue', 'Express.js', 'Typescript', 'GraphQL', 'RxDB'],
-		slug: 'rememoir',
-		type: 'Fullstack',
-		githubUrl: 'https://github.com/venturh/rememoir',
-		pageUrl: 'https://intelligent-top-production.up.railway.app/',
-		year: '2021',
-	},
 	{
 		title: 'Discord Bot',
-		description: 'Ein persönlicher Discord Bot, der den aktuellen Status eines Nutzers anzeigt',
-		descriptionEn: 'Personal discord bot to display the current status of a selected user.',
+		description:
+			'Personal discord bot to display the current status of a selected user, used on this site to display my current status.',
 		tech: ['Node', 'Express', 'Typescript', 'Redis', 'DiscordJS'],
 		slug: 'discordapi',
 		type: 'Backend',
@@ -49,47 +36,14 @@ const projects: Project[] = [
 	},
 	{
 		title: 'werpers.dev',
-		description: 'Meine persönliche Website auf der ich meine Erfahrungen und Projekte teile.',
-		descriptionEn: 'My personal portfolio, where I display my current works and experiences.',
+		description: 'My personal portfolio.',
 		tech: ['React', 'Next.js', 'Typescript'],
 		slug: 'werpers.dev',
 		type: 'Frontend',
 		githubUrl: 'https://github.com/venturh/werpers.dev',
-
 		pageUrl: 'https://werpers.dev/',
 		year: '2020',
-	},
-	{
-		title: 'EIA Note',
-		description: 'Eine hybride Todo App',
-		descriptionEn: 'A hybrid todo app',
-		tech: ['React', 'Ionic', 'Typescript'],
-		slug: 'eianote',
-		type: 'Frontend',
-		githubUrl: 'https://github.com/Venturh/EIANote',
-		pageUrl: 'https://eianode.web.app/',
-		year: '2020',
-	},
-	{
-		title: 'Yee',
-		description: 'Eine Desktop App zur Steuerung von Yeelight Smart Lichtern.',
-		descriptionEn: 'A desktop app for mac and windows to manage Yeelight Smart Lamps.',
-		tech: ['Vue', 'Electron'],
-		slug: 'yee',
-		type: 'Frontend',
-		githubUrl: 'https://github.com/Venturh/Yee',
-		year: '2020',
-	},
-	{
-		title: 'Pokecoin Miner',
-		description: 'Das ist mein erstes Webprojekt, erstellt für den Webengine Kurs der Hochschule.',
-		descriptionEn: 'This is my first web app build for my uni webengine class.',
-		tech: ['React', 'Bootstrap'],
-		slug: 'pokecoin',
-		type: 'Frontend',
-		githubUrl: 'https://github.com/Venturh/pokecoin-miner',
-		pageUrl: 'https://pokecoinminer.netlify.com/',
-		year: '2019',
+		main: true,
 	},
 ];
 

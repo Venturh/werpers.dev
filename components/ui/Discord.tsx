@@ -13,7 +13,7 @@ export default function Discord() {
 	const { data, error } = useSWR<DiscordPresence[]>(
 		`https://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
 		fetcher,
-		{ shouldRetryOnError: false }
+		{ shouldRetryOnError: false },
 	);
 
 	const presence = data ? data[0] : null;

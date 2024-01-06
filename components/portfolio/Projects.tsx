@@ -1,7 +1,7 @@
 import Section from 'components/ui/Section';
 import Clickable from 'components/ui/Clickable';
 
-import { Project } from '@types';
+import { Project } from 'types';
 import { Labels } from 'components/ui/Label';
 import { projects } from 'content';
 
@@ -19,7 +19,7 @@ export default function Projects() {
 							out
 						>
 							<div className="block font-medium "> {project.title}</div>
-							<div className="text-sm">{project.descriptionEn}</div>
+							<div className="text-sm">{project.description}</div>
 
 							<div className="mt-2">
 								<Labels small labels={project.tech} />

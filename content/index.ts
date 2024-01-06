@@ -1,4 +1,4 @@
-import { Navlink } from '@types';
+import { Navlink } from 'types';
 
 export { default as projects } from './projects';
 export { default as experience } from './experience';

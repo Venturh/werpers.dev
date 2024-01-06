@@ -27,7 +27,6 @@ export type Experience = {
 export type Project = {
 	title: string;
 	description?: string;
-	descriptionEn?: string;
 	tech: Array<string>;
 	madeAt?: string;
 	slug: string;

@@ -12,7 +12,7 @@ export default function Label({ children, small, className }: Props) {
 			className={clsx(
 				'text-xs rounded-md leading-5  inline-flex items-center bg-cyan-50 text-cyan-800  dark:bg-brand-primary dark:bg-opacity-10 dark:text-brand-primary dark:text-opacity-80',
 				small ? 'py-[1px] px-1' : 'py-0.5 px-1.5 sm:px-2',
-				className
+				className,
 			)}
 		>
 			{children}

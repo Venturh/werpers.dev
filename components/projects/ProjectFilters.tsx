@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 
 import Filter from 'components/ui/Filter';
 
-import { Project } from '@types';
+import { Project } from 'types';
 
 const options = {
 	shouldSort: true,

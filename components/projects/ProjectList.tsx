@@ -5,7 +5,7 @@ import IconButton from 'components/ui/IconButton';
 import { Labels } from 'components/ui/Label';
 import GithubIcon from 'components/icons/GithubIcon';
 
-import { Project } from '@types';
+import { Project } from 'types';
 
 const ProjectList = ({ projects }: { projects: Project[] }) => {
 	const { t } = useTranslation('portfolio');
