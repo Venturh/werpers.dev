@@ -47,13 +47,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			)}
 			<body
 				className={clsx(
-					'min-h-screen bg-primary text-primary font-sans antialiased',
+					'bg-primary text-primary font-sans antialiased min-h-screen',
 					GeistSans.variable,
 				)}
 			>
-				<div className="relative flex min-h-screen flex-col max-w-3xl mx-auto px-2 md:px-0">
+				<div className="relative h-screen flex flex-col bg-background max-w-5xl mx-auto">
 					<Navigation />
-					<main className="flex-1 mt-6">{children}</main>
+					<main className="flex-1 mt-6  px-4 xl:px-0">{children}</main>
 					<Footer />
 				</div>
 			</body>

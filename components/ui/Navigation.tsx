@@ -6,7 +6,7 @@ import Label from './Label';
 
 export default function Navigation() {
 	return (
-		<div className="sticky border-b border-accent-primary top-0 z-10 w-full h-16 flex items-center backdrop-blur  bg-opacity-30 bg-primary ">
+		<div className="sticky px-4 py-2 xl:px-0 border-b border-accent-primary top-0 z-10 w-full h-16 flex items-center backdrop-blur  bg-opacity-30 bg-primary ">
 			<div className="flex items-center justify-between w-full">
 				<Link to="/">
 					<Label> werpers.dev</Label>

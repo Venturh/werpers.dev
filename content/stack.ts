@@ -2,11 +2,11 @@ const stack = [
 	'Vue',
 	'React',
 	'Nuxt',
-	'NextJs',
-	'TailwindCss',
+	'Nextjs',
+	'tailwindcss',
 	'Laravel',
-	'InertiaJs',
-	'Postgres',
+	'Inertia',
+	'PostgresSQL',
 	'TypeScript',
 ];
 
