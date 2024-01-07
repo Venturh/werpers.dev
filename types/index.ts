@@ -10,24 +10,24 @@ export type Social = {
 	internal?: boolean;
 };
 
-export type Experience = {
-	company: string;
+export type ExperienceStep = {
+	role?: string;
+	status?: string;
+	description?: string;
 	startTime: string;
 	endTime?: string;
+};
+
+export type Experience = {
+	company: string;
 	location: string;
 	url: string;
-	steps: {
-		role: string;
-		description: string[];
-		status: string;
-		time: string;
-	}[];
+	steps: ExperienceStep[];
 };
 
 export type Project = {
 	title: string;
 	description?: string;
-	descriptionEn?: string;
 	tech: Array<string>;
 	madeAt?: string;
 	slug: string;

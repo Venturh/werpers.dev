@@ -1,14 +1,10 @@
-import useTranslation from 'next-translate/useTranslation';
-
 import Discord from './Discord';
 
 import { footer } from 'content';
 import Clickable from './Clickable';
 import clsx from 'clsx';
 
-const Footer = () => {
-	const { t } = useTranslation('portfolio');
-
+export default function Footer() {
 	return (
 		<div className="flex flex-col w-full py-6 space-y-6 text-base">
 			<div className="w-full border-t border-accent-primary" />
@@ -17,7 +13,7 @@ const Footer = () => {
 				{Object.entries(footer).map(([title, values]) => (
 					<div className="space-y-2" key={title}>
 						<span className="text-xs font-semibold tracking-wider uppercase text-secondary">
-							{t(`${title}`)}
+							{title}
 						</span>
 						<div className={clsx('grid gap-2', { 'grid-cols-2': values.length > 2 })}>
 							{values.map(({ link, name, internal }) => (
@@ -27,7 +23,7 @@ const Footer = () => {
 									href={link}
 									out={!internal}
 								>
-									{title === 'pages' ? t(`${name}`) : name}
+									{name}
 								</Clickable>
 							))}
 						</div>
@@ -42,6 +38,4 @@ const Footer = () => {
 			</div>
 		</div>
 	);
-};
-
-export default Footer;
+}

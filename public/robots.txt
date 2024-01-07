@@ -1,6 +1,0 @@
-Sitemap: https://werpers.dev/api/sitemap.xml
-
-User-agent: *
-Allow: /*
-
-Disallow: /api/*

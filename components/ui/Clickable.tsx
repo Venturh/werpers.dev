@@ -1,8 +1,9 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import { ComponentProps, ElementType, forwardRef } from 'react';
 import { Url } from 'url';
 
-type ComponentProp = ComponentProps<'button'> & ComponentProps<'a'>;
+type ComponentProp = ComponentProps<'button'> & ComponentProps<'a'> & ComponentProps<'div'>;
 
 export interface ClickableProps extends Omit<ComponentProp, 'href'> {
 	out?: boolean;
@@ -12,26 +13,25 @@ export interface ClickableProps extends Omit<ComponentProp, 'href'> {
 }
 
 const Clickable = forwardRef<any, ClickableProps>(
-	({ out, href, as, ...props }: ClickableProps, ref) => {
+	({ out, href, ...props }: ClickableProps, ref) => {
 		const isLink = typeof href !== 'undefined';
-		const Clickable = as ? as : isLink ? 'a' : 'button';
-		const content = (
-			<Clickable
-				ref={ref}
-				target={out ? '_blank' : undefined}
-				rel={out ? 'noopener noreferrer' : undefined}
-				{...props}
-			/>
-		);
+
 		if (isLink) {
+			const As = props.as || 'div';
 			return (
-				<Link href={href} {...props}>
-					{content}
+				<Link
+					href={href}
+					target={out ? '_blank' : undefined}
+					rel={out ? 'noopener noreferrer' : undefined}
+				>
+					<As ref={ref} className={clsx('w-full', props.className)} {...props}>
+						{props.children}
+					</As>
 				</Link>
 			);
 		}
-		return content;
-	}
+		return <button ref={ref} {...props} />;
+	},
 );
 
 export default Clickable;

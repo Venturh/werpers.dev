@@ -38,7 +38,7 @@ const Button = forwardRef<any, ButtonProps>(
 			type = 'button',
 			...rest
 		}: ButtonProps,
-		ref
+		ref,
 	) => {
 		return (
 			<Clickable
@@ -52,7 +52,7 @@ const Button = forwardRef<any, ButtonProps>(
 					label ? 'flex flex-col' : 'inline-flex items-center',
 					{ 'rounded-md': rounded },
 					{ 'rounded-full': circle },
-					className
+					className,
 				)}
 				{...rest}
 			>
@@ -98,7 +98,7 @@ const Button = forwardRef<any, ButtonProps>(
 				</>
 			</Clickable>
 		);
-	}
+	},
 );
 
 export default Button;
@@ -110,13 +110,13 @@ export function ButtonIcon({ children, className, ...rest }: ComponentProps<'div
 		? cloneElement(element as any, {
 				'aria-hidden': true,
 				focusable: false,
-		  })
+			})
 		: null;
 	return (
 		<div
 			className={clsx(
 				'flex items-center justify-center flex-shrink-0 text-currentColor',
-				className
+				className,
 			)}
 			{...rest}
 		>

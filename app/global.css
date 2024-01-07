@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.prose {
+  @apply text-secondary md:max-w-3xl;
+}
+
+.prose > :first-child {
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+.prose a {
+  @apply text-secondary;
+  @apply no-underline;
+}
+
+
+:root{
+	--text-primary: 17 24 39;
+	--text-secondary: 75 85 99;
+	--bg-primary: 249 250 251;
+	--bg-secondary: 255 255 255;
+	--accent-primary: 244 244 245;
+	--accent-secondary: 209 213 219;
+	--brand-primary:6 182 212;
+    --brand-primary-rgba: 6, 182, 212, 0.1;
+	--brand-secondary:8 145 178;
+	--success-primary: 16 185 129;
+	--success-secondary: 5 150 105;
+	--error-primary: 244 63 94;
+	--error-secondary: 225 29 72;
+	--warning-primary: 245 158 11;
+	--warning-secondary: 217 119 6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: 255 255 255;
+        --text-secondary: 229 231 235;
+        --bg-primary: 24 24 27;
+        --bg-secondary: 30 30 33;
+        --accent-primary: 41 41 44;
+        --accent-secondary: 37 37 40;
+        --brand-primary: 165 243 252;
+        --brand-primary-rgba: 165, 243, 252, 0.1;
+        --brand-secondary:103 232 249;
+        --success-primary: 110 231 183;
+        --success-secondary: 52 211 153;
+        --error-primary: 253 164 175;
+        --error-secondary: 251 113 133;
+        --warning-primary: 252 211 77;
+        --warning-secondary: 251 191 36;
+    }
+}

@@ -1,20 +1,21 @@
-import Label from 'components/ui/Label';
+import InteractableCard from 'components/ui/InteractableCard';
 import Section from 'components/ui/Section';
 
 import { stack } from 'content';
 
-function Stack() {
+export default function Stack() {
 	return (
-		<Section title="stack" subtitle="stackSub">
-			<div className="flex flex-wrap gap-y-2">
+		<Section title="stack">
+			<div className="grid grid-cols-2 gap-3 md:grid-cols-3">
 				{stack.map((name) => (
-					<Label className="ml-2" key={name}>
+					<InteractableCard
+						key={name}
+						className="col-span-1 flex items-center justify-center space-x-2 p-8"
+					>
 						{name}
-					</Label>
+					</InteractableCard>
 				))}
 			</div>
 		</Section>
 	);
 }
-
-export default Stack;

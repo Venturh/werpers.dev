@@ -1,8 +1,11 @@
+'use client';
+import clsx from 'clsx';
 import { fetcher } from 'lib/swr';
 import useSWR from 'swr';
+import InteractableCard from './InteractableCard';
 
 type DiscordPresence = {
-	name: string;
+	name: 'Offline' | 'Online' | string;
 	state: string | null;
 	details?: string;
 	time?: string;
@@ -13,7 +16,7 @@ export default function Discord() {
 	const { data, error } = useSWR<DiscordPresence[]>(
 		`https://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
 		fetcher,
-		{ shouldRetryOnError: false }
+		{ shouldRetryOnError: false },
 	);
 
 	const presence = data ? data[0] : null;
@@ -21,19 +24,20 @@ export default function Discord() {
 	if ((!data && !error) || error) return <span />;
 
 	return (
-		<div className="flex justify-between p-2 border rounded-lg border-accent-primary bg-secondary">
-			<div className="text-sm truncate">
-				<div className="truncate text-brand-primary">{presence?.name}</div>
-				<div className="mt-1 truncate text-primary">{presence?.state ?? presence.details}</div>
-			</div>
-			{presence?.imgUrl && (
-				<img
-					// style={{ filter: 'invert(1)' }}
-					className="flex-shrink-0 w-10 h-full transform rounded-lg filter invert dark:invert-0"
-					alt="discord"
-					src={presence?.imgUrl}
+		<InteractableCard className="p-2 block">
+			<div className="flex items-center text-sm truncate font-medium">
+				<div
+					className={clsx(
+						'w-2 aspect-square shrink-0 h-2 rounded-full animate-pulse',
+						presence?.name === 'Offline' ? ' bg-red-400' : 'bg-emerald-400',
+					)}
 				/>
-			)}
-		</div>
+				<div className="ml-2">
+					{presence?.name !== 'Offline' ? 'Online/Working' : 'Offline/Not working'}
+				</div>
+			</div>
+
+			<span className="ml-4 truncate">{presence?.name}</span>
+		</InteractableCard>
 	);
 }

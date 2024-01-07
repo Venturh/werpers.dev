@@ -1,20 +1,14 @@
-import { Navlink } from '@types';
+import { Navlink } from 'types';
 
 export { default as projects } from './projects';
 export { default as experience } from './experience';
 export { default as stack } from './stack';
 
-export const navlinks: Navlink[] = [
-	{ name: 'portfolio', to: '/' },
-	{ name: 'projects', to: '/projects' },
-];
+export const navlinks: Navlink[] = [{ name: 'Portfolio', to: '/' }];
 
 export const footer = {
-	pages: [
-		{ name: 'portfolio', link: '/', internal: true },
-		{ name: 'projects', link: '/projects', internal: true },
-	],
-	socials: [
+	pages: [{ name: 'Portfolio', link: '/', internal: true }],
+	contact: [
 		{
 			name: 'Github',
 			link: 'https://github.com/Venturh',
@@ -22,7 +16,7 @@ export const footer = {
 		},
 		{
 			name: 'LinkedIn',
-			link: 'https://www.linkedin.com/in/max-werpers-9474251a5/',
+			link: 'https://www.linkedin.com/in/maximilian-w-9474251a5/',
 			internal: false,
 		},
 		{
