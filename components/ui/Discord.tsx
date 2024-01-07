@@ -12,7 +12,7 @@ type DiscordPresence = {
 
 export default function Discord() {
 	const { data, error } = useSWR<DiscordPresence[]>(
-		`http://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
+		`https://${process.env.NEXT_PUBLIC_DISCORD_API}/presence`,
 		fetcher,
 		{ shouldRetryOnError: false },
 	);
