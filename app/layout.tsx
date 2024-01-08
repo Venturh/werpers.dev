@@ -4,6 +4,7 @@ import Navigation from 'components/ui/Navigation';
 import clsx from 'clsx';
 import Footer from 'components/ui/Footer';
 import type { Metadata } from 'next';
+import svgToDataUri from 'mini-svg-data-uri';
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://werpers.dev'),
@@ -47,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			)}
 			<body
 				className={clsx(
-					'bg-primary text-primary font-sans antialiased min-h-screen',
+					'bg-primary text-primary font-sans antialiased min-h-screen dark:bg-grid-zinc-700/[0.5] bg-grid-black/[0.05]',
 					GeistSans.variable,
 				)}
 			>

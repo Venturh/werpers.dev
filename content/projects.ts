@@ -4,7 +4,7 @@ const projects: Project[] = [
 	{
 		title: 'elisabethwerpers.com',
 		description: 'Art gallery website.',
-		tech: ['NextJs', 'TypeScript', 'TailwindCss'],
+		tech: ['Nextjs', 'TypeScript', 'tailwindcss'],
 		slug: 'galery',
 		type: 'Frontend',
 		githubUrl: 'https://github.com/Venturh/elisabethwerpers.com',
@@ -15,7 +15,7 @@ const projects: Project[] = [
 	{
 		title: 'clickbar.dev',
 		description: 'Company website for clickbar.',
-		tech: ['Nuxt', 'Vue', 'TailwindCss', 'MDX'],
+		tech: ['Nuxt', 'Vue', 'tailwindcss', 'MDX'],
 		slug: 'clickbar',
 		type: 'Frontend',
 		madeAt: 'clickbar',
@@ -37,7 +37,7 @@ const projects: Project[] = [
 	{
 		title: 'werpers.dev',
 		description: 'My personal portfolio.',
-		tech: ['React', 'Next.js', 'Typescript'],
+		tech: ['React', 'Nextjs', 'Typescript'],
 		slug: 'werpers.dev',
 		type: 'Frontend',
 		githubUrl: 'https://github.com/venturh/werpers.dev',

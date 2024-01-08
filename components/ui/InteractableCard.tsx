@@ -23,7 +23,7 @@ export default function InteractableCard({ children, className, href, ...props }
 		<Component
 			href={href}
 			className={clsx(
-				'border-2 border-accent-primary duration-200 rounded-lg bg-primary hover:border-brand-primary/50 hover:scale-[1.01]',
+				'border-2 border-accent-primary duration-200 rounded-lg bg-primary hover:border-brand-primary/50 hover:scale-[1.01] shadow-sm dark:shadow-none',
 				className,
 			)}
 			style={
