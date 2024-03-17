@@ -20,6 +20,16 @@
   @apply no-underline;
 }
 
+@media (hover: hover) {
+    .hover-list:hover li {
+      opacity: 0.5;
+    }
+
+    .hover-list:hover li:hover {
+      opacity: 1;
+    }
+  }
+
 
 :root{
 	--text-primary: 17 24 39;

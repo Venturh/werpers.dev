@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 export default function Footer() {
 	return (
-		<div className="flex flex-col w-full py-6 space-y-6 text-base">
+		<div className="flex flex-col w-full py-6 space-y-6 px-4 sm:px-0">
 			<div className="w-full border-t border-accent-primary" />
 
 			<div className="grid grid-cols-2 gap-4 text-base sm:grid-cols-3">

@@ -51,7 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					GeistSans.variable,
 				)}
 			>
-				<div className="relative h-screen flex flex-col bg-background max-w-5xl mx-auto">
+				<div className="relative h-screen flex flex-col bg-background max-w-2xl mx-auto">
 					<Navigation />
 					<main className="flex-1 mt-6  px-4 xl:px-0">{children}</main>
 					<Footer />
