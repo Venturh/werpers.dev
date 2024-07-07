@@ -12,12 +12,12 @@ export default function Hero() {
 						as="span"
 						className="font-semibold text-brand-primary hover:text-brand-secondary"
 						out
-						href="https://clickbar.dev/"
+						href="https://heizung-billiger.de"
 					>
 						{' '}
-						clickbar.
+						Käsmayr GmbH
 					</Clickable>
-					<p>Working remotely from Funchal - Madeira, Portugal 🏝️.</p>
+					<p>Working remotely from Funchal, Portugal 🏝️.</p>
 				</h2>
 			</div>
 			<Image

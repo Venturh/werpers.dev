@@ -2,12 +2,21 @@ import { Experience } from 'types';
 
 const experience: Experience[] = [
 	{
+		company: 'Käsmayr GmbH',
+		location: 'Remote',
+		url: 'https://heizung-billiger.de',
+		role: 'Full Stack Developer',
+		startTime: '2024-06-06',
+		endTime: undefined,
+		imageName: 'ksmyr.jpeg',
+	},
+	{
 		company: 'clickbar. GmbH',
 		location: 'Darmstadt, Germany',
 		url: 'https://clickbar.dev/',
-		role: 'Full Stack Engineer',
+		role: 'Full Stack Developer',
 		startTime: '2020-10-01',
-		endTime: undefined,
+		endTime: '2024-06-05',
 		imageName: 'cb.webp',
 	},
 	{
