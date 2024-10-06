@@ -41,8 +41,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<script
 					async
 					defer
-					data-website-id="c4375a93-dd92-40f2-a93b-39f725c8d54c"
-					src="https://umami-analytics-sage.vercel.app/umami.js"
+					data-website-id="22ea2066-c4a9-47c1-b56b-6f3e48acbc49"
+					src="https://umami.werpers.dev/script.js"
 				/>
 			)}
 			<body
